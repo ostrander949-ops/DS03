@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Monty — Book a Session</title>
+  <meta name="description" content="Reach out to schedule psychotherapy, coaching, or consulting.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Contact Monty — Book a Session">
+  <meta property="og:description" content="Reach out to schedule psychotherapy, coaching, or consulting.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/profile.svg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html">Monty</a>
+      <div class="links">
+        <a href="about.html">About</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+  <section class="container card">
+    <h2 class="h2">Contact</h2>
+    <p>Use the form below. You’ll be taken to a thank-you page on submission.</p>
+    <form action="https://formspree.io/f/your-id" method="POST">
+      <div class="form-row">
+        <div>
+          <label for="name">Name</label>
+          <input class="input" type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input class="input" type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea class="input" id="message" name="message" rows="6" required></textarea>
+      </div>
+      <input type="hidden" name="_redirect" value="https://example.com/thank-you.html">
+      <div style="margin-top:12px">
+        <button class="button" type="submit">Send</button>
+      </div>
+    </form>
+    <p style="margin-top:12px;color:#9aa2b2">Prefer email? Write to <a href="mailto:hello@example.com">hello@example.com</a>.</p>
+  </section>
+
+    <footer>
+      <hr>
+      <div class="grid two">
+        <div>&copy; <span id="year"></span> Monty — Psychotherapist • Educator • Mental Fitness Coach.</div>
+        <div style="text-align:right">Made with curiosity about UAP, PSI, and a growth mindset.</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
