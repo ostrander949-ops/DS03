@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mindset — Transformation with intent</title>
+  <meta name="description" content="A practical, research-informed guide to cultivating a growth mindset for creators, coaches, and teams." />
+  <meta name="author" content="Monty" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020;         /* deep slate/navy */
+      --bg-soft:#0e1530;     /* card background */
+      --text:#e6ecff;        /* primary text */
+      --muted:#9bb0ff;       /* muted text */
+      --accent:#7c8cff;      /* accent borders */
+      --brand:#8ef0d8;       /* brand accent */
+      --brand-2:#ffd089;     /* secondary accent */
+      --shadow: 0 20px 40px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(124,140,255,.18), transparent 60%),
+                  radial-gradient(800px 600px at 110% 10%, rgba(142,240,216,.10), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    .container{max-width:960px;margin:0 auto;padding:24px}
+    header{
+      position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient(180deg, rgba(11,16,32,.8), rgba(11,16,32,.6));
+      border-bottom:1px solid rgba(124,140,255,.2);
+      z-index:50
+    }
+    .brand{display:flex;align-items:center;gap:12px;padding:14px 0}
+    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--shadow)}
+    .brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.4px}
+    .brand span{font-size:12px;color:var(--muted)}
+
+    .hero{padding:56px 0 8px}
+    .title{font-size:44px;line-height:1.12;margin:0 0 8px;font-weight:800}
+    .subtitle{margin:0;color:var(--muted);max-width:60ch}
+
+    .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;color:var(--muted);font-size:14px}
+    .meta .pill{padding:6px 10px;border:1px solid rgba(124,140,255,.25);border-radius:999px}
+
+    article{margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(14,21,48,.9), rgba(14,21,48,.75));
+          border:1px solid rgba(124,140,255,.2);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
+    .prose h2{font-size:28px;margin:28px 0 8px}
+    .prose h3{font-size:20px;margin:22px 0 6px}
+    .prose p{margin:12px 0}
+    .prose strong{color:#fff}
+    .prose a{color:var(--brand);text-decoration:none}
+    .prose a:hover{text-decoration:underline}
+    .callout{border-left:4px solid var(--brand);padding:12px 16px;background:rgba(142,240,216,.06);border-radius:12px;margin:18px 0}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:820px){.grid{grid-template-columns:1.2fr .8fr}}
+
+    .list{display:grid;gap:8px;margin:8px 0 18px;padding:0 0 0 18px}
+    .list li{margin:6px 0}
+
+    .checklist{list-style:none;padding:0;margin:12px 0}
+    .checklist li{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid rgba(124,140,255,.2);border-radius:14px;background:rgba(124,140,255,.06)}
+    .check{width:20px;height:20px;border-radius:6px;display:inline-block;background:linear-gradient(135deg,var(--brand),var(--brand-2));margin-top:2px}
+
+    blockquote{margin:14px 0;padding:12px 16px;border-left:4px solid var(--brand-2);background:rgba(255,208,137,.08);border-radius:12px}
+
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+         font-size:12px; padding:.18rem .44rem; border:1px solid rgba(124,140,255,.4); border-bottom-width:2px; border-radius:8px; background:rgba(124,140,255,.12)}
+
+    nav.post-nav{display:flex;justify-content:space-between;gap:12px;margin:28px 0}
+    nav.post-nav a{flex:1;display:block;text-align:center;padding:14px 16px;border-radius:12px;border:1px solid rgba(124,140,255,.25);color:var(--text);text-decoration:none;background:rgba(124,140,255,.06)}
+    nav.post-nav a:hover{border-color:var(--brand)}
+
+    footer{margin:36px 0;color:var(--muted);font-size:14px;text-align:center}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Mindset — Blog Post #2",
+    "author": {"@type": "Person", "name": "Monty"},
+    "datePublished": "2025-09-24",
+    "dateModified": "2025-09-24",
+    "keywords": "growth mindset, neuroplasticity, mindfulness, coaching, creative performance"
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>Mindset</h1>
+        <span>Blog Post #2 · Growth is a practice</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2 class="title">Mindset is a Designable System</h2>
+      <p class="subtitle">Not a fixed trait. Borrowing from psychology, contemplative practice, and embodied craft, here’s a pragmatic field guide for installing a <strong>growth mindset</strong> you can actually feel.</p>
+      <div class="meta">
+        <div class="pill">~7 min read</div>
+        <div class="pill">Psychology × Mindfulness</div>
+        <div class="pill">Creator Ops</div>
+      </div>
+    </section>
+
+    <article class="grid">
+      <div class="prose card">
+        <h2>1) Reframe: from Outcome to Process</h2>
+        <p>Fixed mindset hunts for proof of worth. Growth mindset hunts for <em>useful feedback</em>. The lever is not self‑esteem but <strong>process‑esteem</strong>: “Did I run the process I promised myself?” Honor the reps and the results will lag in.</p>
+        <ul class="list">
+          <li><strong>Language swap:</strong> Replace “I’m bad at this” with “I haven’t trained this <em>yet</em>.”</li>
+          <li><strong>Metrics swap:</strong> Track reps, recovery, and rate of learning, not just wins.</li>
+          <li><strong>Identity swap:</strong> From <em>knower</em> to <em>learner</em>: curiosity is your core competence.</li>
+        </ul>
+
+        <div class="callout"><strong>Try this:</strong> At day’s end, ask: <em>What did I learn? What would I try differently tomorrow?</em> Two lines in a notebook beats a page of theory.</div>
+
+        <h2>2) Stress is Information, Not Identity</h2>
+        <p>Challenge arousal often masquerades as danger. Use a 20‑second <span class="kbd">Physio Reset</span> before high‑stakes tasks:</p>
+        <ol class="list">
+          <li><strong>Exhale‑hold:</strong> Long exhale, hold 2–4s. Signals safety.</li>
+          <li><strong>Eyes:</strong> Soften peripheral vision; reduces threat focus.</li>
+          <li><strong>Name:</strong> Label the sensation (e.g., “fast heart, warm hands”). Naming unblends you from it.</li>
+        </ol>
+
+        <h2>3) Praise the <em>Strategy</em>, not the Person</h2>
+        <p>Following Dweck’s research, praise what is <em>controllable</em>—effort <em>and</em> strategy. Ask: “What specifically did you do that worked, and how will you iterate it?”</p>
+
+        <h2>4) The Tiny‑Loop Architecture</h2>
+        <p>Big goals die in vague loops. Build micro‑loops you can finish daily:</p>
+        <ul class="checklist">
+          <li><span class="check"></span><div><strong>Define a unit:</strong> one outbound email, one sketch, one paragraph.</div></li>
+          <li><span class="check"></span><div><strong>Time‑box:</strong> 15–25 minutes. Ship when the box ends.</div></li>
+          <li><span class="check"></span><div><strong>Reflect:</strong> two bullets: <em>keep / change</em>.</div></li>
+        </ul>
+
+        <blockquote>
+          “The mind takes the shape of what it pays attention to.” — Contemplative traditions & neuroplasticity agree.
+        </blockquote>
+
+        <h2>5) Rituals that Rewire</h2>
+        <p>Mindset lives in the body. Pair cognition with ritual so it sticks:</p>
+        <ul class="list">
+          <li><strong>Morning intent:</strong> 60‑second breath + one sentence: “Today I practice being a learner.”</li>
+          <li><strong>Friction audit:</strong> remove one obstacle from your workspace daily.</li>
+          <li><strong>Completion cue:</strong> a closing breath or brief walk to signal the brain the loop is done.</li>
+        </ul>
+
+        <h2>6) Coaching Prompts (self or team)</h2>
+        <ul class="list">
+          <li>Where is the task too big to finish today? What’s the <em>smaller unit</em>?</li>
+          <li>What feedback am I avoiding? How can I get a low‑stakes sample in 24 hours?</li>
+          <li>Which skill, if improved by 10%, collapses many problems?</li>
+        </ul>
+
+        <h3>Downloadable micro‑framework</h3>
+        <p>Screenshot this three‑line loop and stick it near your screen:</p>
+        <ul class="list">
+          <li><strong>Plan:</strong> My smallest shippable unit today is ____.</li>
+          <li><strong>Do:</strong> Work 15–25 minutes. Ship version 0.5.</li>
+          <li><strong>Review:</strong> Keep: ____ · Change: ____</li>
+        </ul>
+      </div>
+
+      <aside class="card">
+        <h3>Mindset Cheats</h3>
+        <ul class="list">
+          <li><strong>Yet:</strong> add it to every “can’t”.</li>
+          <li><strong>Process‑esteem:</strong> judge the reps.</li>
+          <li><strong>State first:</strong> regulate, then strategize.</li>
+          <li><strong>Tiny loops:</strong> finish something daily.</li>
+          <li><strong>Public practice:</strong> ship imperfectly, learn faster.</li>
+        </ul>
+
+        <h3>Suggested Reading</h3>
+        <ul class="list">
+          <li>Carol Dweck — <em>Mindset</em></li>
+          <li>James Clear — <em>Atomic Habits</em></li>
+          <li>Andrew Huberman — protocols on state regulation</li>
+          <li>Ellen Langer — mindful learning</li>
+        </ul>
+
+        <h3>For Creators</h3>
+        <p>Run a <strong>5‑day Growth Sprint</strong>: pick one skill, one daily unit, share learnings. DM peers for feedback on day 5.</p>
+      </aside>
+    </article>
+
+    <nav class="post-nav">
+      <a href="./post-1.html" aria-label="Previous post">← Previous: Why We Train</a>
+      <a href="./post-3.html" aria-label="Next post">Next: Systems over Goals →</a>
+    </nav>
+
+    <footer>
+      © <span id="year"></span> Monty • Built with intention, coffee, and tiny loops.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
