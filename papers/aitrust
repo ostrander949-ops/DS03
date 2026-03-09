@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI and the Erosion of Human Trust | Discovery Science</title>
+
+<style>
+body{
+font-family:Georgia,serif;
+max-width:800px;
+margin:auto;
+padding:40px 20px;
+line-height:1.7;
+background:#f9fbfd;
+color:#222;
+}
+h1{font-size:36px}
+h2{margin-top:40px}
+.meta{color:#666;margin-bottom:30px}
+</style>
+</head>
+
+<body>
+
+<h1>AI and the Erosion of Human Trust in Commercial Dialogue</h1>
+
+<div class="meta">
+Discovery Science Institute — Research Note
+</div>
+
+<h2>Abstract</h2>
+
+<p>
+Artificial intelligence is rapidly transforming the structure of professional
+communication. Automated outreach, synthetic messaging, and algorithmic
+qualification systems now mediate many early interactions between organizations
+and potential clients. While these tools improve efficiency, they may also
+undermine the relational signals that allow trust to form between human actors.
+</p>
+
+<h2>Automation and Authenticity</h2>
+
+<p>
+Human communication contains subtle cues indicating attention, effort, and
+presence. When messages are automated, these cues can disappear, producing a
+sense of impersonality or manipulation even when the message content itself is
+reasonable.
+</p>
+
+<p>
+Over time this may create systemic distrust toward institutional communication.
+</p>
+
+<h2>The Paradox of AI Communication</h2>
+
+<p>
+AI tools promise personalization at scale, yet true personalization requires
+genuine awareness of another person’s context. Algorithmic systems approximate
+this awareness using data signals, but they cannot replicate the lived
+experience of human relational understanding.
+</p>
+
+<h2>Future Research</h2>
+
+<p>
+Future work at Discovery Science will explore how organizations can integrate
+AI tools while preserving authentic human dialogue and relational trust.
+</p>
+
+</body>
+</html>
