@@ -1,1 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discovery Science | Human Communication Research in the Age of AI</title>
+  <meta name="description" content="Discovery Science is an independent research institute studying human communication, neurodiversity, ethical persuasion, contemplative inquiry, and trust in an AI-mediated economy." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0c1728;
+      --panel: rgba(15, 27, 46, 0.82);
+      --panel-2: rgba(18, 34, 56, 0.92);
+      --text: #ecf4ff;
+      --muted: #a9bdd6;
+      --line: rgba(168, 196, 230, 0.16);
+      --accent: #77e7ff;
+      --accent-2: #8b9dff;
+      --glow: rgba(119, 231, 255, 0.25);
+      --max: 1180px;
+      --radius: 22px;
+      --shadow: 0 18px 55px rgba(0, 0, 0, 0.34);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(65, 116, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 84% 18%, rgba(119, 231, 255, 0.15), transparent 22%),
+        linear-gradient(180deg, #040b16 0%, #07111f 45%, #091523 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image: radial-gradient(rgba(255,255,255,0.75) 0.7px, transparent 0.7px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.2));
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(5, 11, 22, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-top {
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.9;
+    }
+
+    .brand-bottom {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus { color: var(--text); }
+
+    .hero {
+      padding: 88px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(119, 231, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(119, 231, 255, 0.08);
+      color: #b8f6ff;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+      max-width: 11ch;
+    }
+
+    .hero-copy p {
+      margin: 22px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition: 0.22s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #84eeff 0%, #7f9eff 100%);
+      color: #08111d;
+      box-shadow: 0 10px 34px var(--glow);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.03); }
+
+    .btn-secondary {
+      border-color: var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover { background: rgba(255,255,255,0.06); }
+
+    .hero-panel,
+    .panel {
+      background: linear-gradient(180deg, rgba(14, 24, 42, 0.92), rgba(10, 18, 31, 0.92));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: radial-gradient(circle at top, rgba(119, 231, 255, 0.16), transparent 38%);
+      pointer-events: none;
+    }
+
+    .panel-label {
+      position: relative;
+      z-index: 1;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .panel-title {
+      position: relative;
+      z-index: 1;
+      font-size: 26px;
+      line-height: 1.2;
+      margin: 14px 0 18px;
+    }
+
+    .focus-list {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 12px;
+    }
+
+    .focus-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 6px;
+      box-shadow: 0 0 20px rgba(119, 231, 255, 0.8);
+      flex: 0 0 auto;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .stat {
+      padding: 18px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section {
+      padding: 36px 0;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 28px;
+      padding: 22px 0 0;
+      border-top: 1px solid var(--line);
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .card {
+      padding: 26px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.035);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card ul {
+      margin: 16px 0 0;
+      padding-left: 18px;
+    }
+
+    .split-panel {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .method-box,
+    .applied-box {
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(18, 31, 50, 0.88), rgba(12, 21, 36, 0.95));
+      box-shadow: var(--shadow);
+    }
+
+    .method-box h3,
+    .applied-box h3 {
+      margin-top: 0;
+      font-size: 28px;
+      line-height: 1.12;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: #d8ebff;
+      background: rgba(255,255,255,0.03);
+      font-size: 13px;
+    }
+
+    .list-panel {
+      padding: 26px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      box-shadow: var(--shadow);
+    }
+
+    .list-panel ul {
+      margin: 18px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .essay-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .essay-item {
+      padding: 18px 20px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .essay-item strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .essay-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cta {
+      margin: 42px 0 18px;
+      padding: 34px;
+      border-radius: 24px;
+      border: 1px solid rgba(119, 231, 255, 0.2);
+      background:
+        radial-gradient(circle at top right, rgba(119, 231, 255, 0.12), transparent 35%),
+        linear-gradient(180deg, rgba(14, 25, 42, 0.96), rgba(9, 17, 29, 0.96));
+      box-shadow: var(--shadow);
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .site-footer {
+      padding: 24px 0 46px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-header,
+      .split-panel,
+      .cta-grid,
+      .cards-grid,
+      .three-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats { grid-template-columns: 1fr; }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .hero { padding: 72px 0 50px; }
+      .hero-copy p,
+      .section-text { font-size: 16px; }
+      .btn { width: 100%; }
+      .hero-actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/index.html">
+        <span class="brand-top">Discovery Science</span>
+        <span class="brand-bottom">Human Communication Research Institute</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/institute.html">Institute</a>
+        <a href="#research">Research</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#writing">Writing</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Independent institute • research, education, selective advisory</span>
+          <h1>Human Communication Research in the Age of Artificial Intelligence</h1>
+          <p>
+            Discovery Science is an independent research institute studying human communication, neurodiversity, ethical persuasion,
+            contemplative inquiry, and trust within modern economic and technological systems. Our work develops evidence-based
+            frameworks for more human, inclusive, and psychologically informed approaches to professional dialogue.
+          </p>
+          <p>
+            In response to the accelerating wave of corporate automation, algorithmic persuasion, and AI-mediated sales systems, we
+            investigate how relational intelligence, neurodivergent sensitivity, humanistic interpersonal skill, and contemplative
+            awareness can preserve dignity, trust, and cognitive diversity in B2B environments.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/institute.html">Visit the Institute</a>
+            <a class="btn btn-secondary" href="#methodology">Explore the Methodology</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>Research</strong>
+              <span>Original inquiry into communication, trust, and cognitive diversity.</span>
+            </div>
+            <div class="stat">
+              <strong>Frameworks</strong>
+              <span>Methodologies derived from interdisciplinary evidence and lived insight.</span>
+            </div>
+            <div class="stat">
+              <strong>Applied Work</strong>
+              <span>Selective coaching and advisory for aligned founders and organizations.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="panel-label">Current focus</div>
+          <div class="panel-title">Primary domains of inquiry</div>
+          <div class="focus-list">
+            <div class="focus-item"><span class="dot"></span><span>Humanistic selling and non-coercive B2B communication</span></div>
+            <div class="focus-item"><span class="dot"></span><span>Neurodivergent sensitivities in professional dialogue and economic participation</span></div>
+            <div class="focus-item"><span class="dot"></span><span>Psychology, technology, and trust in AI-mediated commercial systems</span></div>
+            <div class="focus-item"><span class="dot"></span><span>Meditation, consciousness, and contemplative inquiry as domains of cognitive research</span></div>
+            <div class="focus-item"><span class="dot"></span><span>Inclusive models for modern B2B systems grounded in evidence, ethics, and relational skill</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="positioning">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Positioning</div>
+            <h2>Less a consultancy. More a research-led methodology and intellectual practice.</h2>
+          </div>
+          <div class="section-text">
+            Discovery Science is not primarily a commercial sales firm. It is a research-driven body of work concerned with how people
+            communicate, trust, collaborate, and make decisions under changing technological conditions. Coaching remains part of the
+            offering, but as a secondary applied function: a way to test, refine, and responsibly translate research into practice.
+          </div>
+        </div>
+        <div class="split-panel">
+          <div class="list-panel">
+            <h3>What Discovery Science is</h3>
+            <ul>
+              <li>An independent research institute focused on communication, neurodiversity, trust, and technology.</li>
+              <li>A methodology lab developing human-centered frameworks for ethical persuasion and inclusive B2B interaction.</li>
+              <li>A publishing platform for essays, working papers, and public research on psychology, consciousness, and modern commercial systems.</li>
+              <li>A selective advisory practice for founders and organizations seeking deeper relational intelligence in an AI-driven environment.</li>
+            </ul>
+          </div>
+          <div class="list-panel">
+            <h3>What Discovery Science is not</h3>
+            <ul>
+              <li>Not a high-volume sales training vendor.</li>
+              <li>Not a conversion-first automation agency.</li>
+              <li>Not a script library built around pressure or manipulation.</li>
+              <li>Not a purely commercial response to technology change absent psychological and ethical inquiry.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Research areas</div>
+            <h2>Interdisciplinary inquiry across psychology, technology, sociology, and contemplative science</h2>
+          </div>
+          <div class="section-text">
+            The institute’s work is organized around a set of connected research programs examining how communication functions inside
+            economic systems, how cognitive diversity changes interaction, and how automation alters the conditions of trust.
+          </div>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Humanistic Communication and Ethical Persuasion</h3>
+            <p>
+              Research into the psychological and relational foundations of influence, drawing from psychotherapy, interpersonal
+              psychology, communication theory, and applied sociology to develop non-coercive models of professional dialogue.
+            </p>
+            <ul>
+              <li>Relational trust formation in B2B environments</li>
+              <li>Autonomy-respecting persuasion and decision support</li>
+              <li>Humanistic alternatives to transactional selling systems</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Neurodivergence and Communication</h3>
+            <p>
+              Study of how neurodivergent cognition shapes professional communication, entrepreneurship, sensitivity, pattern recognition,
+              and social participation, with the aim of building more inclusive business frameworks.
+            </p>
+            <ul>
+              <li>Neurodivergent strengths and constraints in sales contexts</li>
+              <li>Inclusive communication design for cognitively diverse professionals</li>
+              <li>Leadership and trust across different perceptual styles</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>AI, Automation, and Trust</h3>
+            <p>
+              Investigation into how AI-mediated communication affects authenticity, persuasion, institutional trust, and commercial
+              legitimacy, especially as organizations automate outreach, qualification, and relationship management.
+            </p>
+            <ul>
+              <li>Human versus AI trust dynamics</li>
+              <li>Ethical risks of algorithmic persuasion systems</li>
+              <li>Preserving human agency in automated workflows</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Meditation, Consciousness, and Contemplative Inquiry</h3>
+            <p>
+              Exploration of meditation, altered attention, self-awareness, consciousness studies, and adjacent anomalous or frontier
+              domains as relevant to perception, attunement, cognition, and interpersonal sensitivity.
+            </p>
+            <ul>
+              <li>Attention and awareness as communication variables</li>
+              <li>Contemplative practice and interpersonal presence</li>
+              <li>Consciousness research, phenomenology, and frontier inquiry</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="methodology">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Methodology</div>
+            <h2>A research-derived model for more human, inclusive, and evidence-based B2B interaction</h2>
+          </div>
+          <div class="section-text">
+            The core applied offering of Discovery Science is not generic coaching. It is a methodology derived from ongoing research into
+            communication, psychology, neurodivergence, ethical persuasion, and the pressures introduced by corporate AI automation.
+          </div>
+        </div>
+        <div class="split-panel">
+          <div class="method-box">
+            <div class="section-kicker">Primary framework</div>
+            <h3>Humanistic Selling</h3>
+            <p>
+              Humanistic Selling is a research-derived methodology integrating interpersonal psychology, therapeutic communication
+              principles, neurodivergent sensitivity, and sociological insight to support ethical, trust-centered business communication.
+              Rather than maximizing pressure, this approach emphasizes attunement, clarity, consent, relational intelligence, and more
+              inclusive ways of engaging buyers and stakeholders.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Ethical persuasion</span>
+              <span class="pill">Neurodivergent inclusion</span>
+              <span class="pill">Trust-centered dialogue</span>
+              <span class="pill">Human-AI balance</span>
+              <span class="pill">Psychology + technology</span>
+            </div>
+          </div>
+          <div class="applied-box">
+            <div class="section-kicker">Applied translation</div>
+            <h3>Selective coaching and advisory</h3>
+            <p>
+              Discovery Science occasionally works with select founders, researchers, and organizations that want to apply the
+              methodology in real-world settings. These engagements are best understood as research-informed implementation rather than
+              standard consulting. They focus on communication systems, team development, neurodivergent accessibility, founder
+              messaging, and trust-preserving responses to AI-driven automation.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Founder coaching</span>
+              <span class="pill">Team advisory</span>
+              <span class="pill">Inclusive revenue stream design</span>
+              <span class="pill">AI-response strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="writing">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Writing and publication</div>
+            <h2>Essays, research notes, and conceptual work emerging from the institute</h2>
+          </div>
+          <div class="section-text">
+            Discovery Science publishes work intended to contribute to public and professional discourse on human communication,
+            neurodiversity, ethical persuasion, consciousness, and the social consequences of AI-mediated systems.
+          </div>
+        </div>
+        <div class="essay-list">
+          <div class="essay-item">
+            <div>
+              <strong>AI and the Erosion of Human Trust in Commercial Dialogue</strong>
+              <span>On automation, authenticity, and the limits of synthetic relationship management.</span>
+            </div>
+            <span>Research note</span>
+          </div>
+          <div class="essay-item">
+            <div>
+              <strong>Neurodivergent Sensitivity as a Strategic Asset in B2B Communication</strong>
+              <span>Reframing difference as relational intelligence rather than sales deficiency.</span>
+            </div>
+            <span>Essay</span>
+          </div>
+          <div class="essay-item">
+            <div>
+              <strong>Meditation, Attention, and Professional Presence</strong>
+              <span>How contemplative practice may influence communication depth, self-regulation, and trust.</span>
+            </div>
+            <span>Working paper</span>
+          </div>
+          <div class="essay-item">
+            <div>
+              <strong>Humanistic Selling as an Alternative to Corporate AI Optimization</strong>
+              <span>Why evidence-based relational methods matter when organizations automate persuasion.</span>
+            </div>
+            <span>Framework</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="engagements">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">How to engage</div>
+            <h2>Three ways to work with Discovery Science</h2>
+          </div>
+          <div class="section-text">
+            For now, Discovery Science operates as a hybrid of institute, publishing platform, and applied methodology practice.
+            Engagements are limited and mission-aligned.
+          </div>
+        </div>
+        <div class="three-grid">
+          <div class="card">
+            <h3>Read and follow the research</h3>
+            <p>Explore institute writing, publications, and evolving frameworks across communication, neurodiversity, AI, and consciousness.</p>
+          </div>
+          <div class="card">
+            <h3>Collaborate with the institute</h3>
+            <p>Partner on research, publishing, interviews, pilots, or interdisciplinary conversation related to human-centered systems.</p>
+          </div>
+          <div class="card">
+            <h3>Apply the methodology</h3>
+            <p>Request a selective coaching or advisory engagement centered on humanistic selling, inclusive communication, and AI-response strategy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container cta">
+        <div class="cta-grid">
+          <div>
+            <div class="section-kicker">Next step</div>
+            <h2 style="margin-bottom:14px;">Explore the institute or begin a conversation</h2>
+            <div class="section-text">
+              Discovery Science is building a research-led body of work for a more human, more psychologically rigorous, and more inclusive
+              future of professional communication.
+            </div>
+          </div>
+          <div class="hero-actions" style="margin-top:0; justify-content:flex-end;">
+            <a class="btn btn-primary" href="/institute.html">Visit Institute</a>
+            <a class="btn btn-secondary" href="/contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>Discovery Science — Human communication, neurodiversity, ethical persuasion, consciousness, and AI-era trust.</div>
+      <div>
+        <a href="/about.html">About</a> ·
+        <a href="/institute.html">Institute</a> ·
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
 
