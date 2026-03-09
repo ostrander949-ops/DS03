@@ -1,62 +1,236 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Monty — Book a Session</title>
-  <meta name="description" content="Reach out to schedule psychotherapy, coaching, or consulting.">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="Contact Monty — Book a Session">
-  <meta property="og:description" content="Reach out to schedule psychotherapy, coaching, or consulting.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/profile.svg">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script defer src="assets/js/main.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Discovery Science Institute</title>
+
+<meta name="description" content="Contact Discovery Science Institute regarding research, collaboration, writing, or methodology advisory." />
+
+<style>
+
+:root{
+--bg:#07111f;
+--text:#ecf4ff;
+--muted:#a9bdd6;
+--line:rgba(168,196,230,0.16);
+--accent:#77e7ff;
+--max:1100px;
+}
+
+body{
+margin:0;
+font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:linear-gradient(180deg,#050c18,#081220);
+color:var(--text);
+}
+
+.container{
+width:min(var(--max),calc(100% - 40px));
+margin:auto;
+}
+
+header{
+border-bottom:1px solid var(--line);
+background:rgba(0,0,0,.35);
+backdrop-filter:blur(10px);
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+}
+
+.brand-top{
+font-size:12px;
+letter-spacing:.28em;
+text-transform:uppercase;
+color:var(--accent);
+}
+
+.brand-bottom{
+font-size:18px;
+font-weight:600;
+}
+
+.nav-links{
+display:flex;
+gap:20px;
+color:var(--muted);
+font-size:14px;
+}
+
+.hero{
+padding:90px 0 60px;
+}
+
+h1{
+font-size:52px;
+margin:0 0 20px 0;
+}
+
+p{
+color:var(--muted);
+font-size:18px;
+line-height:1.6;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+margin-top:40px;
+}
+
+.card{
+border:1px solid var(--line);
+border-radius:18px;
+padding:30px;
+background:rgba(255,255,255,0.02);
+}
+
+.card h3{
+margin-top:0;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:16px;
+margin-top:10px;
+}
+
+input, textarea{
+background:#0f1828;
+border:1px solid var(--line);
+border-radius:10px;
+padding:12px;
+color:white;
+font-size:14px;
+}
+
+textarea{
+min-height:120px;
+}
+
+button{
+margin-top:10px;
+background:linear-gradient(135deg,#84eeff,#7f9eff);
+border:none;
+padding:14px;
+border-radius:12px;
+font-weight:600;
+cursor:pointer;
+}
+
+footer{
+margin-top:80px;
+padding:30px 0;
+border-top:1px solid var(--line);
+color:var(--muted);
+font-size:14px;
+}
+
+@media(max-width:900px){
+.grid{
+grid-template-columns:1fr;
+}
+h1{
+font-size:38px;
+}
+}
+
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <nav class="nav">
-      <a class="brand" href="index.html">Monty</a>
-      <div class="links">
-        <a href="about.html">About</a>
-        <a href="blog/index.html">Blog</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
 
-  <section class="container card">
-    <h2 class="h2">Contact</h2>
-    <p>Use the form below. You’ll be taken to a thank-you page on submission.</p>
-    <form action="https://formspree.io/f/your-id" method="POST">
-      <div class="form-row">
-        <div>
-          <label for="name">Name</label>
-          <input class="input" type="text" id="name" name="name" required>
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input class="input" type="email" id="email" name="email" required>
-        </div>
-      </div>
-      <div>
-        <label for="message">Message</label>
-        <textarea class="input" id="message" name="message" rows="6" required></textarea>
-      </div>
-      <input type="hidden" name="_redirect" value="https://example.com/thank-you.html">
-      <div style="margin-top:12px">
-        <button class="button" type="submit">Send</button>
-      </div>
-    </form>
-    <p style="margin-top:12px;color:#9aa2b2">Prefer email? Write to <a href="mailto:montgomery@discovery-science.com">montgomery@discovery-science.com</a>.</p>
-  </section>
+<header>
+<div class="container nav">
 
-    <footer>
-      <hr>
-      <div class="grid two">
-        <div>&copy; <span id="year"></span> Monty — Psychotherapist • Educator • Mental Fitness Coach.</div>
-        <div style="text-align:right">Made with curiosity about Neuropsychology, PSI, and a growth mindset.</div>
-      </div>
-    </footer>
-  </div>
+<div>
+<div class="brand-top">Discovery Science</div>
+<div class="brand-bottom">Human Communication Research Institute</div>
+</div>
+
+<nav class="nav-links">
+<a href="/index.html">Home</a>
+<a href="/institute.html">Institute</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+</nav>
+
+</div>
+</header>
+
+<main class="container hero">
+
+<h1>Contact the Institute</h1>
+
+<p>
+Discovery Science welcomes thoughtful conversations with researchers, writers,
+founders, organizations, and collaborators interested in human communication,
+neurodiversity, ethical persuasion, contemplative inquiry, and trust in an
+AI-mediated world.
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Reasons to reach out</h3>
+
+<p>Common reasons people contact the institute include:</p>
+
+<ul style="color:var(--muted);line-height:1.6">
+<li>Research collaboration or intellectual partnership</li>
+<li>Interviews or writing collaborations</li>
+<li>Discussion of neurodivergence and communication research</li>
+<li>Exploring the Humanistic Selling methodology</li>
+<li>Selective advisory or coaching inquiries</li>
+<li>Speaking or educational invitations</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Send a message</h3>
+
+<form action="mailto:hello@discovery-science.com" method="post" enctype="text/plain">
+
+<input type="text" name="name" placeholder="Name">
+
+<input type="email" name="email" placeholder="Email">
+
+<input type="text" name="organization" placeholder="Organization (optional)">
+
+<textarea name="message" placeholder="Your message"></textarea>
+
+<button type="submit">Send message</button>
+
+</form>
+
+</div>
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="container">
+
+Discovery Science Institute — Research on human communication,
+neurodiversity, ethical persuasion, contemplative inquiry,
+and trust in the age of artificial intelligence.
+
+</div>
+
+</footer>
+
 </body>
 </html>
