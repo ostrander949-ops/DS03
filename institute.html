@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Discovery Science Institute | Research on Human Communication, Neurodiversity, and AI</title>
+  <title>Discovery Science Institute | Research Programs, Working Papers, and Methodology</title>
   <meta name="description" content="Discovery Science Institute is an independent interdisciplinary institute studying human communication, neurodiversity, ethical persuasion, contemplative inquiry, and trust in an AI-mediated world." />
   <style>
     :root {
@@ -47,6 +47,7 @@
     }
 
     a { color: inherit; text-decoration: none; }
+
     .container {
       width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
@@ -177,17 +178,18 @@
     .btn-secondary:hover { background: rgba(255,255,255,0.06); }
 
     .hero-panel,
-    .panel,
     .card,
     .list-panel,
-    .feature-panel {
-      background: linear-gradient(180deg, rgba(14, 24, 42, 0.92), rgba(10, 18, 31, 0.92));
+    .feature-panel,
+    .pub-item,
+    .cta {
       border: 1px solid var(--line);
-      border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
     .hero-panel {
+      background: linear-gradient(180deg, rgba(14, 24, 42, 0.92), rgba(10, 18, 31, 0.92));
+      border-radius: var(--radius);
       padding: 28px;
       position: relative;
       overflow: hidden;
@@ -311,24 +313,44 @@
       margin-top: 28px;
     }
 
-    .card {
+    .three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .card,
+    .list-panel,
+    .feature-panel {
       padding: 26px;
+      border-radius: 20px;
       background: rgba(255,255,255,0.035);
     }
 
-    .card h3 {
+    .feature-panel {
+      background: linear-gradient(180deg, rgba(18, 31, 50, 0.88), rgba(12, 21, 36, 0.95));
+    }
+
+    .card h3,
+    .list-panel h3,
+    .feature-panel h3 {
       margin: 0 0 12px;
       font-size: 22px;
       line-height: 1.2;
     }
 
     .card p,
-    .card li {
+    .card li,
+    .list-panel p,
+    .list-panel li,
+    .feature-panel p {
       color: var(--muted);
       font-size: 15px;
     }
 
-    .card ul {
+    .card ul,
+    .list-panel ul {
       margin: 16px 0 0;
       padding-left: 18px;
     }
@@ -338,25 +360,6 @@
       grid-template-columns: 1.05fr 0.95fr;
       gap: 22px;
       margin-top: 28px;
-    }
-
-    .list-panel,
-    .feature-panel {
-      padding: 28px;
-      background: linear-gradient(180deg, rgba(18, 31, 50, 0.88), rgba(12, 21, 36, 0.95));
-    }
-
-    .list-panel h3,
-    .feature-panel h3 {
-      margin-top: 0;
-      font-size: 28px;
-      line-height: 1.12;
-    }
-
-    .list-panel ul {
-      margin: 18px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
     }
 
     .pill-row {
@@ -378,50 +381,67 @@
       font-size: 13px;
     }
 
-    .essay-list {
+    .pub-list {
       display: grid;
-      gap: 14px;
-      margin-top: 24px;
+      gap: 16px;
+      margin-top: 22px;
     }
 
-    .essay-item {
-      padding: 18px 20px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      display: flex;
-      justify-content: space-between;
+    .pub-item {
+      padding: 22px 24px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.035);
+      display: grid;
+      grid-template-columns: 1fr auto;
       gap: 20px;
-      align-items: center;
+      align-items: start;
     }
 
-    .essay-item strong {
+    .pub-item strong {
       display: block;
-      font-size: 17px;
-      margin-bottom: 4px;
+      font-size: 20px;
+      line-height: 1.2;
+      margin-bottom: 8px;
     }
 
-    .essay-item span {
+    .pub-meta {
       color: var(--muted);
       font-size: 14px;
+      white-space: nowrap;
     }
 
-    .three-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 28px;
+    .pub-desc {
+      color: var(--muted);
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: #d8ebff;
+      background: rgba(255,255,255,0.03);
+      font-size: 12px;
     }
 
     .cta {
       margin: 42px 0 18px;
       padding: 34px;
       border-radius: 24px;
-      border: 1px solid rgba(119, 231, 255, 0.2);
       background:
         radial-gradient(circle at top right, rgba(119, 231, 255, 0.12), transparent 35%),
         linear-gradient(180deg, rgba(14, 25, 42, 0.96), rgba(9, 17, 29, 0.96));
-      box-shadow: var(--shadow);
     }
 
     .cta-grid {
@@ -450,9 +470,10 @@
       .hero-grid,
       .section-header,
       .split-panel,
-      .cta-grid,
       .cards-grid,
-      .three-grid {
+      .three-grid,
+      .cta-grid,
+      .pub-item {
         grid-template-columns: 1fr;
       }
 
@@ -472,7 +493,6 @@
       .section-text { font-size: 16px; }
       .btn { width: 100%; }
       .hero-actions { flex-direction: column; }
-      .essay-item { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -486,9 +506,8 @@
       <nav class="nav-links">
         <a href="/index.html">Home</a>
         <a href="/institute.html">Institute</a>
-        <a href="#mission">Mission</a>
-        <a href="#research-domains">Research</a>
-        <a href="#publications">Publications</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
       </nav>
     </div>
@@ -498,7 +517,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Institute page • research, publication, methodology development</span>
+          <span class="eyebrow">Institute page • research programs, methodology, working papers</span>
           <h1>Discovery Science Institute</h1>
           <p>
             Discovery Science Institute is the research arm of Discovery Science: an independent interdisciplinary institute studying
@@ -506,27 +525,27 @@
             cognition in an AI-mediated world.
           </p>
           <p>
-            The institute exists to investigate how professional communication, economic exchange, and relational intelligence are
-            being reshaped by automation, cognitive diversity, psychological complexity, and emerging technologies. Its work produces
-            frameworks, essays, working papers, and applied methodologies intended to support more human, inclusive, and ethically
-            grounded forms of B2B interaction.
+            The institute investigates how professional communication, economic exchange, and relational intelligence are being reshaped
+            by automation, cognitive diversity, psychological complexity, and emerging technologies. Its work produces research programs,
+            working papers, essays, conceptual frameworks, and applied methodologies intended to support more human, inclusive, and
+            ethically grounded forms of B2B interaction.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="/contact.html">Collaborate With the Institute</a>
-            <a class="btn btn-secondary" href="#research-domains">Explore Research Areas</a>
+            <a class="btn btn-primary" href="/publications.html">View Publications</a>
+            <a class="btn btn-secondary" href="#research-programs">Explore Research Programs</a>
           </div>
           <div class="hero-stats">
             <div class="stat">
               <strong>4</strong>
-              <span>Primary interdisciplinary research domains</span>
+              <span>Primary interdisciplinary research programs</span>
             </div>
             <div class="stat">
-              <strong>Research</strong>
-              <span>Conceptual, applied, and public-facing inquiry</span>
+              <strong>Working Papers</strong>
+              <span>A growing archive of frameworks, notes, and conceptual publications</span>
             </div>
             <div class="stat">
-              <strong>Institute-led</strong>
-              <span>Frameworks that inform selective advisory work</span>
+              <strong>Research-Led</strong>
+              <span>Methodology and advisory developed from inquiry, not generic consulting</span>
             </div>
           </div>
         </div>
@@ -539,7 +558,7 @@
             <div class="focus-item"><span class="dot"></span><span>Neurodivergent sensitivities, strengths, and constraints in professional communication</span></div>
             <div class="focus-item"><span class="dot"></span><span>Trust, authenticity, and legitimacy under AI-mediated commercial interaction</span></div>
             <div class="focus-item"><span class="dot"></span><span>Meditation, consciousness, attention, and contemplative practice as communication variables</span></div>
-            <div class="focus-item"><span class="dot"></span><span>Inclusive B2B systems grounded in psychology, technology, and sociological evidence</span></div>
+            <div class="focus-item"><span class="dot"></span><span>Inclusive B2B systems grounded in psychology, technology, sociology, and evidence</span></div>
           </div>
         </aside>
       </div>
@@ -566,18 +585,18 @@
             <ul>
               <li>Conducts original inquiry into communication, trust, persuasion, cognition, and human-AI interaction.</li>
               <li>Develops methodologies for ethical, human-centered, and inclusive B2B communication.</li>
-              <li>Publishes essays, working papers, frameworks, and conceptual research for public and professional audiences.</li>
-              <li>Builds an intellectual foundation for selective coaching, advisory, and future educational offerings.</li>
+              <li>Publishes working papers, research notes, essays, and conceptual frameworks.</li>
+              <li>Builds an intellectual foundation for selective coaching, advisory, and future educational programs.</li>
             </ul>
           </div>
           <div class="feature-panel">
             <div class="section-kicker">Research philosophy</div>
             <h3>Interdisciplinary, exploratory, and methodologically serious</h3>
-            <p class="section-text" style="margin:0;">
-              The institute draws from psychology, psychotherapy, sociology, behavioral science, neurodiversity studies, contemplative
-              traditions, and frontier questions related to consciousness. Its orientation is exploratory but grounded: serious about
-              evidence, careful with claims, and committed to work that advances human understanding rather than merely optimizing
-              commercial outcomes.
+            <p>
+              The institute draws from psychology, psychotherapy, sociology, behavioral science, neurodiversity studies,
+              contemplative traditions, and frontier questions related to consciousness. Its orientation is exploratory but grounded:
+              serious about evidence, careful with claims, and committed to work that advances human understanding rather than merely
+              optimizing commercial outcomes.
             </p>
             <div class="pill-row">
               <span class="pill">Psychology</span>
@@ -591,16 +610,16 @@
       </div>
     </section>
 
-    <section id="research-domains">
+    <section id="research-programs">
       <div class="container">
         <div class="section-header">
           <div>
-            <div class="section-kicker">Research domains</div>
+            <div class="section-kicker">Research programs</div>
             <h2>Four integrated programs of inquiry</h2>
           </div>
           <div class="section-text">
-            The institute’s work is organized across several connected domains, each addressing a different dimension of the changing
-            relationship between human communication, cognition, technology, and economic life.
+            The institute’s work is organized across four connected research programs. These programs provide the conceptual structure
+            for publications, future studies, framework development, and public education.
           </div>
         </div>
 
@@ -620,7 +639,7 @@
           </article>
 
           <article class="card">
-            <h3>Neurodivergence and Communication Systems</h3>
+            <h3>Neurodivergence and Professional Communication</h3>
             <p>
               Study of how neurodivergent cognition shapes attention, sensitivity, pattern recognition, social interpretation,
               entrepreneurship, and professional communication, with the aim of designing more inclusive business systems.
@@ -646,7 +665,7 @@
           </article>
 
           <article class="card">
-            <h3>Meditation, Consciousness, and Contemplative Inquiry</h3>
+            <h3>Consciousness and Contemplative Inquiry</h3>
             <p>
               Exploration of meditation, altered attention, self-awareness, phenomenology, and related frontier questions as they
               bear on perception, presence, attunement, and the deeper structure of human communication and cognition.
@@ -665,8 +684,8 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <div class="section-kicker">Institute output</div>
-            <h2>From research to methodology</h2>
+            <div class="section-kicker">Methodology</div>
+            <h2>From research program to applied framework</h2>
           </div>
           <div class="section-text">
             Discovery Science Institute does not separate theory from practice. Its research is intended to generate usable,
@@ -679,7 +698,7 @@
           <div class="feature-panel">
             <div class="section-kicker">Primary framework</div>
             <h3>Humanistic Selling</h3>
-            <p class="section-text" style="margin:0;">
+            <p>
               Humanistic Selling is the institute’s central applied methodology: a research-derived framework integrating therapeutic
               communication principles, interpersonal psychology, neurodivergent sensitivity, and sociological insight to support
               trust-centered, autonomy-respecting B2B interaction. It is positioned as a human alternative to manipulative selling
@@ -698,8 +717,8 @@
             <h3>How the institute translates research</h3>
             <ul>
               <li>Framework design and conceptual models</li>
-              <li>Essays and public-facing research writing</li>
               <li>Working papers and research notes</li>
+              <li>Public-facing essays and conceptual publications</li>
               <li>Future educational programs and lab-style initiatives</li>
               <li>Selective advisory engagements informed by the research</li>
             </ul>
@@ -708,107 +727,125 @@
       </div>
     </section>
 
-    <section id="publications">
+    <section id="publications-preview">
       <div class="container">
         <div class="section-header">
           <div>
-            <div class="section-kicker">Publications</div>
-            <h2>Working themes and emerging papers</h2>
+            <div class="section-kicker">Working papers & research notes</div>
+            <h2>A developing publication archive</h2>
           </div>
           <div class="section-text">
-            The institute publishes across multiple formats, including essays, frameworks, conceptual papers, and research notes.
-            These titles can later link to actual articles or downloadable PDFs as your library grows.
+            Discovery Science Institute publishes across multiple formats, including working papers, research notes, essays,
+            and conceptual frameworks. These publications serve as the institute’s primary public record of inquiry.
           </div>
         </div>
 
-        <div class="essay-list">
-          <div class="essay-item">
+        <div class="pub-list">
+          <article class="pub-item">
             <div>
-              <strong>AI and the Erosion of Human Trust in Commercial Dialogue</strong>
-              <span>On automation, authenticity, institutional legitimacy, and the limits of synthetic relationship management.</span>
+              <strong><a href="/papers/humanistic-selling.html">Humanistic Selling as an Alternative to Corporate AI Optimization</a></strong>
+              <div class="pub-desc">
+                A foundational framework outlining a more human, psychologically rigorous, and ethically grounded approach to
+                B2B communication in response to increasing automation and algorithmic persuasion.
+              </div>
+              <div class="tag-row">
+                <span class="tag">Working Paper</span>
+                <span class="tag">Framework</span>
+                <span class="tag">Humanistic Selling</span>
+              </div>
             </div>
-            <span>Research note</span>
-          </div>
+            <div class="pub-meta">2026</div>
+          </article>
 
-          <div class="essay-item">
+          <article class="pub-item">
             <div>
-              <strong>Neurodivergent Sensitivity as a Strategic Asset in B2B Communication</strong>
-              <span>Reframing cognitive difference as relational intelligence rather than deficiency.</span>
+              <strong><a href="/papers/ai-trust.html">AI and the Erosion of Human Trust in Commercial Dialogue</a></strong>
+              <div class="pub-desc">
+                An examination of how synthetic messaging, automation, and AI-mediated outreach alter authenticity, trust,
+                and relational depth in professional communication.
+              </div>
+              <div class="tag-row">
+                <span class="tag">Research Note</span>
+                <span class="tag">AI</span>
+                <span class="tag">Trust</span>
+              </div>
             </div>
-            <span>Essay</span>
-          </div>
+            <div class="pub-meta">2026</div>
+          </article>
 
-          <div class="essay-item">
+          <article class="pub-item">
             <div>
-              <strong>Humanistic Selling as an Alternative to Corporate AI Optimization</strong>
-              <span>A framework for more ethical, inclusive, and psychologically grounded professional communication.</span>
+              <strong><a href="/papers/neurodivergent-communication.html">Neurodivergent Sensitivity as a Strategic Asset in B2B Communication</a></strong>
+              <div class="pub-desc">
+                A reframing of neurodivergent perception, sensitivity, and cognition as forms of relational intelligence with
+                important implications for entrepreneurship, leadership, and professional dialogue.
+              </div>
+              <div class="tag-row">
+                <span class="tag">Essay</span>
+                <span class="tag">Neurodivergence</span>
+                <span class="tag">Communication</span>
+              </div>
             </div>
-            <span>Framework</span>
-          </div>
+            <div class="pub-meta">2026</div>
+          </article>
+        </div>
 
-          <div class="essay-item">
-            <div>
-              <strong>Meditation, Attention, and Professional Presence</strong>
-              <span>How contemplative practice may affect self-regulation, attunement, and communication depth.</span>
-            </div>
-            <span>Working paper</span>
-          </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/publications.html">Visit Full Publications Archive</a>
+        </div>
+      </div>
+    </section>
 
-          <div class="essay-item">
-            <div>
-              <strong>Consciousness, Perception, and the Future of Human Communication</strong>
-              <span>Frontier questions about awareness, cognition, and the deeper structure of relational intelligence.</span>
-            </div>
-            <span>Concept note</span>
+    <section id="institutional-role">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Institutional role</div>
+            <h2>An institute, a methodology lab, and a publishing platform</h2>
+          </div>
+          <div class="section-text">
+            Discovery Science Institute is intended to function as more than a service brand. It is a research-oriented institutional
+            container for long-horizon inquiry, framework development, publication, and carefully aligned real-world application.
+          </div>
+        </div>
+
+        <div class="three-grid">
+          <div class="card">
+            <h3>Research institute</h3>
+            <p>
+              Conducts inquiry into communication, cognition, trust, neurodiversity, and the cultural effects of AI-mediated systems.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Methodology lab</h3>
+            <p>
+              Develops research-derived frameworks such as Humanistic Selling for more inclusive and ethically serious B2B practice.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Publishing platform</h3>
+            <p>
+              Produces working papers, essays, and conceptual notes that create a public intellectual record of the institute’s work.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <section id="engage">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Engagement</div>
-            <h2>How to work with the institute</h2>
-          </div>
-          <div class="section-text">
-            Discovery Science Institute is open to mission-aligned conversations with researchers, writers, foundations, founders,
-            and organizations interested in communication, cognition, neurodiversity, ethics, and the future of trust in an AI-shaped economy.
-          </div>
-        </div>
-
-        <div class="three-grid">
-          <div class="card">
-            <h3>Follow the research</h3>
-            <p>Read institute essays, frameworks, and developing lines of inquiry across communication, consciousness, and technology.</p>
-          </div>
-          <div class="card">
-            <h3>Collaborate</h3>
-            <p>Discuss interviews, partnerships, pilot projects, publishing collaborations, or shared inquiry across disciplines.</p>
-          </div>
-          <div class="card">
-            <h3>Apply the methodology</h3>
-            <p>Request a selective advisory or coaching engagement based on the institute’s Humanistic Selling framework.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
       <div class="container cta">
         <div class="cta-grid">
           <div>
-            <div class="section-kicker">Next step</div>
-            <h2 style="margin-bottom:14px;">Begin a conversation with Discovery Science Institute</h2>
+            <div class="section-kicker">Engagement</div>
+            <h2 style="margin-bottom:14px;">Read, collaborate, or apply the methodology</h2>
             <div class="section-text">
-              The institute is building a long-horizon body of work on human communication, neurodiversity, ethical persuasion,
-              consciousness, and AI-era trust. Reach out to collaborate, inquire, or explore future work together.
+              The institute is open to mission-aligned conversations with researchers, writers, foundations, founders, and
+              organizations interested in communication, cognition, neurodiversity, ethics, and the future of trust in an AI-shaped economy.
             </div>
           </div>
           <div class="hero-actions" style="margin-top:0; justify-content:flex-end;">
             <a class="btn btn-primary" href="/contact.html">Contact the Institute</a>
-            <a class="btn btn-secondary" href="/index.html">Return Home</a>
+            <a class="btn btn-secondary" href="/publications.html">Read Publications</a>
           </div>
         </div>
       </div>
@@ -817,9 +854,10 @@
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <div>Discovery Science Institute — Human communication, neurodiversity, ethical persuasion, contemplative inquiry, and AI-era trust.</div>
+      <div>Discovery Science Institute — Research programs, working papers, frameworks, and public inquiry on communication, neurodiversity, consciousness, and AI-era trust.</div>
       <div>
         <a href="/index.html">Home</a> ·
+        <a href="/publications.html">Publications</a> ·
         <a href="/about.html">About</a> ·
         <a href="/contact.html">Contact</a>
       </div>
