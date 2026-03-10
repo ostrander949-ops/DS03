@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Discovery Science | Human Communication Research in the Age of AI</title>
+  <title>Discovery Science | Institute for Human Communication, Neurodiversity, and AI-Era Trust</title>
   <meta name="description" content="Discovery Science is an independent research institute studying human communication, neurodiversity, ethical persuasion, contemplative inquiry, and trust in an AI-mediated economy." />
   <style>
     :root {
-      --bg: #06101c;
-      --bg-soft: #0b1626;
-      --bg-deep: #08111d;
-      --panel: rgba(14, 25, 43, 0.82);
-      --panel-2: rgba(18, 34, 56, 0.92);
+      --bg: #050b15;
+      --bg-soft: #0a1322;
+      --bg-deep: #07101c;
+      --panel: rgba(12, 22, 38, 0.84);
+      --panel-2: rgba(18, 32, 54, 0.92);
       --text: #edf5ff;
-      --muted: #a8bdd7;
+      --muted: #a8bed8;
       --line: rgba(168, 196, 230, 0.15);
-      --line-strong: rgba(168, 196, 230, 0.24);
+      --line-strong: rgba(168, 196, 230, 0.26);
       --accent: #79e8ff;
       --accent-2: #8d9fff;
-      --accent-3: #7dd3fc;
-      --glow: rgba(121, 232, 255, 0.24);
+      --accent-3: #9cc8ff;
+      --glow: rgba(121, 232, 255, 0.22);
       --max: 1180px;
       --radius: 22px;
       --shadow: 0 18px 55px rgba(0, 0, 0, 0.34);
@@ -31,14 +31,14 @@
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 8% 12%, rgba(77, 124, 255, 0.18), transparent 28%),
-        radial-gradient(circle at 82% 14%, rgba(125, 211, 252, 0.13), transparent 26%),
-        radial-gradient(circle at 62% 78%, rgba(99, 102, 241, 0.10), transparent 28%),
-        linear-gradient(135deg, #030913 0%, #07111d 32%, #091524 62%, #06101c 100%);
       color: var(--text);
       line-height: 1.65;
       letter-spacing: 0.002em;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(91, 118, 255, 0.16), transparent 26%),
+        radial-gradient(circle at 84% 14%, rgba(121, 232, 255, 0.12), transparent 24%),
+        radial-gradient(circle at 68% 82%, rgba(141, 159, 255, 0.10), transparent 26%),
+        linear-gradient(135deg, #030811 0%, #06101c 24%, #091523 54%, #07111d 78%, #050b15 100%);
     }
 
     body::before {
@@ -46,14 +46,13 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.14;
-      background-image: radial-gradient(rgba(255,255,255,0.78) 0.7px, transparent 0.7px);
+      opacity: 0.12;
+      background-image: radial-gradient(rgba(255,255,255,0.8) 0.7px, transparent 0.7px);
       background-size: 28px 28px;
       mask-image: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.18));
     }
 
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
 
     .container {
       width: min(var(--max), calc(100% - 40px));
@@ -65,7 +64,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: rgba(4, 10, 20, 0.72);
+      background: rgba(4, 10, 18, 0.72);
       border-bottom: 1px solid var(--line);
     }
 
@@ -111,14 +110,14 @@
     }
 
     .hero {
-      padding: 90px 0 74px;
+      padding: 96px 0 78px;
       position: relative;
       overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.16fr 0.84fr;
+      grid-template-columns: 1.14fr 0.86fr;
       gap: 36px;
       align-items: stretch;
     }
@@ -129,7 +128,7 @@
       border: 1px solid rgba(121, 232, 255, 0.22);
       border-radius: 999px;
       background: rgba(121, 232, 255, 0.08);
-      color: #bdf7ff;
+      color: #c2f7ff;
       font-size: 11px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -138,10 +137,10 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(42px, 6vw, 72px);
-      line-height: 1.03;
-      letter-spacing: -0.035em;
-      max-width: 11ch;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      max-width: 12ch;
     }
 
     .hero-copy p {
@@ -171,8 +170,8 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #86efff 0%, #8b9fff 100%);
-      color: #08111d;
+      background: linear-gradient(135deg, #8af0ff 0%, #8fa2ff 100%);
+      color: #07101c;
       box-shadow: 0 10px 34px var(--glow);
     }
 
@@ -203,7 +202,7 @@
     }
 
     .hero-panel {
-      background: linear-gradient(180deg, rgba(14, 24, 42, 0.92), rgba(10, 18, 31, 0.94));
+      background: linear-gradient(180deg, rgba(13, 23, 40, 0.92), rgba(9, 17, 30, 0.95));
       border-radius: var(--radius);
       padding: 28px;
       position: relative;
@@ -215,8 +214,8 @@
       position: absolute;
       inset: -1px;
       background:
-        radial-gradient(circle at top, rgba(121, 232, 255, 0.14), transparent 38%),
-        radial-gradient(circle at 80% 20%, rgba(141, 159, 255, 0.10), transparent 28%);
+        radial-gradient(circle at top, rgba(121, 232, 255, 0.16), transparent 38%),
+        radial-gradient(circle at 78% 16%, rgba(141, 159, 255, 0.12), transparent 26%);
       pointer-events: none;
     }
 
@@ -292,7 +291,7 @@
     }
 
     section {
-      padding: 36px 0;
+      padding: 38px 0;
     }
 
     .section-header {
@@ -314,8 +313,8 @@
 
     h2 {
       margin: 0;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.10;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.08;
       letter-spacing: -0.03em;
     }
 
@@ -426,6 +425,7 @@
       color: var(--muted);
       font-size: 14px;
       white-space: nowrap;
+      text-align: right;
     }
 
     .pub-desc {
@@ -454,13 +454,20 @@
     }
 
     .pub-item a {
-      color: #ecf4ff;
+      color: #edf5ff;
       text-decoration: none;
     }
 
     .pub-item a:hover {
       color: var(--accent);
       text-decoration: underline;
+    }
+
+    .pub-cite {
+      margin-top: 12px;
+      color: #91a8c3;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     .cta {
@@ -514,6 +521,10 @@
         flex-direction: column;
         padding: 14px 0;
       }
+
+      .pub-meta {
+        text-align: left;
+      }
     }
 
     @media (max-width: 640px) {
@@ -545,7 +556,7 @@
     <div class="container nav">
       <a class="brand" href="/index.html">
         <span class="brand-top">Discovery Science</span>
-        <span class="brand-bottom">Human Communication Research Institute</span>
+        <span class="brand-bottom">Institute for Human Communication Research</span>
       </a>
       <nav class="nav-links">
         <a href="/index.html">Home</a>
@@ -564,15 +575,15 @@
           <span class="eyebrow">Independent institute • research, publication, methodology, selective advisory</span>
           <h1>Human Communication Research in the Age of Artificial Intelligence</h1>
           <p>
-            Discovery Science is an independent research institute studying human communication, neurodiversity, ethical persuasion,
-            contemplative inquiry, and trust within modern economic and technological systems. Its work develops evidence-informed
-            frameworks for more human, inclusive, and psychologically sophisticated forms of professional dialogue.
+            Discovery Science is an independent research institute examining human communication, neurodiversity, ethical persuasion,
+            contemplative inquiry, and trust within increasingly automated economic and technological systems. Its work develops
+            evidence-informed frameworks for more human, inclusive, and psychologically rigorous forms of professional dialogue.
           </p>
           <p>
             In response to the accelerating wave of corporate automation, algorithmic persuasion, synthetic personalization, and
             AI-mediated commercial infrastructure, the institute investigates how relational intelligence, neurodivergent sensitivity,
-            phenomenological awareness, and humanistic interpersonal skill can preserve dignity, trust, and cognitive diversity in
-            B2B environments.
+            phenomenological awareness, and humanistic interpersonal skill can preserve dignity, legitimacy, and cognitive diversity
+            in modern B2B environments.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="/institute.html">Visit the Institute</a>
@@ -581,7 +592,7 @@
           <div class="hero-stats">
             <div class="stat">
               <strong>Research</strong>
-              <span>Original inquiry into communication, trust, cognition, and institutional legitimacy.</span>
+              <span>Original inquiry into communication, cognition, trust, and institutional legitimacy.</span>
             </div>
             <div class="stat">
               <strong>Frameworks</strong>
@@ -600,9 +611,9 @@
           <div class="focus-list">
             <div class="focus-item"><span class="dot"></span><span>Humanistic selling and non-coercive B2B communication architectures</span></div>
             <div class="focus-item"><span class="dot"></span><span>Neurodivergent sensitivities in professional dialogue, entrepreneurship, and economic participation</span></div>
-            <div class="focus-item"><span class="dot"></span><span>Psychology, technology, trust, and legitimacy in AI-mediated commercial systems</span></div>
-            <div class="focus-item"><span class="dot"></span><span>Meditation, consciousness, phenomenology, and contemplative inquiry as cognitive variables</span></div>
-            <div class="focus-item"><span class="dot"></span><span>Inclusive B2B system design grounded in behavioral science, ethics, and relational intelligence</span></div>
+            <div class="focus-item"><span class="dot"></span><span>Trust, authenticity, and legitimacy in AI-mediated commercial systems</span></div>
+            <div class="focus-item"><span class="dot"></span><span>Meditation, phenomenology, and contemplative inquiry as variables in cognition and communication</span></div>
+            <div class="focus-item"><span class="dot"></span><span>Inclusive B2B system design grounded in psychology, ethics, sociology, and behavioral evidence</span></div>
           </div>
         </aside>
       </div>
@@ -613,13 +624,13 @@
         <div class="section-header">
           <div>
             <div class="section-kicker">Positioning</div>
-            <h2>Less a consultancy. More a research-led methodology and intellectual practice.</h2>
+            <h2>Less a consultancy. More a research-led methodology and public intellectual practice.</h2>
           </div>
           <div class="section-text">
             Discovery Science is not primarily a commercial sales firm. It is a research-driven institutional project concerned with
-            how people communicate, trust, collaborate, and make decisions under changing technological conditions. Coaching remains
+            how people communicate, trust, collaborate, and make decisions under changing sociotechnical conditions. Coaching remains
             part of the offering, but as a secondary translational function: a way to test, refine, and responsibly apply research in
-            real-world contexts.
+            real-world settings.
           </div>
         </div>
 
@@ -629,7 +640,7 @@
             <ul>
               <li>An independent research institute focused on communication, neurodiversity, trust, and human-AI systems.</li>
               <li>A methodology lab developing human-centered frameworks for ethical persuasion and inclusive B2B interaction.</li>
-              <li>A publishing platform for essays, working papers, research notes, and conceptual work on psychology, consciousness, and commercial systems.</li>
+              <li>A publishing platform for working papers, essays, research notes, and conceptual work on psychology, consciousness, and professional systems.</li>
               <li>A selective advisory practice for founders and organizations seeking greater relational depth and strategic rigor in an AI-mediated environment.</li>
             </ul>
           </div>
@@ -639,7 +650,7 @@
             <ul>
               <li>Not a high-volume sales training vendor.</li>
               <li>Not a conversion-first automation agency.</li>
-              <li>Not a script library organized around pressure, performative persuasion, or superficial optimization.</li>
+              <li>Not a script library organized around pressure, manipulation, or shallow optimization.</li>
               <li>Not a purely commercial response to technological change absent ethical, psychological, and sociological inquiry.</li>
             </ul>
           </div>
@@ -651,13 +662,13 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <div class="section-kicker">Research areas</div>
+            <div class="section-kicker">Research portfolio</div>
             <h2>Interdisciplinary inquiry across psychology, technology, sociology, and contemplative science</h2>
           </div>
           <div class="section-text">
             The institute’s work is organized around a connected research portfolio examining how communication functions inside
             economic systems, how cognitive diversity alters interaction, and how automation changes the conditions of trust,
-            legitimacy, and professional presence.
+            legitimacy, relational depth, and professional presence.
           </div>
         </div>
 
@@ -679,7 +690,7 @@
             <h3>Neurodivergence and Communication</h3>
             <p>
               Study of how neurodivergent cognition shapes professional communication, entrepreneurship, sensitivity, pattern
-              recognition, and social participation, with the aim of building more inclusive business frameworks.
+              recognition, and social participation, with the aim of building more inclusive institutional frameworks.
             </p>
             <ul>
               <li>Neurodivergent strengths and constraints in communication-intensive roles</li>
@@ -704,8 +715,8 @@
           <article class="card">
             <h3>Consciousness and Contemplative Inquiry</h3>
             <p>
-              Exploration of meditation, altered attention, self-awareness, consciousness studies, and adjacent frontier domains as
-              relevant to perception, attunement, cognition, and interpersonal sensitivity.
+              Exploration of meditation, altered attention, self-awareness, phenomenology, and adjacent frontier domains as relevant
+              to perception, attunement, cognition, and interpersonal sensitivity.
             </p>
             <ul>
               <li>Attention and awareness as communication variables</li>
@@ -774,11 +785,11 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <div class="section-kicker">Latest research</div>
-            <h2>Working papers and conceptual publications from the institute</h2>
+            <div class="section-kicker">Working papers & research notes</div>
+            <h2>Current publications from the institute</h2>
           </div>
           <div class="section-text">
-            Discovery Science publishes working papers, research notes, essays, and conceptual frameworks exploring communication,
+            Discovery Science publishes working papers, essays, research notes, and conceptual frameworks exploring communication,
             neurodiversity, trust, contemplative inquiry, and the human future of professional interaction in an AI-mediated economy.
           </div>
         </div>
@@ -792,7 +803,11 @@
               </div>
               <div class="tag-row">
                 <span class="tag">Working Paper</span>
+                <span class="tag">Framework</span>
                 <span class="tag">Humanistic Selling</span>
+              </div>
+              <div class="pub-cite">
+                Discovery Science Institute. 2026. <em>Humanistic Selling as an Alternative to Corporate AI Optimization.</em> Working Paper. San Diego, CA.
               </div>
             </div>
             <div class="pub-meta">2026</div>
@@ -807,6 +822,10 @@
               <div class="tag-row">
                 <span class="tag">Research Note</span>
                 <span class="tag">AI</span>
+                <span class="tag">Trust</span>
+              </div>
+              <div class="pub-cite">
+                Discovery Science Institute. 2026. <em>AI and the Erosion of Human Trust in Commercial Dialogue.</em> Research Note. San Diego, CA.
               </div>
             </div>
             <div class="pub-meta">2026</div>
@@ -821,6 +840,10 @@
               <div class="tag-row">
                 <span class="tag">Essay</span>
                 <span class="tag">Neurodivergence</span>
+                <span class="tag">Communication</span>
+              </div>
+              <div class="pub-cite">
+                Discovery Science Institute. 2026. <em>Neurodivergent Sensitivity as a Strategic Asset in B2B Communication.</em> Essay. San Diego, CA.
               </div>
             </div>
             <div class="pub-meta">2026</div>
@@ -835,6 +858,10 @@
               <div class="tag-row">
                 <span class="tag">Working Paper</span>
                 <span class="tag">Meditation</span>
+                <span class="tag">Attention</span>
+              </div>
+              <div class="pub-cite">
+                Discovery Science Institute. 2026. <em>Meditation, Attention, and Professional Presence.</em> Working Paper. San Diego, CA.
               </div>
             </div>
             <div class="pub-meta">2026</div>
@@ -849,6 +876,10 @@
               <div class="tag-row">
                 <span class="tag">Concept Note</span>
                 <span class="tag">Consciousness</span>
+                <span class="tag">Phenomenology</span>
+              </div>
+              <div class="pub-cite">
+                Discovery Science Institute. 2026. <em>Consciousness, Perception, and the Future of Human Communication.</em> Concept Note. San Diego, CA.
               </div>
             </div>
             <div class="pub-meta">2026</div>
@@ -866,7 +897,7 @@
         <div class="section-header">
           <div>
             <div class="section-kicker">Institutional role</div>
-            <h2>An institute, a methodology lab, and a publishing platform</h2>
+            <h2>An institute, a methodology laboratory, and a publication platform</h2>
           </div>
           <div class="section-text">
             Discovery Science is designed to function as more than a service brand. It is an institutional container for long-horizon
@@ -884,14 +915,14 @@
           </div>
 
           <div class="card">
-            <h3>Methodology lab</h3>
+            <h3>Methodology laboratory</h3>
             <p>
               Develops research-derived frameworks such as Humanistic Selling for more inclusive and ethically serious B2B practice.
             </p>
           </div>
 
           <div class="card">
-            <h3>Publishing platform</h3>
+            <h3>Publication platform</h3>
             <p>
               Produces working papers, essays, and conceptual notes that create a public intellectual record of the institute’s work.
             </p>
