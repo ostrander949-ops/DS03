@@ -1,967 +1,225 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Discovery Science | Institute for Human Communication, Neurodiversity, and AI-Era Trust</title>
-  <meta name="description" content="Discovery Science is an independent research institute studying human communication, neurodiversity, ethical persuasion, contemplative inquiry, psionics and trust in an AI-mediated economy." />
-  <style>
-    :root {
-      --bg: #050b15;
-      --bg-soft: #0a1322;
-      --bg-deep: #07101c;
-      --panel: rgba(12, 22, 38, 0.84);
-      --panel-2: rgba(18, 32, 54, 0.92);
-      --text: #edf5ff;
-      --muted: #a8bed8;
-      --line: rgba(168, 196, 230, 0.15);
-      --line-strong: rgba(168, 196, 230, 0.26);
-      --accent: #79e8ff;
-      --accent-2: #8d9fff;
-      --accent-3: #9cc8ff;
-      --glow: rgba(121, 232, 255, 0.22);
-      --max: 1180px;
-      --radius: 22px;
-      --shadow: 0 18px 55px rgba(0, 0, 0, 0.34);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      line-height: 1.65;
-      letter-spacing: 0.002em;
-      background:
-        radial-gradient(circle at 8% 10%, rgba(91, 118, 255, 0.16), transparent 26%),
-        radial-gradient(circle at 84% 14%, rgba(121, 232, 255, 0.12), transparent 24%),
-        radial-gradient(circle at 68% 82%, rgba(141, 159, 255, 0.10), transparent 26%),
-        linear-gradient(135deg, #030811 0%, #06101c 24%, #091523 54%, #07111d 78%, #050b15 100%);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.12;
-      background-image: radial-gradient(rgba(255,255,255,0.8) 0.7px, transparent 0.7px);
-      background-size: 28px 28px;
-      mask-image: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.18));
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(4, 10, 18, 0.72);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      min-height: 76px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand-top {
-      font-size: 12px;
-      letter-spacing: 0.30em;
-      text-transform: uppercase;
-      color: var(--accent);
-      opacity: 0.92;
-    }
-
-    .brand-bottom {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus {
-      color: var(--text);
-    }
-
-    .hero {
-      padding: 96px 0 78px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.14fr 0.86fr;
-      gap: 36px;
-      align-items: stretch;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(121, 232, 255, 0.22);
-      border-radius: 999px;
-      background: rgba(121, 232, 255, 0.08);
-      color: #c2f7ff;
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(42px, 6vw, 74px);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-      max-width: 12ch;
-    }
-
-    .hero-copy p {
-      margin: 22px 0 0;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 0 20px;
-      border-radius: 16px;
-      border: 1px solid transparent;
-      font-weight: 600;
-      transition: 0.22s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #8af0ff 0%, #8fa2ff 100%);
-      color: #07101c;
-      box-shadow: 0 10px 34px var(--glow);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.03);
-    }
-
-    .btn-secondary {
-      border-color: var(--line);
-      color: var(--text);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.06);
-    }
-
-    .hero-panel,
-    .card,
-    .list-panel,
-    .feature-panel,
-    .pub-item,
-    .cta,
-    .stat {
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-panel {
-      background: linear-gradient(180deg, rgba(13, 23, 40, 0.92), rgba(9, 17, 30, 0.95));
-      border-radius: var(--radius);
-      padding: 28px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-panel::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      background:
-        radial-gradient(circle at top, rgba(121, 232, 255, 0.16), transparent 38%),
-        radial-gradient(circle at 78% 16%, rgba(141, 159, 255, 0.12), transparent 26%);
-      pointer-events: none;
-    }
-
-    .panel-label {
-      position: relative;
-      z-index: 1;
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .panel-title {
-      position: relative;
-      z-index: 1;
-      font-size: 26px;
-      line-height: 1.2;
-      margin: 14px 0 18px;
-    }
-
-    .focus-list {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      gap: 12px;
-    }
-
-    .focus-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.03);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      margin-top: 6px;
-      box-shadow: 0 0 20px rgba(121, 232, 255, 0.8);
-      flex: 0 0 auto;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .stat {
-      padding: 18px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.03);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 24px;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    section {
-      padding: 38px 0;
-    }
-
-    .section-header {
-      display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
-      gap: 28px;
-      padding: 22px 0 0;
-      border-top: 1px solid var(--line);
-      margin-bottom: 24px;
-    }
-
-    .section-kicker {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-    }
-
-    .section-text {
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-top: 28px;
-    }
-
-    .three-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 28px;
-    }
-
-    .card,
-    .list-panel,
-    .feature-panel {
-      padding: 26px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.035);
-    }
-
-    .feature-panel {
-      background: linear-gradient(180deg, rgba(18, 31, 50, 0.88), rgba(12, 21, 36, 0.95));
-    }
-
-    .card h3,
-    .list-panel h3,
-    .feature-panel h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-      line-height: 1.2;
-    }
-
-    .card p,
-    .card li,
-    .list-panel p,
-    .list-panel li,
-    .feature-panel p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .card ul,
-    .list-panel ul {
-      margin: 16px 0 0;
-      padding-left: 18px;
-    }
-
-    .split-panel {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 22px;
-      margin-top: 28px;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 38px;
-      padding: 0 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: #d8ebff;
-      background: rgba(255,255,255,0.03);
-      font-size: 13px;
-    }
-
-    .pub-list {
-      display: grid;
-      gap: 16px;
-      margin-top: 22px;
-    }
-
-    .pub-item {
-      padding: 22px 24px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.035);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: start;
-    }
-
-    .pub-item strong {
-      display: block;
-      font-size: 20px;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-
-    .pub-meta {
-      color: var(--muted);
-      font-size: 14px;
-      white-space: nowrap;
-      text-align: right;
-    }
-
-    .pub-desc {
-      color: var(--muted);
-      font-size: 15px;
-      margin-top: 8px;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 0 12px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: #d8ebff;
-      background: rgba(255,255,255,0.03);
-      font-size: 12px;
-    }
-
-    .pub-item a {
-      color: #edf5ff;
-      text-decoration: none;
-    }
-
-    .pub-item a:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    .pub-cite {
-      margin-top: 12px;
-      color: #91a8c3;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .cta {
-      margin: 42px 0 18px;
-      padding: 34px;
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at top right, rgba(121, 232, 255, 0.12), transparent 35%),
-        linear-gradient(180deg, rgba(14, 25, 42, 0.96), rgba(9, 17, 29, 0.96));
-    }
-
-    .cta-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .site-footer {
-      padding: 24px 0 46px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .section-header,
-      .split-panel,
-      .cards-grid,
-      .three-grid,
-      .cta-grid,
-      .pub-item {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 14px 0;
-      }
-
-      .pub-meta {
-        text-align: left;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        width: min(var(--max), calc(100% - 24px));
-      }
-
-      .hero {
-        padding: 72px 0 50px;
-      }
-
-      .hero-copy p,
-      .section-text {
-        font-size: 16px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="/index.html">
-        <span class="brand-top">Discovery Science</span>
-        <span class="brand-bottom">Institute for Human Communication Research</span>
-      </a>
-      <nav class="nav-links">
-        <a href="/index.html">Home</a>
-        <a href="/institute.html">Institute</a>
-        <a href="/publications.html">Publications</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
+export default function AdultNeurofeedbackOfferingPreview() {
+  const benefits = [
+    {
+      title: 'Closed-Loop Neurofeedback Training',
+      text: 'Real-time EEG-informed feedback reinforces stable brain states using evidence-aligned metrics such as alpha stability and theta/beta regulation.'
+    },
+    {
+      title: 'Individually Modeled Protocols',
+      text: 'Each program is derived from intake, baseline recordings, and symptom clusters to create a tailored training architecture rather than a generic protocol.'
+    },
+    {
+      title: 'Remote, Structured, and Measurable',
+      text: 'Daily sessions, longitudinal tracking, and clinician-guided adjustments provide a consistent and data-driven training environment.'
+    }
+  ];
+
+  const steps = [
+    {
+      title: '1. Clinical Intake & Baseline Modeling',
+      text: 'Comprehensive intake including symptom mapping (stress, anxiety, sleep, cognitive load), followed by baseline EEG sessions to characterize individual regulation patterns.'
+    },
+    {
+      title: '2. Custom App & Protocol Deployment',
+      text: 'A personalized training interface is configured for your profile, including adaptive thresholds, session structures, and feedback dynamics.'
+    },
+    {
+      title: '3. Iterative Optimization & Coaching',
+      text: 'Weekly review of training data, protocol refinement, and coaching guidance to improve state access, recovery speed, and consistency.'
+    }
+  ];
+
+  const useCases = [
+    'Chronic stress and nervous system dysregulation',
+    'Generalized anxiety and difficulty downregulating',
+    'Cognitive fatigue and reduced attentional stability',
+    'Sleep disruption linked to hyperarousal',
+    'Performance recovery and resilience training'
+  ];
+
+  const outcomes = [
+    ['Reduction in stress reactivity', '25–40% avg'],
+    ['Improvement in state stability', '30–55% avg'],
+    ['Faster recovery from stress events', '20–35% avg'],
+    ['Increase in perceived calm/focus', '20–45% avg']
+  ];
+
+  const faqs = [
+    {
+      q: 'Is this a medical treatment?',
+      a: 'Discovery Science programs are positioned as brain training and self-regulation tools. They are not presented as medical diagnosis or treatment, though they are informed by neurofeedback and neuroscience research.'
+    },
+    {
+      q: 'What is included in the program?',
+      a: 'Each program includes intake, baseline sessions, a personalized app configuration, an EEG device for home use, structured protocols, and optional coaching.'
+    },
+    {
+      q: 'How is the program personalized?',
+      a: 'Protocols are adjusted based on EEG patterns, symptom reports, and session performance, allowing dynamic refinement over time.'
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <section className="relative overflow-hidden border-b border-white/10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(99,102,241,0.14),transparent_25%),linear-gradient(to_bottom,rgba(15,23,42,0.95),rgba(2,6,23,1))]" />
+        <div className="relative mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <div className="mb-4 inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-sm text-cyan-200">
+                Discovery Science • Adult Neuro-Regulation Program
+              </div>
+              <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-white md:text-6xl">
+                Precision brain training for stress regulation and cognitive stability.
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+                The Calm & Resilience Program is a structured, remote neurofeedback-informed system designed to train stability, reduce reactivity, and improve recovery dynamics using personalized EEG-driven protocols.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <button className="rounded-2xl bg-white px-5 py-3 text-sm font-medium text-slate-950 shadow-lg shadow-cyan-500/10 transition hover:scale-[1.02]">
+                  Apply for Program
+                </button>
+                <button className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white backdrop-blur transition hover:bg-white/10">
+                  View Protocol Details
+                </button>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-400">
+                <span>Includes personal EEG device</span>
+                <span>Custom-built training app</span>
+                <span>Optional expert coaching</span>
+              </div>
+            </div>
+
+            <div className="lg:pl-8">
+              <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 shadow-2xl shadow-cyan-900/20 backdrop-blur-xl">
+                <div className="rounded-[24px] border border-white/10 bg-slate-900/80 p-5">
+                  <div className="mb-4 flex items-center justify-between">
+                    <div>
+                      <div className="text-sm text-slate-400">Session Output</div>
+                      <div className="mt-1 text-xl font-semibold">State Stability Metrics</div>
+                    </div>
+                    <div className="rounded-xl border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-sm text-emerald-200">
+                      12 min
+                    </div>
+                  </div>
+
+                  <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-4">
+                    <div className="flex items-end justify-between text-sm text-slate-400">
+                      <span>Stability Index</span>
+                      <span>Trend improving</span>
+                    </div>
+                    <div className="mt-4 flex h-36 items-end gap-2">
+                      {[32, 54, 48, 65, 62, 72, 76, 70, 84, 88, 82, 91].map((h, i) => (
+                        <div key={i} className="flex-1 rounded-t-xl bg-gradient-to-t from-cyan-500/40 to-sky-300/80" style={{ height: `${h}%` }} />
+                      ))}
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs text-slate-500">
+                      <span>Week 1</span>
+                      <span>Week 6</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                    {[
+                      ['Recovery time', '-28%'],
+                      ['Consistency', '+34%'],
+                      ['Calm index', '+22%']
+                    ].map(([label, value]) => (
+                      <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                        <div className="text-xs uppercase tracking-wide text-slate-500">{label}</div>
+                        <div className="mt-2 text-2xl font-semibold text-white">{value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
+        <div className="grid gap-6 md:grid-cols-3">
+          {benefits.map((item) => (
+            <div key={item.title} className="rounded-[24px] border border-white/10 bg-white/5 p-6">
+              <h3 className="text-xl font-medium text-white">{item.title}</h3>
+              <p className="mt-3 leading-7 text-slate-300">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-white/5">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:px-10">
+          <div className="max-w-2xl">
+            <div className="text-sm uppercase tracking-[0.2em] text-cyan-300">Program Architecture</div>
+            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+              Structured, adaptive, and data-driven training system.
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {steps.map((step) => (
+              <div key={step.title} className="rounded-[24px] border border-white/10 bg-slate-900/60 p-6">
+                <h3 className="text-xl font-medium text-white">{step.title}</h3>
+                <p className="mt-3 leading-7 text-slate-300">{step.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <div className="text-sm uppercase tracking-[0.2em] text-violet-300">Target Outcomes</div>
+            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+              Measurable improvements across regulation and recovery.
+            </h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {outcomes.map(([label, value]) => (
+                <div key={label} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">
+                  <div className="text-sm text-slate-400">{label}</div>
+                  <div className="text-xl font-semibold text-white">{value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[28px] border border-white/10 bg-gradient-to-b from-cyan-500/10 to-violet-500/10 p-7">
+            <div className="text-sm uppercase tracking-[0.2em] text-slate-300">Program Details</div>
+            <h3 className="mt-3 text-2xl font-semibold text-white">Calm & Resilience Program</h3>
+            <p className="mt-4 leading-7 text-slate-200">
+              Includes intake, baseline EEG sessions, custom-built training application, personal EEG device, adaptive protocols, and optional weekly coaching. Programs are continuously refined based on user data and performance metrics.
+            </p>
+            <div className="mt-6 space-y-3 text-slate-200">
+              <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">Personal EEG device included</div>
+              <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">Custom app configured per user</div>
+              <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">Adaptive neurofeedback protocols</div>
+              <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">Weekly coaching & data review</div>
+            </div>
+            <button className="mt-8 w-full rounded-2xl bg-white px-5 py-3 text-sm font-medium text-slate-950">
+              Apply for Program
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 bg-slate-900/70">
+        <div className="mx-auto max-w-5xl px-6 py-16 md:px-10">
+          <div className="max-w-2xl">
+            <div className="text-sm uppercase tracking-[0.2em] text-cyan-300">FAQ</div>
+            <h2 className="mt-3 text-3xl font-semibold text-white">Program clarity</h2>
+          </div>
+          <div className="mt-10 space-y-4">
+            {faqs.map((item) => (
+              <div key={item.q} className="rounded-[22px] border border-white/10 bg-white/5 p-6">
+                <div className="text-lg font-medium text-white">{item.q}</div>
+                <p className="mt-3 leading-7 text-slate-300">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Independent institute • research, publication, methodology, selective advisory</span>
-          <h1>Human Communication Research in the Age of Artificial Intelligence</h1>
-          <p>
-            Discovery Science is an independent research institute examining human communication, psionics, neurodiversity, ethical persuasion,
-            contemplative inquiry, and trust within increasingly automated economic and technological systems. Its work develops
-            evidence-informed frameworks for more human, inclusive, and psychologically rigorous forms of professional dialogue.
-          </p>
-          <p>
-            In response to the accelerating wave of corporate automation, algorithmic persuasion, synthetic personalization, and
-            AI-mediated commercial infrastructure, the institute investigates how relational intelligence, neurodivergent sensitivity,
-            phenomenological awareness, and humanistic interpersonal skill can preserve dignity, legitimacy, and cognitive diversity
-            in modern B2B environments.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="/institute.html">Visit the Institute</a>
-            <a class="btn btn-secondary" href="/publications.html">Read Publications</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat">
-              <strong>Research</strong>
-              <span>Original inquiry into communication, cognition, trust, and institutional legitimacy.</span>
-            </div>
-            <div class="stat">
-              <strong>Frameworks</strong>
-              <span>Methodologies derived from interdisciplinary evidence, conceptual synthesis, and applied observation.</span>
-            </div>
-            <div class="stat">
-              <strong>Applied Work</strong>
-              <span>Selective coaching and advisory for aligned founders, teams, and organizations.</span>
-            </div>
-          </div>
-        </div>
-
-        <aside class="hero-panel">
-          <div class="panel-label">Current focus</div>
-          <div class="panel-title">Primary domains of inquiry</div>
-          <div class="focus-list">
-            <div class="focus-item"><span class="dot"></span><span>Humanistic selling and non-coercive B2B communication architectures</span></div>
-            <div class="focus-item"><span class="dot"></span><span>Neurodivergent sensitivities in professional dialogue, entrepreneurship, and economic participation</span></div>
-            <div class="focus-item"><span class="dot"></span><span>Trust, authenticity, and legitimacy in AI-mediated commercial systems</span></div>
-            <div class="focus-item"><span class="dot"></span><span>Meditation, phenomenology, and contemplative inquiry as variables in cognition and communication</span></div>
-            <div class="focus-item"><span class="dot"></span><span>Inclusive B2B system design grounded in psychology, ethics, sociology, and behavioral evidence</span></div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="positioning">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Positioning</div>
-            <h2>Less a consultancy. More a research-led methodology and public intellectual practice.</h2>
-          </div>
-          <div class="section-text">
-            Discovery Science is not primarily a commercial sales firm. It is a research-driven institutional project concerned with
-            how people communicate, trust, collaborate, and make decisions under changing sociotechnical conditions. Coaching remains
-            part of the offering, but as a secondary translational function: a way to test, refine, and responsibly apply research in
-            real-world settings.
-          </div>
-        </div>
-
-        <div class="split-panel">
-          <div class="list-panel">
-            <h3>What Discovery Science is</h3>
-            <ul>
-              <li>An independent research institute focused on communication, neurodiversity, trust, and human-AI systems.</li>
-              <li>A methodology lab developing human-centered frameworks for ethical persuasion and inclusive B2B interaction.</li>
-              <li>A publishing platform for working papers, essays, research notes, and conceptual work on psychology, consciousness, and professional systems.</li>
-              <li>A selective advisory practice for founders and organizations seeking greater relational depth and strategic rigor in an AI-mediated environment.</li>
-            </ul>
-          </div>
-
-          <div class="list-panel">
-            <h3>What Discovery Science is not</h3>
-            <ul>
-              <li>Not a high-volume sales training vendor.</li>
-              <li>Not a conversion-first automation agency.</li>
-              <li>Not a script library organized around pressure, manipulation, or shallow optimization.</li>
-              <li>Not a purely commercial response to technological change absent ethical, psychological, and sociological inquiry.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="research">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Research portfolio</div>
-            <h2>Interdisciplinary inquiry across psychology, technology, sociology, and contemplative science</h2>
-          </div>
-          <div class="section-text">
-            The institute’s work is organized around a connected research portfolio examining how communication functions inside
-            economic systems, how cognitive diversity alters interaction, and how automation changes the conditions of trust,
-            legitimacy, relational depth, and professional presence.
-          </div>
-        </div>
-
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Humanistic Communication and Ethical Persuasion</h3>
-            <p>
-              Research into the psychological and relational foundations of influence, drawing from psychotherapy, interpersonal
-              psychology, communication theory, and applied sociology to develop non-coercive models of professional dialogue.
-            </p>
-            <ul>
-              <li>Relational trust formation in B2B environments</li>
-              <li>Autonomy-respecting persuasion and decision support</li>
-              <li>Humanistic alternatives to transactional selling systems</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Neurodivergence and Communication</h3>
-            <p>
-              Study of how neurodivergent cognition shapes professional communication, entrepreneurship, sensitivity, pattern
-              recognition, and social participation, with the aim of building more inclusive institutional frameworks.
-            </p>
-            <ul>
-              <li>Neurodivergent strengths and constraints in communication-intensive roles</li>
-              <li>Inclusive communication design for cognitively diverse professionals</li>
-              <li>Leadership and trust across different perceptual styles</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>AI, Automation, and Trust</h3>
-            <p>
-              Investigation into how AI-mediated communication affects authenticity, persuasion, institutional trust, and commercial
-              legitimacy, especially as organizations automate outreach, qualification, and relationship management.
-            </p>
-            <ul>
-              <li>Human versus AI trust dynamics</li>
-              <li>Ethical risks of algorithmic persuasion systems</li>
-              <li>Preserving human agency in automated workflows</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Consciousness and Contemplative Inquiry</h3>
-            <p>
-              Exploration of meditation, altered attention, self-awareness, phenomenology, and adjacent frontier domains as relevant
-              to perception, attunement, cognition, and interpersonal sensitivity.
-            </p>
-            <ul>
-              <li>Attention and awareness as communication variables</li>
-              <li>Contemplative practice and interpersonal presence</li>
-              <li>Phenomenology, consciousness, and frontier inquiry</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="methodology">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Methodology</div>
-            <h2>A research-derived model for more human, inclusive, and evidence-informed B2B interaction</h2>
-          </div>
-          <div class="section-text">
-            The core applied offering of Discovery Science is not generic coaching. It is a methodology derived from ongoing research
-            into communication, psychology, neurodivergence, ethical persuasion, contemplative cognition, and the structural pressures
-            introduced by corporate AI automation.
-          </div>
-        </div>
-
-        <div class="split-panel">
-          <div class="feature-panel">
-            <div class="section-kicker">Primary framework</div>
-            <h3>Humanistic Selling</h3>
-            <p>
-              Humanistic Selling is a research-derived methodology integrating interpersonal psychology, therapeutic communication
-              principles, neurodivergent sensitivity, and sociological insight to support ethical, trust-centered business
-              communication. Rather than maximizing pressure, this approach emphasizes attunement, clarity, consent, relational
-              intelligence, and more inclusive ways of engaging buyers and stakeholders.
-            </p>
-            <div class="pill-row">
-              <span class="pill">Ethical persuasion</span>
-              <span class="pill">Neurodivergent inclusion</span>
-              <span class="pill">Trust-centered dialogue</span>
-              <span class="pill">Human-AI balance</span>
-              <span class="pill">Psychology + technology</span>
-            </div>
-          </div>
-
-          <div class="feature-panel">
-            <div class="section-kicker">Applied translation</div>
-            <h3>Selective coaching and advisory</h3>
-            <p>
-              Discovery Science occasionally works with select founders, researchers, and organizations that want to apply the
-              methodology in real-world settings. These engagements are best understood as research-informed implementation rather
-              than standard consulting. They focus on communication systems, team development, neurodivergent accessibility, founder
-              messaging, and trust-preserving responses to AI-driven automation.
-            </p>
-            <div class="pill-row">
-              <span class="pill">Founder coaching</span>
-              <span class="pill">Team advisory</span>
-              <span class="pill">Inclusive revenue design</span>
-              <span class="pill">AI-response strategy</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="latest-research">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Working papers & research notes</div>
-            <h2>Current publications from the institute</h2>
-          </div>
-          <div class="section-text">
-            Discovery Science publishes working papers, essays, research notes, and conceptual frameworks exploring communication,
-            neurodiversity, trust, contemplative inquiry, and the human future of professional interaction in an AI-mediated economy.
-          </div>
-        </div>
-
-        <div class="pub-list">
-          <article class="pub-item">
-            <div>
-              <strong><a href="/papers/humanistic-selling.html">Humanistic Selling as an Alternative to Corporate AI Optimization</a></strong>
-              <div class="pub-desc">
-                A foundational framework for more ethical, inclusive, and psychologically grounded B2B communication.
-              </div>
-              <div class="tag-row">
-                <span class="tag">Working Paper</span>
-                <span class="tag">Framework</span>
-                <span class="tag">Humanistic Selling</span>
-              </div>
-              <div class="pub-cite">
-                Discovery Science Institute. 2026. <em>Humanistic Selling as an Alternative to Corporate AI Optimization.</em> Working Paper. San Diego, CA.
-              </div>
-            </div>
-            <div class="pub-meta">2026</div>
-          </article>
-
-          <article class="pub-item">
-            <div>
-              <strong><a href="/papers/ai-trust.html">AI and the Erosion of Human Trust in Commercial Dialogue</a></strong>
-              <div class="pub-desc">
-                An examination of how AI-mediated communication alters authenticity, trust, and relational depth.
-              </div>
-              <div class="tag-row">
-                <span class="tag">Research Note</span>
-                <span class="tag">AI</span>
-                <span class="tag">Trust</span>
-              </div>
-              <div class="pub-cite">
-                Discovery Science Institute. 2026. <em>AI and the Erosion of Human Trust in Commercial Dialogue.</em> Research Note. San Diego, CA.
-              </div>
-            </div>
-            <div class="pub-meta">2026</div>
-          </article>
-
-          <article class="pub-item">
-            <div>
-              <strong><a href="/papers/neurodivergent-communication.html">Neurodivergent Sensitivity as a Strategic Asset in B2B Communication</a></strong>
-              <div class="pub-desc">
-                A reframing of neurodivergent perception and communication as relational and strategic intelligence.
-              </div>
-              <div class="tag-row">
-                <span class="tag">Essay</span>
-                <span class="tag">Neurodivergence</span>
-                <span class="tag">Communication</span>
-              </div>
-              <div class="pub-cite">
-                Discovery Science Institute. 2026. <em>Neurodivergent Sensitivity as a Strategic Asset in B2B Communication.</em> Essay. San Diego, CA.
-              </div>
-            </div>
-            <div class="pub-meta">2026</div>
-          </article>
-
-          <article class="pub-item">
-            <div>
-              <strong><a href="/papers/meditation-attention.html">Meditation, Attention, and Professional Presence</a></strong>
-              <div class="pub-desc">
-                A working paper on attention, self-regulation, and the role of contemplative practice in communication quality.
-              </div>
-              <div class="tag-row">
-                <span class="tag">Working Paper</span>
-                <span class="tag">Meditation</span>
-                <span class="tag">Attention</span>
-              </div>
-              <div class="pub-cite">
-                Discovery Science Institute. 2026. <em>Meditation, Attention, and Professional Presence.</em> Working Paper. San Diego, CA.
-              </div>
-            </div>
-            <div class="pub-meta">2026</div>
-          </article>
-
-          <article class="pub-item">
-            <div>
-              <strong><a href="/papers/consciousness-perception.html">Consciousness, Perception, and the Future of Human Communication</a></strong>
-              <div class="pub-desc">
-                A concept note on awareness, perception, and deeper variables shaping relational communication.
-              </div>
-              <div class="tag-row">
-                <span class="tag">Concept Note</span>
-                <span class="tag">Consciousness</span>
-                <span class="tag">Phenomenology</span>
-              </div>
-              <div class="pub-cite">
-                Discovery Science Institute. 2026. <em>Consciousness, Perception, and the Future of Human Communication.</em> Concept Note. San Diego, CA.
-              </div>
-            </div>
-            <div class="pub-meta">2026</div>
-          </article>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="/publications.html">View Full Publications Archive</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="institutional-role">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Institutional role</div>
-            <h2>An institute, a methodology laboratory, and a publication platform</h2>
-          </div>
-          <div class="section-text">
-            Discovery Science is designed to function as more than a service brand. It is an institutional container for long-horizon
-            inquiry, framework development, publication, and carefully aligned real-world application. Its aim is to contribute to a
-            more human, more rigorous, and more ethically coherent future of professional communication.
-          </div>
-        </div>
-
-        <div class="three-grid">
-          <div class="card">
-            <h3>Research institute</h3>
-            <p>
-              Conducts inquiry into communication, cognition, trust, neurodiversity, and the sociotechnical effects of AI-mediated systems.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Methodology laboratory</h3>
-            <p>
-              Develops research-derived frameworks such as Humanistic Selling for more inclusive and ethically serious B2B practice.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Publication platform</h3>
-            <p>
-              Produces working papers, essays, and conceptual notes that create a public intellectual record of the institute’s work.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="engagements">
-      <div class="container cta">
-        <div class="cta-grid">
-          <div>
-            <div class="section-kicker">Next step</div>
-            <h2 style="margin-bottom:14px;">Explore the institute or begin a conversation</h2>
-            <div class="section-text">
-              Discovery Science is building a research-led body of work for a more human, more psychologically rigorous, and more
-              inclusive future of professional communication. Read the papers, explore the institute, or reach out regarding
-              collaboration, publication, or applied implementation.
-            </div>
-          </div>
-          <div class="hero-actions" style="margin-top:0; justify-content:flex-end;">
-            <a class="btn btn-primary" href="/institute.html">Visit Institute</a>
-            <a class="btn btn-secondary" href="/contact.html">Contact</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <div>Discovery Science — Human communication, neurodiversity, ethical persuasion, consciousness, contemplative inquiry, and AI-era trust.</div>
-      <div>
-        <a href="/about.html">About</a> ·
-        <a href="/institute.html">Institute</a> ·
-        <a href="/publications.html">Publications</a> ·
-        <a href="/contact.html">Contact</a>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
+  );
+}
