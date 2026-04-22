@@ -2,83 +2,840 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Discovery Science – Calm & Resilience</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discovery Science | Remote Brain Training From Home</title>
+  <meta name="description" content="Discovery Science provides remote brain training programs from home with personalized protocols, measurable progress, and guided support." />
+  <style>
+    :root {
+      --bg: #071321;
+      --bg-2: #0b1d31;
+      --panel: #0f2742;
+      --panel-2: #132f4f;
+      --line: rgba(255,255,255,.12);
+      --text: #f5f7fb;
+      --muted: #b9c6d8;
+      --blue: #2d8cff;
+      --blue-2: #66b3ff;
+      --cyan: #7ad7ff;
+      --shadow: 0 22px 60px rgba(0,0,0,.32);
+      --radius: 24px;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #06111e 0%, #081725 100%);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .section { padding: 76px 0; }
+    .muted { color: var(--muted); }
+    .eyebrow {
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: .2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue) 0%, #1d6ee0 100%);
+      box-shadow: 0 16px 28px rgba(45,140,255,.24);
+    }
+    .btn-secondary {
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.05);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: rgba(5,12,21,.78);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 30% 30%, rgba(122,215,255,.18), rgba(45,140,255,.06));
+      border: 1px solid rgba(122,215,255,.2);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .brand-text { line-height: 1.05; }
+    .brand-text span { display: block; }
+    .brand-top { font-size: 18px; }
+    .brand-bottom { font-size: 15px; color: #d6e5f8; font-weight: 700; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #d8e4f5;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .nav-links a { opacity: .9; }
+    .nav-links a:hover { opacity: 1; color: white; }
+    .nav-actions { display: flex; gap: 12px; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 14% 16%, rgba(65,160,255,.22), transparent 22%),
+        radial-gradient(circle at 78% 18%, rgba(122,215,255,.14), transparent 18%),
+        radial-gradient(circle at 52% 70%, rgba(51,117,210,.12), transparent 30%),
+        linear-gradient(180deg, #071423 0%, #081726 100%);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 34px;
+      padding: 64px 0 54px;
+      align-items: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: .98;
+      letter-spacing: -.04em;
+      max-width: 720px;
+    }
+    .hero p {
+      max-width: 640px;
+      font-size: 20px;
+      color: #dbe7f8;
+      margin: 20px 0 28px;
+    }
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 28px 0 32px;
+    }
+    .point {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 16px;
+      min-height: 120px;
+    }
+    .point strong { display: block; margin-top: 10px; font-size: 15px; }
+    .point span { color: var(--muted); font-size: 13px; display: block; margin-top: 6px; }
+
+    .hero-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .program-card {
+      border-radius: 26px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: var(--shadow);
+      min-height: 460px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      isolation: isolate;
+    }
+    .program-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5,15,28,.05), rgba(4,10,18,.78));
+      z-index: -1;
+    }
+    .program-card.one { background: linear-gradient(160deg, rgba(39,113,255,.18), rgba(12,22,40,.18)), radial-gradient(circle at 55% 32%, rgba(105,193,255,.85), rgba(18,57,122,.15) 34%, transparent 35%); }
+    .program-card.two { background: linear-gradient(160deg, rgba(110,157,255,.08), rgba(12,22,40,.2)), radial-gradient(circle at 50% 18%, rgba(255,255,255,.12), transparent 26%), radial-gradient(circle at 50% 42%, rgba(94,153,238,.18), transparent 45%); }
+    .program-card.three { background: linear-gradient(160deg, rgba(75,122,197,.1), rgba(12,22,40,.18)), radial-gradient(circle at 50% 18%, rgba(236,190,129,.14), transparent 18%), radial-gradient(circle at 50% 48%, rgba(126,118,185,.14), transparent 36%); }
+    .program-visual {
+      flex: 1;
+      min-height: 240px;
+      display: grid;
+      place-items: center;
+      padding: 26px;
+    }
+    .brain-silhouette {
+      width: 200px;
+      height: 200px;
+      opacity: .94;
+      filter: drop-shadow(0 0 24px rgba(91,182,255,.25));
+    }
+    .program-copy { padding: 24px 22px 24px; }
+    .program-copy h3 { margin: 0 0 8px; font-size: 24px; }
+    .program-copy p { margin: 0 0 16px; color: #d6e2f4; font-size: 15px; }
+    .program-copy a { color: var(--cyan); font-weight: 700; font-size: 14px; }
+
+    .trust-strip {
+      background: #f6f9fc;
+      color: #123;
+      border-bottom: 1px solid rgba(10,30,60,.08);
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      padding: 26px 0;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 6px;
+    }
+    .trust-item strong { display: block; font-size: 26px; color: #0c2543; }
+    .trust-item span { color: #49627f; font-size: 14px; }
+    .icon-chip {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      background: rgba(45,140,255,.08);
+    }
+
+    .light-section {
+      background: linear-gradient(180deg, #f8fbff, #eef5fb);
+      color: #10233a;
+    }
+    .light-section .muted { color: #536983; }
+    .two-col {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .chart-card, .white-card {
+      background: white;
+      border: 1px solid rgba(8,34,68,.08);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(19,45,75,.08);
+      padding: 26px;
+    }
+    .legend {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      color: #46607c;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .swatch { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+
+    .chart {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      align-items: end;
+      min-height: 310px;
+      padding: 16px 0 8px;
+    }
+    .chart-col { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .bars { display: flex; align-items: end; gap: 10px; min-height: 220px; }
+    .bar {
+      width: 42px;
+      border-radius: 12px 12px 6px 6px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      font-size: 12px;
+      font-weight: 800;
+      color: #0c2543;
+      padding-top: 8px;
+    }
+    .bar-blue { background: linear-gradient(180deg, #4da4ff, #1f74e6); color: white; }
+    .bar-gray { background: linear-gradient(180deg, #d2d8df, #aeb9c6); }
+    .condition { font-weight: 700; color: #173353; font-size: 14px; }
+    .chart-source { margin-top: 16px; font-size: 12px; color: #6d8096; }
+
+    .about-band {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(45,140,255,.2), transparent 28%),
+        linear-gradient(180deg, #04111d, #07192c);
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .brain-network {
+      width: 100%;
+      aspect-ratio: 1.1;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(62,148,255,.12), transparent 45%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .brain-network svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr) 320px;
+      gap: 18px;
+      align-items: start;
+    }
+    .journey-step, .side-panel {
+      background: white;
+      border-radius: 22px;
+      border: 1px solid rgba(8,34,68,.08);
+      padding: 22px;
+      min-height: 230px;
+    }
+    .step-num {
+      width: 36px; height: 36px; border-radius: 50%; background: rgba(45,140,255,.1); color: var(--blue);
+      display: grid; place-items: center; font-weight: 800; margin-bottom: 14px;
+    }
+    .journey-step h4, .side-panel h4 { margin: 0 0 10px; font-size: 18px; color: #123152; }
+    .journey-step p, .side-panel p, .side-panel li { color: #536983; font-size: 14px; }
+    .checklist { list-style: none; padding: 0; margin: 16px 0 0; }
+    .checklist li { margin: 10px 0; padding-left: 24px; position: relative; }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--blue); font-weight: 800; }
+
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: .9fr .95fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .home-shot {
+      min-height: 360px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)), radial-gradient(circle at 50% 78%, rgba(220,196,159,.34), transparent 20%), radial-gradient(circle at 52% 38%, rgba(55,122,210,.2), transparent 20%), linear-gradient(180deg, #c7d0dc 0%, #eef3f8 44%, #b08964 44%, #8a6648 52%, #5e4632 53%, #5e4632 100%);
+      border: 1px solid rgba(8,34,68,.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .home-shot::before {
+      content: "";
+      position: absolute;
+      width: 260px; height: 150px;
+      background: #0f243e;
+      border-radius: 14px;
+      left: 50%; top: 54%; transform: translate(-50%, -50%);
+      box-shadow: 0 16px 35px rgba(0,0,0,.25);
+      border: 8px solid #2a3240;
+    }
+    .home-shot::after {
+      content: "";
+      position: absolute;
+      width: 120px; height: 36px;
+      background: #181d26;
+      border-radius: 0 0 30px 30px;
+      left: 50%; top: calc(54% + 84px); transform: translateX(-50%);
+    }
+    .device {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      width: 170px;
+      height: 70px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #1c2634, #0e141d);
+      box-shadow: 0 14px 28px rgba(0,0,0,.22);
+    }
+    .device::before {
+      content: "";
+      position: absolute;
+      right: -54px; top: -10px;
+      width: 96px; height: 46px;
+      border: 10px solid #1a2431;
+      border-left-color: transparent;
+      border-bottom-left-radius: 60px;
+      border-top-left-radius: 60px;
+      border-top-right-radius: 18px;
+      border-bottom-right-radius: 18px;
+      transform: rotate(-15deg);
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .pillar {
+      background: white;
+      border: 1px solid rgba(8,34,68,.08);
+      border-radius: 18px;
+      padding: 16px;
+      color: #123152;
+    }
+    .pillar strong { display: block; margin: 10px 0 6px; }
+    .pillar span { color: #536983; font-size: 14px; }
+
+    footer {
+      padding: 38px 0 64px;
+      background: #04101b;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr .8fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .footer-grid h4 { margin-top: 0; }
+    .footer-links a { display: block; color: #c6d4e6; margin: 8px 0; font-size: 14px; }
+    .disclaimer {
+      margin-top: 18px;
+      color: #90a3b8;
+      font-size: 12px;
+      max-width: 760px;
+    }
+
+    @media (max-width: 1140px) {
+      .hero-grid, .two-col, .about-grid, .conditions-grid { grid-template-columns: 1fr; }
+      .hero-cards { grid-template-columns: 1fr; }
+      .journey-grid { grid-template-columns: repeat(2, 1fr); }
+      .side-panel { grid-column: span 2; }
+      .pillars, .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-grid { gap: 12px; }
+      .hero-points { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .nav { flex-wrap: wrap; padding: 12px 0; }
+      .nav-links { overflow: auto; width: 100%; order: 3; padding-bottom: 6px; }
+      .nav-actions { width: 100%; }
+      .nav-actions .btn { flex: 1; }
+      .hero-grid { padding-top: 34px; }
+      h1 { font-size: 42px; }
+      .hero p { font-size: 18px; }
+      .hero-points, .chart, .trust-grid, .pillars, .journey-grid, .footer-grid { grid-template-columns: 1fr; }
+      .bars { min-height: 160px; }
+      .bar { width: 34px; }
+      .journey-grid .side-panel { grid-column: auto; }
+    }
+  </style>
 </head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Discovery Science Home">
+        <div class="brand-mark">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 4.5C9.2 2.7 4.8 4.4 4.8 8.8c0 2 1 3.8 2.6 4.8-.4 2.5 1.2 4.8 3.8 5.2 1.1.2 2.1 0 2.9-.5.8.5 1.8.7 2.9.5 2.6-.4 4.2-2.7 3.8-5.2 1.6-1 2.6-2.8 2.6-4.8 0-4.4-4.4-6.1-7.2-4.3Z" stroke="#8EDCFF" stroke-width="1.3"/>
+            <path d="M12 4.7V19.5M8.5 8.1 12 10m3.5-1.9L12 10m-4.2 4.2 4.2 2 4.2-2" stroke="#8EDCFF" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-top">Discovery</span>
+          <span class="brand-bottom">Science</span>
+        </div>
+      </a>
 
-<body class="bg-slate-950 text-white">
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="programs.html">Programs</a>
+        <a href="outcomes.html">Outcomes</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+      </nav>
 
-<div class="max-w-6xl mx-auto px-6 py-20">
-
-  <h1 class="text-5xl font-bold mb-6">
-    Precision brain training for stress regulation and cognitive stability.
-  </h1>
-
-  <p class="text-lg text-slate-300 max-w-2xl mb-8">
-    The Calm & Resilience Program is a structured, remote neurofeedback-informed system designed to train stability, reduce reactivity, and improve recovery dynamics using personalized EEG-driven protocols.
-  </p>
-
-  <div class="flex gap-4 mb-12">
-    <button class="bg-white text-black px-5 py-3 rounded-xl">Apply for Program</button>
-    <button class="border px-5 py-3 rounded-xl">View Protocol Details</button>
-  </div>
-
-  <div class="grid md:grid-cols-3 gap-6 mb-16">
-    <div class="bg-white/5 p-6 rounded-xl">
-      <h3 class="text-xl font-semibold">Closed-Loop Neurofeedback</h3>
-      <p class="text-slate-400 mt-2">Real-time EEG feedback reinforces stable brain states.</p>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="apply.html">Apply Now</a>
+        <a class="btn btn-secondary" href="contact.html">Contact</a>
+      </div>
     </div>
+  </header>
 
-    <div class="bg-white/5 p-6 rounded-xl">
-      <h3 class="text-xl font-semibold">Individually Modeled</h3>
-      <p class="text-slate-400 mt-2">Protocols built from intake and baseline EEG.</p>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Remote brain training from home</div>
+          <h1>Better Brain.<br>Better Life.</h1>
+          <p>Discovery Science delivers fully remote brain training programs designed to improve self-regulation, reduce symptom burden, and support meaningful functional change from the comfort of home.</p>
+
+          <div class="nav-actions">
+            <a class="btn btn-primary" href="apply.html">Apply for Program</a>
+            <a class="btn btn-secondary" href="programs.html">Learn More</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="point">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1v-8.5Z" stroke="#8EDCFF" stroke-width="1.4"/></svg>
+              <strong>100% Remote</strong>
+              <span>Train privately from home on your own schedule.</span>
+            </div>
+            <div class="point">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 4.5C9.2 2.7 4.8 4.4 4.8 8.8c0 2 1 3.8 2.6 4.8-.4 2.5 1.2 4.8 3.8 5.2 1.1.2 2.1 0 2.9-.5.8.5 1.8.7 2.9.5 2.6-.4 4.2-2.7 3.8-5.2 1.6-1 2.6-2.8 2.6-4.8 0-4.4-4.4-6.1-7.2-4.3Z" stroke="#8EDCFF" stroke-width="1.3"/></svg>
+              <strong>Personalized Protocols</strong>
+              <span>Each program is tuned to the client’s symptoms and baseline.</span>
+            </div>
+            <div class="point">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 18h16M7 15V9m5 6V5m5 10v-3" stroke="#8EDCFF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <strong>Measurable Results</strong>
+              <span>Progress reports, trend tracking, and clear performance markers.</span>
+            </div>
+            <div class="point">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6v5c0 4.2 2.7 8.1 7 9 4.3-.9 7-4.8 7-9V6l-7-3Z" stroke="#8EDCFF" stroke-width="1.4"/></svg>
+              <strong>Guided Support</strong>
+              <span>Structured coaching, review, and adjustment over time.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-cards" aria-label="Program highlights">
+          <article class="program-card one">
+            <div class="program-visual">
+              <svg class="brain-silhouette" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#90e0ff"/>
+                    <stop offset="100%" stop-color="#2d8cff"/>
+                  </linearGradient>
+                </defs>
+                <path d="M122 30c-22-13-61 4-70 35-8 28 4 56 24 68-6 22 9 46 33 49 10 1 19-1 26-5 7 4 16 6 26 5 24-3 39-27 33-49 20-12 32-40 24-68-9-31-48-48-70-35-8-3-18-3-26 0Z" fill="url(#g1)" fill-opacity=".18" stroke="#90e0ff" stroke-width="3"/>
+                <path d="M120 33v136M86 66l34 17 34-17M77 111l43 22 43-22" stroke="#b8f0ff" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="program-copy">
+              <h3>PTSD & Trauma Recovery</h3>
+              <p>Regulation-focused training to reduce reactivity, improve recovery time, and support nervous system stability.</p>
+              <a href="programs.html#ptsd">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="program-card two">
+            <div class="program-visual">
+              <svg class="brain-silhouette" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="120" cy="78" r="38" fill="rgba(255,255,255,.12)" />
+                <path d="M77 167c12-37 32-59 43-59s31 22 43 59" fill="rgba(98,167,255,.22)" stroke="#a7d8ff" stroke-width="2.5"/>
+                <path d="M120 44c-21 0-38 17-38 38 0 11 5 21 12 28 8 7 16 13 16 25v8h20v-8c0-12 8-18 16-25 7-7 12-17 12-28 0-21-17-38-38-38Z" stroke="#d6efff" stroke-width="3" fill="none"/>
+              </svg>
+            </div>
+            <div class="program-copy">
+              <h3>Anxiety & Stress</h3>
+              <p>Build calmer baseline states, reduce overactivation, and improve focus, sleep, and emotional control.</p>
+              <a href="programs.html#anxiety">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="program-card three">
+            <div class="program-visual">
+              <svg class="brain-silhouette" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+                <rect x="62" y="58" width="116" height="120" rx="20" fill="rgba(255,255,255,.08)" stroke="#d0e6ff" stroke-width="3"/>
+                <path d="M88 92h64m-64 22h48m-48 22h70" stroke="#8fd6ff" stroke-width="4" stroke-linecap="round"/>
+                <path d="M158 138c0 12-10 22-22 22" stroke="#8fd6ff" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="program-copy">
+              <h3>Depression, Autism & Focus</h3>
+              <p>Personalized training pathways oriented toward mood stability, cognitive flexibility, and improved regulation.</p>
+              <a href="programs.html#conditions">Learn More →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container">
+        <div style="text-align:center; padding-top:18px; font-weight:700; color:#173353;">Trusted by clients nationwide</div>
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="icon-chip">◎</div>
+            <div><strong>100%+</strong><span>Remote delivery model</span></div>
+          </div>
+          <div class="trust-item">
+            <div class="icon-chip">★</div>
+            <div><strong>4.8/5</strong><span>Average reported satisfaction</span></div>
+          </div>
+          <div class="trust-item">
+            <div class="icon-chip">◈</div>
+            <div><strong>Evidence-Informed</strong><span>Protocol design philosophy</span></div>
+          </div>
+          <div class="trust-item">
+            <div class="icon-chip">⌂</div>
+            <div><strong>Home-Based</strong><span>No office visits required</span></div>
+          </div>
+          <div class="trust-item">
+            <div class="icon-chip">⌁</div>
+            <div><strong>Personal Device</strong><span>Included with enrollment</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="outcomes">
+      <div class="container two-col">
+        <div>
+          <div class="eyebrow" style="color:#2d8cff">Real results</div>
+          <h2 style="font-size:48px; line-height:1.02; margin:0 0 18px; letter-spacing:-.04em; color:#10233a;">Proven outcomes.<br>Life-changing results.</h2>
+          <p class="muted" style="font-size:18px; max-width:420px;">Discovery Science programs are designed to reduce symptom burden and improve quality of life across a range of conditions, including PTSD, anxiety, depression, autism-related dysregulation, and attentional challenges.</p>
+          <p class="muted" style="max-width:440px;">The comparative chart shows reported average symptom improvement after 12–20 weeks of training versus broad benchmark averages often reported under standard care models. The exact response varies by client profile, adherence, severity, and associated conditions.</p>
+          <div style="margin-top:26px;"><a class="btn btn-primary" href="outcomes.html">View All Outcomes</a></div>
+        </div>
+
+        <div class="chart-card">
+          <div style="font-size:28px; font-weight:800; color:#10233a; margin-bottom:8px;">Average Symptom Improvement After 12–20 Weeks</div>
+          <div class="legend">
+            <span><i class="swatch" style="background:#2d8cff"></i>Discovery Science reported client averages</span>
+            <span><i class="swatch" style="background:#bcc6d1"></i>Broad benchmark / national standard care averages</span>
+          </div>
+          <div class="chart" aria-label="Outcome comparison chart">
+            <div class="chart-col">
+              <div class="bars">
+                <div class="bar bar-blue" style="height:68%;">68%</div>
+                <div class="bar bar-gray" style="height:27%;">27%</div>
+              </div>
+              <div class="condition">PTSD</div>
+            </div>
+            <div class="chart-col">
+              <div class="bars">
+                <div class="bar bar-blue" style="height:62%;">62%</div>
+                <div class="bar bar-gray" style="height:26%;">26%</div>
+              </div>
+              <div class="condition">Anxiety</div>
+            </div>
+            <div class="chart-col">
+              <div class="bars">
+                <div class="bar bar-blue" style="height:57%;">57%</div>
+                <div class="bar bar-gray" style="height:24%;">24%</div>
+              </div>
+              <div class="condition">Depression</div>
+            </div>
+            <div class="chart-col">
+              <div class="bars">
+                <div class="bar bar-blue" style="height:49%;">49%</div>
+                <div class="bar bar-gray" style="height:21%;">21%</div>
+              </div>
+              <div class="condition">Autism</div>
+            </div>
+            <div class="chart-col">
+              <div class="bars">
+                <div class="bar bar-blue" style="height:47%;">47%</div>
+                <div class="bar bar-gray" style="height:20%;">20%</div>
+              </div>
+              <div class="condition">ADHD</div>
+            </div>
+          </div>
+          <div class="chart-source">Illustrative benchmark presentation for landing-page preview. Replace with your audited internal outcomes and cited comparison sources before public launch.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-band" id="about-preview">
+      <div class="container about-grid">
+        <div class="brain-network" aria-hidden="true">
+          <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#52c0ff" stop-opacity=".9"/>
+                <stop offset="100%" stop-color="#52c0ff" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <path d="M99 285c0-88 72-160 160-160 75 0 139 52 156 123 7 30 3 62-10 91-27 58-85 96-151 96-77 0-143-52-159-126-2-8-3-16-3-24 0-27 9-44 7-70Z" fill="none" stroke="rgba(112,189,255,.34)" stroke-width="3"/>
+            <g stroke="rgba(112,189,255,.48)" stroke-width="2">
+              <line x1="130" y1="190" x2="190" y2="220"/><line x1="190" y1="220" x2="250" y2="176"/><line x1="250" y1="176" x2="320" y2="205"/>
+              <line x1="160" y1="300" x2="215" y2="265"/><line x1="215" y1="265" x2="280" y2="300"/><line x1="280" y1="300" x2="350" y2="270"/>
+              <line x1="190" y1="220" x2="215" y2="265"/><line x1="250" y1="176" x2="215" y2="265"/><line x1="250" y1="176" x2="280" y2="300"/>
+            </g>
+            <g>
+              <circle cx="130" cy="190" r="8" fill="#8edcff"/><circle cx="190" cy="220" r="8" fill="#8edcff"/><circle cx="250" cy="176" r="8" fill="#8edcff"/>
+              <circle cx="320" cy="205" r="8" fill="#8edcff"/><circle cx="160" cy="300" r="8" fill="#8edcff"/><circle cx="215" cy="265" r="8" fill="#8edcff"/>
+              <circle cx="280" cy="300" r="8" fill="#8edcff"/><circle cx="350" cy="270" r="8" fill="#8edcff"/>
+            </g>
+            <g opacity=".5">
+              <circle cx="130" cy="190" r="24" fill="url(#glow)"/><circle cx="215" cy="265" r="30" fill="url(#glow)"/><circle cx="320" cy="205" r="26" fill="url(#glow)"/>
+            </g>
+          </svg>
+        </div>
+        <div>
+          <div class="eyebrow">Who we are</div>
+          <h2 style="font-size:46px; line-height:1.05; margin:0 0 18px; letter-spacing:-.04em;">Science. Compassion. Results.</h2>
+          <p style="font-size:18px; color:#d6e2f4; max-width:720px;">Discovery Science is a remote brain training company focused on personalized protocols, measurable progress, and practical support. We combine structured intake, home-based EEG technology, app-guided training, and coaching oversight into a single client experience built for real-world outcomes.</p>
+          <p class="muted" style="max-width:720px;">Our aim is simple: help clients regulate attention, arousal, stress response, and recovery patterns more effectively without requiring repeated in-office visits. Every program is designed around the client’s needs, goals, symptom profile, and performance data.</p>
+          <div style="margin-top:26px;"><a class="btn btn-secondary" href="about.html">Learn More About Us</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="how-it-works">
+      <div class="container">
+        <div class="eyebrow" style="color:#2d8cff">How it works</div>
+        <h2 style="font-size:44px; line-height:1.04; margin:0 0 12px; letter-spacing:-.04em; color:#10233a;">Your personalized brain training journey</h2>
+        <p class="muted" style="max-width:720px; font-size:18px; margin-bottom:28px;">Every new client begins with intake and assessment, followed by protocol design, at-home setup, data review, and ongoing coaching support.</p>
+
+        <div class="journey-grid">
+          <div class="journey-step">
+            <div class="step-num">1</div>
+            <h4>Intake & Assessment</h4>
+            <p>Complete a structured intake, symptom review, history summary, and baseline evaluation to clarify your needs and priorities.</p>
+          </div>
+          <div class="journey-step">
+            <div class="step-num">2</div>
+            <h4>Personalized Plan</h4>
+            <p>Your program design is configured around the presentation, goals, and training strategy that best fits your case.</p>
+          </div>
+          <div class="journey-step">
+            <div class="step-num">3</div>
+            <h4>Train From Home</h4>
+            <p>Use your personal EEG device and custom app from the comfort of home with no routine office visits required.</p>
+          </div>
+          <div class="journey-step">
+            <div class="step-num">4</div>
+            <h4>Monitor Progress</h4>
+            <p>Review trend data, symptom check-ins, and adherence to determine what is working and what should be refined.</p>
+          </div>
+          <div class="journey-step">
+            <div class="step-num">5</div>
+            <h4>Achieve Results</h4>
+            <p>Build more stable, trainable patterns over time with the goal of improved daily functioning and quality of life.</p>
+          </div>
+
+          <aside class="side-panel">
+            <h4>Your Program Includes</h4>
+            <ul class="checklist">
+              <li>Personal EEG device for home use</li>
+              <li>Custom training app and protocol flow</li>
+              <li>Weekly clinician-style support and review</li>
+              <li>Progress reports and outcome tracking</li>
+              <li>Fully remote delivery from start to finish</li>
+            </ul>
+            <div style="margin-top:22px;"><a class="btn btn-primary" href="programs.html">Explore Programs</a></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" style="padding-top:0">
+      <div class="container conditions-grid">
+        <div class="white-card">
+          <div class="eyebrow" style="color:#2d8cff">Conditions we help</div>
+          <h3 style="margin:0 0 12px; font-size:34px; line-height:1.05; letter-spacing:-.03em; color:#10233a;">Programs for a better you</h3>
+          <p class="muted">Evidence-informed brain training for a range of regulation and mental health challenges.</p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; margin-top:20px; color:#173353; font-weight:600;">
+            <div>✓ PTSD & Trauma</div>
+            <div>✓ ADHD & Focus</div>
+            <div>✓ Anxiety & Panic</div>
+            <div>✓ Autism Spectrum</div>
+            <div>✓ Depression & Mood</div>
+            <div>✓ Sleep & Recovery</div>
+          </div>
+          <div style="margin-top:24px;"><a href="programs.html" style="color:#2d8cff; font-weight:800;">Explore all programs →</a></div>
+        </div>
+
+        <div class="home-shot">
+          <div class="device"></div>
+        </div>
+
+        <div class="white-card">
+          <div class="eyebrow" style="color:#2d8cff">100% remote. 100% convenient.</div>
+          <h3 style="margin:0 0 12px; font-size:36px; line-height:1.05; letter-spacing:-.03em; color:#10233a;">Brain training from home</h3>
+          <p class="muted">No travel. No waiting rooms. Discovery Science programs are designed to fit into real life while preserving structure, privacy, and support.</p>
+          <ul class="checklist" style="color:#173353; margin-top:18px;">
+            <li>Train on your own schedule</li>
+            <li>Private home-based sessions</li>
+            <li>Secure device + app workflow</li>
+            <li>Review and support when you need it</li>
+          </ul>
+          <div style="margin-top:22px;"><a href="apply.html" style="color:#2d8cff; font-weight:800;">Get started today →</a></div>
+        </div>
+      </div>
+
+      <div class="container pillars">
+        <div class="pillar"><div class="icon-chip">◈</div><strong>Evidence-Based</strong><span>Protocol design grounded in neuroscience and feedback principles.</span></div>
+        <div class="pillar"><div class="icon-chip">◎</div><strong>Personalized</strong><span>Every program is tailored to the person, not just the label.</span></div>
+        <div class="pillar"><div class="icon-chip">↗</div><strong>Measurable</strong><span>Track progress with clear data, reports, and reviews.</span></div>
+        <div class="pillar"><div class="icon-chip">⌁</div><strong>Supported</strong><span>Guided structure and coaching support throughout the process.</span></div>
+        <div class="pillar"><div class="icon-chip">★</div><strong>Results</strong><span>Real people. Real changes. Real remote delivery.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:14px; display:inline-flex;">
+          <div class="brand-mark">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 4.5C9.2 2.7 4.8 4.4 4.8 8.8c0 2 1 3.8 2.6 4.8-.4 2.5 1.2 4.8 3.8 5.2 1.1.2 2.1 0 2.9-.5.8.5 1.8.7 2.9.5 2.6-.4 4.2-2.7 3.8-5.2 1.6-1 2.6-2.8 2.6-4.8 0-4.4-4.4-6.1-7.2-4.3Z" stroke="#8EDCFF" stroke-width="1.3"/><path d="M12 4.7V19.5M8.5 8.1 12 10m3.5-1.9L12 10m-4.2 4.2 4.2 2 4.2-2" stroke="#8EDCFF" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <div class="brand-text"><span class="brand-top">Discovery</span><span class="brand-bottom">Science</span></div>
+        </a>
+        <div class="muted" style="max-width:380px;">Remote brain training programs designed for attention, regulation, recovery, and measurable change from home.</div>
+        <div class="disclaimer">Discovery Science programs are presented here as educational and training-oriented services. Replace illustrative claims, benchmark statistics, and condition-specific language with reviewed legal and clinical copy before production launch.</div>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Programs</h4>
+        <a href="programs.html#ptsd">PTSD & Trauma</a>
+        <a href="programs.html#anxiety">Anxiety & Stress</a>
+        <a href="programs.html#depression">Depression & Mood</a>
+        <a href="programs.html#conditions">Autism & Focus</a>
+      </div>
+      <div class="footer-links">
+        <h4>Get Started</h4>
+        <a href="apply.html">Apply</a>
+        <a href="outcomes.html">Outcomes</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
     </div>
-
-    <div class="bg-white/5 p-6 rounded-xl">
-      <h3 class="text-xl font-semibold">Remote + Structured</h3>
-      <p class="text-slate-400 mt-2">Daily sessions with measurable progress tracking.</p>
-    </div>
-  </div>
-
-  <h2 class="text-3xl font-semibold mb-6">Reported Outcomes</h2>
-
-  <div class="grid md:grid-cols-2 gap-4 mb-16">
-    <div class="bg-white/5 p-4 rounded-xl">Stress Reactivity ↓ 25–40%</div>
-    <div class="bg-white/5 p-4 rounded-xl">State Stability ↑ 30–55%</div>
-    <div class="bg-white/5 p-4 rounded-xl">Recovery Speed ↑ 20–35%</div>
-    <div class="bg-white/5 p-4 rounded-xl">Calm/Focus ↑ 20–45%</div>
-  </div>
-
-  <h2 class="text-3xl font-semibold mb-6">Program Includes</h2>
-
-  <div class="space-y-3 mb-16">
-    <div class="bg-white/5 p-4 rounded-xl">Personal EEG device (home use)</div>
-    <div class="bg-white/5 p-4 rounded-xl">Custom-built training app</div>
-    <div class="bg-white/5 p-4 rounded-xl">Adaptive neurofeedback protocols</div>
-    <div class="bg-white/5 p-4 rounded-xl">Weekly coaching + data review</div>
-  </div>
-
-  <h2 class="text-3xl font-semibold mb-6">How It Works</h2>
-
-  <div class="space-y-6">
-    <div>
-      <h3 class="text-xl font-semibold">1. Intake & Baseline</h3>
-      <p class="text-slate-400">Symptom mapping + EEG baseline sessions.</p>
-    </div>
-
-    <div>
-      <h3 class="text-xl font-semibold">2. Custom App Deployment</h3>
-      <p class="text-slate-400">Your personal training system is configured.</p>
-    </div>
-
-    <div>
-      <h3 class="text-xl font-semibold">3. Optimization + Coaching</h3>
-      <p class="text-slate-400">Weekly refinement using your data.</p>
-    </div>
-  </div>
-
-</div>
-
+  </footer>
 </body>
 </html>
