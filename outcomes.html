@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outcomes | Discovery Science</title>
+  <meta name="description" content="Review Discovery Science outcome presentation and progress tracking approach." />
+  <style>
+    :root {
+      --bg: #071321;
+      --bg-2: #0b1d31;
+      --panel: #0f2742;
+      --panel-2: #132f4f;
+      --line: rgba(255,255,255,.12);
+      --text: #f5f7fb;
+      --muted: #b9c6d8;
+      --blue: #2d8cff;
+      --blue-2: #66b3ff;
+      --cyan: #7ad7ff;
+      --shadow: 0 22px 60px rgba(0,0,0,.32);
+      --radius: 24px;
+      --max: 1200px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #06111e 0%, #081725 100%);
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .section { padding: 76px 0; }
+    .muted { color: var(--muted); }
+    .eyebrow {
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: .2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue) 0%, #1d6ee0 100%);
+      box-shadow: 0 16px 28px rgba(45,140,255,.24);
+    }
+    .btn-secondary {
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.05);
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: rgba(5,12,21,.78);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 30% 30%, rgba(122,215,255,.18), rgba(45,140,255,.06));
+      border: 1px solid rgba(122,215,255,.2);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .brand-text { line-height: 1.05; }
+    .brand-text span { display: block; }
+    .brand-top { font-size: 18px; }
+    .brand-bottom { font-size: 15px; color: #d6e5f8; font-weight: 700; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #d8e4f5;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .nav-links a { opacity: .9; }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; color: white; }
+    .nav-actions { display: flex; gap: 12px; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 14% 16%, rgba(65,160,255,.22), transparent 22%),
+        radial-gradient(circle at 78% 18%, rgba(122,215,255,.14), transparent 18%),
+        radial-gradient(circle at 52% 70%, rgba(51,117,210,.12), transparent 30%),
+        linear-gradient(180deg, #071423 0%, #081726 100%);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .page-hero {
+      padding: 72px 0 58px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 32px;
+      align-items: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1;
+      letter-spacing: -.04em;
+      max-width: 760px;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.04;
+      letter-spacing: -.04em;
+    }
+    p.hero-copy {
+      max-width: 680px;
+      font-size: 19px;
+      color: #dbe7f8;
+      margin: 20px 0 28px;
+    }
+    .hero-panel, .card, .white-card {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.1);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+    }
+    .hero-panel { min-height: 360px; padding: 24px; }
+    .hero-visual {
+      width: 100%;
+      height: 100%;
+      min-height: 310px;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(122,215,255,.26), transparent 18%),
+        radial-gradient(circle at 50% 55%, rgba(45,140,255,.18), transparent 28%),
+        linear-gradient(180deg, rgba(6,16,28,.9), rgba(10,22,40,.95));
+      border: 1px solid rgba(255,255,255,.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(142,220,255,.15);
+    }
+    .hero-visual svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .light-section {
+      background: linear-gradient(180deg, #f8fbff, #eef5fb);
+      color: #10233a;
+    }
+    .light-section .muted { color: #536983; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .card, .white-card {
+      padding: 24px;
+    }
+    .white-card {
+      background: white;
+      border: 1px solid rgba(8,34,68,.08);
+      box-shadow: 0 20px 50px rgba(19,45,75,.08);
+      color: #10233a;
+    }
+    .stat {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .stat strong { display: block; font-size: 30px; }
+    .kicker {
+      color: #93a8c1;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    .checklist { list-style: none; padding: 0; margin: 0; }
+    .checklist li { margin: 10px 0; padding-left: 24px; position: relative; }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--blue); font-weight: 800; }
+    .program-box {
+      border-radius: 22px;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .resource-link {
+      display: block;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: white;
+      color: #10233a;
+      border: 1px solid rgba(8,34,68,.08);
+      box-shadow: 0 12px 30px rgba(19,45,75,.06);
+      margin-bottom: 14px;
+    }
+    .resource-link strong { display: block; margin-bottom: 6px; }
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 18px;
+      align-items: start;
+      background: white;
+      border: 1px solid rgba(8,34,68,.08);
+      border-radius: 20px;
+      padding: 20px;
+      color: #10233a;
+    }
+    .step {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: rgba(45,140,255,.1);
+      color: var(--blue);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .form-grid {
+      display: grid;
+      gap: 14px;
+    }
+    input, textarea, select {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(8,34,68,.12);
+      padding: 14px 16px;
+      font: inherit;
+      background: white;
+      color: #10233a;
+    }
+    textarea { min-height: 140px; resize: vertical; }
+    .chart-card {
+      background: white;
+      border: 1px solid rgba(8,34,68,.08);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(19,45,75,.08);
+      padding: 26px;
+      color: #10233a;
+    }
+    .legend {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      color: #46607c;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .swatch { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+    .chart {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      align-items: end;
+      min-height: 300px;
+      padding: 16px 0 8px;
+    }
+    .chart-col { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .bars { display: flex; align-items: end; gap: 10px; min-height: 220px; }
+    .bar {
+      width: 42px;
+      border-radius: 12px 12px 6px 6px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      font-size: 12px;
+      font-weight: 800;
+      color: #0c2543;
+      padding-top: 8px;
+    }
+    .bar-blue { background: linear-gradient(180deg, #4da4ff, #1f74e6); color: white; }
+    .bar-gray { background: linear-gradient(180deg, #d2d8df, #aeb9c6); }
+    .condition { font-weight: 700; color: #173353; font-size: 14px; }
+    .mini-note { font-size: 12px; color: #6d8096; }
+    footer {
+      padding: 38px 0 64px;
+      background: #04101b;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr .8fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .footer-grid h4 { margin-top: 0; }
+    .footer-links a { display: block; color: #c6d4e6; margin: 8px 0; font-size: 14px; }
+    .disclaimer {
+      margin-top: 18px;
+      color: #90a3b8;
+      font-size: 12px;
+      max-width: 760px;
+    }
+    @media (max-width: 1140px) {
+      .page-hero, .grid-2, .contact-grid { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .grid-4 { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 760px) {
+      .nav { flex-wrap: wrap; padding: 12px 0; }
+      .nav-links { overflow: auto; width: 100%; order: 3; padding-bottom: 6px; }
+      .nav-actions { width: 100%; }
+      .nav-actions .btn { flex: 1; }
+      .grid-3, .grid-4, .chart, .footer-grid { grid-template-columns: 1fr; }
+      .bars { min-height: 160px; }
+      .bar { width: 34px; }
+      .timeline-item { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Discovery Science Home">
+        <div class="brand-mark">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 4.5C9.2 2.7 4.8 4.4 4.8 8.8c0 2 1 3.8 2.6 4.8-.4 2.5 1.2 4.8 3.8 5.2 1.1.2 2.1 0 2.9-.5.8.5 1.8.7 2.9.5 2.6-.4 4.2-2.7 3.8-5.2 1.6-1 2.6-2.8 2.6-4.8 0-4.4-4.4-6.1-7.2-4.3Z" stroke="#8EDCFF" stroke-width="1.3"/>
+            <path d="M12 4.7V19.5M8.5 8.1 12 10m3.5-1.9L12 10m-4.2 4.2 4.2 2 4.2-2" stroke="#8EDCFF" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-top">Discovery</span>
+          <span class="brand-bottom">Science</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a class="" href="index.html">Home</a>
+        <a class="" href="programs.html">Programs</a>
+        <a class="active" href="outcomes.html">Outcomes</a>
+        <a class="" href="how-it-works.html">How It Works</a>
+        <a class="" href="about.html">About</a>
+        <a class="" href="resources.html">Resources</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="apply.html">Apply Now</a>
+        <a class="btn btn-secondary" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+  
+<main>
+  <section class="hero">
+    <div class="container page-hero">
+      <div>
+        <div class="eyebrow">Outcomes</div>
+        <h1>Measure what changes. Then build from there.</h1>
+        <p class="hero-copy">Discovery Science is designed around progress tracking, review, and iteration. Outcome reporting can eventually include symptom reduction, consistency, adherence, response time, subjective improvement, and other internal program measures.</p>
+      </div>
+      <div class="hero-panel">
+        <div class="grid-2" style="height:100%;">
+          <div class="stat"><div class="kicker">Illustrative metric</div><strong>12–20 wks</strong><span class="muted">Typical outcome window shown in examples</span></div>
+          <div class="stat"><div class="kicker">Illustrative metric</div><strong>4.8 / 5</strong><span class="muted">Sample satisfaction presentation</span></div>
+          <div class="stat"><div class="kicker">Illustrative metric</div><strong>Remote</strong><span class="muted">Home-based delivery model</span></div>
+          <div class="stat"><div class="kicker">Illustrative metric</div><strong>Custom</strong><span class="muted">Protocol and app personalization</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light-section">
+    <div class="container grid-2">
+      <div>
+        <div class="eyebrow" style="color:#2d8cff;">Illustrative comparison chart</div>
+        <h2>Reported averages vs broad benchmark averages.</h2>
+        <p class="muted">This page preserves the homepage chart as a dedicated outcomes view. Replace these values with your real internal audit numbers and cited comparison references before treating them as marketing claims.</p>
+      </div>
+      <div class="chart-card">
+        <div style="font-size:28px; font-weight:800; color:#10233a; margin-bottom:8px;">Average Symptom Improvement After 12–20 Weeks</div>
+        <div class="legend">
+          <span><i class="swatch" style="background:#2d8cff"></i>Discovery Science reported client averages</span>
+          <span><i class="swatch" style="background:#bcc6d1"></i>Broad benchmark / national standard care averages</span>
+        </div>
+        <div class="chart">
+          <div class="chart-col">
+            <div class="bars"><div class="bar bar-blue" style="height:68%;">68%</div><div class="bar bar-gray" style="height:27%;">27%</div></div>
+            <div class="condition">PTSD</div>
+          </div>
+          <div class="chart-col">
+            <div class="bars"><div class="bar bar-blue" style="height:62%;">62%</div><div class="bar bar-gray" style="height:26%;">26%</div></div>
+            <div class="condition">Anxiety</div>
+          </div>
+          <div class="chart-col">
+            <div class="bars"><div class="bar bar-blue" style="height:57%;">57%</div><div class="bar bar-gray" style="height:24%;">24%</div></div>
+            <div class="condition">Depression</div>
+          </div>
+          <div class="chart-col">
+            <div class="bars"><div class="bar bar-blue" style="height:49%;">49%</div><div class="bar bar-gray" style="height:21%;">21%</div></div>
+            <div class="condition">Autism</div>
+          </div>
+          <div class="chart-col">
+            <div class="bars"><div class="bar bar-blue" style="height:47%;">47%</div><div class="bar bar-gray" style="height:20%;">20%</div></div>
+            <div class="condition">ADHD</div>
+          </div>
+        </div>
+        <div class="mini-note">Illustrative benchmark presentation only. Not a substantiated public claim without supporting audit and source documentation.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-3">
+      <div class="card">
+        <div class="kicker">What to track</div>
+        <h3>Symptom burden</h3>
+        <p class="muted">Use intake and follow-up check-ins to compare how the client is functioning over time rather than relying on one-time impressions.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">What to track</div>
+        <h3>Training consistency</h3>
+        <p class="muted">Adherence often determines whether a remote program becomes effective. Displaying session count, completion rate, and cadence helps.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">What to track</div>
+        <h3>Functional outcomes</h3>
+        <p class="muted">Sleep quality, emotional control, attention, day-to-day recovery, and stress response are often the most meaningful results to clients.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:14px; display:inline-flex;">
+          <div class="brand-mark">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 4.5C9.2 2.7 4.8 4.4 4.8 8.8c0 2 1 3.8 2.6 4.8-.4 2.5 1.2 4.8 3.8 5.2 1.1.2 2.1 0 2.9-.5.8.5 1.8.7 2.9.5 2.6-.4 4.2-2.7 3.8-5.2 1.6-1 2.6-2.8 2.6-4.8 0-4.4-4.4-6.1-7.2-4.3Z" stroke="#8EDCFF" stroke-width="1.3"/><path d="M12 4.7V19.5M8.5 8.1 12 10m3.5-1.9L12 10m-4.2 4.2 4.2 2 4.2-2" stroke="#8EDCFF" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <div class="brand-text"><span class="brand-top">Discovery</span><span class="brand-bottom">Science</span></div>
+        </a>
+        <div class="muted" style="max-width:380px;">Remote brain training programs designed for attention, regulation, recovery, and measurable change from home.</div>
+        <div class="disclaimer">Illustrative website copy for design and launch planning. Review all public-facing claims, condition language, legal disclosures, and outcome statements before production use.</div>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Programs</h4>
+        <a href="programs.html#ptsd">PTSD & Trauma</a>
+        <a href="programs.html#anxiety">Anxiety & Stress</a>
+        <a href="programs.html#depression">Depression & Mood</a>
+        <a href="programs.html#conditions">Autism & Focus</a>
+      </div>
+      <div class="footer-links">
+        <h4>Get Started</h4>
+        <a href="apply.html">Apply</a>
+        <a href="outcomes.html">Outcomes</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
