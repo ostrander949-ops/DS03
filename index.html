@@ -1,225 +1,84 @@
-export default function AdultNeurofeedbackOfferingPreview() {
-  const benefits = [
-    {
-      title: 'Closed-Loop Neurofeedback Training',
-      text: 'Real-time EEG-informed feedback reinforces stable brain states using evidence-aligned metrics such as alpha stability and theta/beta regulation.'
-    },
-    {
-      title: 'Individually Modeled Protocols',
-      text: 'Each program is derived from intake, baseline recordings, and symptom clusters to create a tailored training architecture rather than a generic protocol.'
-    },
-    {
-      title: 'Remote, Structured, and Measurable',
-      text: 'Daily sessions, longitudinal tracking, and clinician-guided adjustments provide a consistent and data-driven training environment.'
-    }
-  ];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discovery Science – Calm & Resilience</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-  const steps = [
-    {
-      title: '1. Clinical Intake & Baseline Modeling',
-      text: 'Comprehensive intake including symptom mapping (stress, anxiety, sleep, cognitive load), followed by baseline EEG sessions to characterize individual regulation patterns.'
-    },
-    {
-      title: '2. Custom App & Protocol Deployment',
-      text: 'A personalized training interface is configured for your profile, including adaptive thresholds, session structures, and feedback dynamics.'
-    },
-    {
-      title: '3. Iterative Optimization & Coaching',
-      text: 'Weekly review of training data, protocol refinement, and coaching guidance to improve state access, recovery speed, and consistency.'
-    }
-  ];
+<body class="bg-slate-950 text-white">
 
-  const useCases = [
-    'Chronic stress and nervous system dysregulation',
-    'Generalized anxiety and difficulty downregulating',
-    'Cognitive fatigue and reduced attentional stability',
-    'Sleep disruption linked to hyperarousal',
-    'Performance recovery and resilience training'
-  ];
+<div class="max-w-6xl mx-auto px-6 py-20">
 
-  const outcomes = [
-    ['Reduction in stress reactivity', '25–40% avg'],
-    ['Improvement in state stability', '30–55% avg'],
-    ['Faster recovery from stress events', '20–35% avg'],
-    ['Increase in perceived calm/focus', '20–45% avg']
-  ];
+  <h1 class="text-5xl font-bold mb-6">
+    Precision brain training for stress regulation and cognitive stability.
+  </h1>
 
-  const faqs = [
-    {
-      q: 'Is this a medical treatment?',
-      a: 'Discovery Science programs are positioned as brain training and self-regulation tools. They are not presented as medical diagnosis or treatment, though they are informed by neurofeedback and neuroscience research.'
-    },
-    {
-      q: 'What is included in the program?',
-      a: 'Each program includes intake, baseline sessions, a personalized app configuration, an EEG device for home use, structured protocols, and optional coaching.'
-    },
-    {
-      q: 'How is the program personalized?',
-      a: 'Protocols are adjusted based on EEG patterns, symptom reports, and session performance, allowing dynamic refinement over time.'
-    }
-  ];
+  <p class="text-lg text-slate-300 max-w-2xl mb-8">
+    The Calm & Resilience Program is a structured, remote neurofeedback-informed system designed to train stability, reduce reactivity, and improve recovery dynamics using personalized EEG-driven protocols.
+  </p>
 
-  return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
-      <section className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(99,102,241,0.14),transparent_25%),linear-gradient(to_bottom,rgba(15,23,42,0.95),rgba(2,6,23,1))]" />
-        <div className="relative mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div>
-              <div className="mb-4 inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-sm text-cyan-200">
-                Discovery Science • Adult Neuro-Regulation Program
-              </div>
-              <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-white md:text-6xl">
-                Precision brain training for stress regulation and cognitive stability.
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
-                The Calm & Resilience Program is a structured, remote neurofeedback-informed system designed to train stability, reduce reactivity, and improve recovery dynamics using personalized EEG-driven protocols.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <button className="rounded-2xl bg-white px-5 py-3 text-sm font-medium text-slate-950 shadow-lg shadow-cyan-500/10 transition hover:scale-[1.02]">
-                  Apply for Program
-                </button>
-                <button className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white backdrop-blur transition hover:bg-white/10">
-                  View Protocol Details
-                </button>
-              </div>
-              <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-400">
-                <span>Includes personal EEG device</span>
-                <span>Custom-built training app</span>
-                <span>Optional expert coaching</span>
-              </div>
-            </div>
+  <div class="flex gap-4 mb-12">
+    <button class="bg-white text-black px-5 py-3 rounded-xl">Apply for Program</button>
+    <button class="border px-5 py-3 rounded-xl">View Protocol Details</button>
+  </div>
 
-            <div className="lg:pl-8">
-              <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 shadow-2xl shadow-cyan-900/20 backdrop-blur-xl">
-                <div className="rounded-[24px] border border-white/10 bg-slate-900/80 p-5">
-                  <div className="mb-4 flex items-center justify-between">
-                    <div>
-                      <div className="text-sm text-slate-400">Session Output</div>
-                      <div className="mt-1 text-xl font-semibold">State Stability Metrics</div>
-                    </div>
-                    <div className="rounded-xl border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-sm text-emerald-200">
-                      12 min
-                    </div>
-                  </div>
-
-                  <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-4">
-                    <div className="flex items-end justify-between text-sm text-slate-400">
-                      <span>Stability Index</span>
-                      <span>Trend improving</span>
-                    </div>
-                    <div className="mt-4 flex h-36 items-end gap-2">
-                      {[32, 54, 48, 65, 62, 72, 76, 70, 84, 88, 82, 91].map((h, i) => (
-                        <div key={i} className="flex-1 rounded-t-xl bg-gradient-to-t from-cyan-500/40 to-sky-300/80" style={{ height: `${h}%` }} />
-                      ))}
-                    </div>
-                    <div className="mt-4 flex items-center justify-between text-xs text-slate-500">
-                      <span>Week 1</span>
-                      <span>Week 6</span>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                    {[
-                      ['Recovery time', '-28%'],
-                      ['Consistency', '+34%'],
-                      ['Calm index', '+22%']
-                    ].map(([label, value]) => (
-                      <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <div className="text-xs uppercase tracking-wide text-slate-500">{label}</div>
-                        <div className="mt-2 text-2xl font-semibold text-white">{value}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
-        <div className="grid gap-6 md:grid-cols-3">
-          {benefits.map((item) => (
-            <div key={item.title} className="rounded-[24px] border border-white/10 bg-white/5 p-6">
-              <h3 className="text-xl font-medium text-white">{item.title}</h3>
-              <p className="mt-3 leading-7 text-slate-300">{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-white/5">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:px-10">
-          <div className="max-w-2xl">
-            <div className="text-sm uppercase tracking-[0.2em] text-cyan-300">Program Architecture</div>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
-              Structured, adaptive, and data-driven training system.
-            </h2>
-          </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {steps.map((step) => (
-              <div key={step.title} className="rounded-[24px] border border-white/10 bg-slate-900/60 p-6">
-                <h3 className="text-xl font-medium text-white">{step.title}</h3>
-                <p className="mt-3 leading-7 text-slate-300">{step.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <div className="text-sm uppercase tracking-[0.2em] text-violet-300">Target Outcomes</div>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
-              Measurable improvements across regulation and recovery.
-            </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {outcomes.map(([label, value]) => (
-                <div key={label} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">
-                  <div className="text-sm text-slate-400">{label}</div>
-                  <div className="text-xl font-semibold text-white">{value}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-[28px] border border-white/10 bg-gradient-to-b from-cyan-500/10 to-violet-500/10 p-7">
-            <div className="text-sm uppercase tracking-[0.2em] text-slate-300">Program Details</div>
-            <h3 className="mt-3 text-2xl font-semibold text-white">Calm & Resilience Program</h3>
-            <p className="mt-4 leading-7 text-slate-200">
-              Includes intake, baseline EEG sessions, custom-built training application, personal EEG device, adaptive protocols, and optional weekly coaching. Programs are continuously refined based on user data and performance metrics.
-            </p>
-            <div className="mt-6 space-y-3 text-slate-200">
-              <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">Personal EEG device included</div>
-              <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">Custom app configured per user</div>
-              <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">Adaptive neurofeedback protocols</div>
-              <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">Weekly coaching & data review</div>
-            </div>
-            <button className="mt-8 w-full rounded-2xl bg-white px-5 py-3 text-sm font-medium text-slate-950">
-              Apply for Program
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-white/10 bg-slate-900/70">
-        <div className="mx-auto max-w-5xl px-6 py-16 md:px-10">
-          <div className="max-w-2xl">
-            <div className="text-sm uppercase tracking-[0.2em] text-cyan-300">FAQ</div>
-            <h2 className="mt-3 text-3xl font-semibold text-white">Program clarity</h2>
-          </div>
-          <div className="mt-10 space-y-4">
-            {faqs.map((item) => (
-              <div key={item.q} className="rounded-[22px] border border-white/10 bg-white/5 p-6">
-                <div className="text-lg font-medium text-white">{item.q}</div>
-                <p className="mt-3 leading-7 text-slate-300">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+  <div class="grid md:grid-cols-3 gap-6 mb-16">
+    <div class="bg-white/5 p-6 rounded-xl">
+      <h3 class="text-xl font-semibold">Closed-Loop Neurofeedback</h3>
+      <p class="text-slate-400 mt-2">Real-time EEG feedback reinforces stable brain states.</p>
     </div>
-  );
-}
+
+    <div class="bg-white/5 p-6 rounded-xl">
+      <h3 class="text-xl font-semibold">Individually Modeled</h3>
+      <p class="text-slate-400 mt-2">Protocols built from intake and baseline EEG.</p>
+    </div>
+
+    <div class="bg-white/5 p-6 rounded-xl">
+      <h3 class="text-xl font-semibold">Remote + Structured</h3>
+      <p class="text-slate-400 mt-2">Daily sessions with measurable progress tracking.</p>
+    </div>
+  </div>
+
+  <h2 class="text-3xl font-semibold mb-6">Reported Outcomes</h2>
+
+  <div class="grid md:grid-cols-2 gap-4 mb-16">
+    <div class="bg-white/5 p-4 rounded-xl">Stress Reactivity ↓ 25–40%</div>
+    <div class="bg-white/5 p-4 rounded-xl">State Stability ↑ 30–55%</div>
+    <div class="bg-white/5 p-4 rounded-xl">Recovery Speed ↑ 20–35%</div>
+    <div class="bg-white/5 p-4 rounded-xl">Calm/Focus ↑ 20–45%</div>
+  </div>
+
+  <h2 class="text-3xl font-semibold mb-6">Program Includes</h2>
+
+  <div class="space-y-3 mb-16">
+    <div class="bg-white/5 p-4 rounded-xl">Personal EEG device (home use)</div>
+    <div class="bg-white/5 p-4 rounded-xl">Custom-built training app</div>
+    <div class="bg-white/5 p-4 rounded-xl">Adaptive neurofeedback protocols</div>
+    <div class="bg-white/5 p-4 rounded-xl">Weekly coaching + data review</div>
+  </div>
+
+  <h2 class="text-3xl font-semibold mb-6">How It Works</h2>
+
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold">1. Intake & Baseline</h3>
+      <p class="text-slate-400">Symptom mapping + EEG baseline sessions.</p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold">2. Custom App Deployment</h3>
+      <p class="text-slate-400">Your personal training system is configured.</p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold">3. Optimization + Coaching</h3>
+      <p class="text-slate-400">Weekly refinement using your data.</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
