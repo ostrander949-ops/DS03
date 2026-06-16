@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discovery Science | Home Neuroregulation Platform</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: #0f1d31;
+      --panel2: #122842;
+      --text: #f4f7fb;
+      --muted: #a9b8cc;
+      --line: rgba(255,255,255,.12);
+      --accent: #66e3d4;
+      --accent2: #93b7ff;
+      --warning: #ffd166;
+      --green: #7ee081;
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(102, 227, 212, .16), transparent 36%),
+        radial-gradient(circle at 80% 15%, rgba(147, 183, 255, .15), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 28px rgba(102,227,212,.38);
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #041016;
+      font-weight: 750;
+      box-shadow: 0 10px 28px rgba(102,227,212,.22);
+      border: 0;
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 24px 70px;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .96;
+      letter-spacing: -2.6px;
+      margin: 0 0 24px;
+    }
+
+    .subhead {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 0 30px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .trust {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .dashboard {
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dashboard::before {
+      content: "";
+      position: absolute;
+      inset: -120px -120px auto auto;
+      width: 260px;
+      height: 260px;
+      background: rgba(102,227,212,.18);
+      filter: blur(50px);
+    }
+
+    .dash-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .dash-title {
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .pill {
+      padding: 6px 10px;
+      background: rgba(126,224,129,.14);
+      color: var(--green);
+      border: 1px solid rgba(126,224,129,.24);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .metric {
+      background: rgba(7,17,31,.72);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .metric .label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .metric .value {
+      font-size: 28px;
+      font-weight: 850;
+      letter-spacing: -.8px;
+    }
+
+    .value small {
+      font-size: 14px;
+      color: var(--green);
+      font-weight: 800;
+      margin-left: 4px;
+    }
+
+    .patient-list {
+      background: rgba(7,17,31,.58);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 14px;
+      position: relative;
+    }
+
+    .patient {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      padding: 13px 8px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .patient:last-child { border-bottom: 0; }
+
+    .patient strong { display: block; font-size: 14px; }
+
+    .patient span { color: var(--muted); font-size: 12px; }
+
+    .score {
+      font-weight: 850;
+      color: var(--accent);
+    }
+
+    section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 68px 24px;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.02;
+      letter-spacing: -1.7px;
+      margin: 0 0 16px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: rgba(102,227,212,.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    .feature-list li {
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+    }
+
+    .feature-list li:last-child { border-bottom: 0; }
+
+    .feature-list b { color: var(--text); }
+
+    .hardware {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hardware div {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid var(--line);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .price-card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 26px;
+    }
+
+    .price-card.featured {
+      background: linear-gradient(180deg, rgba(102,227,212,.13), rgba(255,255,255,.05));
+      border-color: rgba(102,227,212,.4);
+    }
+
+    .price {
+      font-size: 38px;
+      font-weight: 900;
+      margin: 12px 0 4px;
+    }
+
+    .price span {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .fine {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .final-cta {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(102,227,212,.16), rgba(147,183,255,.13));
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 54px 28px;
+    }
+
+    .footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 24px 50px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .hero, .split, .cards, .pricing { grid-template-columns: 1fr; }
+      .hardware { grid-template-columns: repeat(2, 1fr); }
+      .navlinks { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>Discovery Science</div>
+    </div>
+    <div class="navlinks">
+      <a href="#solution">Solution</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#demo">Demo</a>
+    </div>
+    <a class="btn secondary" href="#demo">Schedule Demo</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Clinic-prescribed home neuroregulation</div>
+        <h1>What happens between sessions matters.</h1>
+        <p class="subhead">
+          Discovery Science helps neurofeedback and behavioral health clinics extend care into the home with assigned training sessions, EEG-supported feedback, compliance tracking, and clinician-ready progress reports.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#demo">Book a pilot call</a>
+          <a class="btn secondary" href="#solution">See how it works</a>
+        </div>
+        <div class="trust">Built for clinic owners, directors, and providers who want better engagement, better data, and new recurring revenue.</div>
+      </div>
+
+      <div class="dashboard">
+        <div class="dash-top">
+          <div class="dash-title">Clinic Dashboard</div>
+          <div class="pill">Live home practice</div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <div class="label">Weekly compliance</div>
+            <div class="value">84% <small>+18</small></div>
+          </div>
+          <div class="metric">
+            <div class="label">Home sessions</div>
+            <div class="value">126</div>
+          </div>
+          <div class="metric">
+            <div class="label">Avg regulation score</div>
+            <div class="value">78</div>
+          </div>
+          <div class="metric">
+            <div class="label">Device utilization</div>
+            <div class="value">91%</div>
+          </div>
+        </div>
+
+        <div class="patient-list">
+          <div class="patient">
+            <div><strong>Sarah M.</strong><span>Anxiety track · 5 sessions this week</span></div>
+            <div class="score">86</div>
+          </div>
+          <div class="patient">
+            <div><strong>Jason R.</strong><span>ADHD track · focus stability improving</span></div>
+            <div class="score">74</div>
+          </div>
+          <div class="patient">
+            <div><strong>Monica T.</strong><span>Sleep descent · missed 3 days</span></div>
+            <div class="score" style="color: var(--warning)">49</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>A home training layer for modern neurofeedback care.</h2>
+        <p>Discovery Science is not another EEG headset. It is the software layer that turns home practice into measurable engagement, clinical insight, and program revenue.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">01</div>
+          <h3>Engage clients between visits</h3>
+          <p>Assign simple 10–20 minute home sessions and monitor whether clients actually complete them.</p>
+        </div>
+        <div class="card">
+          <div class="icon">02</div>
+          <h3>Track meaningful progress</h3>
+          <p>Review compliance, session quality, time-to-calm, focus stability, and state regulation trends.</p>
+        </div>
+        <div class="card">
+          <div class="icon">03</div>
+          <h3>Add a revenue stream</h3>
+          <p>Package home neurotraining as a premium program, device rental, or membership add-on.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution">
+      <div class="section-head">
+        <h2>One platform. Two apps.</h2>
+        <p>A clinician view for care teams and a consumer app for clients practicing at home.</p>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <h3>Clinician Dashboard</h3>
+          <ul class="feature-list">
+            <li><b>Assign tracks:</b> calm, focus, sleep descent, regulation, meditation</li>
+            <li><b>Monitor adherence:</b> sessions completed, minutes trained, missed days</li>
+            <li><b>Review progress:</b> client trends, session scores, response patterns</li>
+            <li><b>Support care:</b> exportable reports for treatment reviews and client feedback</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Client App</h3>
+          <ul class="feature-list">
+            <li><b>Guided home sessions:</b> prescribed by the clinic</li>
+            <li><b>Closed-loop feedback:</b> audio cues adapt to state changes</li>
+            <li><b>Simple scores:</b> no confusing raw EEG charts</li>
+            <li><b>Progress visibility:</b> clients see streaks, milestones, and improvements</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="hardware">
+      <div class="section-head">
+        <h2>Hardware-agnostic by design.</h2>
+        <p>Clinics can use existing devices, recommend supported consumer EEGs, or create device rental programs for clients.</p>
+      </div>
+
+      <div class="hardware">
+        <div>Muse</div>
+        <div>Neurosity</div>
+        <div>BrainBit</div>
+        <div>OpenBCI</div>
+      </div>
+
+      <p class="fine">Supported devices shown for concept positioning. Final device support depends on API access, reliability, and pilot validation.</p>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Designed for business outcomes.</h2>
+        <p>Your clinic does not need another wellness app. It needs better visibility, stronger client accountability, and a way to extend the value of care beyond the office.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">↗</div>
+          <h3>Increase program completion</h3>
+          <p>Identify clients who are disengaging before they disappear from care.</p>
+        </div>
+        <div class="card">
+          <div class="icon">$</div>
+          <h3>Monetize home training</h3>
+          <p>Bundle home practice, device rentals, and reporting into premium care plans.</p>
+        </div>
+        <div class="card">
+          <div class="icon">◎</div>
+          <h3>Differentiate your clinic</h3>
+          <p>Offer modern neurotechnology without building your own software or hardware program.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="section-head">
+        <h2>Simple pilot pricing.</h2>
+        <p>Start small with one clinic, one clinician, and a small group of clients.</p>
+      </div>
+
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Starter</h3>
+          <div class="price">$99<span>/mo</span></div>
+          <p class="fine">For early pilot clinics validating home training with up to 10 clients.</p>
+        </div>
+        <div class="price-card featured">
+          <h3>Clinic</h3>
+          <div class="price">$299<span>/mo</span></div>
+          <p class="fine">For small practices that want clinician dashboard, reporting, and client app access.</p>
+        </div>
+        <div class="price-card">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <p class="fine">For multi-location clinics, custom reporting, white-labeling, and workflow integrations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo">
+      <div class="final-cta">
+        <div class="eyebrow">Pilot program</div>
+        <h2>Looking for 3 design-partner clinics.</h2>
+        <p class="subhead" style="margin-left:auto;margin-right:auto;">
+          Help shape the first clinic-prescribed home neuroregulation platform for neurofeedback and behavioral health providers.
+        </p>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn" href="mailto:hello@discovery-science.com?subject=Discovery%20Science%20Pilot%20Demo">Schedule a pilot call</a>
+          <a class="btn secondary" href="mailto:hello@discovery-science.com?subject=Discovery%20Science%20Question">Ask a question</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© 2026 Discovery Science</div>
+    <div>Home neuroregulation software for modern behavioral health clinics.</div>
+  </footer>
+</body>
+</html>
