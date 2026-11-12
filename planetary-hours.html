@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Are Planetary Hours? How to Calculate Them | Discovery Science</title>
+<meta name="description" content="Planetary hours explained: the Chaldean order, unequal day and night hours, how to calculate them from sunrise and sunset, the day angels, and a free calculator.">
+<link rel="canonical" href="https://www.discovery-science.com/planetary-hours.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Discovery Science">
+<meta property="og:title" content="What Are Planetary Hours? How to Calculate Them">
+<meta property="og:description" content="The Chaldean order, unequal hours, a worked example, the angels of the days, and a free on-device calculator.">
+<meta property="og:url" content="https://www.discovery-science.com/planetary-hours.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.ph-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line2);color:var(--muted);margin-right:6px;vertical-align:middle}
+.ph-tag.ev{color:#9fd8b4;border-color:rgba(159,216,180,.4)}
+.ph-tag.tr{color:var(--gold2);border-color:rgba(212,174,98,.45)}
+.ph-tag.mo{color:#b9b0ff;border-color:rgba(154,140,255,.45)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.data td.pl{white-space:nowrap}
+.ph-calc{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:14px 0 6px}
+.ph-calc label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ph-calc input{display:block;width:100%;margin-top:6px;padding:10px 12px;border-radius:12px;border:1px solid var(--line2);background:var(--bg2);color:var(--text);font:15px var(--sans);color-scheme:dark}
+.ph-out tr.now td{background:rgba(212,174,98,.12);color:var(--gold2)}
+.ph-note{min-height:1.4em}
+.apps-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.apps-grid .card h3{font-size:24px;margin:0 0 8px}
+.apps-grid .card p{color:var(--soft);font-size:15px;margin:0 0 12px}
+.faq dt{font-family:var(--serif);font-size:22px;color:var(--text);margin-top:22px}
+.faq dd{margin:6px 0 0;color:var(--soft)}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What Are Planetary Hours? How to Calculate Them","description":"Planetary hours explained: the Chaldean order, unequal day and night hours, how to calculate them for your sunrise and sunset, and the angels of the days.","mainEntityOfPage":"https://www.discovery-science.com/planetary-hours.html","datePublished":"2026-11-12","dateModified":"2026-11-12","inLanguage":"en","author":{"@type":"Organization","name":"Discovery Science, Inc.","url":"https://www.discovery-science.com/"},"publisher":{"@type":"Organization","name":"Discovery Science, Inc.","url":"https://www.discovery-science.com/"},"about":["Planetary hours","Chaldean order","Heptameron"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.discovery-science.com/"},{"@type":"ListItem","position":2,"name":"The Archive","item":"https://www.discovery-science.com/archive.html"},{"@type":"ListItem","position":3,"name":"Planetary Hours","item":"https://www.discovery-science.com/planetary-hours.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are planetary hours?","acceptedAnswer":{"@type":"Answer","text":"Planetary hours divide the daylight into twelve equal parts and the night into twelve more, and assign each part to one of the seven classical planets in the Chaldean order: Saturn, Jupiter, Mars, the Sun, Venus, Mercury and the Moon."}},{"@type":"Question","name":"Is a planetary hour sixty minutes long?","acceptedAnswer":{"@type":"Answer","text":"Only around the equinoxes. A day-hour is one twelfth of the time from sunrise to sunset and a night-hour one twelfth of the time from sunset to the next sunrise, so in summer day-hours are long and night-hours short, and in winter the reverse."}},{"@type":"Question","name":"Which planet rules the first hour of the day?","acceptedAnswer":{"@type":"Answer","text":"The planet that names the weekday: the Sun on Sunday, the Moon on Monday, Mars on Tuesday, Mercury on Wednesday, Jupiter on Thursday, Venus on Friday and Saturn on Saturday. The planetary day begins at sunrise."}},{"@type":"Question","name":"Why do planetary hour calculators give slightly different times?","acceptedAnswer":{"@type":"Answer","text":"Because they define sunrise differently, for example by the upper edge or the centre of the Sun, with or without refraction. Every boundary of the day moves with that choice, usually by a minute or two."}},{"@type":"Question","name":"Do planetary hours work near the North or South Pole?","acceptedAnswer":{"@type":"Answer","text":"Not in the traditional form. When the Sun does not rise or does not set there is no daylight or night to divide into twelve, so the hours cannot be calculated."}},{"@type":"Question","name":"Is there scientific evidence that planetary hours affect events?","acceptedAnswer":{"@type":"Answer","text":"No. The history of the system is well documented, but its effects are a matter of religious and magical tradition, not of scientific evidence. Many people today use the hours as a devotional calendar or a way to structure attention."}}]}</script>
+</head>
+<body data-page="archive">
+<canvas id="sky"></canvas>
+<div id="nav"></div>
+
+<header class="hero" style="min-height:auto;padding:90px 0 40px"><div class="wrap">
+  <div class="folio"><a href="/archive.html" style="color:inherit">The Archive</a> · Study guide</div>
+  <h1>What are <em>planetary hours?</em></h1>
+  <p class="lede">Planetary hours are an old way of dividing time. Daylight is cut into twelve equal parts and the night into twelve more, and each part is given to one of the seven classical planets in a fixed order. The hours change length with the seasons, and they follow your own sunrise and sunset, not the clock.</p>
+  <p class="muted" style="max-width:720px">This guide covers where the system comes from, how to work the hours out by hand, what the old texts did with them, and which parts are history, which are tradition and which are modern practice. The calculator below runs entirely in your browser.</p>
+  <div class="btns" style="margin-top:24px"><a class="btn gold" href="#calculator">Calculate today’s hours</a><a class="btn ghost" href="#how">How to calculate them</a><a class="btn ghost" href="#angels">The angels of the days</a></div>
+  <p class="fine" style="margin-top:22px">Labels used on this page: <span class="ph-tag ev">Evidence</span> what surviving sources show · <span class="ph-tag tr">Tradition</span> what the ritual texts prescribe · <span class="ph-tag mo">Modern</span> present-day practice or interpretation.</p>
+</div></header>
+
+<section id="definition" style="padding-top:20px;border-top:1px solid var(--line)"><div class="wrap cols">
+  <div class="reveal">
+    <div class="eyebrow">I · The idea</div>
+    <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 16px">Seven planets, twenty-four hours</h2>
+    <div class="prose">
+      <p>Ancient astronomers counted seven “planets”, meaning wandering lights against the fixed stars: Saturn, Jupiter, Mars, the Sun, Venus, Mercury and the Moon. Ranked from the slowest to the fastest, as they appear from the Earth, they form what is now called the <b>Chaldean order</b>. A planetary hour is simply an hour assigned to one of these seven, taken in that order and repeated around the clock.</p>
+      <p>The hours are <b>unequal</b>, or “temporal”. Before mechanical clocks spread through Europe in the fourteenth century, an hour usually meant one twelfth of the daylight or one twelfth of the night, so a summer day-hour could be far longer than a winter one. Planetary hours keep that older reckoning, which is why they cannot be read off an ordinary clock.</p>
+      <h3><span class="ph-tag ev">Evidence</span>The hours and the week</h3>
+      <p>The same arithmetic explains the names of the weekdays. Writing in the early third century CE, the Roman historian Cassius Dio describes the seven-day planetary week as a custom that had spread through the Roman world, which he attributes to the Egyptians. One of the explanations he gives is the hour count: give the first hour of a day to Saturn and the following hours to each planet in the Chaldean order, and the first hour of the next day falls to the Sun, the next to the Moon, and so on (<i>Roman History</i> 37.18–19). The result is the planetary week: Saturn’s day, the Sun’s day, the Moon’s day, then Mars, Mercury, Jupiter and Venus, which survive in Saturday, Sunday and Monday and in the Romance names of the other days.</p>
+    </div>
+  </div>
+  <aside class="reveal"><div class="ledger">
+    <h4>Ledger</h4>
+    <dl>
+      <dt>Chaldean order</dt><dd>♄ Saturn · ♃ Jupiter · ♂ Mars · ☉ Sun · ♀ Venus · ☿ Mercury · ☽ Moon</dd>
+      <dt>Day-hours</dt><dd>12, sunrise to sunset</dd>
+      <dt>Night-hours</dt><dd>12, sunset to the next sunrise</dd>
+      <dt>First hour of the day</dt><dd>The planet that names the weekday</dd>
+      <dt>Earliest explanation</dt><dd>Cassius Dio, <i>Roman History</i> 37.18–19 (early 3rd c. CE)</dd>
+    </dl>
+    <h4>Related reading</h4>
+    <p class="fine" style="margin:0"><a href="/archive.html#astral">Archive V · Astral Magic &amp; the Planetary Hours</a><br><a href="/archive.html#angels">Archive VI · The Orders of Angels</a><br><a href="/seven-angels.html">The Seven Angels of the days</a></p>
+  </div></aside>
+</div></section>
+
+<section id="how"><div class="wrap cols">
+  <div class="reveal">
+    <div class="eyebrow">II · Method</div>
+    <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 16px">How to calculate planetary hours</h2>
+    <ol class="rite">
+      <li><b>Find sunrise, sunset and the next sunrise</b> for your location and date. The planetary day begins at sunrise, not at midnight, so the hours before dawn still belong to the previous day’s night.</li>
+      <li><b>Divide the daylight by twelve.</b> The time from sunrise to sunset, divided by twelve, is the length of one day-hour.</li>
+      <li><b>Divide the night by twelve.</b> The time from sunset to the next sunrise, divided by twelve, is the length of one night-hour.</li>
+      <li><b>Give the first hour to the planet of the day:</b> the Sun on Sunday, the Moon on Monday, Mars on Tuesday, Mercury on Wednesday, Jupiter on Thursday, Venus on Friday and Saturn on Saturday.</li>
+      <li><b>Continue in the Chaldean order</b> for the remaining hours, wrapping from the Moon back to Saturn. The night hours carry straight on from the day hours.</li>
+      <li><b>Check the result:</b> after twenty-four hours the count lands on the next day’s planet, three places further on, because 24 leaves a remainder of 3 when divided by 7.</li>
+    </ol>
+    <div class="prose">
+      <h3>A worked example</h3>
+      <p>Take a Wednesday with sunrise at 05:00, sunset at 21:00 and the next sunrise at 05:00. Daylight lasts sixteen hours, so each day-hour lasts 16 × 60 ÷ 12 = 80 minutes. The night lasts eight hours, so each night-hour lasts 40 minutes. Wednesday belongs to Mercury, so the first hour, 05:00 to 06:20, is Mercury’s; the second, 06:20 to 07:40, goes to the Moon; the third to Saturn, and so on. The night carries straight on: the twelfth day-hour, 19:40 to 21:00, is Mars’s, so the first night-hour, from 21:00 to 21:40, belongs to the Sun. At the equinoxes day and night are roughly equal and every planetary hour lasts about sixty minutes.</p>
+      <h3><span class="ph-tag mo">Modern</span>Why calculators disagree by a few minutes</h3>
+      <p>Sunrise can be defined in more than one way: the moment the upper edge of the Sun clears the horizon, the moment its centre does, with or without an allowance for atmospheric refraction, or by a local horizon with hills in it. Different apps and almanacs make different choices, and each choice moves every hour boundary of the day. The old texts did not specify any of this. The calculator below uses the common almanac convention (upper edge, standard refraction), which usually agrees with published sunrise tables to within a minute or two.</p>
+      <p>Near the poles the system breaks down: when the Sun does not set, or does not rise, there is no daylight to divide. The calculator will say so rather than guess.</p>
+    </div>
+  </div>
+  <aside class="reveal"><div class="ledger">
+    <h4>Lengths through the year</h4>
+    <dl>
+      <dt>Equinox</dt><dd>Day- and night-hours ≈ 60 min</dd>
+      <dt>16 h daylight</dt><dd>Day-hours 80 min · night-hours 40 min</dd>
+      <dt>9 h daylight</dt><dd>Day-hours 45 min · night-hours 75 min</dd>
+      <dt>Rule</dt><dd>A day-hour and a night-hour always add up to 120 minutes</dd>
+    </dl>
+  </div></aside>
+</div></section>
+
+<section id="calculator"><div class="wrap">
+  <div class="eyebrow">III · Calculator</div>
+  <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 10px">Planetary hours calculator</h2>
+  <p class="muted" style="max-width:760px">Enter a date with its sunrise, sunset and next sunrise, or let your device fill them in from your location. Everything is computed on this page; your location is never sent anywhere. Times are shown in your device’s time zone.</p>
+  <div class="card">
+    <form class="ph-calc" id="ph-form" onsubmit="return false">
+      <label>Date<input type="date" id="ph-date" required></label>
+      <label>Sunrise<input type="time" id="ph-rise" value="06:00" required></label>
+      <label>Sunset<input type="time" id="ph-set" value="18:00" required></label>
+      <label>Next sunrise<input type="time" id="ph-next" value="06:00" required></label>
+    </form>
+    <div class="btns" style="margin:8px 0 6px"><button class="btn gold small" type="button" id="ph-go">Calculate</button><button class="btn ghost small" type="button" id="ph-geo">Use my location</button></div>
+    <p class="fine ph-note" id="ph-note" role="status" aria-live="polite"></p>
+    <div class="tablewrap"><table class="data ph-out" id="ph-out"><caption class="fine" style="text-align:left;caption-side:top;padding-bottom:6px" id="ph-cap"></caption><thead><tr><th scope="col">Hour</th><th scope="col">Starts</th><th scope="col">Ends</th><th scope="col">Planet</th></tr></thead><tbody></tbody></table></div>
+    <noscript><p class="fine">The calculator needs JavaScript. The tables below give the planet of every hour without it.</p></noscript>
+  </div>
+</div></section>
+
+<section id="tables"><div class="wrap">
+  <div class="eyebrow">IV · Reference</div>
+  <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 10px">Planetary hours for every day of the week</h2>
+  <p class="muted" style="max-width:760px">The planet of each hour is the same every week. Only the clock times change, with the season and your location. Hours 1–12 run from sunrise to sunset, hours 13–24 from sunset to the next sunrise.</p>
+  <div class="tablewrap"><table class="data"><caption class="fine" style="text-align:left;caption-side:top;padding-bottom:6px">Ruling planet of each planetary hour, by weekday</caption><thead><tr><th scope="col">Hour</th><th scope="col">Sunday</th><th scope="col">Monday</th><th scope="col">Tuesday</th><th scope="col">Wednesday</th><th scope="col">Thursday</th><th scope="col">Friday</th><th scope="col">Saturday</th></tr></thead><tbody><tr><td>Day 1</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td></tr><tr><td>Day 2</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td></tr><tr><td>Day 3</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td></tr><tr><td>Day 4</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td></tr><tr><td>Day 5</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td></tr><tr><td>Day 6</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td></tr><tr><td>Day 7</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td></tr><tr><td>Day 8</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td></tr><tr><td>Day 9</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td></tr><tr><td>Day 10</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td></tr><tr><td>Day 11</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td></tr><tr><td>Day 12</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td></tr><tr><td>Night 1</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td></tr><tr><td>Night 2</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td></tr><tr><td>Night 3</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td></tr><tr><td>Night 4</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td></tr><tr><td>Night 5</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td></tr><tr><td>Night 6</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td></tr><tr><td>Night 7</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td></tr><tr><td>Night 8</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td></tr><tr><td>Night 9</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td></tr><tr><td>Night 10</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td></tr><tr><td>Night 11</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td></tr><tr><td>Night 12</td><td class="pl">☿ Mercury</td><td class="pl">♃ Jupiter</td><td class="pl">♀ Venus</td><td class="pl">♄ Saturn</td><td class="pl">☉ Sun</td><td class="pl">☽ Moon</td><td class="pl">♂ Mars</td></tr></tbody></table></div>
+</div></section>
+
+<section id="angels"><div class="wrap cols">
+  <div class="reveal">
+    <div class="eyebrow">V · The angels of the days</div>
+    <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 16px">The seven planetary angels</h2>
+    <div class="prose">
+      <p>Late medieval and Renaissance ritual texts attached an angel to each planet, and so to each day. The best-known list is in the <i>Heptameron</i>, a short handbook falsely attributed to the thirteenth-century physician Peter of Abano and first printed in 1559. It names a ruling angel for each weekday, and it tells the operator to work on the day, and in the hour, of the planet concerned.</p>
+    </div>
+    <div class="tablewrap">
+      <table class="data">
+        <thead><tr><th scope="col">Day</th><th scope="col">Planet</th><th scope="col">Angel of the day (Heptameron)</th></tr></thead>
+        <tbody>
+          <tr><td>Sunday</td><td class="pl">☉ Sun</td><td>Michael</td></tr>
+          <tr><td>Monday</td><td class="pl">☽ Moon</td><td>Gabriel</td></tr>
+          <tr><td>Tuesday</td><td class="pl">♂ Mars</td><td>Samael</td></tr>
+          <tr><td>Wednesday</td><td class="pl">☿ Mercury</td><td>Raphael</td></tr>
+          <tr><td>Thursday</td><td class="pl">♃ Jupiter</td><td>Sachiel</td></tr>
+          <tr><td>Friday</td><td class="pl">♀ Venus</td><td>Anael</td></tr>
+          <tr><td>Saturday</td><td class="pl">♄ Saturn</td><td>Cassiel</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="prose">
+      <h3><span class="ph-tag tr">Tradition</span>How the grimoires used the hours</h3>
+      <p>The planetary hour was a door in time. The Arabic <i>Ghāyat al-Ḥakīm</i>, known in Latin as the <i>Picatrix</i>, tells the maker of a talisman to begin on the planet’s day and in its hour, with the planet strong in the sky. The <i>Heptameron</i> arranges its conjurations by weekday and hour. The <i>Ars Paulina</i>, the third book of the seventeenth-century <i>Lemegeton</i>, goes further and gives a ruling angel to each of the twenty-four hours. The Archive traces these texts in more detail in <a href="/archive.html#astral">Astral Magic &amp; the Planetary Hours</a> and <a href="/archive.html#angels">The Orders of Angels</a>.</p>
+      <h3><span class="ph-tag ev">Evidence</span> and <span class="ph-tag mo">Modern</span> What can and cannot be said</h3>
+      <p>The history of the system is well documented: the Chaldean order, the unequal hours, the derivation of the week and the rules the grimoires give are all in the sources. Whether a planetary hour has any effect on events is a different kind of claim, a matter of religious and magical belief rather than of evidence, and no scientific study supports it. Modern practitioners use the hours as a devotional calendar or a way of structuring attention. Discovery Science apps compute the hours exactly and present the traditions as the texts give them; the binaural sound used in several of the apps is a modern addition, not part of the historical rites.</p>
+    </div>
+  </div>
+  <aside class="reveal"><div class="ledger">
+    <h4>Sources</h4>
+    <ol class="fine" style="padding-left:18px;margin:0">
+      <li>Cassius Dio, <i>Roman History</i>, Book 37, ch. 18–19. Trans. E. Cary, Loeb Classical Library, 1914.</li>
+      <li>Attrell, D. &amp; Porreca, D., trans. <i>Picatrix: A Medieval Treatise on Astral Magic</i>. Penn State University Press, 2019.</li>
+      <li>Pingree, D., ed. <i>Picatrix: The Latin Version of the Ghāyat al-Ḥakīm</i>. Warburg Institute, 1986.</li>
+      <li>Peterson, J. H., ed. <i>The Lesser Key of Solomon: Lemegeton Clavicula Salomonis</i>. Weiser, 2001.</li>
+      <li>Agrippa, H. C. <i>De occulta philosophia libri tres</i>, ed. V. Perrone Compagni. Brill, 1992.</li>
+      <li>Zerubavel, E. <i>The Seven Day Circle: The History and Meaning of the Week</i>. Free Press, 1985.</li>
+      <li>Dohrn-van Rossum, G. <i>History of the Hour: Clocks and Modern Temporal Orders</i>. University of Chicago Press, 1996.</li>
+    </ol>
+  </div></aside>
+</div></section>
+
+<section id="apps"><div class="wrap">
+  <div class="eyebrow">VI · In the collection</div>
+  <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 16px">Apps that keep the planetary hours</h2>
+  <div class="apps-grid">
+    <div class="card"><h3>Ars Astrorum</h3><p>A planetary hours calculator that divides your local day and night into the unequal hours of the Chaldean order.</p><a class="btn ghost small" href="/app/ars-astrorum.html">About the app</a></div>
+    <div class="card"><h3>Celestial Above</h3><p>Calculates the hour from your sunrise and sunset and points you to the planet’s real position in the sky.</p><a class="btn ghost small" href="/app/celestial-above.html">About the app</a></div>
+    <div class="card"><h3>Celestial Veil</h3><p>A live star map of your own sky with the planetary hours and the Heptameron angels laid over it as marked layers.</p><a class="btn ghost small" href="/app/celestial-veil.html">About the app</a></div>
+    <div class="card"><h3>Planetary Attunement</h3><p>Calculated planetary hours for your location, seven reflective practices and clearly labelled history.</p><a class="btn ghost small" href="/planetary-attunement.html">About the app</a></div>
+    <div class="card"><h3>Angelarium</h3><p>Tells you which angel governs the present planetary hour, with its name, seal and the Heptameron’s order of address.</p><a class="btn ghost small" href="/app/angelarium.html">About the app</a></div>
+    <div class="card"><h3>The Seven Angels</h3><p>Seven apps for the angels of the days, Michael to Cassiel, each with home-screen widgets for its planetary hour.</p><a class="btn ghost small" href="/seven-angels.html">See the seven</a></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap" style="max-width:860px">
+  <div class="eyebrow">VII · Questions</div>
+  <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 6px">Planetary hours: common questions</h2>
+  <dl class="faq"><dt>What are planetary hours?</dt><dd>Planetary hours divide the daylight into twelve equal parts and the night into twelve more, and assign each part to one of the seven classical planets in the Chaldean order: Saturn, Jupiter, Mars, the Sun, Venus, Mercury and the Moon.</dd><dt>Is a planetary hour sixty minutes long?</dt><dd>Only around the equinoxes. A day-hour is one twelfth of the time from sunrise to sunset and a night-hour one twelfth of the time from sunset to the next sunrise, so in summer day-hours are long and night-hours short, and in winter the reverse.</dd><dt>Which planet rules the first hour of the day?</dt><dd>The planet that names the weekday: the Sun on Sunday, the Moon on Monday, Mars on Tuesday, Mercury on Wednesday, Jupiter on Thursday, Venus on Friday and Saturn on Saturday. The planetary day begins at sunrise.</dd><dt>Why do planetary hour calculators give slightly different times?</dt><dd>Because they define sunrise differently, for example by the upper edge or the centre of the Sun, with or without refraction. Every boundary of the day moves with that choice, usually by a minute or two.</dd><dt>Do planetary hours work near the North or South Pole?</dt><dd>Not in the traditional form. When the Sun does not rise or does not set there is no daylight or night to divide into twelve, so the hours cannot be calculated.</dd><dt>Is there scientific evidence that planetary hours affect events?</dt><dd>No. The history of the system is well documented, but its effects are a matter of religious and magical tradition, not of scientific evidence. Many people today use the hours as a devotional calendar or a way to structure attention.</dd></dl>
+</div></section>
+
+<div id="footer"></div>
+<script src="/assets/site.js"></script>
+<script src="/assets/planetary-hours.js" defer></script>
+<script src="/assets/track.js" defer></script>
+</body>
+</html>

@@ -3,12 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ORACLE — Discovery Science</title>
+<title>ORACLE App: Daily and Hourly Readings | Discovery Science</title>
 <meta name="description" content="ORACLE: tarot, I Ching, runes and five more traditions. One reading for the day, twenty-four reflections for the hours, live on your home screen.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="canonical" href="https://www.discovery-science.com/oracle.html">
+<meta property="og:url" content="https://www.discovery-science.com/oracle.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Discovery Science">
+<meta property="og:title" content="ORACLE App: Daily and Hourly Readings">
+<meta property="og:description" content="ORACLE: tarot, I Ching, runes and five more traditions. One reading for the day, twenty-four reflections for the hours, live on your home screen.">
+<meta name="twitter:card" content="summary">
 </head>
 <body data-page="oracle">
 <canvas id="sky"></canvas>
@@ -121,5 +128,6 @@
 (function(){var a=window.DS_APPS.filter(function(x){return x.id==='com.discoveryscience.oracle'})[0];if(!a)return;
 document.getElementById('phones').innerHTML=a.shots.slice(0,3).map(function(s,i){return '<div class="phone"><img data-zoom src="'+window.DS_IMG(s,'h900')+'" data-full="'+window.DS_IMG(s,'h1600')+'" alt="ORACLE screenshot '+(i+1)+'"></div>'}).join('');})();
 </script>
+<script src="/assets/track.js" defer></script>
 </body>
 </html>

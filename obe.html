@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OBE Induction — Discovery Science</title>
-<meta name="description" content="OBE Induction: an out-of-body induction ritual for Android. Twelve guided protocols, a staged three-threshold binaural progression, ceremonial hours computed from your own sky, experience markers, and a Live EEG edition that records what happened.">
-<meta property="og:title" content="OBE Induction — an out-of-body induction ritual">
+<title>OBE Induction App: Guided Out-of-Body Ritual | Discovery Science</title>
+<meta name="description" content="OBE Induction for Android: twelve guided protocols, a staged three-threshold binaural progression, ceremonial hours from your own sky and experience markers.">
+<meta property="og:title" content="OBE Induction App: Guided Out-of-Body Ritual">
 <meta property="og:url" content="https://www.discovery-science.com/obe.html">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +40,11 @@
 @media(max-width:960px){.arc{grid-template-columns:repeat(3,minmax(0,1fr))}.protos{grid-template-columns:repeat(2,minmax(0,1fr))}.markers{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.arc,.protos,.sheets{grid-template-columns:minmax(0,1fr)}.markers{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
+<link rel="canonical" href="https://www.discovery-science.com/obe.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Discovery Science">
+<meta property="og:description" content="OBE Induction for Android: twelve guided protocols, a staged three-threshold binaural progression, ceremonial hours from your own sky and experience markers.">
+<meta name="twitter:card" content="summary">
 </head>
 <body data-page="obe">
 <canvas id="sky"></canvas>
@@ -270,5 +275,6 @@ var P=[
 document.getElementById('protos').innerHTML=P.map(function(p,i){return '<div class="card proto reveal"'+(i===0?' style="border-color:rgba(212,174,98,.5)"':'')+'><div class="eyebrow">'+(i<9?'0':'')+(i+1)+' · '+p[3]+'</div><h3>'+p[0]+'</h3><p class="muted">'+p[1]+'</p><div class="st">'+p[2].map(function(s){return '<span>'+s+'</span>'}).join('')+'</div></div>'}).join('');
 window.__reveal&&window.__reveal();})();
 </script>
+<script src="/assets/track.js" defer></script>
 </body>
 </html>

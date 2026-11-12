@@ -30,6 +30,11 @@
 @media(max-width:960px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.pgrid{grid-template-columns:minmax(0,1fr)}.stat div{font-size:36px}}
 </style>
+<link rel="canonical" href="https://www.discovery-science.com/google-play.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Discovery Science">
+<meta property="og:description" content="Every Discovery Science app available now on Google Play: 57 apps of ceremonial magic, ancient gods, Kabbalah, astrology and divination, temple rites and contemplative paths.">
+<meta name="twitter:card" content="summary">
 </head>
 <body data-page="play">
 <canvas id="sky"></canvas>
@@ -62,5 +67,6 @@ document.getElementById('chips').innerHTML=CAT.map(function(g){return '<a href="
 document.getElementById('halls').innerHTML=CAT.map(function(g){return '<section class="hall-sec" id="'+g[0]+'"><div class="wrap"><div class="sec-head reveal"><div class="eyebrow">Hall '+g[1]+' · '+g[4].length+' apps</div><h2>'+e(g[2])+'</h2><p>'+e(g[3])+'</p></div><div class="pgrid">'+g[4].map(function(a){return '<article class="pcard reveal" id="'+a[1].replace(/\./g,'-')+'"><div class="pg">'+Y[g[0]]+'</div><h3>'+e(a[0])+'</h3><p>'+e(a[2])+'</p><a class="btn gold small" href="'+P+a[1]+'" target="_blank" rel="noopener" aria-label="Get '+e(a[0])+' on Google Play">Get it on Google Play →</a></article>'}).join('')+'</div></div></section>'}).join('');})();
 </script>
 <script src="/assets/site.js"></script>
+<script src="/assets/track.js" defer></script>
 </body>
 </html>
