@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Archive — Discovery Science</title>
+<meta name="description" content="The Discovery Science Archive: how the rites behind our apps actually operated, from the Greek Magical Papyri and the Hekhalot palaces to John Dee, the Goetia, the Picatrix, Egypt, Babylon, the North and the Valley of Mexico. Primary sources and scholarship for every tradition.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body data-page="archive">
+<canvas id="sky"></canvas>
+<style>
+.dsn{position:sticky;top:0;z-index:50;background:rgba(6,9,15,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,174,98,.14);box-shadow:0 1px 0 rgba(169,155,216,.38)}
+.dsn .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:62px}
+.dsn .brand{font-family:var(--serif,"Cormorant Garamond",serif);font-size:21px;color:#ece6d6;text-decoration:none;letter-spacing:.01em}
+.dsn ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+.dsn ul a{text-decoration:none;font:500 11px "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:#aaa79d;white-space:nowrap}
+.dsn ul a:hover,.dsn ul a.on{color:#c9a75d}
+@media(max-width:760px){.dsn ul{display:none}}
+.dsf{padding:48px 0 40px;border-top:1px solid rgba(212,174,98,.22);box-shadow:inset 0 1px 0 rgba(169,155,216,.38);margin-top:40px;font-size:14px}
+.dsf .wrap>div{display:flex;flex-wrap:wrap;column-gap:20px;row-gap:6px;margin-bottom:12px}
+.dsf a{color:#aaa79d;text-decoration:none}.dsf .soc a{color:#c9a75d}.dsf a:hover{color:#e2c98c}.dsf .cr{color:#6e7180}
+.toc a span{color:#a99bd8}
+</style>
+<nav class="dsn"><div class="wrap"><a class="brand" href="/">Discovery Science</a><ul><li><a href="/#apps">The Apps</a></li><li><a href="/seven-angels.html">Seven Angels</a></li><li><a href="/new.html">All Apps</a></li><li><a href="/shop.html">Shop</a></li><li><a href="/library.html">Library</a></li><li><a href="/archive.html" class="on">Archive</a></li></ul></div></nav>
+
+<header style="padding:90px 0 40px"><div class="wrap">
+  <div class="folio">The Archive · Folio III</div>
+  <h1 style="font-size:clamp(48px,8vw,104px);margin:16px 0 20px;line-height:.98">How the rites<br><em style="color:var(--gold2);font-weight:500">actually worked</em></h1>
+  <p class="lede">Every Discovery Science app begins here, with the texts. This archive records what the sources say practitioners did, in what order, and when, and it keeps a clear line between what the record shows and what anyone claimed the rites achieved. Where scholars disagree, the disagreement is stated.</p>
+  <div class="note" style="max-width:760px">Each chapter gives an overview, the ritual sequence as the sources describe it, a ledger of key data, and the primary texts and scholarship behind it. Dates are BCE/CE.</div>
+  <div class="toc" style="margin-top:36px">
+    <a href="#greek"><span>I</span>Greek Gods &amp; the Magical Papyri</a>
+    <a href="#hekhalot"><span>II</span>Hekhalot &amp; the Merkavah</a>
+    <a href="#enochian"><span>III</span>John Dee &amp; the Enochian Calls</a>
+    <a href="#solomonic"><span>IV</span>Solomon &amp; the Goetia</a>
+    <a href="#astral"><span>V</span>Astral Magic &amp; the Planetary Hours</a>
+    <a href="#angels"><span>VI</span>The Orders of Angels</a>
+    <a href="#jinn"><span>VII</span>The Jinn &amp; the Science of Letters</a>
+    <a href="#egypt"><span>VIII</span>Egypt: Heka &amp; the Temple</a>
+    <a href="#mesopotamia"><span>IX</span>Sumer, Akkad &amp; the Anunnaki</a>
+    <a href="#norse"><span>X</span>The North: Blót, Seiðr &amp; Runes</a>
+    <a href="#mexica"><span>XI</span>The Mexica &amp; the New Fire</a>
+    <a href="#hermetic"><span>XII</span>Hermes, Alchemy &amp; True Will</a>
+    <a href="#oracle"><span>XIII</span>Tarot, the I Ching &amp; the Hours</a>
+    <a href="#voynich"><span>XIV</span>The Voynich Manuscript</a>
+    <a href="#paths"><span>XV</span>The Contemplative Lineages</a>
+    <a href="#methods"><span>XVI</span>The Six Angelic Methods</a>
+    <a href="#threshold"><span>XVII</span>Theta: the Science of the Threshold</a>
+    <a href="#methods"><span>XVI</span>The Six Angelic Methods</a>
+    <a href="#threshold"><span>XVII</span>Theta: the Science of the Threshold</a>
+  </div>
+</div></header>
+
+<main><div class="wrap">
+
+<!-- I GREEK -->
+<article class="chapter" id="greek">
+  <div class="chapter-head reveal"><div class="num">I</div><div><div class="eyebrow">Greece &amp; Graeco-Roman Egypt · c. 700 BCE – 500 CE</div><h2>The Greek Gods &amp; the Magical Papyri</h2><div class="sub">Invocation, reminder, request: the grammar of a prayer that expects an answer</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>Greek religion had no scripture and no creed. It was a set of practices, sacrifice, libation, procession and above all prayer, performed at altars that usually stood in the open before the temple. Two great hymn collections preserve its language of address. The thirty-three Homeric Hymns, the longer ones archaic, are narrative praise poems. The eighty-seven Orphic Hymns, composed in Asia Minor around the middle of the third century CE, are shorter and more liturgical: most carry a heading naming an offering, usually an incense, and run through chains of the god’s epithets before asking for health or peace for the initiates.</p>
+      <p>Scholars describe the formal prayer in three movements. The <b>invocation</b> names the god precisely, by name, epithet, parentage and favoured sanctuaries, because a god misnamed may not hear. The <b>argument</b>, the <i>hypomnesis</i> or “reminder,” recalls offerings made or favours received. Then comes the <b>request</b>. Its logic is reciprocal, classified in Latin as <i>do ut des</i>, “I give that you may give,” and <i>da quia dedi</i>, “give, because I have given.” The prayer of the priest Chryses to Apollo in the first book of the <i>Iliad</i> is the textbook case.</p>
+      <p>The Greek Magical Papyri carry this grammar into the workshop. They are a modern collection of Graeco-Egyptian ritual handbooks dating from the second century BCE to the fifth century CE, many bilingual with Demotic, and much of the core comes from the so-called Theban Magical Library, dispersed through the dealer Giovanni Anastasi to Leiden in 1828, Stockholm in 1832, London in 1839 and Paris in 1857. They keep the hymn’s structure and add Egyptian priestly technique: secret names, drawn signs, timing by moon and hour, and strict rules of purity. The Great Magical Papyrus of Paris contains the text known as the “Mithras Liturgy,” an ascent through the heavens to a face-to-face meeting with the god.</p>
+      <h3>How the rite operated</h3>
+      <p style="margin-bottom:8px" class="muted"><i>A. The household or civic offering</i></p>
+      <ol class="rite">
+        <li><b>Purification.</b> Hands are washed in lustral water; a brand dipped in it may sprinkle altar and worshippers.</li>
+        <li><b>Preparation.</b> Barley grains go into a basket with the knife hidden beneath; the victim is led to the altar, ideally consenting.</li>
+        <li><b>Holy silence and invocation.</b> A herald calls for <i>euphēmia</i>; with raised hands the officiant names the god, epithets and cult places.</li>
+        <li><b>Hypomnesis.</b> Past offerings and past favours are recalled.</li>
+        <li><b>Request.</b> One clear petition.</li>
+        <li><b>Sacrifice.</b> Barley is thrown, hairs from the victim burned, the women raise the <i>ololygē</i>; the thigh-bones wrapped in fat burn for the god and the people share the meat.</li>
+        <li><b>Libation.</b> Wine, or for the powers below honey, milk or water, poured as a measured <i>spondē</i> or a full <i>choē</i>.</li>
+      </ol>
+      <p style="margin:18px 0 8px" class="muted"><i>B. A rite of the Magical Papyri (generalised)</i></p>
+      <ol class="rite">
+        <li><b>Election of the day.</b> A lunar phase, weekday or hour; some rites begin at sunrise.</li>
+        <li><b>Purity.</b> Days of sexual abstinence and avoidance of certain foods; bathing; clean linen.</li>
+        <li><b>Materials.</b> Specified inks, papyrus, an uncoloured lamp, frankincense or myrrh, sometimes a metal lamella or figurine.</li>
+        <li><b>Inscription.</b> Signs (<i>charaktêres</i>), vowel sequences and name-formulas, sometimes shaped as wings or hearts.</li>
+        <li><b>Invocation.</b> A hymnic prayer, names, epithets, reminder (“for I know your names”), request, woven with sacred words such as <i>ablanathanalba</i>.</li>
+        <li><b>Offering.</b> Incense; libations of wine, milk or honey.</li>
+        <li><b>The encounter.</b> A vision, a dream oracle, a lamp divination or the gaining of a spirit assistant, depending on the recipe.</li>
+        <li><b>Dismissal.</b> A formula of release, and a protective amulet worn during and after.</li>
+      </ol>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Magical Papyri</dt><dd>2nd c. BCE – 5th c. CE (Betz)</dd>
+        <dt>Orphic Hymns</dt><dd>87 hymns, Asia Minor, mid-3rd c. CE</dd>
+        <dt>Homeric Hymns</dt><dd>33 hymns; the longest archaic</dd>
+        <dt>Mithras Liturgy</dt><dd>PGM IV.475–829, Great Magical Papyrus of Paris</dd>
+        <dt>Standard edition</dt><dd>Preisendanz, <i>Papyri Graecae Magicae</i>, 1928–31</dd>
+        <dt>Prayer structure</dt><dd>Invocation · hypomnesis · request</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Betz, H. D., ed. <i>The Greek Magical Papyri in Translation</i>. 2nd ed. Chicago, 1992.</li>
+        <li>Athanassakis, A. N. &amp; Wolkow, B. M., trans. <i>The Orphic Hymns</i>. Johns Hopkins, 2013.</li>
+        <li>Homer, <i>Iliad</i> 1.37–42.</li>
+        <li>Pulleyn, S. <i>Prayer in Greek Religion</i>. Oxford, 1997.</li>
+        <li>Burkert, W. <i>Greek Religion</i>. Harvard, 1985.</li>
+        <li>Graf, F. <i>Magic in the Ancient World</i>. Harvard, 1997.</li>
+        <li>Dieleman, J. <i>Priests, Tongues, and Rites</i>. Brill, 2005.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/greek-gods.html">Greek Gods</a><a href="/app/oracle.html">ORACLE</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- II HEKHALOT -->
+<article class="chapter" id="hekhalot">
+  <div class="chapter-head reveal"><div class="num">II</div><div><div class="eyebrow">Palestine &amp; Babylonia · c. 3rd – 9th c. CE</div><h2>Hekhalot &amp; the Merkavah</h2><div class="sub">The descenders to the Chariot, the seven palaces, and the Throne of Ezekiel’s vision</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>The root text is the first chapter of Ezekiel: a storm from the north, four living creatures, wheels full of eyes, a firmament like crystal, and above it a throne bearing “the appearance of the likeness of the glory of the Lord.” The rabbis fenced it off. The Mishnah, <i>Ḥagigah</i> 2:1, forbids expounding the “work of the Chariot” even to a single student unless he is wise and understands of his own knowledge.</p>
+      <p>The Hekhalot, “palaces,” are a body of Hebrew and Aramaic writings in which famous rabbis of the first and second centuries, above all Rabbi Ishmael, Rabbi Akiva and Rabbi Neḥuniah ben ha-Qanah, pass through seven heavenly palaces to behold the enthroned King and join the liturgy of the angels. Other passages bind an angelic Prince of Torah, the <i>Sar Torah</i>, to grant perfect memory of learning. Practitioners are called <i>yordei merkavah</i>, the “descenders to the Chariot”; why the texts speak of descent rather than ascent is still debated.</p>
+      <p>Modern scholarship has moved through three readings. Gershom Scholem saw a mysticism of heavenly ascent reaching back to early rabbinic Palestine. Peter Schäfer, editing the manuscripts side by side in his <i>Synopse</i> of 1981, showed the texts to be fluid “macroforms” with late redaction in Babylonia and an emphasis on liturgy and adjuration rather than mystical union. James Davila compared the descenders to the ritual specialists, even shamans, of their region, and read the rites as real techniques for inducing altered states. The Posen Library dates its excerpts of <i>Hekhalot Rabbati</i> to the sixth to eighth centuries.</p>
+      <h3>How the descent operated</h3>
+      <p class="muted" style="margin-bottom:8px"><i>A composite from Hekhalot Rabbati, Hekhalot Zutarti, the Sar Torah material and Hai Gaon’s description; the texts differ among themselves.</i></p>
+      <ol class="rite">
+        <li><b>Qualification.</b> The practitioner must be learned in Torah and observant; tradition adds marks of worthiness and character.</li>
+        <li><b>Purification.</b> Set periods of fasting and abstinence, ritual immersion, and avoidance of impurity.</li>
+        <li><b>Posture.</b> Hai Gaon, head of the academy at Pumbedita (d. 1038), describes the adept sitting “with the head between the knees,” as Elijah did on Carmel, whispering hymns and praises.</li>
+        <li><b>The hymns.</b> Recitation of the songs the texts place in the mouths of the living creatures and the Throne itself, dense with chains of divine names.</li>
+        <li><b>The seven palaces.</b> At each gate the descender shows <b>seals</b>, divine and angelic names, to the <b>gatekeepers</b> stationed to the right and left of the door.</li>
+        <li><b>The test of the sixth palace.</b> In <i>Hekhalot Rabbati</i> the descender must not mistake the shining marble for water; whoever asks “what is this water?” is struck down. The Talmud’s story of the four who entered the Orchard (b. <i>Ḥagigah</i> 14b) carries the same warning.</li>
+        <li><b>Before the Throne.</b> The descender beholds the King in his beauty and joins the angelic praise; some texts reveal the measures of the divine form.</li>
+        <li><b>Return.</b> Prayers “to descend in peace and ascend in peace.” Sar Torah rites close with knowledge that will not be forgotten.</li>
+      </ol>
+      <div class="note">Of the four sages who entered the Orchard, the Tosefta and Talmud record that Ben Azzai looked and died, Ben Zoma looked and was harmed, Elisha ben Abuyah “cut the shoots,” and only Rabbi Akiva entered in peace and went out in peace.</div>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Scriptural base</dt><dd>Ezekiel 1 and 10; also Isaiah 6, Daniel 7</dd>
+        <dt>Principal texts</dt><dd><i>Hekhalot Rabbati</i> · <i>Hekhalot Zutarti</i> · <i>Ma’aseh Merkavah</i> · <i>Merkavah Rabbah</i> · <i>3 Enoch</i> · the Sar Torah</dd>
+        <dt>3 Enoch</dt><dd>Enoch transformed into the angel Metatron</dd>
+        <dt>Manuscripts</dt><dd>Medieval Ashkenazi copies (Oxford, Munich, New York, Vatican, Budapest) and Cairo Genizah fragments</dd>
+        <dt>Best external witness</dt><dd>Responsum of Hai Gaon, d. 1038</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Schäfer, P., ed. <i>Synopse zur Hekhalot-Literatur</i>. Tübingen, 1981.</li>
+        <li>Davila, J. R., trans. <i>Hekhalot Literature in Translation</i>. Brill, 2013.</li>
+        <li>Alexander, P. S., trans. “3 Enoch,” in Charlesworth, <i>OT Pseudepigrapha</i> I, 1983.</li>
+        <li>Mishnah and Talmud, <i>Ḥagigah</i>.</li>
+        <li>Scholem, G. <i>Major Trends in Jewish Mysticism</i>, 1941.</li>
+        <li>Schäfer, P. <i>The Origins of Jewish Mysticism</i>. Princeton, 2011.</li>
+        <li>Davila, J. R. <i>Descenders to the Chariot</i>. Brill, 2001.</li>
+        <li>Swartz, M. D. <i>Scholastic Magic</i>. Princeton, 1996.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/hekhalot-the-seven-palaces.html">Hekhalot: The Seven Palaces</a><a href="/new.html#lightbody">LightBody</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- III ENOCHIAN -->
+<article class="chapter" id="enochian">
+  <div class="chapter-head reveal"><div class="num">III</div><div><div class="eyebrow">England, Kraków &amp; Bohemia · 1581 – 1589</div><h2>John Dee &amp; the Enochian Calls</h2><div class="sub">A mathematician, a scryer, a shew-stone, and the language of angels</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>John Dee (1527–1608/9) was a mathematician, astrologer, antiquary and adviser at the Elizabethan court. In the early 1580s, having exhausted what books could tell him, he turned to “actions” with angels through a scryer. After an early session with Barnabas Saul in December 1581, his principal seer from March 1582 was Edward Kelley. Kelley gazed into a shew-stone while Dee prayed, asked questions and recorded everything.</p>
+      <p>Over the following years the sessions produced a whole sacred apparatus: a Holy Table and the great wax <i>Sigillum Dei Aemeth</i>; a book of letter-tables, <i>Liber Loagaeth</i>; an alphabet; the angelic Calls or Keys; a Great Table of four quarters that later occultists called the Watchtowers; and a map of thirty Aethyrs with their ninety-one governors. The work moved from England to Kraków and Prague and to Třeboň in Bohemia. The partnership broke down in 1587–88, after the angels commanded the two men to share their wives, and Dee returned to England in 1589.</p>
+      <p>Dee’s papers had a strange afterlife. In 1659 Meric Casaubon printed the later diaries as evidence of diabolical delusion; the earlier books surfaced in a chest bought by a confectioner, passed to Elias Ashmole and are now among the Sloane manuscripts of the British Library. The Hermetic Order of the Golden Dawn and then Aleister Crowley reorganised the material into “Enochian magic”; Crowley’s visions of the thirty Aethyrs were published as <i>The Vision and the Voice</i> in 1911.</p>
+      <h3>How an action operated</h3>
+      <ol class="rite">
+        <li><b>The place.</b> Dee’s oratory held the Holy Table, painted to the angels’ design and standing on four wax seals, with the Sigillum Dei at its centre under silk and the shew-stone above.</li>
+        <li><b>Prayer.</b> Long prayers to God, several surviving in Dee’s hand, asking for wisdom through his angels.</li>
+        <li><b>Scrying.</b> Kelley looked into the stone; figures appeared, spoke and often pointed to letters on tables.</li>
+        <li><b>Record.</b> Dee wrote down questions, answers and visions as they happened, with date and time.</li>
+        <li><b>Dictation.</b> The Calls were dictated letter by letter, often in reverse, because the angels said the words were too potent to be spoken straight through during transmission. Translations followed separately.</li>
+        <li><b>Use of the Calls.</b> Spoken in the angelic language to open the quarters of the Great Table or call the governors of the Aethyrs; in later Golden Dawn and Crowleyan practice, to travel through the Aethyrs in vision.</li>
+        <li><b>Closing.</b> A prayer of thanksgiving.</li>
+      </ol>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Sloane MS 3188</dt><dd>Dee’s record of the conferences from 22 December 1581 to May 1583 (<i>Mysteriorum Libri Quinque</i>)</dd>
+        <dt>Sloane MS 3191</dt><dd>The <i>48 Claves Angelicae</i> and related works</dd>
+        <dt>The Calls</dt><dd>Conventionally 18 Calls plus the Call of the Aethyrs, spoken 30 times with the names of the Aethyrs, LIL to TEX</dd>
+        <dt>Alphabet</dt><dd>21 letters, written right to left</dd>
+        <dt>Governors</dt><dd>91, distributed across the 30 Aethyrs</dd>
+        <dt>Casaubon</dt><dd><i>A True &amp; Faithful Relation</i>, London, 1659</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Casaubon, M., ed. <i>A True &amp; Faithful Relation</i>. London, 1659.</li>
+        <li>Peterson, J. H., ed. <i>John Dee’s Five Books of Mystery</i>. Weiser, 2003.</li>
+        <li>Crowley, A. <i>The Vision and the Voice</i>. <i>The Equinox</i> I.5, 1911.</li>
+        <li>Harkness, D. E. <i>John Dee’s Conversations with Angels</i>. Cambridge, 1999.</li>
+        <li>Asprem, E. <i>Arguing with Angels</i>. SUNY, 2012.</li>
+        <li>Clulee, N. H. <i>John Dee’s Natural Philosophy</i>. Routledge, 1988.</li>
+        <li>Szőnyi, G. E. <i>John Dee’s Occultism</i>. SUNY, 2004.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/enochian-calls.html">Enochian Calls</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- IV SOLOMONIC -->
+<article class="chapter" id="solomonic">
+  <div class="chapter-head reveal"><div class="num">IV</div><div><div class="eyebrow">Late antiquity to 1904</div><h2>Solomon &amp; the Goetia</h2><div class="sub">The ring, the circle, the triangle and the license to depart</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>Solomon’s reputation as master of spirits rests on his proverbial wisdom in 1 Kings, on Josephus, who describes an exorcist using a ring and a root “prescribed by Solomon,” and above all on the Greek <i>Testament of Solomon</i>, dated variously between the first and fifth centuries CE. There the archangel Michael brings Solomon a ring; with it he interrogates demon after demon, each confessing its name, its harm and the angel who defeats it, and sets them to build the Temple.</p>
+      <p>The grimoires grew from that pattern. The <i>Key of Solomon</i>, with Greek ancestors in the <i>Hygromanteia</i> and Latin and Italian forms from the fifteenth and sixteenth centuries, concerns consecrated tools, pentacles, timing and the circle. The <i>Lemegeton</i>, or <i>Lesser Key of Solomon</i>, is a seventeenth-century compilation in five parts whose first book, the <i>Ars Goetia</i>, lists seventy-two spirits with their ranks, seals, appearances and offices. Its catalogue stands close to Johann Weyer’s <i>Pseudomonarchia Daemonum</i>, printed in 1577 as an appendix to <i>De praestigiis daemonum</i>, which Weyer published partly to expose such books, and which Reginald Scot carried into English in 1584. In 1904 Crowley published S. L. MacGregor Mathers’s English <i>Goetia</i>, bringing the system into modern occultism.</p>
+      <h3>How the operation ran</h3>
+      <ol class="rite">
+        <li><b>The operator.</b> Days of abstinence, prayer and confession; clean white garments; timing by planetary day and hour and by the moon.</li>
+        <li><b>The instruments.</b> Wand or sceptre, the spirit’s seal on the metal proper to its rank, the Pentagram and Hexagram of Solomon, the ring and the brass vessel.</li>
+        <li><b>The circle.</b> A double circle about nine feet across inscribed with divine and angelic names, lamps at set points. The operator stands within and does not leave.</li>
+        <li><b>The Triangle of Art.</b> Drawn outside the circle with names on its sides: the place where the spirit is to appear.</li>
+        <li><b>Conjuration.</b> The spirit is called by name and commanded through the divine names to appear in fair human shape without harm; if it does not come, further conjurations and an invocation of its king follow.</li>
+        <li><b>Constraint.</b> If it resists, the “Spirits’ Chain” curse and the burning of its seal.</li>
+        <li><b>Charge.</b> The seal is shown, an oath taken and the commission given.</li>
+        <li><b>License to depart.</b> A formula dismissing the spirit peaceably, “without injury to man or beast.” The operator remains in the circle until it has gone.</li>
+      </ol>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>The Lemegeton’s five books</dt><dd><i>Ars Goetia</i> (72 spirits) · <i>Theurgia-Goetia</i> · <i>Ars Paulina</i> · <i>Ars Almadel</i> · <i>Ars Notoria</i>, the oldest part, 12th–13th c.</dd>
+        <dt>Manuscripts</dt><dd>British Library Sloane MS 3825; Sloane 2731 (1687); also Sloane 3648, Harley 6483</dd>
+        <dt>Weyer, 1577</dt><dd>69 spirits listed, though the text speaks of 72</dd>
+        <dt>Goetia vs. Weyer</dt><dd>Adds Vassago, Seere, Dantalion, Andromalius; omits Pruflas</dd>
+        <dt>Mathers/Crowley</dt><dd>Boleskine, 1904</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Duling, D. C., trans. <i>Testament of Solomon</i>, in Charlesworth I, 1983.</li>
+        <li>Peterson, J. H., ed. <i>The Lesser Key of Solomon</i>. Weiser, 2001.</li>
+        <li>Weyer, J. <i>Pseudomonarchia Daemonum</i>. Basel, 1577.</li>
+        <li>Mathers &amp; Crowley. <i>The Book of the Goetia of Solomon the King</i>, 1904.</li>
+        <li>Davies, O. <i>Grimoires: A History of Magic Books</i>. Oxford, 2009.</li>
+        <li>Klaassen, F. <i>The Transformations of Magic</i>. Penn State, 2013.</li>
+        <li>Kieckhefer, R. <i>Forbidden Rites</i>. Penn State, 1997.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/solomonic.html">Solomonic</a><a href="/app/djin-invocation.html">Djin Invocation</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- V ASTRAL -->
+<article class="chapter" id="astral">
+  <div class="chapter-head reveal"><div class="num">V</div><div><div class="eyebrow">Al-Andalus to Renaissance Florence · 10th – 16th c.</div><h2>Astral Magic &amp; the Planetary Hours</h2><div class="sub">The Picatrix, the Heptameron, Agrippa and Ficino: capturing the influence of the stars</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>Astral magic rests on one idea: that the planets pour down influences, “spiritual powers,” and that the right material, image, word and moment can capture them. Its great compendium, the <i>Ghāyat al-Ḥakīm</i>, “The Goal of the Sage,” was compiled in Arabic in al-Andalus in the latter half of the tenth century from more than two hundred sources. It was translated into Castilian at the court of Alfonso X in the mid-thirteenth century, traditionally 1256, and soon after into Latin as <i>Picatrix</i>: talismans, planetary prayers, fumigations and the worship of the planets.</p>
+      <p>Latin Europe built a whole discipline of timing on it. The <i>Heptameron</i>, falsely attributed to Peter of Abano and first printed in 1559, arranges the conjuration of angels by weekday and hour. Agrippa’s <i>De occulta philosophia</i>, drafted in 1510 and printed complete at Cologne in 1533, systematised the correspondences, seals and magic squares. Marsilio Ficino’s <i>De vita coelitus comparanda</i> of 1489 offered a cautious Neoplatonic version: music, odours, colours and images that tune the soul to the heavens.</p>
+      <h3>Computing the planetary hours</h3>
+      <ol class="rite">
+        <li><b>The Chaldean order.</b> List the planets from slowest to fastest: Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon.</li>
+        <li><b>The day’s ruler.</b> The first hour after sunrise belongs to the planet of the day: Sun on Sunday, Moon on Monday, Mars on Tuesday, Mercury on Wednesday, Jupiter on Thursday, Venus on Friday, Saturn on Saturday.</li>
+        <li><b>Unequal hours.</b> Divide sunrise to sunset by twelve for the length of a day-hour, and sunset to sunrise by twelve for a night-hour. Summer day-hours are long; winter day-hours short.</li>
+        <li><b>Succession.</b> Each hour takes the next planet in the Chaldean order, cycling round.</li>
+        <li><b>The proof.</b> After twenty-four hours the sequence lands on the next day’s ruler, three places on, since 24 leaves a remainder of 3 when divided by 7. This is how the order of the planetary week arose.</li>
+      </ol>
+      <h3>Making a talisman, after the Picatrix</h3>
+      <ol class="rite">
+        <li><b>Election.</b> Choose a moment when the planet is strong, in its own sign or exaltation, angular and unafflicted, and begin in its day and hour.</li>
+        <li><b>Matter.</b> The planet’s own metal, stone and colour: for Saturn, lead and black.</li>
+        <li><b>Image.</b> Engrave the prescribed figure, a crowned king enthroned for Jupiter, with the planet’s names and characters.</li>
+        <li><b>Suffumigation.</b> Burn the planet’s compound incense.</li>
+        <li><b>Prayer.</b> Address the planet by its names in several languages, recite its powers, then make the request.</li>
+        <li><b>Keeping.</b> Wrap or carry the talisman and renew it at the proper times.</li>
+      </ol>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Ghāyat al-Ḥakīm</dt><dd>Latter half of the 10th c., from 200+ sources</dd>
+        <dt>Picatrix</dt><dd>Castilian and Latin, mid-13th c. under Alfonso X</dd>
+        <dt>Heptameron</dt><dd>First printed 1559; attribution to Peter of Abano spurious</dd>
+        <dt>Agrippa</dt><dd>Draft 1510; Book I 1531; complete 1533</dd>
+        <dt>Ficino</dt><dd><i>De vita libri tres</i>, Florence, 1489</dd>
+        <dt>Chaldean order</dt><dd>♄ ♃ ♂ ☉ ♀ ☿ ☽</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Attrell, D. &amp; Porreca, D., trans. <i>Picatrix</i>. Penn State, 2019.</li>
+        <li>Pingree, D., ed. <i>Picatrix: The Latin Version</i>. Warburg, 1986.</li>
+        <li>Agrippa, <i>De occulta philosophia</i>, ed. Perrone Compagni. Brill, 1992.</li>
+        <li>Ficino, <i>Three Books on Life</i>, ed. Kaske &amp; Clark, 1989.</li>
+        <li>Walker, D. P. <i>Spiritual and Demonic Magic from Ficino to Campanella</i>, 1958.</li>
+        <li>Saif, L. <i>The Arabic Influences on Early Modern Occult Philosophy</i>, 2015.</li>
+        <li>Perrone Compagni, V. “Agrippa,” <i>Stanford Encyclopedia of Philosophy</i>.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/ars-astrorum.html">Ars Astrorum</a><a href="/app/rites-of-magic.html">Rites of Magic</a><a href="/app/celestial-veil.html">Celestial Veil</a><a href="/app/celestial-above.html">Celestial Above</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- VI ANGELS -->
+<article class="chapter" id="angels">
+  <div class="chapter-head reveal"><div class="num">VI</div><div><div class="eyebrow">3rd c. BCE – 17th c. CE</div><h2>The Orders of Angels</h2><div class="sub">From the Watchers of Enoch to the nine choirs and the angels of the hours</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>The angels of the Hebrew Bible are mostly nameless “messengers”; only Daniel names Michael and Gabriel. The Second Temple period changed that. The <i>Book of the Watchers</i>, the first thirty-six chapters of <i>1 Enoch</i> and generally dated to the third century BCE, tells how two hundred Watchers descended on Mount Hermon, took human wives, fathered the giants and taught forbidden arts: metallurgy, cosmetics, spells, root-cutting and astrology. The archangels carry the cry of the earth before God, and a list of seven holy angels follows.</p>
+      <p>Christian theology systematised the heavens. Around 500 CE the anonymous author writing as Dionysius the Areopagite set out in <i>The Celestial Hierarchy</i> nine choirs in three triads, through which divine light descends. Aquinas and Dante inherited the scheme. Jewish esotericism developed the angelic names, above all the Shem ha-Mephorash, the seventy-two-fold Name drawn from Exodus 14:19–21, which Christian Kabbalah turned into seventy-two angels. The grimoires put the angels to work by the clock: the <i>Ars Paulina</i>, third book of the Lemegeton, assigns a ruling angel to each of the twenty-four hours and to each degree of the zodiac.</p>
+      <h3>An angelic operation, Ars Paulina type</h3>
+      <ol class="rite">
+        <li><b>The hour and its angel.</b> Compute the planetary hour and read its ruling angel.</li>
+        <li><b>Preparation.</b> Penitence, prayer, fasting, clean garments. The angels are to be prayed to, not compelled.</li>
+        <li><b>The table and seal.</b> A Table of Practice modelled on Dee’s Sigillum Dei, a crystal stone, the angel’s seal worn or held.</li>
+        <li><b>Invocation.</b> God through the divine names, then the angel by name and office, asking it to appear in the stone.</li>
+        <li><b>Converse.</b> Knowledge or help sought within the angel’s office.</li>
+        <li><b>Thanksgiving and dismissal.</b></li>
+      </ol>
+      <div class="note">Exodus 14:19, 20 and 21 each contain seventy-two Hebrew letters. Write verse 19 forward, verse 20 reversed beneath it, and verse 21 forward beneath that; reading down the columns yields seventy-two three-letter names, which with the suffix <i>-el</i> or <i>-yah</i> become the seventy-two angels.</div>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>The nine choirs</dt><dd>Seraphim, Cherubim, Thrones · Dominions, Virtues, Powers · Principalities, Archangels, Angels</dd>
+        <dt>1 Enoch</dt><dd>Aramaic fragments at Qumran; complete only in Ge’ez</dd>
+        <dt>Watchers</dt><dd>200, under Shemiḥazah, with ʿAsaʾel</dd>
+        <dt>Islam</dt><dd>Jibrīl, Mīkāʾīl, Isrāfīl, the angel of death, Munkar and Nakīr, Hārūt and Mārūt</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Pseudo-Dionysius, <i>Complete Works</i>, trans. Luibheid &amp; Rorem, 1987.</li>
+        <li>Nickelsburg, G. W. E. <i>1 Enoch 1</i>. Hermeneia, 2001.</li>
+        <li><i>Ars Paulina</i>, Lemegeton, Sloane MS 3825.</li>
+        <li>Reed, A. Y. <i>Fallen Angels and the History of Judaism and Christianity</i>, 2005.</li>
+        <li>Keck, D. <i>Angels and Angelology in the Middle Ages</i>, 1998.</li>
+        <li>Burge, S. R. <i>Angels in Islam</i>. Routledge, 2012.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/angelarium.html">Angelarium</a><a href="/app/rites-of-magic.html">Rites of Magic</a><a href="/app/celestial-veil.html">Celestial Veil</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- VII JINN -->
+<article class="chapter" id="jinn">
+  <div class="chapter-head reveal"><div class="num">VII</div><div><div class="eyebrow">Arabia to the Maghreb · 7th c. onward</div><h2>The Jinn &amp; the Science of Letters</h2><div class="sub">Smokeless fire, Solomon’s seal, and the magic square</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>Belief in jinn was widespread in pre-Islamic Arabia, where they were thought to inspire poets and soothsayers. The Qur’an gave them a theological place. They are made of smokeless fire, morally accountable like human beings, and some believed on hearing the Qur’an recited: Sūrat al-Jinn opens with a company of jinn marvelling at what they have heard. Iblīs “was of the jinn.” Solomon commanded jinn among his hosts; they laboured for him and did not know of his death until a worm gnawed through his staff.</p>
+      <p>Medieval Islam developed learned occult sciences around these ideas, chief among them <i>ʿilm al-ḥurūf</i>, the science of letters, whose premise is that the Arabic letters, their numerical values and the divine names form the structure of creation. The name most tied to it is Aḥmad al-Būnī, a Sufi of Ifrīqiya who died in the 1220s or early 1230s. The famous <i>Shams al-maʿārif al-kubrā</i> bears his name, but recent work by Noah Gardiner shows the common printed version to be an early modern compilation built around a core of his authentic writings. Beside the letters stands the <i>wafq</i>, the magic square whose rows, columns and diagonals share one sum.</p>
+      <h3>How a lettrist operation ran</h3>
+      <ol class="rite">
+        <li><b>Intention and Name.</b> Choose a divine Name suited to the purpose, such as al-Laṭīf, “the Subtle,” for ease.</li>
+        <li><b>Calculation.</b> Find the Name’s value by <i>abjad</i> and derive the related counts.</li>
+        <li><b>Timing.</b> An auspicious planetary day and hour and a suitable lunar mansion.</li>
+        <li><b>Retreat and purity.</b> Ablution, sometimes fasting or seclusion, and incense.</li>
+        <li><b>Recitation.</b> Repeat the Name a fixed number of times, often its numerical value.</li>
+        <li><b>The square.</b> Fill a 3×3, 4×4 or larger square from a computed starting value and write it at the chosen hour.</li>
+        <li><b>Use.</b> Carried as an amulet, buried, hung, or its ink dissolved in water.</li>
+        <li><b>Conclusion.</b> Blessings on the Prophet; in rites touching the jinn, a dismissal.</li>
+      </ol>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Qur’an</dt><dd>Sūra 72, al-Jinn, 28 verses; jinn of smokeless fire, 55:15; Solomon and the jinn, 27, 34, 38</dd>
+        <dt>Buduḥ</dt><dd>The 3×3 square of sum 15, whose corners 2-4-6-8 give the word <i>b-d-w-ḥ</i></dd>
+        <dt>Abjad</dt><dd>Letters valued 1–9, 10–90, 100–900, and 1000</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>The Qur’an, trans. Abdel Haleem. Oxford, 2004.</li>
+        <li>Gardiner, N. “Stars and Saints.” <i>Magic, Ritual, and Witchcraft</i> 12 (2017).</li>
+        <li>Saif, L., et al., eds. <i>Islamicate Occult Sciences in Theory and Practice</i>. Brill, 2020.</li>
+        <li>Coulon, J.-C. <i>La magie en terre d’islam au Moyen Âge</i>. CTHS, 2017.</li>
+        <li>“Jinni,” <i>Encyclopaedia Britannica</i>.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/djin-invocation.html">Djin Invocation</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- VIII EGYPT -->
+<article class="chapter" id="egypt">
+  <div class="chapter-head reveal"><div class="num">VIII</div><div><div class="eyebrow">Egypt · c. 2350 BCE – Ptolemaic period</div><h2>Egypt: Heka &amp; the Temple</h2><div class="sub">Waking the god, opening the mouth, and the stars that told the hours of night</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>Egyptian religion was a religion of temple and tomb, not of scripture. Ritual act, spoken formula and image kept the cosmos in order, <i>maat</i>. Every day, in the sanctuaries of the great temples, priests acting for the king woke the god’s cult statue, purified it, clothed it and fed it. The power behind these acts was <i>heka</i>, usually translated “magic.” It was no fringe practice: it was a creative force the gods themselves used, personified as a god of the same name, and Robert Ritner showed it to be a core element of official religion.</p>
+      <p>The mortuary literature is one continuous, changing tradition. The <b>Pyramid Texts</b> were carved in royal burial chambers from the end of the Fifth Dynasty, around 2350 BCE, first in the pyramid of Unas. The <b>Coffin Texts</b>, painted on Middle Kingdom coffins around 2000 BCE, opened similar spells to the elite. The <b>Book of the Dead</b>, the “spells for coming forth by day,” was compiled around the sixteenth century BCE; about two hundred chapters are known, though no single papyrus holds them all, and chapter 125 contains the weighing of the heart against the feather of Maat.</p>
+      <p>Time itself was ritual. From around 2000 BCE, diagonal star tables painted inside coffin lids divided the night into hours using thirty-six star groups, the <b>decans</b>, each rising in turn over ten-day weeks: a map of the night sky the dead would cross.</p>
+      <h3>The daily temple ritual</h3>
+      <p class="muted" style="margin-bottom:8px"><i>After the chapels of Sety I at Abydos and Papyrus Berlin 3055.</i></p>
+      <ol class="rite">
+        <li><b>Approach.</b> The officiant burns incense and purifies himself and the sanctuary.</li>
+        <li><b>Opening the shrine.</b> He breaks the clay seal, draws the bolt of the naos and “reveals the face of the god.”</li>
+        <li><b>Adoration.</b> Prostration and hymns of greeting to the awakened god.</li>
+        <li><b>Censing and anointing.</b> Incense again, and scented oils.</li>
+        <li><b>The offering of Maat.</b> A figurine of the goddess Maat, the whole cosmic order, is presented to the god.</li>
+        <li><b>The god’s toilet.</b> Old cloths removed, fresh linen of prescribed colours, green and black eye paint, unguents.</li>
+        <li><b>The meal.</b> Food offerings, afterwards “reverted” to the priests.</li>
+        <li><b>Withdrawal.</b> Natron and water scattered; the priest backs out sweeping away his footprints, and re-seals the shrine.</li>
+      </ol>
+      <div class="note">The Opening of the Mouth, which made a statue or mummy able to breathe, speak, eat and see, followed a parallel sequence. Eberhard Otto’s synthesis counts 75 episodes, including the touching of mouth and eyes with an adze and the forked <i>pesesh-kef</i>. The tomb-chapel of the vizier Rekhmira (c. 1425 BCE) preserves 51 of them.</div>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Pyramid Texts</dt><dd>From c. 2350 BCE, pyramid of Unas</dd>
+        <dt>Coffin Texts</dt><dd>c. 2000 BCE, Middle Kingdom</dd>
+        <dt>Book of the Dead</dt><dd>Compiled c. 16th c. BCE; named by Lepsius, 1842</dd>
+        <dt>Daily ritual sources</dt><dd>Sety I chapels, Abydos; Papyri Berlin 3014, 3053, 3055</dd>
+        <dt>Diagonal star tables</dt><dd>At least 27 known; 36 decans, 12 night hours</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Allen, J. P., trans. <i>The Ancient Egyptian Pyramid Texts</i>. SBL, 2005.</li>
+        <li>Faulkner, R. O., trans. <i>The Ancient Egyptian Coffin Texts</i>, 1973–78.</li>
+        <li>Faulkner, R. O., trans. <i>The Ancient Egyptian Book of the Dead</i>, 1985.</li>
+        <li>Ritner, R. K. <i>The Mechanics of Ancient Egyptian Magical Practice</i>. Chicago, 1993.</li>
+        <li>Otto, E. <i>Das ägyptische Mundöffnungsritual</i>, 1960.</li>
+        <li>Neugebauer, O. &amp; Parker, R. A. <i>Egyptian Astronomical Texts</i>, 1960–69.</li>
+        <li>UCL, <i>Digital Egypt for Universities</i>: daily cult.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/egyptian-gods.html">Egyptian Gods</a><a href="/app/celestial-veil.html">Celestial Veil</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- IX MESOPOTAMIA -->
+<article class="chapter" id="mesopotamia">
+  <div class="chapter-head reveal"><div class="num">IX</div><div><div class="eyebrow">Sumer, Akkad, Babylonia &amp; Assyria · c. 3000 – 100 BCE</div><h2>Sumer, Akkad &amp; the Anunnaki</h2><div class="sub">City gods, the burning of the witches, the New Year, and a hymn that is a recipe</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>For three thousand years Mesopotamian religion was organised around city gods dwelling in their temples: Enlil at Nippur, Nanna-Suen at Ur, and from the second millennium Marduk at Babylon. Priests fed, clothed and consulted the divine statues much as in Egypt; a new image was brought to life by the <i>mīs pî</i>, the “washing of the mouth.” Ziggurats, stepped towers such as Etemenanki at Babylon, rose beside the great temples.</p>
+      <p><b>The Anunnaki.</b> The name, Sumerian <i>da-nun-na</i>, Akkadian <i>Anunnakū</i>, first appears in the inscriptions of Gudea and Ur III texts around the twenty-second to twenty-first centuries BCE. It probably means “offspring of the prince,” and named the senior gods of the pantheon as a group. After the Old Babylonian period it came to mean especially the gods of the underworld, while the Igigi took over the heavenly sense. Evidence for a cult of the Anunnaki as a group is very thin. Their best-known modern role, as extraterrestrial colonisers, comes from Zecharia Sitchin’s <i>The 12th Planet</i> of 1976; it is a modern reinterpretation, not a reading of the cuneiform record.</p>
+      <p>The Sumerian <b>Hymn to Ninkasi</b>, known from Old Babylonian copies, praises the beer goddess by narrating her work: the beer-bread, the malting, the soaking, the mash cooled on reed mats, the fermentation and the filtered pour. It is at once hymn and recipe.</p>
+      <h3>Maqlû, “Burning”: one night, one dawn</h3>
+      <ol class="rite">
+        <li><b>The night court.</b> At the end of the month Abu, when spirits were thought to pass between the worlds, patient and exorcist appeal to the gods of the night sky and the underworld for judgment against unknown witches.</li>
+        <li><b>The burning.</b> Figurines of the witches in clay, wax, dough or tallow are bound, mutilated and burned in a brazier while incantations are recited.</li>
+        <li><b>Disposal and purification.</b> The remains are drowned or buried; the patient is purified with water and protective plants.</li>
+        <li><b>Dawn.</b> Šamaš the sun, divine judge, is invoked; the patient washes and is declared free.</li>
+      </ol>
+      <h3>The Akītu at Babylon</h3>
+      <ol class="rite">
+        <li><b>Nisannu 1–3.</b> Pre-dawn prayers before Marduk in the Esagila.</li>
+        <li><b>Day 4.</b> The <i>Enūma eliš</i> recited in full before the god.</li>
+        <li><b>Day 5.</b> The king humbled: the high priest removes his regalia and strikes his cheek; the king declares he has not neglected Babylon. Tears are a good omen.</li>
+        <li><b>Day 6.</b> Nabû arrives from Borsippa.</li>
+        <li><b>Days 8–11.</b> The gods assemble to fix the destinies; Marduk processes along the Processional Way to the <i>bīt akīti</i>, returns, and the destinies are fixed again.</li>
+      </ol>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Anunnaki</dt><dd>First attested c. 22nd–21st c. BCE; in use to the Seleucid period</dd>
+        <dt>Hymn to Ninkasi</dt><dd>ETCSL 4.23.1, Old Babylonian copies</dd>
+        <dt>Maqlû</dt><dd>One night-to-morning ceremony; anti-witchcraft</dd>
+        <dt>Šurpu</dt><dd>Sins named and burned away with peeled onion, dates and wool</dd>
+        <dt>MUL.APIN</dt><dd>Two-tablet star compendium: the paths of Anu, Enlil and Ea</dd>
+        <dt>Enūma eliš</dt><dd>Seven tablets, ending with Marduk’s fifty names</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>ETCSL 4.23.1, “A hymn to Ninkasi,” Oxford.</li>
+        <li>Abusch, T. <i>The Witchcraft Series Maqlû</i>. SBL, 2015.</li>
+        <li>Hunger, H. &amp; Pingree, D. <i>MUL.APIN</i>, 1989.</li>
+        <li>Lambert, W. G. <i>Babylonian Creation Myths</i>. Eisenbrauns, 2013.</li>
+        <li>Brisch, N. “Anunna (Anunnaku),” Oracc, 2012.</li>
+        <li>Bidmead, J. <i>The Akītu Festival</i>. Gorgias, 2002.</li>
+        <li>Walker, C. &amp; Dick, M. B. <i>The Induction of the Cult Image</i>, 2001.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/anunnaki.html">Anunnaki</a><a href="/new.html#sumerian-beer">Sumerian Beer</a><a href="/app/celestial-veil.html">Celestial Veil</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- X NORSE -->
+<article class="chapter" id="norse">
+  <div class="chapter-head reveal"><div class="num">X</div><div><div class="eyebrow">Scandinavia &amp; Iceland · 2nd – 13th c.</div><h2>The North: Blót, Seiðr &amp; Runes</h2><div class="sub">Sacrifice and feast, the seeress on the high seat, and nine nights on the windy tree</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>Pre-Christian Norse religion must be pieced together from three kinds of evidence: archaeology and inscriptions; outside observers such as Tacitus and Adam of Bremen; and Icelandic writing from two to three centuries after the conversion of around 1000, chiefly the <i>Poetic Edda</i>, preserved in the Codex Regius of about 1270, and the <i>Prose Edda</i> that Snorri Sturluson wrote around 1220. These preserve old poetry, but they are not liturgy. Practice centred on <i>blót</i>, sacrifice and communal feast, and on <i>seiðr</i>, a trance-based sorcery and divination associated with Odin, Freyja and the seeresses, the <i>vǫlur</i>.</p>
+      <p>The Elder Futhark of twenty-four runes, named for its first six letters, was in use from about the second century to the eighth, when Scandinavia moved to the sixteen-rune Younger Futhark. Most inscriptions are names, maker’s marks and memorials; some carry charm words such as <i>alu</i>. In <i>Hávamál</i> Odin wins the runes by hanging nine nights on a wind-swept tree, “given to Odin, myself to myself”: a myth of where hidden knowledge comes from. Rune-casting with a meaning for each rune is largely a twentieth-century creation, and the collection presents it that way.</p>
+      <h3>Blót</h3>
+      <ol class="rite">
+        <li><b>Assembly.</b> At winter-nights, midwinter and summer, the community gathers at a chieftain’s hall or cult site.</li>
+        <li><b>Sacrifice.</b> Animals, especially horses, are slain; the blood is caught in bowls and sprinkled with twig-brushes on altars, walls and people.</li>
+        <li><b>Feast.</b> The meat is boiled at the hall’s hearth and eaten together.</li>
+        <li><b>Toasts.</b> To Odin for victory and power, to Njǫrðr and Freyr for good harvest and peace, then to the kinsmen who have died.</li>
+      </ol>
+      <h3>Seiðr, after the Saga of Erik the Red</h3>
+      <ol class="rite">
+        <li><b>Arrival.</b> The seeress comes in prescribed costume and is given a ritual meal.</li>
+        <li><b>The high seat.</b> She takes a raised platform.</li>
+        <li><b>The warding songs.</b> Women stand around her and sing the <i>varðlokkur</i> that draw the spirits.</li>
+        <li><b>Prophecy.</b> In an altered state she gains knowledge and answers questions about the season and individual fates.</li>
+      </ol>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Elder Futhark</dt><dd>24 runes, three groups of eight</dd>
+        <dt>Younger Futhark</dt><dd>16 runes, from c. 8th c.</dd>
+        <dt>Hávamál</dt><dd>Odin’s rune-winning, stanzas 138–141 (standard numbering)</dd>
+        <dt>Prose Edda</dt><dd>Snorri Sturluson, c. 1220</dd>
+        <dt>Codex Regius</dt><dd>c. 1270</dd>
+        <dt>Rune poems</dt><dd>Old English, Norwegian and Icelandic</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li><i>Poetic Edda</i>, trans. H. A. Bellows, 1923.</li>
+        <li>Snorri Sturluson, <i>Edda</i>, trans. A. Faulkes, 1987.</li>
+        <li>Dickins, B., ed. <i>Runic and Heroic Poems</i>. Cambridge, 1915.</li>
+        <li>Price, N. <i>The Viking Way</i>. 2nd ed. Oxbow, 2019.</li>
+        <li>Page, R. I. <i>Runes</i>. British Museum, 1987.</li>
+        <li>Lindow, J. <i>Norse Mythology</i>. Oxford, 2001.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/norse-gods.html">Norse Gods</a><a href="/app/oracle.html">ORACLE</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- XI MEXICA -->
+<article class="chapter" id="mexica">
+  <div class="chapter-head reveal"><div class="num">XI</div><div><div class="eyebrow">Valley of Mexico · 1325 – 1521</div><h2>The Mexica &amp; the New Fire</h2><div class="sub">Two calendars, fifty-two years, and the night the world might not continue</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>The Mexica of Tenochtitlan inherited a Mesoamerican religious world centuries older than themselves. The Great Temple carried twin shrines, to Huitzilopochtli, patron of sun and war, and to Tlaloc, the rain. Quetzalcoatl the Feathered Serpent, Tezcatlipoca the Smoking Mirror, Xiuhtecuhtli of fire and time, and the water, maize and earth powers filled out the pantheon.</p>
+      <p>Ritual life turned on two interlocking counts. The <b>tonalpohualli</b>, a 260-day divinatory count of twenty day-signs and the numbers one to thirteen, was read by specialists from painted screenfold books to set names, marriages, journeys and ceremonies. The <b>xiuhpohualli</b> was a 365-day year of eighteen twenty-day months, each with its festival, plus five unlucky days. The two return to the same combination every fifty-two years, and that “binding of the years” was marked by the New Fire. Almost all of the textual record passes through colonial filters, above all the Franciscan Bernardino de Sahagún’s Nahuatl and Spanish <i>Florentine Codex</i>, completed in 1577.</p>
+      <h3>The New Fire, after Sahagún</h3>
+      <ol class="rite">
+        <li><b>The end of the cycle.</b> At the close of a fifty-two-year bundle every fire in the Basin of Mexico is put out; households discard hearthstones, images and utensils.</li>
+        <li><b>Vigil.</b> Pregnant women are masked and shut away, children kept awake, for fear that if the fire failed the sun would not rise.</li>
+        <li><b>Procession.</b> At dusk the fire priests, dressed as gods, climb Huixachtecatl, the Hill of the Star.</li>
+        <li><b>The Pleiades.</b> At midnight they watch whether the Pleiades cross the meridian. If they do, the world continues.</li>
+        <li><b>The drilling.</b> A new fire is drilled on the chest of a sacrificial captive.</li>
+        <li><b>Distribution.</b> Runners carry torches to the Great Temple and then to every town and household, and the new bundle of years begins.</li>
+      </ol>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Tonalpohualli</dt><dd>20 signs × 13 numbers = 260 days, in 20 trecenas</dd>
+        <dt>Xiuhpohualli</dt><dd>18 × 20 + 5 = 365 days</dd>
+        <dt>Year-bearers</dt><dd>Reed, Flint, House, Rabbit: 52 named years</dd>
+        <dt>Calendar round</dt><dd>52 years = 18,980 days</dd>
+        <dt>Florentine Codex</dt><dd>12 books, c. 2,500 illustrations; Laurenziana, Florence</dd>
+        <dt>Codex Borgia</dt><dd>Pre-Hispanic, Puebla-Tlaxcala region; Vatican Library</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Sahagún, <i>Florentine Codex</i>, trans. Anderson &amp; Dibble, 1950–82.</li>
+        <li>Getty Research Institute, <i>Digital Florentine Codex</i>, 2023.</li>
+        <li><i>Codex Borgia</i>, Biblioteca Apostolica Vaticana, Borg. mess. 1.</li>
+        <li>Boone, E. H. <i>Cycles of Time and Meaning in the Mexican Books of Fate</i>, 2007.</li>
+        <li>Aveni, A. F. <i>Skywatchers</i>. Rev. ed., 2001.</li>
+        <li>INAH, “Xiuhmolpilli and the New Fire ceremony.”</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/new.html#mexica">Mexica Gods</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- XII HERMETIC -->
+<article class="chapter" id="hermetic">
+  <div class="chapter-head reveal"><div class="num">XII</div><div><div class="eyebrow">Roman Egypt to Cairo, 1904</div><h2>Hermes, Alchemy &amp; True Will</h2><div class="sub">Thrice-great Hermes, the Great Work, and the Book of the Law</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>The <i>Hermetica</i> are Greek and Latin texts from Roman Egypt, written roughly between the mid-first and late third centuries CE and attributed to Hermes Trismegistus. The “technical” Hermetica treat astrology, alchemy and magic; the “philosophical” ones, the seventeen treatises of the <i>Corpus Hermeticum</i> and the Latin <i>Asclepius</i>, teach salvation through <i>gnosis</i>, knowledge of God, cosmos and self. Marsilio Ficino set aside his Plato to translate them for Cosimo de’ Medici in 1463; printed at Treviso in 1471, the translation ran to eight editions before 1500. Renaissance readers believed Hermes a sage near the time of Moses until Isaac Casaubon showed in 1614 that the texts were written after Christ.</p>
+      <p>The alchemical Great Work, the <i>opus magnum</i>, was imagined as a sequence of colour stages leading to the philosophers’ stone. Isaac Newton wrote and transcribed about a million words on alchemy. And in Cairo, on 8, 9 and 10 April 1904, Aleister Crowley wrote <i>Liber AL vel Legis</i>, one chapter a day, which recast the Great Work as the discovery and fulfilment of one’s True Will.</p>
+      <h3>The Great Work</h3>
+      <ol class="rite">
+        <li><b>Preparation.</b> The <i>prima materia</i> is chosen and purified; authors disagree, often on purpose, about what it is.</li>
+        <li><b>Nigredo.</b> Dissolution and putrefaction in the sealed vessel: crows, skulls, the black sun.</li>
+        <li><b>Albedo.</b> Washing, and the white stage: the swan, the white queen, the moon.</li>
+        <li><b>Citrinitas.</b> A yellowing, often dropped from the sixteenth century on.</li>
+        <li><b>Rubedo.</b> Fixation and the red stone: the red king, the phoenix, the sun.</li>
+        <li><b>Multiplication and projection.</b> The stone’s power increased and cast upon molten metal.</li>
+      </ol>
+      <h3>The Hermetic ascent, Poimandres</h3>
+      <ol class="rite">
+        <li><b>Dissolution.</b> At death the body dissolves; form and character are handed back.</li>
+        <li><b>The seven spheres.</b> The soul rises, surrendering at each a power or vice: growth and decay, guile, lust, arrogance, rash daring, greed, falsehood.</li>
+        <li><b>The Ogdoad.</b> Stripped, it enters the eighth sphere and joins the hymn to God.</li>
+        <li><b>Becoming God.</b> It passes into the Powers. The living Hermetist seeks this in advance, through <i>gnosis</i>.</li>
+      </ol>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Corpus Hermeticum</dt><dd>17 treatises, numbered I–XVIII without XV</dd>
+        <dt>Ficino</dt><dd>Translated 1463; printed Treviso, 1471</dd>
+        <dt>Casaubon</dt><dd>Re-dated the texts, 1614</dd>
+        <dt>Emerald Tablet</dt><dd>Earliest versions Arabic; Latin from the 12th c.</dd>
+        <dt>Newton</dt><dd>~1,000,000 words on alchemy; papers sold 1936</dd>
+        <dt>Liber AL</dt><dd>Cairo, 8–10 April 1904</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Copenhaver, B. P., trans. <i>Hermetica</i>. Cambridge, 1992.</li>
+        <li>Newman, W. R., ed. <i>The Chymistry of Isaac Newton</i>. Indiana University.</li>
+        <li>Crowley, A. <i>Liber AL vel Legis</i>. <i>The Equinox</i> I.10, 1913.</li>
+        <li>Principe, L. M. <i>The Secrets of Alchemy</i>. Chicago, 2013.</li>
+        <li>Fowden, G. <i>The Egyptian Hermes</i>. Cambridge, 1986.</li>
+        <li>“Hermetic writings,” <i>Encyclopaedia Britannica</i>.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/the-great-work.html">Great Work</a><a href="/new.html#true-will">True Will</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- XIII ORACLE -->
+<article class="chapter" id="oracle">
+  <div class="chapter-head reveal"><div class="num">XIII</div><div><div class="eyebrow">Zhou China, Renaissance Italy, Enlightenment Paris</div><h2>Tarot, the I Ching &amp; the Hours</h2><div class="sub">The traditions behind ORACLE</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>Tarot began as a game. In the northern Italian courts of the 1440s, <i>carte da trionfi</i>, four-suited decks with an added series of allegorical trumps, were used for trick-taking; the luxurious Visconti-Sforza cards of Milan survive, thirty-five of them in the Morgan Library. The occult tarot is French and of the eighteenth century: Antoine Court de Gébelin claimed in 1781 that the trumps preserved the Egyptian Book of Thoth; Etteilla issued the first deck designed for divination; Éliphas Lévi tied the twenty-two trumps to the Hebrew alphabet. The Rider-Waite-Smith deck, drawn by Pamela Colman Smith for A. E. Waite and published in December 1909, fixed the modern images.</p>
+      <p>The <i>Zhou yi</i> is a Western Zhou manual of sixty-four hexagrams, each with a judgment and six line statements, whose core probably took shape in the late ninth century BCE. The Ten Wings, commentaries of the Warring States and early Han, made it a cosmological classic. The oldest manuscripts are the Shanghai Museum bamboo slips of about 300 BCE and the Mawangdui silk text, sealed in a tomb in 168 BCE.</p>
+      <h3>Casting a hexagram with yarrow</h3>
+      <ol class="rite">
+        <li><b>Fifty stalks.</b> Set one aside; forty-nine remain, “the number of the great expansion.”</li>
+        <li><b>Division.</b> Split the forty-nine at random into two heaps; take one stalk from the right heap and hold it between the fingers of the left hand.</li>
+        <li><b>Counting by fours.</b> Count off each heap by fours and set aside the remainders, five or nine stalks in all.</li>
+        <li><b>Twice more.</b> Repeat with the rest; these rounds set aside four or eight.</li>
+        <li><b>The line.</b> What remains, divided by four, gives 6, 7, 8 or 9: old yin, young yang, young yin, old yang.</li>
+        <li><b>The hexagram.</b> Six lines built from the bottom up; read the judgment and any changing lines, then change them to find the relating hexagram.</li>
+      </ol>
+      <div class="note">With yarrow, the chances of 6, 7, 8 and 9 are 1, 5, 7 and 3 in 16; with three coins they are 1, 3, 3 and 1 in 8. Both give a changing line one time in four, but yarrow makes a changing yang line three times as likely as a changing yin line.</div>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Visconti-Sforza</dt><dd>Milan, c. 1450–80; 35 cards at the Morgan Library</dd>
+        <dt>Occult tarot</dt><dd>Court de Gébelin 1781 · Etteilla 1780s · RWS December 1909</dd>
+        <dt>Zhou yi</dt><dd>64 hexagrams of 8 trigrams; Ten Wings</dd>
+        <dt>Planetary week</dt><dd>Cassius Dio explains it by the hours; origin placed in Italy, 1st c. BCE</dd>
+        <dt>Rune divination</dt><dd>No medieval manual survives; modern systems from 1908 and 1982</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Legge, J., trans. <i>The Yî King</i>, 1882.</li>
+        <li>Waite, A. E. <i>The Pictorial Key to the Tarot</i>, 1910.</li>
+        <li>Morgan Library, MS M.630, Visconti-Sforza tarot.</li>
+        <li>Dummett, M. <i>The Game of Tarot</i>, 1980.</li>
+        <li>Decker, Depaulis &amp; Dummett. <i>A Wicked Pack of Cards</i>, 1996.</li>
+        <li>Smith, R. J. <i>The I Ching: A Biography</i>. Princeton, 2012.</li>
+        <li>Shaughnessy, E. L. <i>Unearthing the Changes</i>, 2014.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/oracle.html">ORACLE</a><a href="/app/celestial-above.html">Celestial Above</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- XIV VOYNICH -->
+<article class="chapter" id="voynich">
+  <div class="chapter-head reveal"><div class="num">XIV</div><div><div class="eyebrow">Central Europe · parchment 1404–1438</div><h2>The Voynich Manuscript</h2><div class="sub">Beinecke MS 408: the book no one can read</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>A small illustrated parchment codex at Yale, about 23 by 16 centimetres and some 240 pages, several folding out, written in a script that has never been deciphered. Radiocarbon dating at the University of Arizona in 2009 placed its parchment between 1404 and 1438, ruling out Roger Bacon and most theories of a modern forgery.</p>
+      <p>Its pictures fall into sections: an herbal of unidentifiable plants; astronomical and zodiac roundels; the “balneological” pages of small nude women in pools and tubes; a great fold-out of nine rosettes; a pharmaceutical section of plant parts beside jars; and text-only “recipes” marked with stars. It passed through the circle of Emperor Rudolf II in Prague; Johannes Marcus Marci sent it to Athanasius Kircher in Rome in the 1660s; Wilfrid Voynich bought it in 1912, and H. P. Kraus gave it to Yale in 1969. Its statistics look partly like language and partly not, which keeps every hypothesis, natural language, cipher, constructed language or meaningless text, still open.</p>
+      <h3>How it is studied</h3>
+      <ol class="rite">
+        <li><b>Material dating.</b> Radiocarbon of parchment samples; analysis of inks and pigments.</li>
+        <li><b>Codicology.</b> Gatherings, foliation and fold-outs; the leaves were rebound out of order and some are missing.</li>
+        <li><b>Transcription.</b> Machine-readable alphabets for computational study.</li>
+        <li><b>Statistics.</b> Word frequencies, entropy and the positional rules of glyphs.</li>
+        <li><b>Iconography.</b> Comparison with fifteenth-century herbals and astrological and bathing manuscripts.</li>
+        <li><b>Provenance.</b> Letters and ownership marks, including a signature legible under ultraviolet light.</li>
+      </ol>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Shelfmark</dt><dd>Beinecke Library, MS 408</dd>
+        <dt>Radiocarbon</dt><dd>1404–1438, announced 2009</dd>
+        <dt>Parchment</dt><dd>Calfskin</dd>
+        <dt>Status</dt><dd>Undeciphered</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Beinecke Library catalogue, MS 408.</li>
+        <li>Clemens, R., ed. <i>The Voynich Manuscript</i>. Yale, 2016.</li>
+        <li>Zandbergen, R. “Radio-carbon dating of the Voynich MS.”</li>
+        <li>D’Imperio, M. E. <i>The Voynich Manuscript: An Elegant Enigma</i>. NSA, 1978.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/new.html#voynich-garden">Voynich Garden</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- XV PATHS -->
+<article class="chapter" id="paths">
+  <div class="chapter-head reveal"><div class="num">XV</div><div><div class="eyebrow">The thirty-day paths</div><h2>The Contemplative Lineages</h2><div class="sub">Eight ways inward, and the texts that carry them</div></div></div>
+  <div class="grid2">
+    <div class="card reveal"><div class="eyebrow">The Pleroma · Gnosticism</div><p class="muted" style="margin:10px 0 0">In Valentinian Gnosticism of the second century the Pleroma, the “Fullness,” is a realm of thirty aeons emanating in pairs from the unknowable Father. Sophia’s longing to know the Father directly produces a fall, a material world made by an ignorant Demiurge, and redemption is the return of the spiritual seed through <i>gnosis</i>. The thirteen Nag Hammadi codices, found in 1945, returned the Gnostics’ own writings.</p><div class="app-links"><a href="/app/the-pleroma.html">The Pleroma</a></div></div>
+    <div class="card reveal"><div class="eyebrow">The Inner Citadel · Stoicism</div><p class="muted" style="margin:10px 0 0">Marcus Aurelius wrote his twelve books of notes “to himself” between about 170 and 180, much of it on campaign. In 8.48 he calls the mind free of passions an <i>akropolis</i>, a citadel. Pierre Hadot read the book as a structured practice of the disciplines of assent, desire and action: <i>La Citadelle intérieure</i>, 1992; English 1998.</p><div class="app-links"><a href="/app/the-inner-citadel.html">The Inner Citadel</a></div></div>
+    <div class="card reveal"><div class="eyebrow">The Cloud · Christian mysticism</div><p class="muted" style="margin:10px 0 0">An anonymous English guide of the later fourteenth century, in seventy-five short chapters. God cannot be grasped by thought, only by love: put every creature beneath a cloud of forgetting and press upward with naked intent through the cloud of unknowing, holding the mind to a single short word such as “God” or “love.”</p><div class="app-links"><a href="/app/the-cloud.html">The Cloud</a></div></div>
+    <div class="card reveal"><div class="eyebrow">The Way · Daoism</div><p class="muted" style="margin:10px 0 0">The <i>Daodejing</i>, about five thousand characters, presents the <i>dao</i> as the nameless source of all things and recommends <i>wuwei</i>, softness, emptiness and the uncarved block. The oldest witnesses are the Guodian bamboo slips, from a tomb of about 300 BCE, and the Mawangdui silks of 168 BCE.</p><div class="app-links"><a href="/app/the-way.html">The Way</a></div></div>
+    <div class="card reveal"><div class="eyebrow">The One · Neoplatonism</div><p class="muted" style="margin:10px 0 0">Plotinus (204/5–270) taught that all things proceed from the One, beyond being and thought, through Intellect and Soul. The contemplative turns inward and may briefly reach union; Porphyry, who arranged the fifty-four treatises of the <i>Enneads</i>, says his teacher did so four times in six years.</p><div class="app-links"><a href="/app/the-one.html">The One</a></div></div>
+    <div class="card reveal"><div class="eyebrow">Middle Way · Madhyamaka</div><p class="muted" style="margin:10px 0 0">Nāgārjuna (c. 150–250) argued in some 450 verses of the <i>Mūlamadhyamakakārikā</i> that nothing has intrinsic nature: all is empty because all arises dependently, and emptiness is itself empty. The two truths, conventional and ultimate, keep practice in place while loosening every fixed view.</p><div class="app-links"><a href="/app/middle-way.html">Middle Way</a></div></div>
+    <div class="card reveal"><div class="eyebrow">Empty Gate · Zen</div><p class="muted" style="margin:10px 0 0">Wumen Huikai compiled the forty-eight kōans of the <i>Wumenguan</i>, the Gateless Barrier, in 1228. Case one is Zhaozhou’s dog: asked whether a dog has Buddha-nature, Zhaozhou answers <i>wu</i>, “no.” The student holds that single word day and night until conceptual thought gives way.</p><div class="app-links"><a href="/app/empty-gate.html">Zen’s Empty Gate</a></div></div>
+    <div class="card reveal"><div class="eyebrow">The Witness · Advaita Vedānta</div><p class="muted" style="margin:10px 0 0">For Śaṅkara’s Advaita the self is pure, self-luminous consciousness, identical with <i>brahman</i>. The <i>sākṣin</i>, the witness, observes waking, dream and deep sleep and is never itself an object. The practice is discrimination of seer from seen, <i>neti neti</i>, “not this, not this,” until only the witness remains.</p><div class="app-links"><a href="/app/the-witness.html">The Witness</a></div></div>
+  </div>
+</article>
+
+
+<!-- XVI METHODS -->
+<article class="chapter" id="methods">
+  <div class="chapter-head reveal"><div class="num">XVI</div><div><div class="eyebrow">Late antiquity to the seventeenth century</div><h2>The Six Angelic Methods</h2><div class="sub">The hour, the planet, the stone, the Name, the guardian and the ascent</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>Every grimoire in this archive had one aim at its heart: to speak with angels and be answered. The angelic literature does not describe one technique. It describes several, and each depends on a different key: the right time, the right instrument, the right name, the right preparation. The operators kept careful records of how.</p>
+      <h3>The six keys</h3>
+      <ol class="rite">
+        <li><b>The hour.</b> The <i>Ars Paulina</i>, third book of the Lemegeton, gives a ruling angel to each of the twenty-four unequal hours of day and night. To call an angel at the wrong hour was to call into an empty room.</li>
+        <li><b>The planet.</b> The <i>Heptameron</i>, printed under Peter of Abano’s name in 1559, assigns angels to each weekday, planet, season and quarter of the sky, with the conjuration, the circle and the license to depart. The planetary angels answer on their own day.</li>
+        <li><b>The stone.</b> From 1582 John Dee and the scryer Edward Kelley held hundreds of sessions with angels seen in a crystal. They wrote down an angelic language, the Calls spoken in it, the thirty Aethyrs and the Great Table of the Watchtowers.</li>
+        <li><b>The Name.</b> Exodus 14:19–21 holds three verses of seventy-two Hebrew letters each. Woven together they give the seventy-two triads of the <i>Shem ha-Meforash</i>; Christian Kabbalists later read an angel in each triad.</li>
+        <li><b>The guardian.</b> The Book of Abramelin teaches a long retreat of prayer and purification, six months in the oldest German copies and eighteen in the French, to win the knowledge and conversation of one’s holy guardian angel. The <i>Ars Almadel</i> adds a wax tablet and the angels of four altitudes.</li>
+        <li><b>The ascent.</b> The Hekhalot texts describe the descent to the Chariot through seven heavenly palaces. At every gate stand angelic guards who must be shown the right seal and given the right name.</li>
+      </ol>
+      <h3>Who is being addressed</h3>
+      <p>Around the year 500 a Syrian writer under the name of Dionysius the Areopagite arranged the angels into nine choirs in three triads: Seraphim, Cherubim and Thrones; Dominions, Virtues and Powers; Principalities, Archangels and Angels. His <i>Celestial Hierarchy</i> shaped every later angelology, from Aquinas to Agrippa and the grimoires that drew on him.</p>
+      <p>The grimoires were explicit about manners. The operator prepares, purifies and fixes an intention. He addresses the angel by name and office, at its hour and in its direction. He waits in silence. And he always gives the license to depart: preparation, address, audience, thanksgiving, return.</p>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Methods</dt><dd>Hour, planet, stone, Name, guardian, ascent</dd>
+        <dt>Dee’s sessions</dt><dd>From 1582</dd>
+        <dt>Heptameron</dt><dd>Printed 1559</dd>
+        <dt>Choirs</dt><dd>Nine, in three triads</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Lemegeton III, <i>Ars Paulina</i>. Sloane MSS 3825, 2731.</li>
+        <li><i>Heptameron</i> (1559); Agrippa, <i>De occulta philosophia</i>.</li>
+        <li>Dee, Sloane MS 3188; Casaubon, <i>A True &amp; Faithful Relation</i> (1659).</li>
+        <li>Exodus 14:19–21; Sukkah 45a; Reuchlin; Kircher.</li>
+        <li><i>The Book of Abramelin</i>; Lemegeton IV, <i>Ars Almadel</i>.</li>
+        <li><i>Hekhalot Rabbati</i>; <i>Hekhalot Zutarti</i>; 3 Enoch.</li>
+        <li>Pseudo-Dionysius, <i>The Celestial Hierarchy</i>.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/angelarium.html">Angelarium</a><a href="/new.html#ars-paulina">Ars Paulina</a><a href="/seven-angels.html">The Seven Angels</a><a href="/app/enochian-calls.html">Enochian Calls</a><a href="/new.html#names72">The 72 Names</a><a href="/app/hekhalot-the-seven-palaces.html">Hekhalot: The Seven Palaces</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- XVII THRESHOLD -->
+<article class="chapter" id="threshold">
+  <div class="chapter-head reveal"><div class="num">XVII</div><div><div class="eyebrow">1839 to the present · research</div><h2>Theta: the Science of the Threshold</h2><div class="sub">The drum, the chamber and the binaural beat</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>Between waking and sleep there is a narrow band, four to eight cycles a second, where imagery rises unbidden and the boundary of the self grows thin. Every tradition in this archive found its own way there: the drum, the chant, the whispered hymn, the vigil. Binaural entrainment is the modern way.</p>
+      <h3>A tone that exists only inside the head</h3>
+      <p>Play a steady 200 Hz tone into the left ear and a 206 Hz tone into the right, through headphones, and you hear something neither ear received: a soft pulsing at six beats per second. It is assembled in the brainstem, where the superior olivary complex compares the timing of the two ears. Heinrich Wilhelm Dove described the effect in 1839; Gerald Oster drew it back into science in 1973 with “Auditory beats in the brain.” The hypothesis tested ever since is that the wider brain is drawn toward the beat’s rhythm.</p>
+      <h3>The receptive state</h3>
+      <p>Beta (12–30 Hz) is the working mind the rites begin by leaving. Alpha (8–12 Hz) is the doors closing. Theta (4–8 Hz) is the hypnagogic edge of sleep: vivid imagery, deep absorption. Gamma (30+ Hz) is high-frequency integration, reported at striking amplitude in some long-term meditators. Theta is where the body can rest while the mind stays awake: the Hekhalot adept with head between the knees, the seeress on her high seat, the shaman’s drum.</p>
+      <h3>How sound became a door</h3>
+      <p>In the 1970s a laboratory in rural Virginia built layered binaural audio into a graded training method: a numbered ladder of states, each anchored by its own sound and cues, so that a state could be re-entered at will. In 1983 United States Army intelligence assessed the method; Lieutenant Colonel Wayne McDonnell’s report of 9 June 1983, later released through the CIA’s reading room, became one of the most read documents in its archive. Its lesson for this archive is architectural: a structured sound environment, used with intention and a graded sequence, can become a repeatable door. That is the architecture the ancient rites used.</p>
+      <h3>Before electronics</h3>
+      <ol class="rite">
+        <li><b>The drum, about four beats a second.</b> In 2026 a team at the Hebrew University of Jerusalem recorded EEG while forty participants heard drumming at delta, theta and alpha tempos. The brain tracked the theta-rate drum most closely, and the strength of that tracking predicted how deeply consciousness was altered.</li>
+        <li><b>The chamber, about 110 Hz.</b> Acoustic surveys of ancient chambers, from Neolithic passage tombs to the Hypogeum of Malta, found resonances clustered between 95 and 120 Hz. At UCLA, 110 Hz reduced activity over the left temporal language areas and shifted prefrontal activity toward the right.</li>
+      </ol>
+      <h3>How the apps use sound</h3>
+      <p>Preparation opens on room tone with the beat in alpha. Invocation carries gamma-range layers under the spoken names. Silence and vision rest on theta-range beats over low carriers of 120–320 Hz, beneath temple drones. The return climbs back through alpha and closes deliberately. Every layer is generated on the device. Laboratory studies have found real effects of binaural beats on attention, memory and anxiety, while whether the EEG itself locks to the beat varies from person to person.</p>
+      <p class="muted"><i>Use binaural audio only through headphones, seated or lying down, never while driving. If you have epilepsy or a seizure disorder, consult a physician first. The apps are for contemplation, study and practice, and are not medical devices.</i></p>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>1839</dt><dd>Dove describes the binaural beat</dd>
+        <dt>1973</dt><dd>Oster, “Auditory beats in the brain”</dd>
+        <dt>1970s</dt><dd>The numbered ladder, Virginia</dd>
+        <dt>1983</dt><dd>McDonnell’s Army assessment</dd>
+        <dt>2026</dt><dd>Theta tracking of the drum</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Oster, G. (1973). Auditory beats in the brain. <i>Scientific American</i> 229(4).</li>
+        <li>McDonnell, W. M. (1983). U.S. Army assessment memorandum, 9 June 1983.</li>
+        <li>Gordon, Karvat, Dagan &amp; Landau (2026). Neural tracking at theta predicts drumming-induced altered states. <i>Scientific Reports</i> 16.</li>
+        <li>Cook, Pajot &amp; Leuchter (2008). Ancient architectural acoustic resonance patterns and regional brain activity. <i>Time and Mind</i> 1(1).</li>
+        <li>Jahn, Devereux &amp; Ibison (1996). Acoustical resonances of assorted ancient structures. <i>JASA</i> 99(2).</li>
+        <li>Garcia-Argibay et al. (2019). Binaural beats: a meta-analysis. <i>Psychological Research</i> 83.</li>
+        <li>Ingendoh, Posny &amp; Heine (2023). Binaural beats to entrain the brain? <i>PLOS ONE</i> 18(5).</li>
+        <li>Green (1968); Blackmore (1982); Blanke et al. (2002) <i>Nature</i> 419; Smith &amp; Messier (2014).</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/shaman.html">Shaman</a><a href="/new.html#spirit-drum">Spirit Drum</a><a href="/app/obe-induction.html">OBE Induction</a><a href="/app/the-signal.html">The Signal</a><a href="/new.html#harmonic">Harmonic</a></div>
+    </div></aside>
+  </div>
+</article>
+
+
+<!-- XVI METHODS -->
+<article class="chapter" id="methods">
+  <div class="chapter-head reveal"><div class="num">XVI</div><div><div class="eyebrow">Late antiquity to the seventeenth century</div><h2>The Six Angelic Methods</h2><div class="sub">The hour, the planet, the stone, the Name, the guardian and the ascent</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>Every grimoire in this archive had one aim at its heart: to speak with angels and be answered. The angelic literature does not describe one technique. It describes several, and each depends on a different key: the right time, the right instrument, the right name, the right preparation. The operators kept careful records of how.</p>
+      <h3>The six keys</h3>
+      <ol class="rite">
+        <li><b>The hour.</b> The <i>Ars Paulina</i>, third book of the Lemegeton, gives a ruling angel to each of the twenty-four unequal hours of day and night. To call an angel at the wrong hour was to call into an empty room.</li>
+        <li><b>The planet.</b> The <i>Heptameron</i>, printed under Peter of Abano’s name in 1559, assigns angels to each weekday, planet, season and quarter of the sky, with the conjuration, the circle and the license to depart. The planetary angels answer on their own day.</li>
+        <li><b>The stone.</b> From 1582 John Dee and the scryer Edward Kelley held hundreds of sessions with angels seen in a crystal. They wrote down an angelic language, the Calls spoken in it, the thirty Aethyrs and the Great Table of the Watchtowers.</li>
+        <li><b>The Name.</b> Exodus 14:19–21 holds three verses of seventy-two Hebrew letters each. Woven together they give the seventy-two triads of the <i>Shem ha-Meforash</i>; Christian Kabbalists later read an angel in each triad.</li>
+        <li><b>The guardian.</b> The Book of Abramelin teaches a long retreat of prayer and purification, six months in the oldest German copies and eighteen in the French, to win the knowledge and conversation of one’s holy guardian angel. The <i>Ars Almadel</i> adds a wax tablet and the angels of four altitudes.</li>
+        <li><b>The ascent.</b> The Hekhalot texts describe the descent to the Chariot through seven heavenly palaces. At every gate stand angelic guards who must be shown the right seal and given the right name.</li>
+      </ol>
+      <h3>Who is being addressed</h3>
+      <p>Around the year 500 a Syrian writer under the name of Dionysius the Areopagite arranged the angels into nine choirs in three triads: Seraphim, Cherubim and Thrones; Dominions, Virtues and Powers; Principalities, Archangels and Angels. His <i>Celestial Hierarchy</i> shaped every later angelology, from Aquinas to Agrippa and the grimoires that drew on him.</p>
+      <p>The grimoires were explicit about manners. The operator prepares, purifies and fixes an intention. He addresses the angel by name and office, at its hour and in its direction. He waits in silence. And he always gives the license to depart: preparation, address, audience, thanksgiving, return.</p>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>Methods</dt><dd>Hour, planet, stone, Name, guardian, ascent</dd>
+        <dt>Dee’s sessions</dt><dd>From 1582</dd>
+        <dt>Heptameron</dt><dd>Printed 1559</dd>
+        <dt>Choirs</dt><dd>Nine, in three triads</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Lemegeton III, <i>Ars Paulina</i>. Sloane MSS 3825, 2731.</li>
+        <li><i>Heptameron</i> (1559); Agrippa, <i>De occulta philosophia</i>.</li>
+        <li>Dee, Sloane MS 3188; Casaubon, <i>A True &amp; Faithful Relation</i> (1659).</li>
+        <li>Exodus 14:19–21; Sukkah 45a; Reuchlin; Kircher.</li>
+        <li><i>The Book of Abramelin</i>; Lemegeton IV, <i>Ars Almadel</i>.</li>
+        <li><i>Hekhalot Rabbati</i>; <i>Hekhalot Zutarti</i>; 3 Enoch.</li>
+        <li>Pseudo-Dionysius, <i>The Celestial Hierarchy</i>.</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/angelarium.html">Angelarium</a><a href="/new.html#ars-paulina">Ars Paulina</a><a href="/seven-angels.html">The Seven Angels</a><a href="/app/enochian-calls.html">Enochian Calls</a><a href="/new.html#names72">The 72 Names</a><a href="/app/hekhalot-the-seven-palaces.html">Hekhalot: The Seven Palaces</a></div>
+    </div></aside>
+  </div>
+</article>
+
+<!-- XVII THRESHOLD -->
+<article class="chapter" id="threshold">
+  <div class="chapter-head reveal"><div class="num">XVII</div><div><div class="eyebrow">1839 to the present · research</div><h2>Theta: the Science of the Threshold</h2><div class="sub">The drum, the chamber and the binaural beat</div></div></div>
+  <div class="cols">
+    <div class="prose reveal">
+      <p>Between waking and sleep there is a narrow band, four to eight cycles a second, where imagery rises unbidden and the boundary of the self grows thin. Every tradition in this archive found its own way there: the drum, the chant, the whispered hymn, the vigil. Binaural entrainment is the modern way.</p>
+      <h3>A tone that exists only inside the head</h3>
+      <p>Play a steady 200 Hz tone into the left ear and a 206 Hz tone into the right, through headphones, and you hear something neither ear received: a soft pulsing at six beats per second. It is assembled in the brainstem, where the superior olivary complex compares the timing of the two ears. Heinrich Wilhelm Dove described the effect in 1839; Gerald Oster drew it back into science in 1973 with “Auditory beats in the brain.” The hypothesis tested ever since is that the wider brain is drawn toward the beat’s rhythm.</p>
+      <h3>The receptive state</h3>
+      <p>Beta (12–30 Hz) is the working mind the rites begin by leaving. Alpha (8–12 Hz) is the doors closing. Theta (4–8 Hz) is the hypnagogic edge of sleep: vivid imagery, deep absorption. Gamma (30+ Hz) is high-frequency integration, reported at striking amplitude in some long-term meditators. Theta is where the body can rest while the mind stays awake: the Hekhalot adept with head between the knees, the seeress on her high seat, the shaman’s drum.</p>
+      <h3>How sound became a door</h3>
+      <p>In the 1970s a laboratory in rural Virginia built layered binaural audio into a graded training method: a numbered ladder of states, each anchored by its own sound and cues, so that a state could be re-entered at will. In 1983 United States Army intelligence assessed the method; Lieutenant Colonel Wayne McDonnell’s report of 9 June 1983, later released through the CIA’s reading room, became one of the most read documents in its archive. Its lesson for this archive is architectural: a structured sound environment, used with intention and a graded sequence, can become a repeatable door. That is the architecture the ancient rites used.</p>
+      <h3>Before electronics</h3>
+      <ol class="rite">
+        <li><b>The drum, about four beats a second.</b> In 2026 a team at the Hebrew University of Jerusalem recorded EEG while forty participants heard drumming at delta, theta and alpha tempos. The brain tracked the theta-rate drum most closely, and the strength of that tracking predicted how deeply consciousness was altered.</li>
+        <li><b>The chamber, about 110 Hz.</b> Acoustic surveys of ancient chambers, from Neolithic passage tombs to the Hypogeum of Malta, found resonances clustered between 95 and 120 Hz. At UCLA, 110 Hz reduced activity over the left temporal language areas and shifted prefrontal activity toward the right.</li>
+      </ol>
+      <h3>How the apps use sound</h3>
+      <p>Preparation opens on room tone with the beat in alpha. Invocation carries gamma-range layers under the spoken names. Silence and vision rest on theta-range beats over low carriers of 120–320 Hz, beneath temple drones. The return climbs back through alpha and closes deliberately. Every layer is generated on the device. Laboratory studies have found real effects of binaural beats on attention, memory and anxiety, while whether the EEG itself locks to the beat varies from person to person.</p>
+      <p class="muted"><i>Use binaural audio only through headphones, seated or lying down, never while driving. If you have epilepsy or a seizure disorder, consult a physician first. The apps are for contemplation, study and practice, and are not medical devices.</i></p>
+    </div>
+    <aside class="reveal"><div class="ledger">
+      <h4>Ledger</h4>
+      <dl>
+        <dt>1839</dt><dd>Dove describes the binaural beat</dd>
+        <dt>1973</dt><dd>Oster, “Auditory beats in the brain”</dd>
+        <dt>1970s</dt><dd>The numbered ladder, Virginia</dd>
+        <dt>1983</dt><dd>McDonnell’s Army assessment</dd>
+        <dt>2026</dt><dd>Theta tracking of the drum</dd>
+      </dl>
+      <h4>Sources</h4>
+      <ol class="biblio">
+        <li>Oster, G. (1973). Auditory beats in the brain. <i>Scientific American</i> 229(4).</li>
+        <li>McDonnell, W. M. (1983). U.S. Army assessment memorandum, 9 June 1983.</li>
+        <li>Gordon, Karvat, Dagan &amp; Landau (2026). Neural tracking at theta predicts drumming-induced altered states. <i>Scientific Reports</i> 16.</li>
+        <li>Cook, Pajot &amp; Leuchter (2008). Ancient architectural acoustic resonance patterns and regional brain activity. <i>Time and Mind</i> 1(1).</li>
+        <li>Jahn, Devereux &amp; Ibison (1996). Acoustical resonances of assorted ancient structures. <i>JASA</i> 99(2).</li>
+        <li>Garcia-Argibay et al. (2019). Binaural beats: a meta-analysis. <i>Psychological Research</i> 83.</li>
+        <li>Ingendoh, Posny &amp; Heine (2023). Binaural beats to entrain the brain? <i>PLOS ONE</i> 18(5).</li>
+        <li>Green (1968); Blackmore (1982); Blanke et al. (2002) <i>Nature</i> 419; Smith &amp; Messier (2014).</li>
+      </ol>
+      <h4 style="margin-top:20px">In the collection</h4>
+      <div class="app-links"><a href="/app/shaman.html">Shaman</a><a href="/new.html#spirit-drum">Spirit Drum</a><a href="/app/obe-induction.html">OBE Induction</a><a href="/app/the-signal.html">The Signal</a><a href="/new.html#harmonic">Harmonic</a></div>
+    </div></aside>
+  </div>
+</article>
+
+</div></main>
+
+<footer class="dsf"><div class="wrap"><div><a href="/">Home</a><a href="/#apps">The Apps</a><a href="/seven-angels.html">Seven Angels</a><a href="/new.html">All Apps</a><a href="/shop.html">Shop</a><a href="/library.html">Library</a><a href="/archive.html">Archive</a><a href="/privacy.html">Privacy</a></div><div class="soc"><a href="https://www.youtube.com/@angeliccommmunication" rel="noopener">YouTube · Angelic Communication</a><a href="https://www.tiktok.com/@discoveryscience" rel="noopener">TikTok · @discoveryscience</a><a href="https://www.instagram.com/discoverysciencetools/" rel="noopener">Instagram · @discoverysciencetools</a><a href="https://www.instagram.com/sigilandwing/" rel="noopener">Instagram · @sigilandwing</a><a href="https://x.com/sizzlefeggio" rel="noopener">X · @sizzlefeggio</a><a href="https://www.etsy.com/shop/SigilAndWing" rel="noopener">Etsy · SigilAndWing</a><a href="https://ostrander5.gumroad.com/" rel="noopener">Shop · toolkits &amp; courses</a></div><div class="cr">© 2026 Discovery Science, Inc. · montgomery@discovery-science.com</div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Neurofeedback EEG — Discovery Science</title>
+<meta name="description" content="Live Neurofeedback with EEG: every Discovery Science rite in an edition that listens to your brain through OpenBCI or Neurosity Crown. Hear theta dominance and gamma bursts in real time, record every session and export it to Excel. $999 per app.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.steps4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.steps4 .rn{font-family:var(--serif);font-size:34px;color:var(--gold);display:block;line-height:1;margin-bottom:10px}
+@media(max-width:900px){.steps4{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.steps4{grid-template-columns:minmax(0,1fr)}}
+.xls{font-family:var(--mono);font-size:12px;border-collapse:collapse;width:100%;background:#0b1220}
+.xls th,.xls td{border:1px solid #22304e;padding:6px 8px;text-align:left;white-space:nowrap}
+.xls th{background:#13203a;color:var(--gold)}
+.xls td{color:var(--soft)}
+.xls .g{color:#8ff0c6}.xls .a{color:#f0d79a}
+</style>
+</head>
+<body data-page="neuro">
+<canvas id="sky"></canvas>
+<div id="nav"></div>
+
+<header class="hero" style="min-height:auto;padding:90px 0 50px"><div class="wrap spot">
+  <div>
+    <div class="folio" style="color:#a99fff">Live Neurofeedback with EEG · Folio IV</div>
+    <h1 style="font-size:clamp(46px,7vw,88px);line-height:1;margin:16px 0 20px">The rite that<br><em style="color:var(--gold2);font-weight:500">listens back.</em></h1>
+    <p class="lede">Every app in the library has a Live Neurofeedback EEG edition. Put on an OpenBCI or Neurosity Crown headset and the rite hears your brain in real time: a tone tells you the moment you become theta dominant, a chime marks every anomalous gamma burst, and the whole session is recorded for you to export to Excel and track over weeks and months.</p>
+    <div class="btns" style="margin-top:28px"><a class="btn gold" href="#buy">Buy · $999</a><a class="btn ghost" href="#hear">What you hear</a></div>
+  </div>
+  <div class="reveal" style="max-width:300px;margin:0 auto">
+    <div class="phone" style="aspect-ratio:360/751"><img data-zoom src="/assets/img/rites-eeg-1.webp" alt="A Rites of Magic session with live EEG band power: delta, theta, alpha, beta and gamma, and a flagged gamma burst"></div>
+    <p class="fine" style="text-align:center;margin-top:10px">A live session in Rites of Magic: relative band power for every rhythm, and a gamma burst flagged at +5.57 SD.</p>
+  </div>
+</div></header>
+
+<section id="hear" style="padding-top:30px;border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">I · What you hear</div><h2>Identify the state. Catch the anomaly.</h2><p>The EEG editions are built for two jobs: telling you, while your eyes are closed, which state you are in, and catching the rare events worth writing down.</p></div>
+  <div class="grid3">
+    <div class="card reveal" style="border-color:rgba(154,140,255,.5)"><div class="eyebrow" style="color:#c7bfff">The theta tone</div><h3 style="font-size:28px;margin:10px 0">You hear the threshold</h3><p class="muted" style="margin:0">When theta power rises above alpha and beta and holds there, a soft sustained tone enters the soundscape. It fades as you drift back up. With eyes closed, you learn to find the theta-dominant state and stay in it.</p></div>
+    <div class="card reveal"><div class="eyebrow">The gamma chime</div><h3 style="font-size:28px;margin:10px 0">You hear the burst</h3><p class="muted" style="margin:0">Each sudden surge of gamma power far above your own baseline, measured in standard deviations, is marked by a distinct chime and time-stamped, so you can match it to what you were experiencing.</p></div>
+    <div class="card reveal"><div class="eyebrow">The rite responds</div><h3 style="font-size:28px;margin:10px 0">Gates that open</h3><p class="muted" style="margin:0">In ascent rites the next palace, Aethyr or stage opens only when the target state has been sustained. In ORACLE the card turns when your attention has settled.</p></div>
+  </div>
+  <div class="grid4" style="margin-top:20px">
+    <div class="card reveal"><span class="eyebrow">Live</span><p class="muted" style="margin:8px 0 0;font-size:15px">Delta, theta, alpha, beta and gamma band power, updated several times a second.</p></div>
+    <div class="card reveal"><span class="eyebrow">Personal</span><p class="muted" style="margin:8px 0 0;font-size:15px">A one-minute eyes-open and eyes-closed calibration sets every threshold to your own baseline.</p></div>
+    <div class="card reveal"><span class="eyebrow">Marked</span><p class="muted" style="margin:8px 0 0;font-size:15px">Touch markers for planet, angel, out, in, peak and mark, so impressions are logged against the signal.</p></div>
+    <div class="card reveal"><span class="eyebrow">Clean</span><p class="muted" style="margin:8px 0 0;font-size:15px">Signal quality is checked continuously, and blinks, jaw tension and movement are flagged so they are not mistaken for events.</p></div>
+  </div>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap cols">
+  <div class="reveal">
+    <div class="eyebrow">II · The record</div>
+    <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 16px">Every session, recorded and exportable</h2>
+    <p class="muted" style="font-size:17px">Each session is saved on your device with its band-power timeline, the moments of theta dominance, every gamma burst, your markers and your written impressions. Export any session, or your whole history, as an Excel spreadsheet to chart your progress, compare rites and hours, or share with a teacher or researcher.</p>
+    <ul class="feat" style="columns:1;font-size:15px">
+      <li>Time-stamped band power for all five rhythms</li>
+      <li>Total and longest periods of theta dominance per session</li>
+      <li>Gamma bursts with size relative to your baseline</li>
+      <li>Your markers, ritual stage and journal notes in the same timeline</li>
+      <li>Signal-quality and artifact flags for honest analysis</li>
+    </ul>
+  </div>
+  <aside class="reveal"><div class="ledger" style="padding:16px">
+    <h4>Session export · .xlsx (sample layout)</h4>
+    <div class="tablewrap"><table class="xls">
+      <tr><th>time</th><th>stage</th><th>θ %</th><th>α %</th><th>γ z</th><th>state</th><th>marker</th></tr>
+      <tr><td>00:41</td><td>Purification</td><td>18.2</td><td>31.4</td><td>0.4</td><td>alpha</td><td></td></tr>
+      <tr><td>04:12</td><td>Invocation</td><td>27.9</td><td>19.1</td><td>1.1</td><td class="g">θ dominant</td><td></td></tr>
+      <tr><td>06:37</td><td>Silence</td><td>31.6</td><td>17.0</td><td class="a">5.6</td><td class="a">γ burst</td><td>PEAK</td></tr>
+      <tr><td>09:05</td><td>Silence</td><td>29.8</td><td>18.4</td><td>0.9</td><td class="g">θ dominant</td><td>ANGEL</td></tr>
+      <tr><td>12:30</td><td>Return</td><td>16.7</td><td>33.0</td><td>0.2</td><td>alpha</td><td></td></tr>
+    </table></div>
+    <p class="fine" style="margin:10px 0 0">Illustrative values. Columns are exported for every update of the signal.</p>
+  </div></aside>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">III · How it works</div><h2>The closed loop, in plain terms</h2><p>Think of learning to balance on a bicycle. Nobody can explain the muscles involved, but the bike tells you instantly when you tip, and soon your body knows. Neurofeedback does the same for states of consciousness.</p></div>
+  <div class="steps4">
+    <div class="card reveal"><span class="rn">I</span><h3 style="font-size:24px">Listen</h3><p class="muted" style="margin:0">Dry electrodes pick up the brain’s rhythms, signals measured in millionths of a volt, 250 to 256 times a second.</p></div>
+    <div class="card reveal"><span class="rn">II</span><h3 style="font-size:24px">Measure</h3><p class="muted" style="margin:0">Several times a second the app computes the strength of each rhythm and compares it with your baseline.</p></div>
+    <div class="card reveal"><span class="rn">III</span><h3 style="font-size:24px">Answer</h3><p class="muted" style="margin:0">Within about a quarter of a second, the sound and the rite respond: the tone, the chime, the gate.</p></div>
+    <div class="card reveal"><span class="rn">IV</span><h3 style="font-size:24px">Learn</h3><p class="muted" style="margin:0">States that are signalled become easier to find again. Over sessions you learn to enter them on purpose.</p></div>
+  </div>
+  <div class="prose reveal" style="max-width:820px;margin-top:40px">
+    <p>The method is sixty years old. In the 1960s Joe Kamiya showed that people could learn to recognise and then control their own alpha rhythm when given a signal for it, and Barry Sterman’s laboratory trained a 12–15 Hz rhythm in cats that, unexpectedly, made them resistant to seizures. Meditation research since has drawn a consistent picture: practice brings rising alpha and theta, expert meditators show increased frontal midline theta during concentration, and some long-term practitioners generate striking high-amplitude gamma. Studies of neurofeedback during meditation have found that people can learn to raise their theta power, and that real feedback moves the trained signal more than sham feedback does.</p>
+    <p>Pair that with <a href="/entrainment.html">binaural entrainment</a> and you have the complete instrument: the sound invites the brain toward theta, and the EEG tells you, honestly and in real time, whether it went there.</p>
+  </div>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">IV · Hardware</div><h2>Works with two open platforms</h2><p>Both headsets use dry electrodes, connect wirelessly and give access to the raw signal. The headset is bought separately from its manufacturer.</p></div>
+  <div class="grid2">
+    <div class="card reveal"><div class="eyebrow">OpenBCI</div><h3 style="font-size:30px;margin:10px 0 14px">Open-source research hardware</h3>
+      <div class="tablewrap"><table class="data">
+        <tr><th>Board</th><th>Channels</th><th>Sample rate</th></tr>
+        <tr><td>Ganglion</td><td>4</td><td>200 Hz</td></tr>
+        <tr><td>Cyton</td><td>8</td><td>250 Hz</td></tr>
+        <tr><td>Cyton + Daisy</td><td>16</td><td>125 Hz per channel</td></tr>
+      </table></div>
+      <p class="muted" style="font-size:14px;margin:0">Worn in the Ultracortex Mark IV headset, with up to 35 electrode positions on the 10–20 system.</p></div>
+    <div class="card reveal"><div class="eyebrow">Neurosity</div><h3 style="font-size:30px;margin:10px 0 14px">The Crown</h3>
+      <div class="tablewrap"><table class="data">
+        <tr><th>Spec</th><th>Value</th></tr>
+        <tr><td>Channels</td><td>8 EEG at 256 Hz</td></tr>
+        <tr><td>Positions</td><td>CP3, C3, F5, PO3, PO4, F6, C4, CP4</td></tr>
+        <tr><td>Onboard</td><td>Quad-core processor; filtering on the device</td></tr>
+      </table></div>
+      <p class="muted" style="font-size:14px;margin:0">Posterior alpha is read from PO3 and PO4; frontal theta from F5 and F6.</p></div>
+  </div>
+</div></section>
+
+<section id="buy" style="border-top:1px solid var(--line)"><div class="wrap cols" style="align-items:center">
+  <div class="reveal">
+    <div class="eyebrow">V · Buy</div>
+    <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 16px">One EEG edition per rite</h2>
+    <p class="muted" style="font-size:17px">Choose the rite you practise most: ORACLE, the Seven Palaces, Enochian Calls, the Greek Gods, The Signal or any other in the library. Each Live Neurofeedback EEG edition includes:</p>
+    <ul class="feat" style="columns:1;font-size:15px">
+      <li>The full rite, with its binaural entrainment and soundscape</li>
+      <li>Live band power, the theta tone and the gamma-burst chime</li>
+      <li>Personal calibration and adaptive thresholds</li>
+      <li>Session recording and Excel export</li>
+      <li>Support for OpenBCI Ganglion, Cyton, Cyton + Daisy and the Neurosity Crown</li>
+    </ul>
+  </div>
+  <div class="price-card reveal">
+    <div class="eyebrow" style="color:#c7bfff">Live Neurofeedback EEG edition</div>
+    <div class="amt">$999</div>
+    <p class="muted" style="margin:6px 0 18px">per app · headset sold separately</p>
+    <select class="sel" id="buy-app" aria-label="Choose the rite"></select>
+    <button class="btn gold" data-buy="" style="width:100%;justify-content:center">Buy now</button>
+    <p class="fine" style="margin-top:16px">Your order opens a pre-filled email to montgomery@discovery-science.com with the rite and headset; you receive payment details and installation instructions in reply. EEG editions are for contemplation, study and personal research. They are not medical devices and do not diagnose or treat any condition. OpenBCI and Neurosity are trademarks of their respective owners; Discovery Science is independent of both.</p>
+  </div>
+</div></section>
+
+<section style="border-top:1px solid var(--line);padding-top:60px"><div class="wrap narrow">
+  <div class="eyebrow">References</div>
+  <ol class="refs" style="margin-top:16px">
+    <li>Sitaram, R., et al. (2017). Closed-loop brain training: the science of neurofeedback. <i>Nature Reviews Neuroscience</i>, 18, 86–100. <a href="https://doi.org/10.1038/nrn.2016.164">doi:10.1038/nrn.2016.164</a></li>
+    <li>Kamiya, J. (2011). The first communications about operant conditioning of the EEG. <i>Journal of Neurotherapy</i>, 15, 65–73. <a href="https://doi.org/10.1080/10874208.2011.545764">doi:10.1080/10874208.2011.545764</a></li>
+    <li>Sterman, M. B. (2010). Biofeedback in the treatment of epilepsy. <i>Cleveland Clinic Journal of Medicine</i>, 77(Suppl 3), S60–S67. <a href="https://doi.org/10.3949/ccjm.77.s3.11">doi:10.3949/ccjm.77.s3.11</a></li>
+    <li>Cahn, B. R., &amp; Polich, J. (2006). Meditation states and traits: EEG, ERP, and neuroimaging studies. <i>Psychological Bulletin</i>, 132, 180–211. <a href="https://doi.org/10.1037/0033-2909.132.2.180">doi:10.1037/0033-2909.132.2.180</a></li>
+    <li>Lomas, T., Ivtzan, I., &amp; Fu, C. H. Y. (2015). A systematic review of the neurophysiology of mindfulness on EEG oscillations. <i>Neuroscience &amp; Biobehavioral Reviews</i>, 57, 401–410. <a href="https://doi.org/10.1016/j.neubiorev.2015.09.018">doi:10.1016/j.neubiorev.2015.09.018</a></li>
+    <li>Brandmeyer, T., &amp; Delorme, A. (2018). Reduced mind wandering in experienced meditators and associated EEG correlates. <i>Experimental Brain Research</i>, 236, 2519–2528. <a href="https://doi.org/10.1007/s00221-016-4811-5">doi:10.1007/s00221-016-4811-5</a></li>
+    <li>Lutz, A., et al. (2004). Long-term meditators self-induce high-amplitude gamma synchrony during mental practice. <i>PNAS</i>, 101, 16369–16373. <a href="https://doi.org/10.1073/pnas.0407401101">doi:10.1073/pnas.0407401101</a></li>
+    <li>De Vuyst, H.-J., et al. (2025). Assisting focused attention meditation through EEG-based alpha-theta cross-frequency neurofeedback. <i>Mindfulness</i>, 16, 1933–1949. <a href="https://doi.org/10.1007/s12671-025-02603-x">doi:10.1007/s12671-025-02603-x</a></li>
+    <li>Treves, I. N., et al. (2024). Mindfulness-based neurofeedback: a systematic review of EEG and fMRI studies. <i>Imaging Neuroscience</i>. <a href="https://doi.org/10.1162/imag_a_00396">doi:10.1162/imag_a_00396</a></li>
+    <li>Gruzelier, J. (2009). A theory of alpha/theta neurofeedback. <i>Cognitive Processing</i>, 10, S101–S109. <a href="https://doi.org/10.1007/s10339-008-0248-5">doi:10.1007/s10339-008-0248-5</a></li>
+    <li>Belinskaia, A., et al. (2020). Short-delay neurofeedback facilitates training of the parietal alpha rhythm. <i>Journal of Neural Engineering</i>, 17, 066012. <a href="https://doi.org/10.1088/1741-2552/abc8d7">doi:10.1088/1741-2552/abc8d7</a></li>
+    <li>Whitham, E. M., et al. (2007). Scalp electrical recording during paralysis: quantitative evidence that EEG frequencies above 20 Hz are contaminated by EMG. <i>Clinical Neurophysiology</i>, 118, 1877–1888. <a href="https://doi.org/10.1016/j.clinph.2007.04.027">doi:10.1016/j.clinph.2007.04.027</a></li>
+    <li>OpenBCI documentation: <a href="https://docs.openbci.com/FAQ/HowProductsGoTogether">product overview</a>. Neurosity: <a href="https://neurosity.co/tech-specs">Crown tech specs</a>.</li>
+  </ol>
+</div></section>
+
+<div id="footer"></div>
+<script src="/assets/apps.js"></script>
+<script src="/assets/apps-patch.js"></script>
+<script src="/assets/site.js"></script>
+<script>
+(function(){var s=document.getElementById('buy-app');var q=new URLSearchParams(location.search).get('app');
+s.innerHTML=window.DS_APPS.map(function(a){return '<option'+(a.name===q?' selected':'')+'>'+a.name+'</option>'}).join('');})();
+</script>
+</body>
+</html>
