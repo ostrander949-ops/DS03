@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OBE Induction App: Guided Out-of-Body Ritual | Discovery Science</title>
+<meta name="description" content="OBE Induction for Android: twelve guided protocols, a staged three-threshold binaural progression, ceremonial hours from your own sky and experience markers.">
+<meta property="og:title" content="OBE Induction App: Guided Out-of-Body Ritual">
+<meta property="og:url" content="https://www.discovery-science.com/obe.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.arc{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;counter-reset:a}
+.arc div{border:1px solid var(--line2);border-radius:12px;padding:14px 12px;background:rgba(255,255,255,.02)}
+.arc b{display:block;font-family:var(--serif);font-size:20px;color:var(--gold2);margin-bottom:4px}
+.arc span{font-size:13px;color:var(--soft);line-height:1.5;display:block}
+.arc i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.12em}
+.protos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.proto{padding:20px}
+.proto h3{font-size:23px;margin:6px 0 6px}
+.proto p{font-size:14px;margin:0 0 10px}
+.proto .st{display:flex;flex-wrap:wrap;gap:5px}
+.proto .st span{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--soft);border:1px solid var(--line2);border-radius:4px;padding:2px 6px}
+.markers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.markers div{border:1px solid var(--line2);border-radius:12px;padding:14px}
+.markers b{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--gold2)}
+.markers p{font-size:13.5px;margin:6px 0 0;color:var(--soft)}
+.log{font-family:var(--mono);font-size:12.5px;border-left:2px solid var(--line2);margin:0;padding:0}
+.log li{list-style:none;position:relative;padding:8px 0 8px 22px;color:var(--soft)}
+.log li::before{content:"";position:absolute;left:-6px;top:15px;width:10px;height:10px;border-radius:50%;background:var(--line2)}
+.log li.g::before{background:#f0d79a}.log li.o::before{background:#9a8cff}
+.log li b{color:var(--text);font-weight:500}
+.log .t{color:var(--gold);margin-right:10px}
+.sheets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 26px}
+.sheets div{border-bottom:1px solid var(--line);padding:8px 0}
+.sheets b{font-family:var(--mono);font-size:12.5px;color:var(--gold2)}
+.sheets span{display:block;font-size:13.5px;color:var(--soft)}
+@media(max-width:960px){.arc{grid-template-columns:repeat(3,minmax(0,1fr))}.protos{grid-template-columns:repeat(2,minmax(0,1fr))}.markers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.arc,.protos,.sheets{grid-template-columns:minmax(0,1fr)}.markers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+<link rel="canonical" href="https://www.discovery-science.com/obe.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Discovery Science">
+<meta property="og:description" content="OBE Induction for Android: twelve guided protocols, a staged three-threshold binaural progression, ceremonial hours from your own sky and experience markers.">
+<meta name="twitter:card" content="summary">
+</head>
+<body data-page="obe">
+<canvas id="sky"></canvas>
+<div id="nav"></div>
+
+<header class="hero" style="min-height:auto;padding:90px 0 60px"><div class="wrap spot">
+  <div>
+    <div class="folio" style="color:#a99fff">New release · Folio VI</div>
+    <h1 style="font-size:clamp(52px,8.5vw,108px);line-height:.98;margin:16px 0 14px">OBE<br><em style="color:var(--gold2);font-weight:500">Induction</em></h1>
+    <p style="font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.8vw,30px);color:var(--gold2);margin:0 0 18px">An out-of-body induction ritual.</p>
+    <p class="lede">Twelve guided protocols, built around the oldest map of the threshold: let the body fall asleep while the mind stays awake, widen awareness past the edge of the body, rest where time stops, and come back. Voice, landscape and a binaural field that changes with every stage carry you there. Experience markers record what happens while it happens. The Live EEG edition records what your brain was doing at the same moment.</p>
+    <div class="btns" style="margin-top:28px"><a class="btn gold" href="https://play.google.com/store/apps/details?id=com.discoveryscience.ritual" target="_blank" rel="noopener">Get OBE Induction</a><a class="btn ghost" href="#eeg">The Live EEG edition</a></div>
+  </div>
+  <div class="spot-phones">
+    <div class="phone"><img data-zoom src="/assets/img/obe-practice.webp" alt="OBE Induction during the grounding stage of a ceremonial hour, with experience markers OUT, IN, LIGHT, SOUND and PRESENCE"></div>
+    <div class="phone"><img data-zoom src="/assets/img/rites-eeg-1.webp" alt="OBE Induction Live EEG edition showing relative band power and a flagged gamma event during an invocation"></div>
+  </div>
+</div></header>
+
+<section style="padding-top:30px;border-top:1px solid var(--line)"><div class="wrap cols">
+  <div class="reveal">
+    <div class="eyebrow">I · The experience</div>
+    <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 16px">Leaving the body, as people describe it</h2>
+    <div class="prose">
+      <p>An out-of-body experience is the vivid sense of perceiving the world from a location outside your own physical body. People who report one describe a recognisable run of events: a heaviness as the body goes still, a buzzing or rushing “vibration” spreading through it, sometimes a roar or a high ringing, then a sensation of rising, rolling or floating free, and a view of the room, or of their own body, from somewhere it cannot be seen from. The return is often abrupt, with a jolt and a rush of ordinary bodily feeling.</p>
+      <p>The experience is far from rare, and it has been mapped many times: by the numbered ladder of states a 1970s American sound laboratory made famous, by the hypnagogic literature on the edge of sleep, by the <i>yordei merkavah</i> who “descended to the Chariot” with head between the knees, by the <i>vǫlva</i> on her high seat while the <i>varðlokkur</i> were sung. <a href="/entrainment.html#obe-research">The research behind OBE Induction</a> is on its own page.</p>
+      <p>OBE Induction follows the ritual logic those traditions share. It does not play you a recording and hope. It prepares you, orders the stages, holds you at the edge, and brings you back.</p>
+    </div>
+  </div>
+  <aside class="reveal"><div class="ledger">
+    <h4>What practitioners report</h4>
+    <dl>
+      <dt>Onset</dt><dd>Heaviness, stillness, hypnagogic images at the edge of sleep</dd>
+      <dt>Vibrations</dt><dd>Buzzing, pressure or rushing through the body; often sound with it</dd>
+      <dt>Separation</dt><dd>Rising, rolling, floating or “stepping out”</dd>
+      <dt>Perspective</dt><dd>The room, or one’s own body, seen from outside</dd>
+      <dt>Presence</dt><dd>A sense that someone or something is near</dd>
+      <dt>Light</dt><dd>Luminous fields, points or figures</dd>
+      <dt>Return</dt><dd>A jolt or rush back into bodily feeling</dd>
+    </dl>
+    <p class="fine" style="margin:12px 0 0">These are subjective reports. The app records them as such and never presents them as proof that anything left the body.</p>
+  </div></aside>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">II · The rite</div><h2>Built as a ritual, not a track</h2><p>Every session follows the same six-part arc. The protocols change what happens inside it.</p></div>
+  <div class="arc reveal">
+    <div><i>01</i><b>Intention</b><span>One clear sentence: what you seek and why. Ethical framing is part of every protocol.</span></div>
+    <div><i>02</i><b>Orientation</b><span>Headphones on, phone placed, body settled. Ceremonial protocols find your direction by compass.</span></div>
+    <div><i>03</i><b>Descent</b><span>Voice and landscape withdraw the senses; the binaural beat begins to slow.</span></div>
+    <div><i>04</i><b>Threshold</b><span>The deepest stage. The sound field narrows and goes quiet so attention can stay continuous.</span></div>
+    <div><i>05</i><b>Return</b><span>The beat climbs; breath, body, room and ordinary time come back deliberately.</span></div>
+    <div><i>06</i><b>Record</b><span>Markers, notes and a reflection are saved to your private practice history.</span></div>
+  </div>
+  <div class="grid3" style="margin-top:22px">
+    <div class="card reveal"><div class="eyebrow">Voice</div><h3 style="font-size:24px;margin:8px 0">Recorded guidance</h3><p class="muted" style="margin:0;font-size:15px">A human voice carries the phases, attunement, purification, deepening, induction, integration, and adaptive cues: remain still, soften the body, release the location, let awareness expand. Orientation prompts guide you to turn, raise or lower the phone until you are aligned.</p></div>
+    <div class="card reveal"><div class="eyebrow">Landscape</div><h3 style="font-size:24px;margin:8px 0">Living environments</h3><p class="muted" style="margin:0;font-size:15px">Night forest, river, rain, wind, thunder and dawn birds crossfade from stage to stage beneath dedicated threshold drones, a tribal theta drum and crystal bowl, each set to its own level for each stage.</p></div>
+    <div class="card reveal"><div class="eyebrow">Sound</div><h3 style="font-size:24px;margin:8px 0">A moving binaural field</h3><p class="muted" style="margin:0;font-size:15px">Each stage has its own carrier tone and its own beat between the ears, changing gradually rather than switching, so the brain is led from one rhythm to the next. Every layer is generated on the device in real time.</p></div>
+  </div>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap cols">
+  <div class="reveal">
+    <div class="eyebrow">III · The core protocol</div>
+    <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 16px">The Threshold progression</h2>
+    <div class="prose">
+      <p>The central protocol climbs the old numbered ladder that every serious student of the out-of-body literature will recognise, the rungs once counted ten, twelve and fifteen. At <b>Threshold I</b> the body goes heavy and quiet while awareness stays clear. At <b>Threshold II</b> awareness widens beyond the boundary of the skin until the room itself is part of what you are calmly observing. At <b>Threshold III</b> you stop measuring time and rest in still, continuous awareness, the stage the guidance describes as “stop seeking an event.” Then a full sensory <b>Return</b>.</p>
+      <p>The beat drops as you go deeper, from the alpha border into the heart of theta, then climbs back for the return. The carrier tone moves with it, so each state has its own unmistakable sonic signature that you learn to recognise and, with practice, re-enter.</p>
+    </div>
+    <p class="fine">An independent, original audio design built from the public research literature on hypnagogia and deep relaxation. Not affiliated with any institute, programme or trademark holder; contains no third-party recordings.</p>
+  </div>
+  <aside class="reveal"><div class="ledger">
+    <h4>Threshold progression · stage map</h4>
+    <div class="tablewrap"><table class="data" style="margin:0">
+      <tr><th>Stage</th><th>Meaning</th><th>Beat</th><th>Carrier</th></tr>
+      <tr><td>Threshold I</td><td>Mind awake, body asleep</td><td>8 Hz</td><td>200 Hz</td></tr>
+      <tr><td>Threshold II</td><td>Expanded awareness</td><td>6 Hz</td><td>240 Hz</td></tr>
+      <tr><td>Threshold III</td><td>Timeless stillness</td><td>4 Hz</td><td>180 Hz</td></tr>
+      <tr><td>Return</td><td>Full sensory orientation</td><td>10 Hz</td><td>220 Hz</td></tr>
+    </table></div>
+    <p class="muted" style="font-size:13.5px;margin:12px 0 0">In a 30-minute session the three threshold stages take a little over eight minutes each; the return takes four and a half.</p>
+  </div></aside>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">IV · Twelve protocols</div><h2>Twelve doors to the same threshold</h2><p>Each protocol has its own stages, carrier, beat arc and landscape, and its own source note explaining exactly what it draws on and what it does not claim.</p></div>
+  <div class="protos" id="protos"></div>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap cols">
+  <div class="reveal">
+    <div class="eyebrow">V · The ceremonial hours</div>
+    <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 16px">The angel of this hour, under your own sky</h2>
+    <div class="prose">
+      <p>The <i>Ars Paulina</i>, third book of the Lemegeton, gives a ruling angel to each of the twenty-four hours. Those hours are not clock hours. They are unequal “temporal” hours: daylight divided into twelve, night divided into twelve, so they stretch and shrink with the seasons and with where you stand.</p>
+      <p>OBE Induction computes them properly. With your permission it reads your location, calculates the true local sunrise and sunset, finds the current temporal hour and its planet in the traditional sequence, and names the angel of that hour from the Sloane manuscript table. A seal diagram turns at the centre of the screen. In the Celestial Alignment stage the compass guides you to face the azimuth of the ruling planet, even when it is below the horizon, with eyes lowered if it is the Sun.</p>
+      <p>The ceremony then runs in seven stages: purification, celestial alignment, planetary attunement, invocation, quiet audience, thanksgiving and license to depart, and grounding. The sound field darkens and quiets as you approach the audience, then opens again for the return. The voice warns you when the hour is about to change.</p>
+    </div>
+  </div>
+  <aside class="reveal"><div class="ledger">
+    <h4>On the ceremonial protocols</h4>
+    <dl>
+      <dt>Ars Paulina</dt><dd>24 hour-angels · local temporal hours · compass alignment · seven stages</dd>
+      <dt>Heptameron</dt><dd>Weekday, planetary hour, season and direction</dd>
+      <dt>Ars Almadel</dt><dd>Four celestial altitudes and a fourfold altar</dd>
+      <dt>Heptarchy</dt><dd>Dee’s sevenfold planetary table and crystal audience</dd>
+      <dt>Seventy-Two Names</dt><dd>Contemplation of a three-letter unit of the Name</dd>
+      <dt>Guardian Angel</dt><dd>Preparation and reflection after Abramelin’s aim</dd>
+    </dl>
+    <p class="fine" style="margin:12px 0 0">Each is presented as guided contemplation inspired by its source. None claims to reproduce the historical operation or to deliver verified contact.</p>
+  </div></aside>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">VI · Experience markers</div><h2>Mark it while it happens</h2><p>Memory edits experience within minutes. So the app lets you log events at the moment they occur, with a tap or, on Android, a spoken word, without opening your eyes or breaking the state.</p></div>
+  <div class="markers reveal">
+    <div><b>OUT</b><p>The moment of separation: rising, rolling, stepping out.</p></div>
+    <div><b>IN</b><p>The return to the body. OUT and IN are paired into a timed transition.</p></div>
+    <div><b>LIGHT</b><p>Luminous fields, points or figures.</p></div>
+    <div><b>SOUND</b><p>Vibration, roar, ringing, voices or tones not in the audio.</p></div>
+    <div><b>PRESENCE</b><p>The sense that someone or something is near.</p></div>
+    <div><b>MARK</b><p>Anything else worth finding again later.</p></div>
+    <div><b>PLANET · ANGEL</b><p>In the EEG edition: moments of attunement during the ceremonial hours.</p></div>
+    <div><b>PEAK</b><p>In the EEG edition: the high point of the session.</p></div>
+  </div>
+</div></section>
+
+<section id="eeg" style="border-top:1px solid var(--line)"><div class="wrap spot">
+  <div class="reveal" style="max-width:300px;margin:0 auto">
+    <div class="phone" style="aspect-ratio:412/860"><img data-zoom loading="lazy" src="/assets/img/rites-eeg-1.webp" alt="Live EEG panel in OBE Induction with five band powers and a gamma event marked in standard deviations"></div>
+  </div>
+  <div class="reveal">
+    <div class="eyebrow" style="color:#c7bfff">VII · Ritual · Live EEG edition</div>
+    <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 16px">Ritual: the EEG edition</h2>
+    <p class="muted" style="font-size:17px">OBE Induction has an EEG counterpart, <b class="gold">Ritual</b>: the same twelve protocols, voice and landscapes, rebuilt around a live brain signal. It connects to a Neurosity Crown and streams relative band power, delta, theta, alpha, beta and gamma, through the whole session. Everything you mark is stamped with the state of your brain at that instant.</p>
+    <ul class="feat" style="columns:1;font-size:15px">
+      <li><b class="gold">Live EEG sonification.</b> The atmosphere responds to your relative band power. Whichever rhythm dominates, delta, theta, alpha, beta or gamma, shapes the sound field, so with eyes closed you hear the moment theta takes over.</li>
+      <li><b class="gold">Gamma events, defined strictly.</b> Gamma is smoothed and compared with a rolling baseline built from your own signal, ready after thirty seconds and spanning up to two minutes. An event is logged only when it rises 1.5, 2 or 2.5 standard deviations above that baseline and holds for at least three-quarters of a second, with an eight-second gap before the next. Each one sounds a gamma harmonic in the field, and can be switched off.</li>
+      <li><b class="gold">Markers tied to the signal.</b> Every OUT, IN, LIGHT or PEAK carries the five band powers and the gamma score from the same moment, and the time to the nearest gamma event before and after.</li>
+      <li><b class="gold">Ten seconds either side.</b> For every marker the report compares each band in the ten seconds before with the ten seconds after.</li>
+      <li><b class="gold">Out and back, measured.</b> Each OUT is paired with the next IN to give the duration of the excursion and the gamma level before, during and after it.</li>
+      <li><b class="gold">Honest about artifacts.</b> Speech and muscle tension contaminate gamma. The report flags every event and marker that falls near a spoken word.</li>
+    </ul>
+    <div class="btns" style="margin-top:20px"><a class="btn gold" data-buy="OBE Induction (Ritual EEG edition)" href="#">Buy Ritual · EEG edition · $999</a><a class="btn ghost" href="/neuro.html">How Live EEG works</a></div>
+  </div>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head reveal"><div class="eyebrow">VIII · The report</div><h2>What a session looks like, phenomenologically</h2><p>At the end of a session Ritual writes an Excel workbook. It holds two kinds of record side by side and never mixes them: what you experienced, in your own markers and words, and what the headset measured.</p></div>
+  <div class="cols" style="align-items:start">
+    <div class="reveal">
+      <div class="ledger" style="padding:22px">
+        <h4>A session, read</h4>
+        <p class="muted" style="font-size:13.5px;margin:0 0 14px">Threshold progression, 30 minutes, lying down, eyes closed. An illustrative composite drawn from the kinds of sessions we log in our own practice; times and values are representative, not a transcript.</p>
+        <ol class="log">
+          <li><span class="t">03:40</span><b>Threshold I.</b> Alpha falls as the eyes settle; theta begins to climb. Body reported as heavy and distant.</li>
+          <li><span class="t">07:55</span><b>SOUND.</b> A buzzing that starts in the chest and spreads to the head. Theta now the largest of the waking bands.</li>
+          <li class="g"><span class="t">08:12</span><b>Gamma event · 2 SD.</b> Brief, sustained 0.9 s, 17 s after the SOUND marker. No speech nearby.</li>
+          <li><span class="t">12:30</span><b>Threshold II.</b> The room “opens.” Awareness described as extending to the corners of the ceiling.</li>
+          <li class="o"><span class="t">14:06</span><b>OUT.</b> A rolling sensation to the left; the bed seen from about head height beside it.</li>
+          <li class="g"><span class="t">14:11</span><b>Gamma cluster · 3 events, peak 2.5 SD,</b> beginning five seconds after OUT.</li>
+          <li><span class="t">14:30</span><b>LIGHT.</b> A soft white field at the edge of vision.</li>
+          <li class="o"><span class="t">15:02</span><b>IN.</b> An abrupt return with a jolt in the legs. Excursion: 56 seconds.</li>
+          <li><span class="t">21:40</span><b>Threshold III.</b> Time sense fades; no markers for six minutes. Delta rises with theta.</li>
+          <li><span class="t">26:20</span><b>Return.</b> The beat climbs to 10 Hz; alpha and beta recover.</li>
+        </ol>
+        <p class="muted" style="font-size:13.5px;margin:14px 0 0"><b class="gold">Reflection, in the practitioner’s words:</b> what was felt, what was seen, what is uncertain, and one grounded action to carry forward.</p>
+      </div>
+    </div>
+    <aside class="reveal">
+      <div class="ledger" style="padding:22px">
+        <h4>Inside the workbook</h4>
+        <div class="sheets">
+          <div><b>ExperienceMarkers</b><span>Each marker with time, stage and the five bands at that instant</span></div>
+          <div><b>OBETransitions</b><span>Each OUT→IN pair: duration and gamma before, during and after</span></div>
+          <div><b>EventRelatedAnalysis</b><span>Every band ten seconds before vs. after each marker, as % change</span></div>
+          <div><b>GammaValidation</b><span>Every gamma event with its z-score and the rule that qualified it</span></div>
+          <div><b>GammaClusters</b><span>Bursts grouped within 15 s, with peak strength</span></div>
+          <div><b>RitualStages</b><span>When each stage began</span></div>
+          <div><b>EEGTiming</b><span>The full band-power timeline</span></div>
+          <div><b>SpeechIntervals</b><span>When you spoke, for artifact review</span></div>
+          <div><b>UnpairedMarkers</b><span>An OUT with no IN, and the like</span></div>
+          <div><b>RitualMetadata</b><span>Settings, the hour’s seal and the interpretation note</span></div>
+        </div>
+        <div class="note" style="margin-top:18px">The workbook carries its own disclaimer, and we mean it: these are subjective reports alongside relative EEG band-power correlations. A gamma event is an algorithm-qualified rise in measured power, not artifact-clean EEG and not evidence of anything leaving the body. What the record gives you is better: an honest, repeatable account of your own practice, session after session.</div>
+      </div>
+    </aside>
+  </div>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="cta-band reveal" style="border:1px solid rgba(212,174,98,.45);border-radius:18px;padding:34px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:30px;align-items:center;background:linear-gradient(135deg,rgba(154,140,255,.08),rgba(212,174,98,.05))">
+    <div>
+      <div class="eyebrow">Begin</div>
+      <h2 style="font-size:clamp(32px,4.4vw,48px);margin:10px 0 12px">Two ways to practise</h2>
+      <p class="muted" style="margin:0"><b class="gold">OBE Induction</b> on Google Play gives you all twelve protocols, the voice, the landscapes, the binaural field, the markers and your private practice history. <b class="gold">Ritual, the Live EEG edition,</b> adds the Neurosity Crown connection, a sound field shaped by your own brain, gamma harmonics on each sustained burst, and the full Excel session report.</p>
+    </div>
+    <div style="text-align:center">
+      <a class="btn gold" style="width:100%;justify-content:center" href="https://play.google.com/store/apps/details?id=com.discoveryscience.ritual" target="_blank" rel="noopener">Get it on Google Play</a>
+      <div style="font-family:var(--serif);font-size:44px;color:var(--gold2);line-height:1;margin:20px 0 6px">$999</div>
+      <a class="btn ghost" style="width:100%;justify-content:center" data-buy="OBE Induction (Ritual EEG edition)" href="#">Buy Ritual · Live EEG edition</a>
+    </div>
+  </div>
+</div></section>
+
+<section style="border-top:1px solid var(--line);padding-top:60px"><div class="wrap narrow">
+  <p class="fine">Use OBE Induction seated or lying down, with headphones, never while driving or operating machinery. Stop if you feel light-headed or distressed. If you have epilepsy or a seizure disorder, or a history of dissociation or psychosis, consult a clinician before using rhythmic audio and deep-relaxation practices. OBE Induction is for contemplation, study and personal practice; it is not a medical device and does not diagnose or treat any condition. Neurosity and Crown are trademarks of their owner; Discovery Science is independent.</p>
+  <p class="fine" style="margin-top:18px">Sources, studies and the history of out-of-body research: <a href="/entrainment.html#obe-research">Research</a> · <a href="/archive.html">The Archive</a>.</p>
+</div></section>
+
+<div id="footer"></div>
+<script src="/assets/site.js"></script>
+<script>
+(function(){
+var P=[
+['Threshold Progression','The core induction on the old ten-twelve-fifteen ladder: mind awake, body asleep; expanded awareness; timeless stillness; return.',['Threshold I','Threshold II','Threshold III','Return'],'Original audio architecture'],
+['Starlight Contact','An open-sky contact meditation in the manner of the group field protocols of the 1990s, the encounter of the fifth kind: grounding, heart coherence, location projection and receptive silence. Presented as meditation, not verified communication.',['Grounding','Heart Coherence','Location Projection','Receptive Silence','Integration'],'After the fifth-kind field meditations'],
+['Hypnagogia','A descent that follows the measured waking-to-sleep transition, with imagery onset and a timed recall.',['Settle','Imagery Onset','Theta Ripples','Recall'],'EEG waking–sleep research'],
+['Ars Paulina · Ceremonial Hour','The angel of the current temporal hour, computed from your own sunrise and sunset, approached in seven stages.',['Purification','Celestial Alignment','Planetary Attunement','Invocation','Quiet Audience','License to Depart','Grounding'],'Lemegeton III'],
+['Heptameron · Day & Hour','The planetary angels by weekday, hour, season and direction.',['Circle of the Day','Planetary Hour','Angelic Oration','Silent Petition','License to Depart'],'Heptameron'],
+['Ars Almadel · Four Altitudes','Fourfold geometry and luminous, quiet contemplation of one celestial altitude.',['Prepare the Almadel','Altitude Alignment','Luminous Petition','Crystal Audience','Close the Altitude'],'Lemegeton IV'],
+['Guardian Angel · Sacred Conversation','Ethical preparation and listening, after the central aim of Abramelin.',['Ethical Preparation','Interior Silence','Holy Aspiration','Sacred Listening','Integration'],'Book of Abramelin'],
+['Angelic Heptarchy · Sevenfold Table','Dee’s seven planetary offices and a crystal audience, without the later Calls.',['Prepare the Oratory','Sevenfold Alignment','Planetary Address','Crystal Audience','Thanksgiving'],'Dee, Mysteriorum Libri'],
+['Seventy-Two Names','Contemplation of a three-letter unit of the seventy-twofold Name.',['Purification','Letter Triad','Divine Name','Receptive Silence','Return'],'Shem ha-Mephorash tradition'],
+['Merkaba Integration','Heart coherence, balanced breath and the counter-rotating star tetrahedron, held as symbol.',['Heart Coherence','Balanced Breath','Star Tetrahedron','Counter-Rotation','Grounded Integration'],'Original adaptation'],
+['UAP Dogwhistle','An experimental audible beacon: prime-pattern chirps, a widening binaural difference and 8–40 Hz modulation. Not established communication technology.',['Coherence','Location Signal','Prime Beacon','Convergence','Grounded Return'],'Original experimental protocol'],
+['Theta Reset','A gentle 8 → 7 → 6 → 8 Hz arc to rest between demanding protocols.',['Exhale','Settle','Theta Rest','Ready'],'Theta relaxation design']];
+document.getElementById('protos').innerHTML=P.map(function(p,i){return '<div class="card proto reveal"'+(i===0?' style="border-color:rgba(212,174,98,.5)"':'')+'><div class="eyebrow">'+(i<9?'0':'')+(i+1)+' · '+p[3]+'</div><h3>'+p[0]+'</h3><p class="muted">'+p[1]+'</p><div class="st">'+p[2].map(function(s){return '<span>'+s+'</span>'}).join('')+'</div></div>'}).join('');
+window.__reveal&&window.__reveal();})();
+</script>
+<script src="/assets/track.js" defer></script>
+</body>
+</html>
