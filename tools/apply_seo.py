@@ -26,7 +26,11 @@ def wr(p, s):
 
 
 def url_for(p):
-    return ORIGIN + '/' if p == 'index.html' else f'{ORIGIN}/{p}'
+    if p == 'index.html':
+        return ORIGIN + '/'
+    if p.endswith('/index.html'):  # directory pages (/gifts/, /links/) use trailing-slash URLs
+        return f'{ORIGIN}/{p[:-len("index.html")]}'
+    return f'{ORIGIN}/{p}'
 
 
 def esc(s):
@@ -128,6 +132,12 @@ PAGES = {
     'planetary-attunement.html': ('Planetary Attunement: Planetary Hours App | Discovery Science', None, 'website'),
     'spirit-drum.html': (None, None, 'website'),
     'theurgia.html': (None, None, 'website'),
+    'gifts/index.html': (None, None, 'website'),
+    'gifts/journals/index.html': (None, None, 'website'),
+    'gifts/meditation-sound-healing/index.html': (None, None, 'website'),
+    'gifts/pet-lovers/index.html': (None, None, 'website'),
+    'gifts/sales-pros/index.html': (None, None, 'website'),
+    'links/index.html': (None, None, 'website'),
 }
 
 for p, (title, desc, og_type) in PAGES.items():
@@ -354,7 +364,9 @@ SITEMAP = ['index.html', 'new.html', 'angels.html', 'seven-angels.html', 'archiv
            'library.html', 'catalog.html', 'apps.html', 'almanac.html', 'google-play.html', 'obe.html', 'oracle.html',
            'neuro.html', 'entrainment.html', 'shop.html',
            'asclepion.html', 'dhikr.html', 'divining-vessel.html', 'ekstasis.html', 'kispu.html',
-           'planetary-attunement.html', 'spirit-drum.html', 'theurgia.html']
+           'planetary-attunement.html', 'spirit-drum.html', 'theurgia.html',
+           'gifts/index.html', 'gifts/journals/index.html', 'gifts/meditation-sound-healing/index.html',
+           'gifts/pet-lovers/index.html', 'gifts/sales-pros/index.html', 'links/index.html']
 SITEMAP += ['app/' + f for f in sorted(os.listdir(os.path.join(ROOT, 'app'))) if 'app/' + f not in CANONICAL_OVERRIDE]
 out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for p in SITEMAP:

@@ -73,7 +73,7 @@ All edits are made by `tools/apply_seo.py` (re-runnable, standard library only) 
 |---|---|---|---|
 | repo root | Replaced old repo contents with the exact production site; old site moved to `legacy-monty-site/` | Make the repo the source of truth | `diff -r` against the live mirror: identical; 94 files SHA-1-verified against Vercel deploy hashes |
 | `.vercelignore` | Excludes `legacy-monty-site`, `tools`, `*.md` | Keep non-site files out of deploys | n/a |
-| `sitemap.xml` | 58 indexable canonical URLs (was 42). Adds the hubs, `obe`, `oracle`, `neuro`, `entrainment`, `google-play`, `catalog`, `apps`, the 8 collection app pages and the new guide. Excludes privacy pages, 404 and `app/obe-induction.html` (canonicalised to `/obe.html`) | Discovery of commercially useful pages | Checker: every `<loc>` exists, is self-canonical and not noindex |
+| `sitemap.xml` | 64 indexable canonical URLs (was 42), including the new `/gifts/` guides and `/links/`. Adds the hubs, `obe`, `oracle`, `neuro`, `entrainment`, `google-play`, `catalog`, `apps`, the 8 collection app pages and the new guide. Excludes privacy pages, 404 and `app/obe-induction.html` (canonicalised to `/obe.html`) | Discovery of commercially useful pages | Checker: every `<loc>` exists, is self-canonical and not noindex |
 | 23 hub/landing pages (`angels`, `archive`, `apps`, `library`, `catalog`, `new`, `entrainment`, `neuro`, `obe`, `oracle`, `seven-angels`, `almanac`, `planetary-attunement` and others) | Unique, keyword-led titles; tightened descriptions where weak or overlong; self-canonical; `og:url`/`og:type`/`og:site_name`/`twitter:card` | Fix duplicates (#4) and missing canonicals (#3); better SERP snippets | 0 duplicate titles; 0 checker errors |
 | `catalog.html` | First heading promoted from `h2` to `h1` (computed styles identical); `og:url` fixed | #5 | Playwright: computed margin, size and line-height identical to before |
 | `index.html` | `Organization` + `WebSite` JSON-LD (only verifiable facts: name, URL, email, existing social/Play profiles); footer link to the new guide | Entity understanding | JSON-LD parses |
@@ -157,7 +157,7 @@ Today `/`, `/sitemap.xml`, `/app/*.html`, `/archive.html` and the other rewritte
 1. `vercel deploy` (preview) from the repo root, linked to project `ds-03`. Check pages on the preview URL; project routes may also apply to previews, so verify `/` and `/app/apkallu.html` show the new footer and history block.
 2. `vercel deploy --prod`.
 3. In Vercel → ds-03 → Routes, **disable** the nine `ds-home` rewrites (IDs `d2f57bd5…`, `2646ef00…`, `8abc69ea…`, `f428ffb1…`, `14d7d26b…`, `a72766d2…`, `f1959ac1…`, `3f1cde4c…`, `5db6761d…`). Because ds-03's files equal what ds-home serves today, plus these edits, this changes nothing except the intended improvements, and it removes the dependency on `ds-home`.
-4. Verify on the live domain: `/sitemap.xml` has 58 URLs; `/planetary-hours.html` returns 200; `/about.html` returns 308 → `/`; Vercel → Events shows `Play Click` after a test click.
+4. Verify on the live domain: `/sitemap.xml` has 64 URLs; `/planetary-hours.html` returns 200; `/about.html` returns 308 → `/`; Vercel → Events shows `Play Click` after a test click.
 5. Submit `https://www.discovery-science.com/sitemap.xml` in Search Console and request indexing for `/planetary-hours.html`, `/angels.html` and `/obe.html`.
 6. Rollback: re-enable the routes, or promote the previous deployment `dpl_GBzT2mpnucoV2fvdwLgPZSpTWwme`.
 
@@ -176,6 +176,9 @@ Also recommended: Vercel → Domains → `discovery-science.com` → change the 
 5. **Publish two more source-led guides** that match apps without existing landing pages, the **Ars Paulina** (with a real landing page for the paid app) and the **Picatrix**, built from Archive §V/§VI the same way as the planetary-hours guide, then add a Heptameron history section to `/seven-angels.html`.
 
 ### Notes for the reviewer
-- Realistic expectation: 125 → 1,250 monthly visitors is a growth target. Organic search currently delivers almost none of the traffic, so the gains depend on indexing the 16 previously unlisted pages, on new guide content ranking, and on Play listings linking to landing pages.
+- Realistic expectation: 125 → 1,250 monthly visitors is a growth target. Organic search currently delivers almost none of the traffic, so the gains depend on indexing the previously unlisted pages, on new guide content ranking, and on Play listings linking to landing pages.
 - I did not invent ratings, prices, testimonials or features. JSON-LD uses only data already on the pages. `MobileApplication` markup without `offers` or `aggregateRating` is valid but will not produce app rich results. Adding real Play ratings is a possible future step if kept current.
 - Two Play apps share the "Oracle" name (`com.discoveryscience.oracle` "Consult the Angels" and `com.discoveryscience.oracle.tarot`). `oracle.html` links the former and `app/oracle.html` the latter. This looks intentional but is worth a human check.
+
+### Update 2026-11-13
+A new production deploy (`dpl_8n8UuadrBTEXxtU3uXhHneBs5JKC`, 2026-11-12 ~22:32 UTC) added `/gifts/` (5 pages + `products.json`), `/links/` and `assets/affiliate-links.js`, and updated `angels.html`, `archive.html`, `assets/apps.js` and `google-play.html`. Those were merged into this branch, with the same SEO treatment and tracking, before deploying. Affiliate link handling is unchanged; clicks on those links are recorded as `Outbound Click` events. Also found: `ds-03` **is** connected to this GitHub repo (it builds PR previews), so merging to `main` deploys production.

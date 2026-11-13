@@ -1,0 +1,147 @@
+{
+ "hs-solfeggio-9": {
+  "merchant": "healingsounds",
+  "name": "Solfeggio Tuning Fork Set, 9 pieces",
+  "url": "https://healing-sounds.com/products/professionally-tuned-solfeggio-9pc-set-gray"
+ },
+ "hs-otto-4": {
+  "merchant": "healingsounds",
+  "name": "Professional Otto Tuners, set of 4 (128 Hz, Om, 528 Hz, 4096 Hz)",
+  "url": "https://healing-sounds.com/products/4-tuning-forks-128-hz-om-528-hz-4096-hz"
+ },
+ "adc-128": {
+  "merchant": "amazon",
+  "name": "ADC 128 Hz Medical Grade Tuning Fork with Fixed Weights",
+  "url": "https://www.amazon.com/dp/B000QV5L4S"
+ },
+ "tfw-solfeggio-9": {
+  "merchant": "amazon",
+  "name": "Solfeggio Tuning Forks, Set of 9, by Tools For Wellness",
+  "url": "https://www.amazon.com/dp/B015RYKLCK"
+ },
+ "silentmind-bowl": {
+  "merchant": "amazon",
+  "name": "Silent Mind Tibetan Singing Bowl Set",
+  "url": "https://www.amazon.com/dp/B0C8CDLCDC"
+ },
+ "gaiam-zafu": {
+  "merchant": "gaiam",
+  "name": "Gaiam Zafu Meditation Cushion",
+  "url": "https://www.gaiam.com/products/05-62060_2"
+ },
+ "nolava-eye": {
+  "merchant": "amazon",
+  "name": "NOLAVA Lotus Lavender Eye Pillow",
+  "url": "https://www.amazon.com/dp/B07N82GNFS"
+ },
+ "cozyphones": {
+  "merchant": "amazon",
+  "name": "CozyPhones Wireless Sleep Headphones",
+  "url": "https://www.amazon.com/dp/B08B1VNTNH"
+ },
+ "five-minute-journal": {
+  "merchant": "amazon",
+  "name": "The Five Minute Journal by Intelligent Change",
+  "url": "https://www.amazon.com/dp/0991846206"
+ },
+ "qa-a-day": {
+  "merchant": "amazon",
+  "name": "Q&A a Day: 5-Year Journal",
+  "url": "https://www.amazon.com/dp/0307719774"
+ },
+ "guided-dream-journal": {
+  "merchant": "amazon",
+  "name": "The Guided Dream Journal by Katherine Olivetti",
+  "url": "https://www.amazon.com/dp/1646118758"
+ },
+ "start-where-you-are": {
+  "merchant": "amazon",
+  "name": "Start Where You Are: A Journal for Self-Exploration by Meera Lee Patel",
+  "url": "https://www.amazon.com/dp/0399174826"
+ },
+ "morning-pages": {
+  "merchant": "amazon",
+  "name": "The Artist’s Way Morning Pages Journal, Deluxe Edition, by Julia Cameron",
+  "url": "https://www.amazon.com/dp/0143129414"
+ },
+ "leuchtturm-a5": {
+  "merchant": "amazon",
+  "name": "LEUCHTTURM1917 Hardcover Notebook, Medium (A5), Dotted",
+  "url": "https://www.amazon.com/dp/B002TSIMW4"
+ },
+ "sigilandwing": {
+  "merchant": "own",
+  "name": "SigilAndWing journals",
+  "url": "https://www.etsy.com/shop/SigilAndWing"
+ },
+ "sheri-donut-small": {
+  "merchant": "amazon",
+  "name": "Best Friends by Sheri Original Calming Donut Dog Bed, Small 23″",
+  "url": "https://www.amazon.com/dp/B01MV2YF39"
+ },
+ "kong-puppy-small": {
+  "merchant": "amazon",
+  "name": "KONG Puppy, Small",
+  "url": "https://www.amazon.com/dp/B00Q2QK4XY"
+ },
+ "nina-brick": {
+  "merchant": "amazon",
+  "name": "Outward Hound Nina Ottosson Dog Brick, Level 2",
+  "url": "https://www.amazon.com/dp/B0711Y9XTF"
+ },
+ "easy-walk-petite": {
+  "merchant": "amazon",
+  "name": "PetSafe Easy Walk No-Pull Dog Harness, Petite",
+  "url": "https://www.amazon.com/dp/B000OGLHDO"
+ },
+ "burts-puppy-shampoo": {
+  "merchant": "amazon",
+  "name": "Burt’s Bees Tearless 2-in-1 Puppy Shampoo & Conditioner, 16 oz",
+  "url": "https://www.amazon.com/dp/B00CVTRO48"
+ },
+ "hertzko-slicker": {
+  "merchant": "amazon",
+  "name": "Hertzko Self-Cleaning Slicker Brush",
+  "url": "https://www.amazon.com/dp/B00ZGPI3OY"
+ },
+ "lickimat-soother": {
+  "merchant": "amazon",
+  "name": "LickiMat Classic Soother",
+  "url": "https://www.amazon.com/dp/B08GR58WMB"
+ },
+ "sandler-bike": {
+  "merchant": "amazon",
+  "name": "You Can’t Teach a Kid to Ride a Bike at a Seminar, 2nd Edition, by David Sandler",
+  "url": "https://www.amazon.com/dp/0071847820"
+ },
+ "sandler-rules": {
+  "merchant": "amazon",
+  "name": "The Sandler Rules: 49 Timeless Selling Principles and How to Apply Them, by David Mattson",
+  "url": "https://www.amazon.com/dp/0982255489"
+ },
+ "never-split": {
+  "merchant": "amazon",
+  "name": "Never Split the Difference by Chris Voss with Tahl Raz",
+  "url": "https://www.amazon.com/dp/0062407805"
+ },
+ "spin-selling": {
+  "merchant": "amazon",
+  "name": "SPIN Selling by Neil Rackham",
+  "url": "https://www.amazon.com/dp/0070511136"
+ },
+ "fanatical-prospecting": {
+  "merchant": "amazon",
+  "name": "Fanatical Prospecting by Jeb Blount",
+  "url": "https://www.amazon.com/dp/1119144752"
+ },
+ "hubspot-crm": {
+  "merchant": "hubspot",
+  "name": "HubSpot free CRM",
+  "url": "https://www.hubspot.com/products/crm"
+ },
+ "pipedrive": {
+  "merchant": "pipedrive",
+  "name": "Pipedrive sales CRM",
+  "url": "https://www.pipedrive.com/"
+ }
+}

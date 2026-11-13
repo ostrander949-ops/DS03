@@ -76,7 +76,11 @@ def html_files():
 
 
 def url_for(rel):
-    return ORIGIN + ('/' if rel == 'index.html' else '/' + rel)
+    if rel == 'index.html':
+        return ORIGIN + '/'
+    if rel.endswith('/index.html'):
+        return ORIGIN + '/' + rel[:-len('index.html')]
+    return ORIGIN + '/' + rel
 
 
 def exists(path):
@@ -164,6 +168,8 @@ def main():
             errors.append('sitemap: duplicate <loc>')
         for loc in locs:
             rel = 'index.html' if loc == ORIGIN + '/' else loc[len(ORIGIN) + 1:]
+            if rel.endswith('/'):
+                rel += 'index.html'
             if not loc.startswith(ORIGIN + '/'):
                 errors.append(f'sitemap: non-canonical host {loc}')
             elif rel not in pages:
