@@ -40,8 +40,8 @@
     var name, data = { page: page };
     if (u.hostname === 'play.google.com') {
       var id = u.searchParams.get('id');
-      name = id ? 'Play Click' : 'Play Developer Click';
-      if (id) data.app = id;
+      if (/^\/store\/apps\/details/.test(u.pathname) && id) { name = 'Play Click'; data.app = id; }
+      else name = 'Play Developer Click';
     } else if (u.hostname === 'apps.apple.com') {
       name = 'App Store Click';
       data.app = u.pathname.split('/').pop();
