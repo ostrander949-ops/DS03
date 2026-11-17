@@ -1,9 +1,44 @@
 {
   "redirects": [
-    { "source": "/about.html", "destination": "/", "permanent": true },
-    { "source": "/contact.html", "destination": "/", "permanent": true },
-    { "source": "/how-it-works.html", "destination": "/", "permanent": true },
-    { "source": "/publications.html", "destination": "/library.html", "permanent": true },
-    { "source": "/resources.html", "destination": "/library.html", "permanent": true }
+    {
+      "source": "/about.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-it-works.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/publications.html",
+      "destination": "/library.html",
+      "permanent": true
+    },
+    {
+      "source": "/resources.html",
+      "destination": "/library.html",
+      "permanent": true
+    },
+    {
+      "source": "/almanac",
+      "destination": "/almanac.html",
+      "permanent": true
+    },
+    {
+      "source": "/asclepion",
+      "destination": "/asclepion.html",
+      "permanent": true
+    },
+    {
+      "source": "/archive",
+      "destination": "/archive.html",
+      "permanent": true
+    }
   ]
 }
