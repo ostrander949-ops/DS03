@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Angel of the Hour: Ars Paulina &amp; Heptameron Angels, Live | Discovery Science</title>
+<meta name="description" content="Which angel rules this hour? The Ars Paulina angel of the hour, the Heptameron angel of the day, where the hour’s planet stands in your sky, and all 31 angels in full.">
+<link rel="canonical" href="https://www.discovery-science.com/angel-of-the-hour.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Discovery Science">
+<meta property="og:title" content="Angel of the Hour: the Ars Paulina and Heptameron Angels, Live">
+<meta property="og:description" content="The angel ruling this hour where you are, the angel of the day, the planet in your sky, and the 31 angels of the Ars Paulina and the Heptameron.">
+<meta property="og:url" content="https://www.discovery-science.com/angel-of-the-hour.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Frank+Ruhl+Libre:wght@500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+:root{--ah:#ffd27a}
+body{background:radial-gradient(ellipse at 50% 0%,rgba(255,214,140,.07),transparent 60%),var(--bg)}
+/* artwork motion */
+.aa .aa-rays{animation:aaspin 300s linear infinite;transform-origin:0 0}
+.aa .aa-ring1{animation:aaspin 240s linear infinite;transform-origin:0 0}
+.aa .aa-ring2{animation:aaspin 320s linear infinite reverse;transform-origin:0 0}
+.aa .aa-wings{animation:aabreathe 9s ease-in-out infinite;transform-origin:0 -60px}
+.aa .aa-glow{animation:aapulse 7s ease-in-out infinite}
+.aa .aa-tw{animation:aatw 5s ease-in-out infinite}
+@keyframes aaspin{to{transform:rotate(360deg)}}
+@keyframes aabreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes aapulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes aatw{0%,100%{opacity:.15}50%{opacity:.9}}
+.paused .aa *{animation-play-state:paused!important}
+.as .as-line{stroke-dasharray:1000;stroke-dashoffset:0}
+.as.draw .as-line{animation:asdraw 4.5s ease-out both}
+.as .as-ring{animation:aaspin 200s linear infinite;transform-origin:0 0}
+@keyframes asdraw{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){.aa *,.as *{animation:none!important}}
+/* stage */
+.ah-stage{position:relative;max-width:640px;margin:0 auto}
+.ah-stage svg.aa{width:100%;height:auto;display:block;filter:drop-shadow(0 0 60px rgba(255,214,140,.18))}
+.ah-veil svg.aa{filter:blur(14px) brightness(.55) saturate(.6);transition:filter 2.2s ease}
+.ah-veil.lifted svg.aa{filter:drop-shadow(0 0 60px rgba(255,214,140,.25))}
+.ah-reveal{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:20px}
+.ah-reveal .btn{font-size:17px;padding:16px 28px}
+.ah-name{text-align:center;margin-top:10px}
+.ah-name h2{font-size:clamp(46px,7vw,86px);margin:6px 0 4px;color:#fff3d6;text-shadow:0 0 40px rgba(255,214,140,.35)}
+.ah-name .sub{color:var(--soft);font-size:18px;max-width:640px;margin:0 auto}
+.ah-count{font-family:var(--mono);color:var(--gold2);font-size:15px;margin-top:10px}
+.ah-quote{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--soft);max-width:680px;margin:18px auto 0;text-align:center}
+.ah-controls{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.ah-controls select{padding:9px 12px;border-radius:999px;border:1px solid var(--line2);background:var(--bg2);color:var(--text);font:14px var(--sans);color-scheme:dark}
+.ah-panel{margin-top:64px}
+.ah-panel h2{font-size:clamp(30px,4vw,46px);margin:8px 0 14px}
+/* the chain of intermediaries */
+.chain{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;align-items:start;position:relative}
+.chain .node{text-align:center;padding:0 8px;position:relative;z-index:1}
+.chain .node .disc{width:min(170px,100%);aspect-ratio:1;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;overflow:hidden;border:1px solid rgba(212,174,98,.45);background:radial-gradient(circle,rgba(255,214,140,.16),rgba(6,9,15,.9) 70%)}
+.chain .node .disc svg{width:118%;height:118%}
+.chain .node .g{font-size:74px;color:var(--ah);text-shadow:0 0 30px var(--ah)}
+.chain .node b{display:block;font-family:var(--serif);font-size:24px;font-weight:500;color:var(--text)}
+.chain .node span{font-size:13.5px;color:var(--muted)}
+.chain svg.flow{position:absolute;left:0;right:0;top:52px;width:100%;height:80px;z-index:0;pointer-events:none}
+.flow path{stroke-dasharray:4 14;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-36}}
+@media(max-width:760px){.chain{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:24px}.chain svg.flow{display:none}}
+/* alignment */
+.align{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:18px;align-items:center}
+.align .med{text-align:center}
+.align .med .disc{width:min(220px,100%);aspect-ratio:1;margin:0 auto;border-radius:50%;overflow:hidden;border:1px solid rgba(212,174,98,.4)}
+.align .med .disc svg{width:116%;height:116%;margin:-8%}
+.align .med b{display:block;font-family:var(--serif);font-size:26px;font-weight:500;margin-top:10px}
+.align .mid{text-align:center;min-width:150px}
+.align .mid .ring{width:84px;height:84px;margin:0 auto 8px;border-radius:50%;border:2px solid var(--line2);display:grid;place-items:center;font-size:28px;color:var(--muted);transition:all 1s}
+.align.on .mid .ring{border-color:var(--gold2);color:#1a1408;background:var(--gold2);box-shadow:0 0 50px rgba(240,215,154,.7)}
+.align.on .med .disc{box-shadow:0 0 60px rgba(240,215,154,.45)}
+@media(max-width:700px){.align{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.align .mid{grid-column:1/-1;order:3}}
+/* sky compass */
+.sky{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center}
+@media(max-width:860px){.sky{grid-template-columns:minmax(0,1fr)}}
+#ah-compass svg{width:100%;max-width:470px;display:block;margin:0 auto;transition:transform .4s ease-out}
+.quarters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0}
+.quarters div{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:rgba(13,20,34,.7)}
+.quarters div.on{border-color:var(--gold);box-shadow:0 0 24px rgba(212,174,98,.25)}
+.quarters b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.quarters span{font-size:14px;color:var(--soft)}
+/* seal + next hours */
+.sealrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:28px;align-items:center}
+@media(max-width:760px){.sealrow{grid-template-columns:minmax(0,1fr)}}
+#ah-seal svg{width:100%;max-width:380px;display:block;margin:0 auto}
+#ah-next{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+#ah-next li{display:grid;grid-template-columns:72px 30px minmax(0,1fr) auto;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding:8px 0;font-size:15px}
+#ah-next li b{font-family:var(--serif);font-size:20px;font-weight:500}
+#ah-next .t{font-family:var(--mono);color:var(--gold2);font-size:13px}
+#ah-next .al{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:#1a1408;background:var(--gold2);border-radius:999px;padding:2px 8px}
+/* codex */
+.codex{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:34px;align-items:start;padding:34px 0;border-top:1px solid var(--line)}
+.codex.small{grid-template-columns:minmax(0,220px) minmax(0,1fr)}
+@media(max-width:760px){.codex,.codex.small{grid-template-columns:minmax(0,1fr)}.codex-art{max-width:300px;margin:0 auto}}
+.codex-art{aspect-ratio:1}
+.codex-art svg{width:100%;height:auto}
+.codex h3{font-size:clamp(36px,4.6vw,54px);margin:6px 0 12px}
+.codex p{color:var(--soft)}
+.codex .lede2{font-size:18px;color:var(--text)}
+.codex h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:22px 0 8px}
+.codex .dukes{font-family:var(--serif);font-size:19px;color:var(--text);line-height:1.6}
+.codex.now{background:linear-gradient(90deg,rgba(212,174,98,.08),transparent)}
+.codex.now .eyebrow::after{content:" · ruling now";color:var(--gold2)}
+.facts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 16px;margin:16px 0;font-size:15px}
+.facts dt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.facts dd{margin:0;color:var(--text)}
+.note{font-size:15px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid rgba(212,174,98,.45);color:var(--gold2);margin-right:6px}
+table.week td{white-space:nowrap;font-size:13.5px}
+.tablewrap{overflow-x:auto}
+.faq dt{font-family:var(--serif);font-size:22px;color:var(--text);margin-top:22px}
+.faq dd{margin:6px 0 0;color:var(--soft)}
+/* sanctuary (contemplation) */
+#ah-sanct{position:fixed;inset:0;z-index:200;background:radial-gradient(circle at 50% 45%,#120e06,#020205 70%);display:none;align-items:center;justify-content:center;flex-direction:column;gap:18px;padding:20px}
+#ah-sanct.open{display:flex}
+#ah-sanct .art{width:min(78vh,92vw);position:relative}
+#ah-sanct .art svg{width:100%;height:auto}
+#ah-sanct .breath{position:absolute;inset:-3%;border-radius:50%;border:2px solid rgba(255,231,168,.55);box-shadow:0 0 60px rgba(255,214,140,.25);animation:breath 10s ease-in-out infinite;pointer-events:none}
+@keyframes breath{0%,100%{transform:scale(.94);opacity:.35}40%{transform:scale(1.02);opacity:1}}
+#ah-sanct .cue{font-family:var(--serif);font-size:24px;color:#f3dfa6;letter-spacing:.06em;min-height:1.4em}
+#ah-sanct .bar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+@media (prefers-reduced-motion: reduce){#ah-sanct .breath,.flow path{animation:none}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Angel of the Hour","url":"https://www.discovery-science.com/angel-of-the-hour.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"The Ars Paulina angel of the hour and the Heptameron angel of the day for your location, with the position of the hour's planet in your sky.","publisher":{"@type":"Organization","name":"Discovery Science, Inc.","url":"https://www.discovery-science.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.discovery-science.com/"},{"@type":"ListItem","position":2,"name":"Planetary Hours","item":"https://www.discovery-science.com/planetary-hours.html"},{"@type":"ListItem","position":3,"name":"Angel of the Hour","item":"https://www.discovery-science.com/angel-of-the-hour.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Pauline angel of the hour?", "acceptedAnswer": {"@type": "Answer", "text": "The Ars Paulina, the third book of the seventeenth-century Lemegeton, names an angel for each of the twelve hours of the day and the twelve hours of the night, counted from sunrise. The first hour of every day is ruled by Samael, the first hour of every night by Sabrathan."}}, {"@type": "Question", "name": "How is the Pauline hour different from the planetary hour?", "acceptedAnswer": {"@type": "Answer", "text": "The planetary hour belongs to one of the seven planets and changes with the day of the week. The Pauline angel belongs to the hour’s number and is the same every day. The Ars Paulina joins the two: the angel of the hour does “all things that are attributed to” the planet that rules that hour."}}, {"@type": "Question", "name": "Which angel rules today?", "acceptedAnswer": {"@type": "Answer", "text": "In the Heptameron each day has an angel: Michael on Sunday, Gabriel on Monday, Samael on Tuesday, Raphael on Wednesday, Sachiel on Thursday, Anael on Friday and Cassiel on Saturday."}}, {"@type": "Question", "name": "When does the angel of the day rule the hour too?", "acceptedAnswer": {"@type": "Answer", "text": "In the first and eighth hours of the day and the third and tenth hours of the night, the planet of the hour is the planet of the day. These are the hours the Ars Paulina names for its observances on Sunday, Monday, Wednesday and Saturday."}}, {"@type": "Question", "name": "Is my location sent anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Sunrise, sunset, the hours and the positions of the planets are calculated in your browser."}}, {"@type": "Question", "name": "Is the artwork historical?", "acceptedAnswer": {"@type": "Answer", "text": "No. The figures and seals on this page are modern devotional artwork made for Discovery Science. The names, hours, numbers and texts come from the sources cited."}}]}</script>
+</head>
+<body data-page="angels">
+<canvas id="sky"></canvas>
+<div id="nav"></div>
+
+<header class="hero" style="min-height:auto;padding:70px 0 10px"><div class="wrap" style="text-align:center">
+  <div class="folio"><a href="/planetary-hours.html" style="color:inherit">Planetary hours</a> · Ars Paulina · Heptameron</div>
+  <h1 style="font-size:clamp(44px,6.6vw,84px)">The angel <em>of this hour</em></h1>
+  <p class="lede" style="margin:0 auto">Twenty-four angels keep the hours of the day and night in the Ars Paulina. Seven more rule the days in the Heptameron. Find who is keeping this hour where you stand.</p>
+</div></header>
+
+<section id="ah" style="padding-top:20px"><div class="wrap">
+  <div class="ah-stage ah-veil" id="ah-stage">
+    <div id="ah-art"></div>
+    <div class="ah-reveal" id="ah-reveal">
+      <button class="btn gold" type="button" id="ah-go">Reveal the angel of this hour</button>
+      <span class="fine" style="max-width:360px">Uses your device’s location to find your sunrise and your sky. Nothing is sent anywhere.</span>
+      <select id="ah-city" aria-label="Or choose a city"></select>
+    </div>
+  </div>
+  <noscript><p class="lede" style="text-align:center">The live angel of the hour needs JavaScript. All thirty-one angels are described below.</p></noscript>
+  <div id="ah-live" hidden>
+    <div class="ah-name">
+      <div class="eyebrow" id="ah-eyebrow"></div>
+      <h2 id="ah-title"></h2>
+      <p class="sub" id="ah-sub"></p>
+      <div class="ah-count" id="ah-count" aria-live="off"></div>
+      <p class="ah-quote">“Their offices is to doe all things that are attributed to the 7 planetts.” <span class="fine" style="font-style:normal">Ars Paulina, Sloane MS 3825</span></p>
+    </div>
+    <div class="ah-controls">
+      <button class="btn gold small" type="button" id="ah-sit">Sit with the angel</button>
+      <a class="btn ghost small" id="ah-read" href="#paulina">Read about this angel</a>
+      <button class="btn ghost small" type="button" id="ah-share">Share this hour</button>
+      <button class="btn ghost small" type="button" id="ah-relocate">Change place</button>
+    </div>
+    <p class="fine" id="ah-status" role="status" aria-live="polite" style="text-align:center;min-height:1.4em;margin-top:10px"></p>
+
+    <div class="ah-panel">
+      <div class="eyebrow">The chain of the hour</div>
+      <h2>From the planet <em>to you</em></h2>
+      <p class="muted" style="max-width:760px">In the Heptameron each planet has its angel; in the Ars Paulina the angel of the hour does the work of whichever planet rules it. Read top to bottom, this is how the old books arranged the powers of this hour.</p>
+      <div class="chain card" id="ah-chain"></div>
+    </div>
+
+    <div class="ah-panel">
+      <div class="eyebrow">The day and the hour</div>
+      <h2>When the angel of the day <em>rules the hour</em></h2>
+      <div class="align card" id="ah-align"></div>
+    </div>
+
+    <div class="ah-panel">
+      <div class="eyebrow">Your sky</div>
+      <h2>Where the planet <em>stands now</em></h2>
+      <div class="sky">
+        <div><div id="ah-compass"></div><div class="ah-controls" style="margin-top:6px"><button class="btn ghost small" type="button" id="ah-face">Point my phone</button></div></div>
+        <div id="ah-quarters"></div>
+      </div>
+    </div>
+
+    <div class="ah-panel">
+      <div class="eyebrow">A seal for this hour</div>
+      <h2>Made <em>for this moment</em></h2>
+      <div class="sealrow">
+        <div id="ah-seal"></div>
+        <div>
+          <p class="muted">The Ars Paulina tells its reader to make each angel’s seal “according to the time of the years Day and hour”, and gives examples drawn for the 10th of March 1641. This seal follows that instruction in a modern way: the angel’s name is traced across a rose of the alphabet, and the ring records this hour and this day. It is a new design, not the manuscript’s figure.</p>
+          <h3 style="font-size:24px;margin:24px 0 10px">The next angels of the hours</h3>
+          <ul id="ah-next"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="seven" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="eyebrow">The Heptameron</div>
+  <h2 style="font-size:clamp(34px,4.8vw,56px);margin:12px 0 10px">The seven angels <em>of the days</em></h2>
+  <p class="muted" style="max-width:780px">The Heptameron, a short handbook printed in 1559 under the name of Peter of Abano, gives each day of the week an angel, a planet, companions, a heaven, a king of the air with his ministers, a wind and a perfume. Agrippa’s table of seven gives a slightly different list, noted under each angel.</p>
+  
+<article class="codex reveal" id="angel-michael" data-planet="Sun">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Michael&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;hebrew&quot;: &quot;מיכאל&quot;, &quot;kind&quot;: &quot;day&quot;, &quot;lite&quot;: true, &quot;subtitle&quot;: &quot;Michael&quot;, &quot;ring&quot;: &quot;MICHAEL ✦ ANGEL OF THE SUN ✦ SUNDAY ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Michael, angel of the Sun&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">☉ Sunday · angel of the Sun</div>
+    <h3>Michael</h3>
+    <p>Michael is one of only two angels named in the Hebrew Bible. In the Book of Daniel he is “one of the chief princes” (10:13) and “the great prince which standeth for the children of thy people” (12:1). The New Testament calls him “Michael the archangel”, disputing with the devil over the body of Moses (Jude 9), and in Revelation “Michael and his angels fought against the dragon” (12:7). His name is a question: who is like God?</p><p>The Heptameron makes him the angel of Sunday and of the Sun. On his day he rules with two companions, Dardiel and Huratapel; the spirits of the air are under a king called Varcan and his ministers Tus, Andas and Cynabal, all subject to the North wind; and his heaven is Machen, the fourth. The book prescribes a perfume for the day, printed in the 1655 English as “red wheat” and corrected by Peterson to red sanders.</p>
+    <dl class="facts"><dt>Day</dt><dd>Sunday · ☉ the Sun</dd><dt>Name</dt><dd>Michael · מיכאל · “Who is like God?”</dd><dt>Companions on his day</dt><dd>Dardiel, Huratapel</dd><dt>Heaven</dt><dd>Machen, the fourth</dd><dt>King of the air</dt><dd>Varcan; ministers Tus, Andas, Cynabal</dd><dt>Wind</dt><dd>the North wind</dd><dt>Perfume of the day</dt><dd>red sanders (printed as “red wheat”)</dd></dl>
+    <h4>To be called “from the four parts of the world”</h4><div class="quarters"><div><b>East</b><span>Samael, Baciel, Atel, Fabriel, Vionatraba</span></div><div><b>West</b><span>Anael, Pabel, Ustael, Burchat, Suceratos, Capabali</span></div><div><b>North</b><span>Aiel, Aniel (or Aquiel), Masgabriel, Sapiel, Matuyel</span></div><div><b>South</b><span>Haludiel, Machasiel, Charsiel, Uriel, Naromiel</span></div></div>
+    <p class="note"><span class="tag tr">Agrippa</span> Agrippa’s “scale of the number seven” gives the Sun to Raphael and moves Michael to Mercury.</p>
+    <p class="note"><span class="tag tr">Ars Paulina</span> In the second part of the Ars Paulina, Michael governs the spirits of the fiery signs “towards the South”, to be observed on Sunday in the first and eighth hours of the day and the third and tenth of the night. They are said to appear “in Royal Robes holding scepters in their hands, oft Ryding on a Lion or a Cock.”</p>
+    <p><a class="btn ghost small" href="https://play.google.com/store/apps/details?id=com.discoveryscience.michael" rel="noopener">Michael on your home screen · Google Play</a></p>
+  </div>
+</article>
+<article class="codex reveal" id="angel-gabriel" data-planet="Moon">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Gabriel&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;hebrew&quot;: &quot;גבריאל&quot;, &quot;kind&quot;: &quot;day&quot;, &quot;lite&quot;: true, &quot;subtitle&quot;: &quot;Gabriel&quot;, &quot;ring&quot;: &quot;GABRIEL ✦ ANGEL OF THE MOON ✦ MONDAY ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Gabriel, angel of the Moon&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">☽ Monday · angel of the Moon</div>
+    <h3>Gabriel</h3>
+    <p>Gabriel is the other angel named in the Hebrew Bible. He explains Daniel’s visions (Daniel 8:16; 9:21), and in the Gospel of Luke he announces two births: “I am Gabriel, that stand in the presence of God” (Luke 1:19), and then to Mary in Nazareth (Luke 1:26). In Islam, as Jibril, he brings the revelation to Muhammad.</p><p>In the Heptameron he is the angel of Monday and the Moon, ruling with Michael and Samael. The spirits of the air are under King Arcan and his ministers Bilet, Missabu and Abuzaba, subject to the West wind; his heaven is Shamain, the first and lowest, the heaven of the Moon. The perfume of the day is aloes.</p>
+    <dl class="facts"><dt>Day</dt><dd>Monday · ☽ the Moon</dd><dt>Name</dt><dd>Gabriel · גבריאל · usually explained as “God is my strength”</dd><dt>Companions on his day</dt><dd>Michael, Samael</dd><dt>Heaven</dt><dd>Shamain, the first</dd><dt>King of the air</dt><dd>Arcan; ministers Bilet, Missabu, Abuzaba</dd><dt>Wind</dt><dd>the West wind</dd><dt>Perfume of the day</dt><dd>aloes</dd></dl>
+    <h4>To be called “from the four parts of the world”</h4><div class="quarters"><div><b>East</b><span>Gabriel, Gabrael, Madiel, Deamiel, Janael</span></div><div><b>West</b><span>Sachiel, Zaniel, Habaiel, Bachanael, Corabael</span></div><div><b>North</b><span>Mael, Vuael, Valnum, Baliel, Balay, Humastrau</span></div><div><b>South</b><span>Curaniel, Dabriel, Darquiel, Hanun, Anayl, Vetuel</span></div></div>
+    <p class="note"><span class="tag tr">Agrippa</span> Agrippa agrees: Gabriel is the angel of the Moon.</p>
+    <p class="note"><span class="tag tr">Ars Paulina</span> In the second part of the Ars Paulina, Gabriel governs the spirits of the watery signs “towards the north”, with three mighty princes under him: Samael, Madiel and Mael. They are observed on Monday at the first and eighth hours of the day and the third and tenth of the night.</p>
+    <p><a class="btn ghost small" href="https://play.google.com/store/apps/details?id=com.discoveryscience.gabriel" rel="noopener">Gabriel on your home screen · Google Play</a></p>
+  </div>
+</article>
+<article class="codex reveal" id="angel-samael" data-planet="Mars">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Samael&quot;, &quot;planet&quot;: &quot;Mars&quot;, &quot;hebrew&quot;: &quot;סמאל&quot;, &quot;kind&quot;: &quot;day&quot;, &quot;lite&quot;: true, &quot;subtitle&quot;: &quot;Samael&quot;, &quot;ring&quot;: &quot;SAMAEL ✦ ANGEL OF MARS ✦ TUESDAY ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Samael, angel of Mars&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">♂ Tuesday · angel of Mars</div>
+    <h3>Samael</h3>
+    <p>Samael does not appear in the Bible. He comes from later Jewish literature, where he is a great prince of heaven associated with the accuser and with death; the midrash Pirkei de-Rabbi Eliezer tells of Samael in the Garden of Eden. The grimoires keep the fierceness but put him to work as the angel of Mars.</p><p>The Heptameron makes him the angel of Tuesday, ruling with Satael and Amabiel. The spirits of the air are under King Samax and his ministers Carmax, Ismoli and Paffran, subject to the East wind; his heaven is Machon, the fifth. The perfume of the day is pepper.</p>
+    <dl class="facts"><dt>Day</dt><dd>Tuesday · ♂ Mars</dd><dt>Name</dt><dd>Samael · סמאל · a name of uncertain meaning in rabbinic tradition</dd><dt>Companions on his day</dt><dd>Satael, Amabiel</dd><dt>Heaven</dt><dd>Machon, the fifth</dd><dt>King of the air</dt><dd>Samax; ministers Carmax, Ismoli, Paffran</dd><dt>Wind</dt><dd>the East wind</dd><dt>Perfume of the day</dt><dd>pepper</dd></dl>
+    <h4>To be called “from the four parts of the world”</h4><div class="quarters"><div><b>East</b><span>Friagne, Guael, Damael, Calzas, Arragon</span></div><div><b>West</b><span>Lama, Astagna, Lobquin, Soncas, Jazel, Isiael, Irel</span></div><div><b>North</b><span>Rahumel, Hyniel, Rayel, Seraphiel, Mathiel, Fraciel</span></div><div><b>South</b><span>Sacriel, Janiel, Galdel, Osael, Vianuel, Zaliel</span></div></div>
+    <p class="note"><span class="tag tr">Agrippa</span> Agrippa gives Mars to Camael (כמאל) instead.</p>
+    <p class="note"><span class="tag tr">Ars Paulina</span> Samael is everywhere in the Ars Paulina: the manuscript names him (as “Samuel”, corrected to Samael) the angel of the first hour of every day, and in its second part he is one of the three princes under Gabriel.</p>
+    <p><a class="btn ghost small" href="https://play.google.com/store/apps/details?id=com.discoveryscience.samael" rel="noopener">Samael on your home screen · Google Play</a></p>
+  </div>
+</article>
+<article class="codex reveal" id="angel-raphael" data-planet="Mercury">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Raphael&quot;, &quot;planet&quot;: &quot;Mercury&quot;, &quot;hebrew&quot;: &quot;רפאל&quot;, &quot;kind&quot;: &quot;day&quot;, &quot;lite&quot;: true, &quot;subtitle&quot;: &quot;Raphael&quot;, &quot;ring&quot;: &quot;RAPHAEL ✦ ANGEL OF MERCURY ✦ WEDNESDAY ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Raphael, angel of Mercury&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">☿ Wednesday · angel of Mercury</div>
+    <h3>Raphael</h3>
+    <p>Raphael is the healer. In the Book of Tobit he travels in disguise with young Tobias, binds a demon and cures his father’s blindness, then reveals himself: “I am Raphael, one of the seven holy angels” (Tobit 12:15). The Book of Enoch lists him among the archangels and has him bind the fallen Azazel (1 Enoch 10).</p><p>The Heptameron makes him the angel of Wednesday and Mercury, ruling with Miel and Seraphiel. The spirits of the air are under King Mediat, or Modiat, and his ministers Suquinos and Sallales, subject to the Southwest wind; his heaven is Raquie, the second. The perfume of the day is mastick.</p>
+    <dl class="facts"><dt>Day</dt><dd>Wednesday · ☿ Mercury</dd><dt>Name</dt><dd>Raphael · רפאל · “God heals”</dd><dt>Companions on his day</dt><dd>Miel, Seraphiel</dd><dt>Heaven</dt><dd>Raquie, the second</dd><dt>King of the air</dt><dd>Mediat (or Modiat); ministers Suquinos, Sallales</dd><dt>Wind</dt><dd>the Southwest wind</dd><dt>Perfume of the day</dt><dd>mastick</dd></dl>
+    <h4>To be called “from the four parts of the world”</h4><div class="quarters"><div><b>East</b><span>Mathlai, Tarmiel, Baraborat</span></div><div><b>West</b><span>Jeresous, Mitraton</span></div><div><b>North</b><span>Thiel, Rael, Jariahel, Venahel, Velel, Abuiori, Ucirnuel</span></div><div><b>South</b><span>Milliel, Nelapa, Babel, Caluel, Vel, Laquel</span></div></div>
+    <p class="note"><span class="tag tr">Agrippa</span> Agrippa’s scale swaps him with Michael: Raphael for the Sun, Michael for Mercury.</p>
+    <p class="note"><span class="tag tr">Ars Paulina</span> In the second part of the Ars Paulina, Raphael is the “sovereign prince” of the spirits of the airy signs, to be observed “towards the east” on Wednesday, with two princes under him, Miel and Seraphiel, the same two companions the Heptameron gives him.</p>
+    <p><a class="btn ghost small" href="https://play.google.com/store/apps/details?id=com.discoveryscience.raphael" rel="noopener">Raphael on your home screen · Google Play</a></p>
+  </div>
+</article>
+<article class="codex reveal" id="angel-sachiel" data-planet="Jupiter">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Sachiel&quot;, &quot;planet&quot;: &quot;Jupiter&quot;, &quot;hebrew&quot;: &quot;צדקיאל&quot;, &quot;kind&quot;: &quot;day&quot;, &quot;lite&quot;: true, &quot;subtitle&quot;: &quot;Sachiel&quot;, &quot;ring&quot;: &quot;SACHIEL ✦ ANGEL OF JUPITER ✦ THURSDAY ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Sachiel, angel of Jupiter&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">♃ Thursday · angel of Jupiter</div>
+    <h3>Sachiel</h3>
+    <p>Sachiel is a grimoire angel: he is not in the Bible, and his name has come down in several spellings. The printed Heptameron reads Sachiel; Peterson records the forms Sadkiel and Satquiel in other manuscripts. Agrippa’s table of seven gives Jupiter to Zadkiel, and the two are now usually treated as one angel of Jupiter, the planet of kingship, law and abundance.</p><p>The Heptameron makes him the angel of Thursday, ruling with Castiel and Asasiel. The spirits of the air are under King Suth and his ministers Maguth and Gutrix, subject to the South wind; his heaven is Zebul, the sixth. For the four quarters on Thursday the book gives prayers instead of angels, because “there are no Angels ruling the Air, above the fifth heaven.” The perfume of the day is saffron.</p>
+    <dl class="facts"><dt>Day</dt><dd>Thursday · ♃ Jupiter</dd><dt>Name</dt><dd>Sachiel · צדקיאל (Zadkiel, Agrippa) · other copies spell him Sadkiel or Satquiel; Agrippa’s Zadkiel means “righteousness of God”</dd><dt>Companions on his day</dt><dd>Castiel, Asasiel</dd><dt>Heaven</dt><dd>Zebul, the sixth</dd><dt>King of the air</dt><dd>Suth; ministers Maguth, Gutrix</dd><dt>Wind</dt><dd>the South wind</dd><dt>Perfume of the day</dt><dd>saffron</dd></dl>
+    <p class="fine">For the four quarters on Thursday the Heptameron gives prayers instead of angels.</p>
+    <p class="note"><span class="tag tr">Agrippa</span> Agrippa names Jupiter’s angel Zadkiel (צדקיאל). Peterson notes that other manuscripts of the Heptameron read Sadkiel and Satquiel, which is why Sachiel and Zadkiel are so often treated as one angel.</p>
+    <p class="note"><span class="tag tr">Ars Paulina</span> In the second part of the Ars Paulina, Sachiel is one of the three princes under Uriel, who governs the spirits of the earthy signs towards the West.</p>
+    <p><a class="btn ghost small" href="https://play.google.com/store/apps/details?id=com.discoveryscience.sachiel" rel="noopener">Sachiel on your home screen · Google Play</a></p>
+  </div>
+</article>
+<article class="codex reveal" id="angel-anael" data-planet="Venus">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Anael&quot;, &quot;planet&quot;: &quot;Venus&quot;, &quot;hebrew&quot;: &quot;האניאל&quot;, &quot;kind&quot;: &quot;day&quot;, &quot;lite&quot;: true, &quot;subtitle&quot;: &quot;Anael&quot;, &quot;ring&quot;: &quot;ANAEL ✦ ANGEL OF VENUS ✦ FRIDAY ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Anael, angel of Venus&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">♀ Friday · angel of Venus</div>
+    <h3>Anael</h3>
+    <p>Anael is the angel of Venus, of love, beauty and friendship in the old correspondences. Like Sachiel he is a figure of the magical literature rather than the Bible; Agrippa gives the form Haniel. He is one of the few angels who appears in both the Heptameron and the Ars Paulina, ruling a day in one and an hour in the other.</p><p>The Heptameron makes him the angel of Friday, ruling with Rachiel and Sachiel. The spirits of the air are under King Sarabotres and his ministers Amabiel, Aba, Abalidoth and Flaef, subject to the West wind; his heaven is Sagun, the third. The perfume of the day is pepperwort.</p>
+    <dl class="facts"><dt>Day</dt><dd>Friday · ♀ Venus</dd><dt>Name</dt><dd>Anael · האניאל (Haniel, Agrippa) · Agrippa gives the form Haniel</dd><dt>Companions on his day</dt><dd>Rachiel, Sachiel</dd><dt>Heaven</dt><dd>Sagun, the third</dd><dt>King of the air</dt><dd>Sarabotres; ministers Amabiel, Aba, Abalidoth, Flaef</dd><dt>Wind</dt><dd>the West wind</dd><dt>Perfume of the day</dt><dd>pepperwort</dd></dl>
+    <h4>To be called “from the four parts of the world”</h4><div class="quarters"><div><b>East</b><span>Setchiel, Chedisutaniel, Corat, Tamael, Tenaciel</span></div><div><b>West</b><span>Turiel, Coniel, Rabiel, Kadie, Maltiel, Huphaltiel</span></div><div><b>North</b><span>Peniel, Pemael, Penat, Raphael, Raniel, Doremiel</span></div><div><b>South</b><span>Porna, Sachiel, Chermiel, Samael, Santaniel, Famiel</span></div></div>
+    <p class="note"><span class="tag tr">Agrippa</span> Agrippa names Venus’s angel Haniel (האניאל).</p>
+    <p class="note"><span class="tag tr">Ars Paulina</span> In the Ars Paulina, Anael rules the second hour of every day, the hour called Cevorym, with 70 chief dukes in the other manuscripts (20 in Sloane 3825) and 100 lesser dukes.</p>
+    <p><a class="btn ghost small" href="https://play.google.com/store/apps/details?id=com.discoveryscience.anael" rel="noopener">Anael on your home screen · Google Play</a></p>
+  </div>
+</article>
+<article class="codex reveal" id="angel-cassiel" data-planet="Saturn">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Cassiel&quot;, &quot;planet&quot;: &quot;Saturn&quot;, &quot;hebrew&quot;: &quot;צפקיאל&quot;, &quot;kind&quot;: &quot;day&quot;, &quot;lite&quot;: true, &quot;subtitle&quot;: &quot;Cassiel&quot;, &quot;ring&quot;: &quot;CASSIEL ✦ ANGEL OF SATURN ✦ SATURDAY ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Cassiel, angel of Saturn&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">♄ Saturday · angel of Saturn</div>
+    <h3>Cassiel</h3>
+    <p>Cassiel is the angel of Saturn, the slowest and most distant of the seven, the planet of time, limits and solitude. A marginal note in the printed text adds “or Caphriel”, and other manuscripts read Caphael, Cafriel or Capciel.</p><p>The Heptameron makes him the angel of Saturday, ruling with Machatan and Uriel. The spirits of the air are under King Maymon and his ministers Abumalith, Assaibi and Balidet, subject to the Southwest wind. No heaven is named for Saturday, and for the four quarters the book refers back to the prayers of Thursday. The perfume of the day is sulphur.</p>
+    <dl class="facts"><dt>Day</dt><dd>Saturday · ♄ Saturn</dd><dt>Name</dt><dd>Cassiel · צפקיאל (Zaphkiel, Agrippa) · a marginal note adds “or Caphriel”</dd><dt>Companions on his day</dt><dd>Machatan, Uriel</dd><dt>Heaven</dt><dd>None named for Saturday</dd><dt>King of the air</dt><dd>Maymon; ministers Abumalith, Assaibi, Balidet</dd><dt>Wind</dt><dd>the Southwest wind</dd><dt>Perfume of the day</dt><dd>sulphur</dd></dl>
+    <p class="fine">For the four quarters on Saturday the Heptameron gives prayers instead of angels.</p>
+    <p class="note"><span class="tag tr">Agrippa</span> Agrippa gives Saturn to Zaphkiel (צפקיאל).</p>
+    <p class="note"><span class="tag tr">Ars Paulina</span> In the second part of the Ars Paulina, Cassiel is one of the three princes under Uriel, governing the spirits of the earthy signs towards the West, observed on Saturday.</p>
+    <p><a class="btn ghost small" href="https://play.google.com/store/apps/details?id=com.discoveryscience.cassiel" rel="noopener">Cassiel on your home screen · Google Play</a></p>
+  </div>
+</article>
+</div></section>
+
+<section id="paulina" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="eyebrow">The Ars Paulina</div>
+  <h2 style="font-size:clamp(34px,4.8vw,56px);margin:12px 0 10px">The twenty-four angels <em>of the hours</em></h2>
+  <p class="muted" style="max-width:780px">The Ars Paulina is the third book of the Lemegeton, compiled in the seventeenth century; its text mentions the year 1641. Its first part names an angel for each hour of the day, counted from sunrise, and of the night, with a court of dukes and servants. Peterson shows that much of it is drawn from the Steganographia of Trithemius. The general rule is set down at the start: “The Nature of these 24 Angells of the day and night changeth every day: and their offices is to doe all things that are attributed to the 7 planetts. But that changeth every day also.” The names below follow British Library Sloane MS 3825; readings from the other manuscripts are in brackets.</p>
+  <p><a class="btn ghost small" href="https://play.google.com/store/apps/details?id=com.discoveryscience.arspaulina" rel="noopener">Ars Paulina: A Book of Hours · Google Play</a></p>
+  
+<article class="codex small reveal" id="paulina-samael" data-hour="0">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Samael&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;I&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 1, &quot;subtitle&quot;: &quot;Samael&quot;, &quot;ring&quot;: &quot;SAMAEL ✦ THE FIRST HOUR OF THE DAY ✦ BARIM ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Samael, angel of the first hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">I · the first hour of the day</div>
+    <h3>Samael</h3>
+    <p class="lede2">Ruler of the first hour of every day, the hour called <i>Barim</i>. In the manuscript he has many dukes and servants; 8 chief dukes named, with 444 servants apiece.</p>
+    <p class="note">Sloane 3825 spells him “Samuel”, corrected to Samael. The name of the hour is not given in the manuscript; “Barim” is supplied from Wolfgang Heidel.</p>
+    <p>Like every angel of the hours, Samael has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Ameniel, Charpon, Darosiel, Monasiel, Brumiel, Nestoriel, Chremas, Meresyn</p>
+    <p class="fine">Dukes who also serve another hour: Nestoriel (also under Sarandiel).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-anael" data-hour="1">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Anael&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;II&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 2, &quot;subtitle&quot;: &quot;Anael&quot;, &quot;ring&quot;: &quot;ANAEL ✦ THE SECOND HOUR OF THE DAY ✦ CEVORYM ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Anael, angel of the second hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">II · the second hour of the day</div>
+    <h3>Anael</h3>
+    <p class="lede2">Ruler of the second hour of every day, the hour called <i>Cevorym</i>. In the manuscript he has 20 [70] chief dukes and 100 lesser dukes; 9 named, with 330 servants apiece.</p>
+    
+    <p>Like every angel of the hours, Anael has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Menarchos, Archiel, Chardiel, Orphiel, Cursiel, Elmoym, Quosiel, Ermaziel, Granyel</p>
+    
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-vequaniel" data-hour="2">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Vequaniel&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;III&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 3, &quot;subtitle&quot;: &quot;Vequaniel&quot;, &quot;ring&quot;: &quot;VEQUANIEL ✦ THE THIRD HOUR OF THE DAY ✦ DANSOR ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Vequaniel, angel of the third hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">III · the third hour of the day</div>
+    <h3>Vequaniel</h3>
+    <p class="lede2">Ruler of the third hour of every day, the hour called <i>Dansor</i>. In the manuscript he has 20 chief dukes and 200 lesser dukes; 12 named, with 1,760 servants.</p>
+    
+    <p>Like every angel of the hours, Vequaniel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Asmiel, Persiel, Mursiel, Zoesiel, Drelmech, Sadiniel, Parniel, Comadiel, Gemary, Xantiel, Serviel, Furiel</p>
+    <p class="fine">Dukes who also serve another hour: Gemary (also under Abasdarhon).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-vathmiel" data-hour="3">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Vathmiel&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;IV&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 4, &quot;subtitle&quot;: &quot;Vathmiel&quot;, &quot;ring&quot;: &quot;VATHMIEL ✦ THE FOURTH HOUR OF THE DAY ✦ ELECHYM ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Vathmiel, angel of the fourth hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">IV · the fourth hour of the day</div>
+    <h3>Vathmiel</h3>
+    <p class="lede2">Ruler of the fourth hour of every day, the hour called <i>Elechym</i>. In the manuscript he has 10 chief dukes and 100 lesser dukes; 15 named, with 1,550 servants.</p>
+    
+    <p>Like every angel of the hours, Vathmiel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Armmyel, Larmich, Marfiel, Ormyel, Zardiel, Emarfiel, Permiel, Queriel, Strubiel, Diviel, Jermiel, Thuros, Vanesiel, Zasviel, Hermiel</p>
+    
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-sasquiel" data-hour="4">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Sasquiel&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;V&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 5, &quot;subtitle&quot;: &quot;Sasquiel&quot;, &quot;ring&quot;: &quot;SASQUIEL ✦ THE FIFTH HOUR OF THE DAY ✦ FEALECH ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Sasquiel, angel of the fifth hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">V · the fifth hour of the day</div>
+    <h3>Sasquiel</h3>
+    <p class="lede2">Ruler of the fifth hour of every day, the hour called <i>Fealech</i>. In the manuscript he has 10 chief dukes and 100 lesser dukes; 15 named, with 5,550 servants.</p>
+    
+    <p>Like every angel of the hours, Sasquiel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Damiel, Araniel, Maroch, Saraphiel, Putisiel, Jameriel, Futiniel, Rameriel, Amisiel, Uraniel, Omerach, Lameros, Zachiel, Fustiel, Camiel</p>
+    <p class="fine">Dukes who also serve another hour: Uraniel (also under Iassuarim).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-saniel" data-hour="5">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Saniel&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;VI&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 6, &quot;subtitle&quot;: &quot;Saniel&quot;, &quot;ring&quot;: &quot;SANIEL ✦ THE SIXTH HOUR OF THE DAY ✦ GENAPHERIM ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Saniel, angel of the sixth hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">VI · the sixth hour of the day</div>
+    <h3>Saniel</h3>
+    <p class="lede2">Ruler of the sixth hour of every day, the hour called <i>Genapherim</i>. In the manuscript he has 10 chief dukes and 100 lesser dukes; 15 named, with 5,550 servants.</p>
+    
+    <p>Like every angel of the hours, Saniel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Arnebiel, Charuch, Medusiel, Nathmiel, Pemiel, Gamyel, Jenotriel, Sameon, Trasiel, Xamyon, Nedabor, Permon, Brasiel, Camosiel, Evadar</p>
+    <p class="fine">Dukes who also serve another hour: Permon (also under Dardariel); Brasiel (also under Quabriel).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-barquiel" data-hour="6">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Barquiel&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;VII&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 7, &quot;subtitle&quot;: &quot;Barquiel&quot;, &quot;ring&quot;: &quot;BARQUIEL ✦ THE SEVENTH HOUR OF THE DAY ✦ HAMARYM ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Barquiel, angel of the seventh hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">VII · the seventh hour of the day</div>
+    <h3>Barquiel</h3>
+    <p class="lede2">Ruler of the seventh hour of every day, the hour called <i>Hamarym</i>. In the manuscript he has 10 chief dukes and 100 lesser dukes; 15 named, with 600 servants.</p>
+    
+    <p>Like every angel of the hours, Barquiel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Abrasiel, Farmos, Nestorii, Manuel, Sagiel, Harmiel, Nastrus, Varmay, Tulmas, Crosiel, Pasriel, Venesiel, Evarym, Drufiel, Kathos</p>
+    
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-osmadiel" data-hour="7">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Osmadiel&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;VIII&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 8, &quot;subtitle&quot;: &quot;Osmadiel&quot;, &quot;ring&quot;: &quot;OSMADIEL ✦ THE EIGHTH HOUR OF THE DAY ✦ JAFANYM ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Osmadiel, angel of the eighth hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">VIII · the eighth hour of the day</div>
+    <h3>Osmadiel</h3>
+    <p class="lede2">Ruler of the eighth hour of every day, the hour called <i>Jafanym</i>. In the manuscript he has 100 [10] chief dukes and 100 lesser dukes; 15 named, with 1,100 servants.</p>
+    
+    <p>Like every angel of the hours, Osmadiel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Sarfiel, Amalym, Chroel, Mesial, Lantrhots, Demarot, Janofiel, Larfuty, Vemael, Thribiel, Mariel, Remasyn, Theoriel, Framion, Ermiel</p>
+    
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-quabriel" data-hour="8">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Quabriel&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;IX&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 9, &quot;subtitle&quot;: &quot;Quabriel&quot;, &quot;ring&quot;: &quot;QUABRIEL ✦ THE NINTH HOUR OF THE DAY ✦ KARRON ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Quabriel, angel of the ninth hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">IX · the ninth hour of the day</div>
+    <h3>Quabriel</h3>
+    <p class="lede2">Ruler of the ninth hour of every day, the hour called <i>Karron</i>. In the manuscript he has 10 greater and 100 lesser dukes, who have 192,980 servants in 10 orders; 15 named.</p>
+    
+    <p>Like every angel of the hours, Quabriel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Astroniel, Charmy, Pamory, Damyel, Nadriel, Kranos, Menas, Brasiel, Nefarym, Zoymiel, Trubas, Xermiel, Lameson, Zasnor, Janediel</p>
+    <p class="fine">Dukes who also serve another hour: Brasiel (also under Saniel).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-oriel" data-hour="9">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Oriel&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;X&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 10, &quot;subtitle&quot;: &quot;Oriel&quot;, &quot;ring&quot;: &quot;ORIEL ✦ THE TENTH HOUR OF THE DAY ✦ LAMARHON ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Oriel, angel of the tenth hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">X · the tenth hour of the day</div>
+    <h3>Oriel</h3>
+    <p class="lede2">Ruler of the tenth hour of every day, the hour called <i>Lamarhon</i>. In the manuscript he has dukes and servants in 10 orders, 5,600 spirits in all; 15 named, with 1,100 servants.</p>
+    
+    <p>Like every angel of the hours, Oriel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Armosy, Drabiel, Penaly, Mesriel, Choreb, Lemur, Ormas, Charny, Zazyor, Naveron, Xantros, Basilon, Nameron, Kranoti, Alfrael</p>
+    
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-bariel" data-hour="10">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Bariel&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;XI&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 11, &quot;subtitle&quot;: &quot;Bariel&quot;, &quot;ring&quot;: &quot;BARIEL ✦ THE ELEVENTH HOUR OF THE DAY ✦ MANELOYM ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Bariel, angel of the eleventh hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">XI · the eleventh hour of the day</div>
+    <h3>Bariel</h3>
+    <p class="lede2">Ruler of the eleventh hour of every day, the hour called <i>Maneloym</i>. In the manuscript he has dukes and servants in 10 parts, 5,600 in all; 15 named, with 1,100 servants.</p>
+    
+    <p>Like every angel of the hours, Bariel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Almarizel, Prasiniel, Chadros, Turmiel, Lamiel, Menafiel, Demasor, Omary, Helmas, Zemoel, Almas, Perman, Comial, Temas, Lanifiel</p>
+    
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-beratiel" data-hour="11">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Beratiel&quot;, &quot;planet&quot;: &quot;Sun&quot;, &quot;medallion&quot;: &quot;XII&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;day&quot;, &quot;hour&quot;: 12, &quot;subtitle&quot;: &quot;Beratiel&quot;, &quot;ring&quot;: &quot;BERATIEL ✦ THE TWELFTH HOUR OF THE DAY ✦ NAHALON ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Beratiel, angel of the twelfth hour of the day&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">XII · the twelfth hour of the day</div>
+    <h3>Beratiel</h3>
+    <p class="lede2">Ruler of the twelfth hour of every day, the hour called <i>Nahalon</i>. In the manuscript he has dukes and servants in 12 degrees, 3,700 spirits in all; 15 named, with 1,100 servants.</p>
+    
+    <p>Like every angel of the hours, Beratiel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Camaron, Astrofiel, Penatiel, Demarac, Famaras, Plamiel, Nerostiel, Emarson, Quirix, Sameron, Edriel, Choriel, Romiel, Fenosiel, Harmary</p>
+    <p class="fine">Dukes who also serve another hour: Choriel (also under Mendrion).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-sabrathan" data-hour="12">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Sabrathan&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;I&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 1, &quot;subtitle&quot;: &quot;Sabrathan&quot;, &quot;ring&quot;: &quot;SABRATHAN ✦ THE FIRST HOUR OF THE NIGHT ✦ OMALHARIEN ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Sabrathan, angel of the first hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">I · the first hour of the night</div>
+    <h3>Sabrathan</h3>
+    <p class="lede2">Ruler of the first hour of every night, the hour called <i>Omalharien</i>. In the manuscript he has 1,540 dukes and servants in 10 orders; 15 named, with 2,000 servants.</p>
+    
+    <p>Like every angel of the hours, Sabrathan has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Domaras, Amerany, Penoles, Mardiel, Nastul, Ramesiel, Omedriel, Franedac, Chrasiel, Dormason, Hayzoym, Emalon, Turtiel, Quenol, Rymaliel</p>
+    
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-tartys" data-hour="13">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Tartys&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;II&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 2, &quot;subtitle&quot;: &quot;Tartys&quot;, &quot;ring&quot;: &quot;TARTYS ✦ THE SECOND HOUR OF THE NIGHT ✦ PANEZUR ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Tartys, angel of the second hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">II · the second hour of the night</div>
+    <h3>Tartys</h3>
+    <p class="lede2">Ruler of the second hour of every night, the hour called <i>Panezur</i>. In the manuscript he has 101,550 in 12 degrees; 18 named, with 1,320 servants.</p>
+    
+    <p>Like every angel of the hours, Tartys has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Almodar, Famoriel, Nedroz, Ormezyn, Chabriz, Praxiel, Permaz, Vameroz, Emaryel, Fromezyn, Ramaziel, Granozyn, Gabrinoz, Mercoph, Tameriel, Venomiel, Jenaziel, Xemyzin</p>
+    <p class="fine">Dukes who also serve another hour: Tameriel (also under Pamyel).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-serquanich" data-hour="14">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Serquanich&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;III&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 3, &quot;subtitle&quot;: &quot;Serquanich&quot;, &quot;ring&quot;: &quot;SERQUANICH ✦ THE THIRD HOUR OF THE NIGHT ✦ QUABRION ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Serquanich, angel of the third hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">III · the third hour of the night</div>
+    <h3>Serquanich</h3>
+    <p class="lede2">Ruler of the third hour of every night, the hour called <i>Quabrion</i>. In the manuscript he has 101,550 dukes and servants in 12 degrees; 18 named, with 1,320 servants.</p>
+    
+    <p>Like every angel of the hours, Serquanich has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Menarym, Chrusiel, Penargos, Amriel, Demanoz, Nestoroz, Evanuel, Sarmozyn, Haylon, Quabriel, Thurmytz, Fronyzon, Vanosyr, Lemaron, Almonoyz, Janothyel, Melrotz, Xanthyozod</p>
+    
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-jefischa" data-hour="15">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Jefischa&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;IV&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 4, &quot;subtitle&quot;: &quot;Jefischa&quot;, &quot;ring&quot;: &quot;JEFISCHA ✦ THE FOURTH HOUR OF THE NIGHT ✦ RAMERSY ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Jefischa, angel of the fourth hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">IV · the fourth hour of the night</div>
+    <h3>Jefischa</h3>
+    <p class="lede2">Ruler of the fourth hour of every night, the hour called <i>Ramersy</i>. In the manuscript he has 101,550 dukes and servants in 12 orders; 18 named, with 7,260 servants.</p>
+    
+    <p>Like every angel of the hours, Jefischa has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Armosiel, Nedruan, Maneyloz, Ormael, Phorsiel, Rimezyn, Rayziel, Gemezin, Fremiel, Hamayz, Japuriel, Jasphiel, Lamediel, Adroziel, Zodiel, Bramiel, Coreziel, Enatriel</p>
+    <p class="fine">Dukes who also serve another hour: Rayziel (also under Mendrion).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-abasdarhon" data-hour="16">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Abasdarhon&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;V&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 5, &quot;subtitle&quot;: &quot;Abasdarhon&quot;, &quot;ring&quot;: &quot;ABASDARHON ✦ THE FIFTH HOUR OF THE NIGHT ✦ SANAYFAR ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Abasdarhon, angel of the fifth hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">V · the fifth hour of the night</div>
+    <h3>Abasdarhon</h3>
+    <p class="lede2">Ruler of the fifth hour of every night, the hour called <i>Sanayfar</i>. In the manuscript he has 101,550 dukes and servants in 12 degrees; 24 named, with 3,200 servants.</p>
+    
+    <p>Like every angel of the hours, Abasdarhon has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Meniel, Charaby, Appiniel, Deinatz, Nechorym, Hameriel, Vulcaniel, Samelon, Gemary, Vanescor, Samerym, Xantropy, Herphatz, Chrymas, Patrozyn, Nameton, Barmas, Platiel, Neszomy, Quesdor, Caremaz, Umariel, Kralym, Habalon</p>
+    <p class="fine">Dukes who also serve another hour: Gemary (also under Vequaniel).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-zaazenach" data-hour="17">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Zaazenach&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;VI&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 6, &quot;subtitle&quot;: &quot;Zaazenach&quot;, &quot;ring&quot;: &quot;ZAAZENACH ✦ THE SIXTH HOUR OF THE NIGHT ✦ THAAZARON ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Zaazenach, angel of the sixth hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">VI · the sixth hour of the night</div>
+    <h3>Zaazenach</h3>
+    <p class="lede2">Ruler of the sixth hour of every night, the hour called <i>Thaazaron</i>. In the manuscript he has 101,550 dukes and servants in 12 orders; 18 named, with 2,400 servants.</p>
+    
+    <p>Like every angel of the hours, Zaazenach has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Amonazy, Menoriel, Prenostix, Namedor, Cherasiel, Dramaz, Tuberiel, Humaziel, Lanoziel, Lamerotzod, Xerphiel, Zeziel, Pammon, Dracon, Gematzod, Enariel, Rudefor, Sarmon</p>
+    
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-mendrion" data-hour="18">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Mendrion&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;VII&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 7, &quot;subtitle&quot;: &quot;Mendrion&quot;, &quot;ring&quot;: &quot;MENDRION ✦ THE SEVENTH HOUR OF THE NIGHT ✦ VENAYDOR ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Mendrion, angel of the seventh hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">VII · the seventh hour of the night</div>
+    <h3>Mendrion</h3>
+    <p class="lede2">Ruler of the seventh hour of every night, the hour called <i>Venaydor</i>. In the manuscript he has 101,550 dukes and servants in 12 orders; 18 named, with 1,860 servants.</p>
+    
+    <p>Like every angel of the hours, Mendrion has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Ammiel, Choriel, Genarytz, Pandroz, Menesiel, Sameriel, Ventariel, Zachariel, Dubraz, Marchiel, Jonadriel, Pemoniel, Rayziel, Tarmytz, Anapion, Jmonyel, Framoth, Machmag</p>
+    <p class="fine">Dukes who also serve another hour: Choriel (also under Beratiel); Rayziel (also under Jefischa).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-narcoriel" data-hour="19">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Narcoriel&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;VIII&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 8, &quot;subtitle&quot;: &quot;Narcoriel&quot;, &quot;ring&quot;: &quot;NARCORIEL ✦ THE EIGHTH HOUR OF THE NIGHT ✦ XYMALIM ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Narcoriel, angel of the eighth hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">VIII · the eighth hour of the night</div>
+    <h3>Narcoriel</h3>
+    <p class="lede2">Ruler of the eighth hour of every night, the hour called <i>Xymalim</i>. In the manuscript he has 101,550 dukes and servient spirits in 12 degrees; 18 named, with 30,200 [36,200] servants.</p>
+    
+    <p>Like every angel of the hours, Narcoriel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Cambiel, Nedarym, Astrocon, Marifiel, Dramozyn, Lustifion, Amelson, Lemozar, Xernifiel, Kanorsiel, Bufanotz, Jamedroz, Xanoriz, Jastrion, Themaz, Hobraiym, Zymeloz, Gamsiel</p>
+    
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-pamyel" data-hour="20">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Pamyel&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;IX&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 9, &quot;subtitle&quot;: &quot;Pamyel&quot;, &quot;ring&quot;: &quot;PAMYEL ✦ THE NINTH HOUR OF THE NIGHT ✦ ZESCHAR ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Pamyel, angel of the ninth hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">IX · the ninth hour of the night</div>
+    <h3>Pamyel</h3>
+    <p class="lede2">Ruler of the ninth hour of every night, the hour called <i>Zeschar</i>. In the manuscript he has 101,550 dukes and servants in 12 parts; 18 chief dukes named, with 1,320 servants.</p>
+    
+    <p>Like every angel of the hours, Pamyel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Demaor, Nameal, Adrapan, Chermel, Fenadros, Vemasiel, Comary, Matiel, Zenoroz, Brandiel, Evandiel, Tameriel, Befranzy, Jachoroz, Xanthir, Armapy, Druchas, Sardiel</p>
+    <p class="fine">Dukes who also serve another hour: Tameriel (also under Tartys); Druchas (also under Dardariel).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-iassuarim" data-hour="21">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Iassuarim&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;X&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 10, &quot;subtitle&quot;: &quot;Iassuarim&quot;, &quot;ring&quot;: &quot;IASSUARIM ✦ THE TENTH HOUR OF THE NIGHT ✦ MALCHO ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Iassuarim, angel of the tenth hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">X · the tenth hour of the night</div>
+    <h3>Iassuarim</h3>
+    <p class="lede2">Ruler of the tenth hour of every night, the hour called <i>Malcho</i>. In the manuscript he has 100 chief dukes and 100 lesser dukes; 6 named, with 1,620 servants.</p>
+    
+    <p>Like every angel of the hours, Iassuarim has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Lapheriel, Emarziel, Nameroyz, Chameray, Hazaniel, Uraniel</p>
+    <p class="fine">Dukes who also serve another hour: Uraniel (also under Sasquiel).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-dardariel" data-hour="22">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Dardariel&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;XI&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 11, &quot;subtitle&quot;: &quot;Dardariel&quot;, &quot;ring&quot;: &quot;DARDARIEL ✦ THE ELEVENTH HOUR OF THE NIGHT ✦ AALACHO ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Dardariel, angel of the eleventh hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">XI · the eleventh hour of the night</div>
+    <h3>Dardariel</h3>
+    <p class="lede2">Ruler of the eleventh hour of every night, the hour called <i>Aalacho</i>. In the manuscript he has many servants and dukes; 21 named, with 420 servants.</p>
+    <p class="note">Of his dukes the manuscript says: “They are all good and obey gods lawes.”</p>
+    <p>Like every angel of the hours, Dardariel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Cardiel, Permon, Armiel, Nastoriel, Casmiroz, Dameriel, Furamiel, Mafriel, Hariaz, Damar, Alachuc, Emeriel, Naveroz, Alaphar, Nermas, Druchas, Carman, Elamyz, Jatroziel, Lamersy, Hamarytzod</p>
+    <p class="fine">Dukes who also serve another hour: Permon (also under Saniel); Druchas (also under Pamyel).</p>
+  </div>
+</article>
+<article class="codex small reveal" id="paulina-sarandiel" data-hour="23">
+  <div class="codex-art" data-art='{&quot;name&quot;: &quot;Sarandiel&quot;, &quot;planet&quot;: &quot;Moon&quot;, &quot;medallion&quot;: &quot;XII&quot;, &quot;lite&quot;: true, &quot;kind&quot;: &quot;pauline&quot;, &quot;period&quot;: &quot;night&quot;, &quot;hour&quot;: 12, &quot;subtitle&quot;: &quot;Sarandiel&quot;, &quot;ring&quot;: &quot;SARANDIEL ✦ THE TWELFTH HOUR OF THE NIGHT ✦ XEPHAN ✦ &quot;, &quot;label&quot;: &quot;Devotional artwork of Sarandiel, angel of the twelfth hour of the night&quot;}'></div>
+  <div class="codex-text">
+    <div class="eyebrow">XII · the twelfth hour of the night</div>
+    <h3>Sarandiel</h3>
+    <p class="lede2">Ruler of the twelfth hour of every night, the hour called <i>Xephan</i>. In the manuscript he has many dukes and servants; 21 named (“cheefe and good Dukes”), with 420 servants.</p>
+    
+    <p>Like every angel of the hours, Sarandiel has no planet of his own. The Ars Paulina says the offices of these angels change with the day: in his hour he does “all things that are attributed to” whichever planet rules it. Over a week he serves all seven:</p>
+    <div class="tablewrap"><table class="data week"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody><tr><td><span class="g" data-p="Mercury">☿</span> Mercury</td><td><span class="g" data-p="Jupiter">♃</span> Jupiter</td><td><span class="g" data-p="Venus">♀</span> Venus</td><td><span class="g" data-p="Saturn">♄</span> Saturn</td><td><span class="g" data-p="Sun">☉</span> Sun</td><td><span class="g" data-p="Moon">☽</span> Moon</td><td><span class="g" data-p="Mars">♂</span> Mars</td></tr></tbody></table></div>
+    <h4>His chief dukes named in the manuscript</h4>
+    <p class="dukes">Adoniel, Damasiel, Ambriel, Meriel, Denaryz, Emarion, Kabriel, Marachy, Chabrion, Nestoriel, Zachriel, Naveriel, Damery, Namael, Hardiel, Nefrias, Irmanotzod, Gerthiel, Dromiel, Ladrotzod, Melanas</p>
+    <p class="fine">Dukes who also serve another hour: Nestoriel (also under Samael).</p>
+  </div>
+</article>
+</div></section>
+
+<section id="sources" style="border-top:1px solid var(--line)"><div class="wrap cols">
+  <div class="prose">
+    <div class="eyebrow">Sources and method</div>
+    <h2 style="font-size:clamp(30px,4vw,44px);margin:12px 0 14px">How this page is made</h2>
+    <p>The hours are counted from sunrise and sunset calculated for your place, the day divided into twelve and the night into twelve. The planet of each hour follows the Chaldean order from the planet of the day. The angels of the hours are those of the Ars Paulina; the angels of the days and the angels of the four quarters are those of the Heptameron. The positions of the planets are calculated from their orbital elements and agree with professional ephemerides to within a small fraction of a degree.</p>
+    <p>The names, hours, numbers and quotations come from the sources listed. The figures of the angels and the seals are modern devotional artwork made for Discovery Science and are not reproductions of any manuscript. This page describes a tradition; it does not claim that the angels or the hours influence events.</p>
+  </div>
+  <aside><div class="ledger">
+    <h4>Sources</h4>
+    <ol class="fine" style="padding-left:18px;margin:0">
+      <li><i>Ars Paulina</i> (Lemegeton III), ed. J. H. Peterson, esotericarchives.com, from British Library Sloane MS 3825. Transcription licensed CC BY 4.0.</li>
+      <li><i>Heptameron, or Magical Elements</i>, attributed to Peter of Abano, English translation 1655, ed. J. H. Peterson, esotericarchives.com.</li>
+      <li>Agrippa, <i>Three Books of Occult Philosophy</i>, Book II, ch. 10, “The Scale of the Number seven”.</li>
+      <li>Peterson, J. H., ed. <i>The Lesser Key of Solomon</i>. Weiser, 2001.</li>
+      <li>Daniel 8–12; Luke 1; Jude 9; Revelation 12; Tobit 12; 1 Enoch 10.</li>
+    </ol>
+    <p class="fine" style="margin-top:12px"><a href="/planetary-hour-now.html">Planetary hour now</a> · <a href="/planetary-hours.html">Planetary hours guide</a> · <a href="/seven-angels.html">The Seven Angels apps</a> · <a href="/archive.html#angels">Archive: the orders of angels</a></p>
+  </div></aside>
+</div></section>
+
+<section id="faq"><div class="wrap" style="max-width:860px">
+  <div class="eyebrow">Questions</div>
+  <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 6px">Angel of the hour: common questions</h2>
+  <dl class="faq"><dt>What is the Pauline angel of the hour?</dt><dd>The Ars Paulina, the third book of the seventeenth-century Lemegeton, names an angel for each of the twelve hours of the day and the twelve hours of the night, counted from sunrise. The first hour of every day is ruled by Samael, the first hour of every night by Sabrathan.</dd><dt>How is the Pauline hour different from the planetary hour?</dt><dd>The planetary hour belongs to one of the seven planets and changes with the day of the week. The Pauline angel belongs to the hour’s number and is the same every day. The Ars Paulina joins the two: the angel of the hour does “all things that are attributed to” the planet that rules that hour.</dd><dt>Which angel rules today?</dt><dd>In the Heptameron each day has an angel: Michael on Sunday, Gabriel on Monday, Samael on Tuesday, Raphael on Wednesday, Sachiel on Thursday, Anael on Friday and Cassiel on Saturday.</dd><dt>When does the angel of the day rule the hour too?</dt><dd>In the first and eighth hours of the day and the third and tenth hours of the night, the planet of the hour is the planet of the day. These are the hours the Ars Paulina names for its observances on Sunday, Monday, Wednesday and Saturday.</dd><dt>Is my location sent anywhere?</dt><dd>No. Sunrise, sunset, the hours and the positions of the planets are calculated in your browser.</dd><dt>Is the artwork historical?</dt><dd>No. The figures and seals on this page are modern devotional artwork made for Discovery Science. The names, hours, numbers and texts come from the sources cited.</dd></dl>
+</div></section>
+
+<div id="ah-sanct" role="dialog" aria-modal="true" aria-label="Sit with the angel">
+  <div class="art"><div class="breath"></div><div id="ah-sanct-art"></div></div>
+  <div class="cue" id="ah-cue" aria-live="polite"></div>
+  <div class="bar"><button class="btn ghost small" type="button" id="ah-tone">Soft tone: off</button><button class="btn ghost small" type="button" id="ah-swap">Show the angel of the day</button><button class="btn gold small" type="button" id="ah-close">Return</button></div>
+</div>
+
+<div id="footer"></div>
+<script src="/assets/site.js"></script>
+<script src="/assets/angel-art.js"></script>
+<script src="/assets/ephemeris.js"></script>
+<script src="/assets/angels-data.js"></script>
+<script src="/assets/angel-hour.js" defer></script>
+<script src="/assets/track.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Planetary Hour Now: Current Hour, Angel &amp; Countdown | Discovery Science</title>
+<meta name="description" content="What planetary hour is it right now? A live planetary clock for your location: the ruling planet and angel, a countdown, the next hour of every planet and tonight’s Moon.">
+<link rel="canonical" href="https://www.discovery-science.com/planetary-hour-now.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Discovery Science">
+<meta property="og:title" content="Planetary Hour Now: Current Hour, Angel and Countdown">
+<meta property="og:description" content="A live planetary clock for your location: the ruling planet and angel of this hour, a countdown, and the next hour of every planet.">
+<meta property="og:url" content="https://www.discovery-science.com/planetary-hour-now.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+#hn{--hn:var(--gold2)}
+.hn-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:center}
+@media(max-width:900px){.hn-grid{grid-template-columns:minmax(0,1fr)}}
+#hn-main{display:flex;gap:22px;align-items:flex-start}
+@media(max-width:600px){#hn-main{flex-direction:column;gap:4px}.hn-glyph{font-size:64px;text-align:left}}
+.hn-glyph{font-size:clamp(72px,11vw,128px);line-height:1;color:var(--hn);text-shadow:0 0 42px color-mix(in srgb,var(--hn) 45%,transparent);min-width:1em;text-align:center;transition:color .6s}
+.hn-title{font-size:clamp(38px,5.6vw,66px);margin:8px 0 10px}
+.hn-title em{color:var(--hn)}
+.hn-angel{color:var(--soft);margin:0 0 16px;font-size:16.5px}
+.hn-angel b{color:var(--gold2);font-family:var(--serif);font-size:22px;font-weight:500}
+.hn-count{display:flex;gap:14px;align-items:center;margin:0 0 18px;color:var(--text)}
+.hn-count svg{width:46px;height:46px;flex:none}
+.hn-count b{font-family:var(--mono);font-size:18px;color:var(--gold2)}
+.hn-app{display:flex;gap:10px;flex-wrap:wrap}
+#hn-wheel svg{width:100%;max-width:440px;display:block;margin:0 auto}
+#hn-needle{transition:transform 1s linear}
+.hn-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+.hn-controls select{padding:9px 12px;border-radius:999px;border:1px solid var(--line2);background:var(--bg2);color:var(--text);font:14px var(--sans);color-scheme:dark}
+.hn-controls label{display:inline-flex;gap:8px;align-items:center;font-size:14px;color:var(--soft);cursor:pointer}
+.hn-controls input[type=checkbox]{accent-color:var(--gold)}
+#hn-next{list-style:none;padding:0;margin:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+#hn-next li{border:1px solid var(--line);border-radius:16px;padding:14px;background:rgba(13,20,34,.8);display:flex;flex-direction:column;gap:2px;font-size:14px}
+#hn-next .g{font-size:26px;line-height:1}
+#hn-next b{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--text)}
+.hn-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+@media(max-width:760px){.hn-two{grid-template-columns:minmax(0,1fr)}}
+#hn-moon{display:flex;gap:18px;align-items:center}
+#hn-moon svg{width:96px;height:96px;flex:none}
+#hn-moon b{font-family:var(--serif);font-size:24px;font-weight:500}
+details.hn-sch summary{cursor:pointer;color:var(--gold2);font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin:6px 0 12px}
+.tablewrap{overflow-x:auto}
+table.data tr.now td{background:rgba(212,174,98,.12);color:var(--gold2)}
+.faq dt{font-family:var(--serif);font-size:22px;color:var(--text);margin-top:22px}
+.faq dd{margin:6px 0 0;color:var(--soft)}
+.hn-skel{min-height:220px}
+#hn.ready .hn-skel{min-height:0}
+@media (prefers-reduced-motion: reduce){#hn-needle{transition:none}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Planetary Hour Now","url":"https://www.discovery-science.com/planetary-hour-now.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A live planetary hour clock: the current planetary hour and its angel for your location, a countdown, the next hour of each planet and the Moon's phase.","publisher":{"@type":"Organization","name":"Discovery Science, Inc.","url":"https://www.discovery-science.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.discovery-science.com/"},{"@type":"ListItem","position":2,"name":"Planetary Hours","item":"https://www.discovery-science.com/planetary-hours.html"},{"@type":"ListItem","position":3,"name":"Planetary Hour Now","item":"https://www.discovery-science.com/planetary-hour-now.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What planetary hour is it now?","acceptedAnswer":{"@type":"Answer","text":"It depends on where you are, because planetary hours are measured from your local sunrise and sunset. This page calculates the current hour, its planet and its angel for your location and updates every second."}},{"@type":"Question","name":"Which angel rules the current planetary hour?","acceptedAnswer":{"@type":"Answer","text":"In the tradition of the Heptameron each planet has an angel: Michael for the Sun, Gabriel for the Moon, Samael for Mars, Raphael for Mercury, Sachiel for Jupiter, Anael for Venus and Cassiel for Saturn. The angel shown is the angel of the planet that rules the hour."}},{"@type":"Question","name":"Why is this hour longer or shorter than sixty minutes?","acceptedAnswer":{"@type":"Answer","text":"Planetary hours are unequal. Daylight is divided into twelve and the night into twelve, so day-hours are long in summer and short in winter. They are close to sixty minutes only near the equinoxes."}},{"@type":"Question","name":"Is my location sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Sunrise, sunset and the hours are calculated in your browser. If you share your location, it is used on your device only."}},{"@type":"Question","name":"Why does another planetary hour site show slightly different times?","acceptedAnswer":{"@type":"Answer","text":"Calculators define sunrise differently, for example by the upper edge or the centre of the Sun, with or without refraction. That moves every hour boundary by a minute or two."}}]}</script>
+</head>
+<body data-page="archive">
+<canvas id="sky"></canvas>
+<div id="nav"></div>
+
+<header class="hero" style="min-height:auto;padding:80px 0 20px"><div class="wrap">
+  <div class="folio"><a href="/planetary-hours.html" style="color:inherit">Planetary hours</a> · Live</div>
+  <h1 style="font-size:clamp(44px,6.6vw,84px)">Planetary hour <em>now</em></h1>
+  <p class="lede">The hour, its planet and its angel, worked out from sunrise and sunset where you are, and counted down to the second.</p>
+</div></header>
+
+<section id="hn" style="padding-top:10px"><div class="wrap">
+  <div class="card">
+    <div class="hn-grid">
+      <div id="hn-main" class="hn-skel" aria-live="polite"><noscript><p class="lede">This live clock needs JavaScript. The <a href="/planetary-hours.html#tables">weekday tables</a> list the planet of every hour without it.</p></noscript></div>
+      <div id="hn-wheel"></div>
+    </div>
+    <div class="hn-controls">
+      <span class="fine">Showing: <b id="hn-place" style="color:var(--text)">your area</b></span>
+      <select id="hn-city" aria-label="Choose a city"></select>
+      <button class="btn ghost small" type="button" id="hn-geo">Use my exact location</button>
+      <button class="btn ghost small" type="button" id="hn-share">Share this hour</button>
+      <label><input type="checkbox" id="hn-chime"> Sound a soft chime when the hour turns</label>
+    </div>
+    <p class="fine" id="hn-status" role="status" aria-live="polite" style="min-height:1.4em;margin:8px 0 0"></p>
+    <p class="fine" id="hn-live" aria-live="assertive" style="position:absolute;left:-9999px"></p>
+  </div>
+
+  <h2 style="font-size:clamp(30px,4vw,44px);margin:56px 0 16px">The next hour of <em>every planet</em></h2>
+  <p class="muted" style="margin:0 0 16px">For planning: when each planet’s hour next begins where you are.</p>
+  <ul id="hn-next"></ul>
+
+  <div class="hn-two" style="margin-top:40px">
+    <div class="card"><div class="eyebrow">Tonight’s Moon</div><div id="hn-moon" style="margin-top:14px"></div><p class="fine" style="margin:12px 0 0">Approximate, from the average length of the lunar month.</p></div>
+    <div class="card"><div class="eyebrow">The name of the day</div><p id="hn-dayname" style="color:var(--soft);margin:14px 0 0"></p></div>
+  </div>
+
+  <details class="hn-sch card" style="margin-top:18px">
+    <summary>Today’s full schedule of hours</summary>
+    <div class="tablewrap"><table class="data"><thead><tr><th scope="col">Hour</th><th scope="col">Starts</th><th scope="col">Ends</th><th scope="col">Planet</th><th scope="col">Angel</th></tr></thead><tbody id="hn-sched"></tbody></table></div>
+  </details>
+</div></section>
+
+<section id="how" style="border-top:1px solid var(--line)"><div class="wrap cols">
+  <div class="prose reveal">
+    <div class="eyebrow">How it works</div>
+    <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 16px">How the current hour is found</h2>
+    <p>The clock calculates sunrise and sunset for your place and date, divides the daylight into twelve equal parts and the night into twelve more, and gives the first hour after sunrise to the planet of the day: the Sun on Sunday, the Moon on Monday, Mars on Tuesday, Mercury on Wednesday, Jupiter on Thursday, Venus on Friday and Saturn on Saturday. Each following hour takes the next planet in the Chaldean order, Saturn, Jupiter, Mars, the Sun, Venus, Mercury and the Moon. The planetary day runs from sunrise to the next sunrise, so the small hours after midnight still belong to the previous day’s night.</p>
+    <p>The angel shown is the angel the <i>Heptameron</i>, first printed in 1559, gives to the planet that rules the hour. The planets, the hours and the angels are a historical tradition; this page shows how that tradition reckons time and makes no claim that the hours influence events. The full history, worked examples and weekday tables are in the <a href="/planetary-hours.html">planetary hours guide</a>.</p>
+  </div>
+  <aside class="reveal"><div class="ledger">
+    <h4>Keep the hours with you</h4>
+    <p class="fine" style="margin:0 0 10px">Home-screen widgets and full rites for each hour:</p>
+    <p class="fine" style="margin:0"><a href="/angel-of-the-hour.html">Angel of the Hour: the Ars Paulina angels, live</a><br><a href="/seven-angels.html">The Seven Angels apps</a><br><a href="/app/angelarium.html">Angelarium: every angel, every hour</a><br><a href="/app/celestial-above.html">Celestial Above: the planet in the real sky</a><br><a href="/app/ars-astrorum.html">Ars Astrorum: planetary hours calculator</a><br><a href="/planetary-attunement.html">Planetary Attunement</a></p>
+  </div></aside>
+</div></section>
+
+<section id="faq"><div class="wrap" style="max-width:860px">
+  <div class="eyebrow">Questions</div>
+  <h2 style="font-size:clamp(34px,4.8vw,52px);margin:12px 0 6px">Planetary hour now: common questions</h2>
+  <dl class="faq">
+    <dt>What planetary hour is it now?</dt><dd>It depends on where you are, because planetary hours are measured from your local sunrise and sunset. This page calculates the current hour, its planet and its angel for your location and updates every second.</dd>
+    <dt>Which angel rules the current planetary hour?</dt><dd>In the tradition of the Heptameron each planet has an angel: Michael for the Sun, Gabriel for the Moon, Samael for Mars, Raphael for Mercury, Sachiel for Jupiter, Anael for Venus and Cassiel for Saturn. The angel shown is the angel of the planet that rules the hour.</dd>
+    <dt>Why is this hour longer or shorter than sixty minutes?</dt><dd>Planetary hours are unequal. Daylight is divided into twelve and the night into twelve, so day-hours are long in summer and short in winter. They are close to sixty minutes only near the equinoxes.</dd>
+    <dt>Is my location sent anywhere?</dt><dd>No. Sunrise, sunset and the hours are calculated in your browser. If you share your location, it is used on your device only.</dd>
+    <dt>Why does another planetary hour site show slightly different times?</dt><dd>Calculators define sunrise differently, for example by the upper edge or the centre of the Sun, with or without refraction. That moves every hour boundary by a minute or two.</dd>
+  </dl>
+</div></section>
+
+<div id="footer"></div>
+<script src="/assets/site.js"></script>
+<script src="/assets/hour-now.js" defer></script>
+<script src="/assets/track.js" defer></script>
+</body>
+</html>

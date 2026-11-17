@@ -174,7 +174,7 @@ s = add_jsonld(s, {
     '"@type":"Organization"')
 s = add_jsonld(s, {'@context': 'https://schema.org', '@type': 'WebSite', 'name': 'Discovery Science', 'url': ORIGIN + '/'}, '"@type":"WebSite"')
 s = s.replace('<a href="/archive.html">Archive</a><a href="/privacy.html">Privacy</a></div><div class="soc">',
-              '<a href="/archive.html">Archive</a><a href="/planetary-hours.html">Planetary Hours</a><a href="/privacy.html">Privacy</a></div><div class="soc">', 1)
+              '<a href="/archive.html">Archive</a><a href="/planetary-hours.html">Planetary Hours</a><a href="/planetary-hour-now.html">Planetary Hour Now</a><a href="/angel-of-the-hour.html">Angel of the Hour</a><a href="/privacy.html">Privacy</a></div><div class="soc">', 1)
 wr('index.html', s)
 
 # Archive: point the planetary-hours chapter at the new guide.
@@ -261,6 +261,7 @@ for f in sorted(os.listdir(os.path.join(ROOT, 'app'))):
     links = [(f'/archive.html#{a}', f'Archive: {t}') for a, t in ARCHIVE.get(slug, [])]
     if slug in PLANETARY:
         links.append(('/planetary-hours.html', 'Guide: what are planetary hours?'))
+        links.append(('/planetary-hour-now.html', 'Live: the planetary hour now'))
     links += EXTRA.get(slug, [])
     if links and 'class="blk hist"' not in s:
         block = ('<section class="blk hist"><div class="wrap"><h2>The history <em>behind it</em></h2><div class="rel">'
@@ -360,7 +361,7 @@ wr('planetary-hours.html', page)
 # --------------------------------------------------------------------------------------------
 # 5. sitemap.xml: every indexable canonical page (privacy policies and 404 excluded)
 # --------------------------------------------------------------------------------------------
-SITEMAP = ['index.html', 'new.html', 'angels.html', 'seven-angels.html', 'archive.html', 'planetary-hours.html',
+SITEMAP = ['index.html', 'new.html', 'angels.html', 'seven-angels.html', 'archive.html', 'planetary-hours.html', 'planetary-hour-now.html', 'angel-of-the-hour.html',
            'library.html', 'catalog.html', 'apps.html', 'almanac.html', 'google-play.html', 'obe.html', 'oracle.html',
            'neuro.html', 'entrainment.html', 'shop.html',
            'asclepion.html', 'dhikr.html', 'divining-vessel.html', 'ekstasis.html', 'kispu.html',
