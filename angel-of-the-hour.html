@@ -76,9 +76,9 @@ body{background:radial-gradient(ellipse at 50% 0%,rgba(255,214,140,.07),transpar
 .align.on .med .disc{box-shadow:0 0 60px rgba(240,215,154,.45)}
 @media(max-width:700px){.align{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.align .mid{grid-column:1/-1;order:3}}
 /* sky compass */
-.sky{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center}
+.sky{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:center}
 @media(max-width:860px){.sky{grid-template-columns:minmax(0,1fr)}}
-#ah-compass svg{width:100%;max-width:470px;display:block;margin:0 auto;transition:transform .4s ease-out}
+#ah-compass svg{width:100%;max-width:580px;display:block;margin:0 auto;transition:transform .4s ease-out;filter:drop-shadow(0 0 40px rgba(120,150,255,.18))}
 .quarters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0}
 .quarters div{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:rgba(13,20,34,.7)}
 .quarters div.on{border-color:var(--gold);box-shadow:0 0 24px rgba(212,174,98,.25)}
@@ -93,6 +93,31 @@ body{background:radial-gradient(ellipse at 50% 0%,rgba(255,214,140,.07),transpar
 #ah-next li b{font-family:var(--serif);font-size:20px;font-weight:500}
 #ah-next .t{font-family:var(--mono);color:var(--gold2);font-size:13px}
 #ah-next .al{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:#1a1408;background:var(--gold2);border-radius:999px;padding:2px 8px}
+/* next hour */
+.nexthour{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:20px;align-items:center;max-width:760px;margin:26px auto 0}
+.nexthour .disc{width:120px;height:120px;border-radius:50%;overflow:hidden;border:1px solid rgba(212,174,98,.45)}
+.nexthour .disc svg{width:116%;height:116%;margin:-8%}
+.nexthour b{font-family:var(--serif);font-size:30px;font-weight:500;display:block;line-height:1.1}
+.nexthour .when{text-align:right;font-family:var(--mono);color:var(--gold2)}
+.nexthour .when big{display:block;font-size:22px}
+@media(max-width:600px){.nexthour{grid-template-columns:84px minmax(0,1fr)}.nexthour .disc{width:84px;height:84px}.nexthour .when{grid-column:1/-1;text-align:left}}
+.alignlist{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:14px}
+@media(max-width:1100px){.alignlist{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.alignlist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.alignlist div{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:rgba(13,20,34,.75)}
+.alignlist div.past{opacity:.45}
+.alignlist div.now{border-color:var(--gold2);box-shadow:0 0 30px rgba(240,215,154,.35)}
+.alignlist div.next{border-color:rgba(212,174,98,.6)}
+.alignlist b{display:block;font-family:var(--mono);font-size:15px;color:var(--gold2)}
+.alignlist span{font-size:13.5px;color:var(--soft)}
+.alignlist em{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.bignext{text-align:center;margin:18px 0 0;font-family:var(--serif);font-size:24px;color:var(--text)}
+.bignext b{color:var(--gold2);font-family:var(--mono);font-size:22px}
+/* sky */
+#ah-compass .sky-tw{animation:aatw 4s ease-in-out infinite}
+#ah-compass .sky-pulse{animation:skypulse 2.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes skypulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+@media (prefers-reduced-motion: reduce){#ah-compass *{animation:none!important}}
 /* codex */
 .codex{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:34px;align-items:start;padding:34px 0;border-top:1px solid var(--line)}
 .codex.small{grid-template-columns:minmax(0,220px) minmax(0,1fr)}
@@ -130,9 +155,9 @@ table.week td{white-space:nowrap;font-size:13.5px}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.discovery-science.com/"},{"@type":"ListItem","position":2,"name":"Planetary Hours","item":"https://www.discovery-science.com/planetary-hours.html"},{"@type":"ListItem","position":3,"name":"Angel of the Hour","item":"https://www.discovery-science.com/angel-of-the-hour.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Pauline angel of the hour?", "acceptedAnswer": {"@type": "Answer", "text": "The Ars Paulina, the third book of the seventeenth-century Lemegeton, names an angel for each of the twelve hours of the day and the twelve hours of the night, counted from sunrise. The first hour of every day is ruled by Samael, the first hour of every night by Sabrathan."}}, {"@type": "Question", "name": "How is the Pauline hour different from the planetary hour?", "acceptedAnswer": {"@type": "Answer", "text": "The planetary hour belongs to one of the seven planets and changes with the day of the week. The Pauline angel belongs to the hour’s number and is the same every day. The Ars Paulina joins the two: the angel of the hour does “all things that are attributed to” the planet that rules that hour."}}, {"@type": "Question", "name": "Which angel rules today?", "acceptedAnswer": {"@type": "Answer", "text": "In the Heptameron each day has an angel: Michael on Sunday, Gabriel on Monday, Samael on Tuesday, Raphael on Wednesday, Sachiel on Thursday, Anael on Friday and Cassiel on Saturday."}}, {"@type": "Question", "name": "When does the angel of the day rule the hour too?", "acceptedAnswer": {"@type": "Answer", "text": "In the first and eighth hours of the day and the third and tenth hours of the night, the planet of the hour is the planet of the day. These are the hours the Ars Paulina names for its observances on Sunday, Monday, Wednesday and Saturday."}}, {"@type": "Question", "name": "Is my location sent anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Sunrise, sunset, the hours and the positions of the planets are calculated in your browser."}}, {"@type": "Question", "name": "Is the artwork historical?", "acceptedAnswer": {"@type": "Answer", "text": "No. The figures and seals on this page are modern devotional artwork made for Discovery Science. The names, hours, numbers and texts come from the sources cited."}}]}</script>
 </head>
-<body data-page="angels">
+<body data-page="angelhour">
 <canvas id="sky"></canvas>
-<div id="nav"></div>
+<div id="nav"><!--ds-nav--><nav class="top" aria-label="Main"><div class="wrap"><a class="brand" href="/">DISCOVERY SCIENCE</a><div class="links"><a href="/google-play.html">Apps</a><a href="/angels.html">Angels</a><a href="/angel-of-the-hour.html" class="on">Angel of the Hour</a><a href="/planetary-hour-now.html">Planetary Hours</a><a href="/archive.html">Archive</a><a href="/library.html">Library</a><a href="/shop.html">Shop</a></div></div></nav><!--/ds-nav--></div>
 
 <header class="hero" style="min-height:auto;padding:70px 0 10px"><div class="wrap" style="text-align:center">
   <div class="folio"><a href="/planetary-hours.html" style="color:inherit">Planetary hours</a> · Ars Paulina · Heptameron</div>
@@ -165,11 +190,12 @@ table.week td{white-space:nowrap;font-size:13.5px}
       <button class="btn ghost small" type="button" id="ah-relocate">Change place</button>
     </div>
     <p class="fine" id="ah-status" role="status" aria-live="polite" style="text-align:center;min-height:1.4em;margin-top:10px"></p>
+    <div class="nexthour card" id="ah-nexthour"></div>
 
     <div class="ah-panel">
       <div class="eyebrow">The chain of the hour</div>
       <h2>From the planet <em>to you</em></h2>
-      <p class="muted" style="max-width:760px">In the Heptameron each planet has its angel; in the Ars Paulina the angel of the hour does the work of whichever planet rules it. Read top to bottom, this is how the old books arranged the powers of this hour.</p>
+      <p class="muted" style="max-width:760px">The planet rules the hour. The Ars Paulina’s angel of the hour does that planet’s work. Above them both stands the archangel of the day in the Heptameron, and the hour comes to you under all three.</p>
       <div class="chain card" id="ah-chain"></div>
     </div>
 
@@ -177,6 +203,7 @@ table.week td{white-space:nowrap;font-size:13.5px}
       <div class="eyebrow">The day and the hour</div>
       <h2>When the angel of the day <em>rules the hour</em></h2>
       <div class="align card" id="ah-align"></div>
+      <div class="alignlist" id="ah-alignlist"></div>
     </div>
 
     <div class="ah-panel">
@@ -677,7 +704,7 @@ table.week td{white-space:nowrap;font-size:13.5px}
   <div class="bar"><button class="btn ghost small" type="button" id="ah-tone">Soft tone: off</button><button class="btn ghost small" type="button" id="ah-swap">Show the angel of the day</button><button class="btn gold small" type="button" id="ah-close">Return</button></div>
 </div>
 
-<div id="footer"></div>
+<div id="footer"><!--ds-foot--><footer><div class="wrap"><div class="ds-foot"><div><h5>Apps</h5><a href="/google-play.html">All apps on Google Play</a><a href="/coming-soon.html">New and coming soon</a><a href="/new.html">Apps by tradition</a><a href="/catalog.html">The full catalogue</a><a href="/angels.html">The Angelic Hall</a><a href="/seven-angels.html">The Seven Angels</a><a href="/almanac.html">The Almanac</a><a href="https://apps.apple.com/us/developer/montgomery-ostrander/id6804113840" rel="noopener">On the App Store</a></div><div><h5>Live tools and study</h5><a href="/angel-of-the-hour.html">Angel of the Hour</a><a href="/planetary-hour-now.html">Planetary Hour Now</a><a href="/planetary-hours.html">Planetary hours guide</a><a href="/archive.html">The Archive</a><a href="/library.html">Library of sources</a><a href="/entrainment.html">Research: entrainment</a><a href="/neuro.html">Live EEG editions</a><a href="/obe.html">OBE Induction</a><a href="/oracle.html">ORACLE</a></div><div><h5>More</h5><a href="/shop.html">Shop</a><a href="/gifts/">Gift guides</a><a href="/links/">Links</a><a href="/privacy.html">Privacy</a><a href="mailto:montgomery@discovery-science.com">Contact</a></div></div></div></footer><!--/ds-foot--></div>
 <script src="/assets/site.js"></script>
 <script src="/assets/angel-art.js"></script>
 <script src="/assets/ephemeris.js"></script>

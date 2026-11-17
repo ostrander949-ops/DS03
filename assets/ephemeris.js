@@ -82,6 +82,17 @@
     return { alt: alt, az: az, ra: p.ra, dec: p.dec };
   }
 
-  var api = { altAz: altAz, radec: radec };
+  // Horizontal position of a point on the ecliptic (ecliptic longitude in degrees, latitude 0)
+  function eclipticAltAz(lambda, date, lat, lon) {
+    var d = dayNumber(date), ecl = 23.4393 - 3.563e-7 * d;
+    var ra = rev(atan2d(sind(lambda) * cosd(ecl), cosd(lambda))), dec = Math.asin(sind(ecl) * sind(lambda)) / RAD;
+    var sun = elements('Sun', d), Ls = rev(sun.M + sun.w), ut = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
+    var ha = rev(Ls + 180 + ut * 15 + lon) - ra;
+    var x = cosd(ha) * cosd(dec), y = sind(ha) * cosd(dec), z = sind(dec);
+    var xh = x * sind(lat) - z * cosd(lat), zh = x * cosd(lat) + z * sind(lat);
+    return { alt: atan2d(zh, Math.sqrt(xh * xh + y * y)), az: rev(atan2d(y, xh) + 180) };
+  }
+
+  var api = { altAz: altAz, radec: radec, eclipticAltAz: eclipticAltAz };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.DSEphemeris = api;
 })(this);

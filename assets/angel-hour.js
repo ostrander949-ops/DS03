@@ -104,7 +104,7 @@
     $('ah-read').href = '#' + pa.slug;
     document.querySelectorAll('.codex.now').forEach(function (x) { x.classList.remove('now'); });
     [pa.slug, 'angel-' + S.dayAngel.slug, 'angel-' + S.hourAngel.slug].forEach(function (sl) { var el = $(sl); if (el) el.classList.add('now'); });
-    renderChain(); renderAlign(); renderSky(); renderSeal(); renderNext();
+    renderChain(); renderNextHour(); renderAlign(); renderSky(); renderSeal(); renderNext();
     lastHourKey = +h.start;
     tick();
   }
@@ -117,14 +117,31 @@
   }
 
   function renderChain() {
-    var h = S.cur, pa = S.pa, ha = S.hourAngel, p = sky(h.planet);
+    var h = S.cur, d = S.day, pa = S.pa, da = S.dayAngel, p = sky(h.planet);
     var you = '<svg viewBox="-50 -50 100 100" style="width:62%;height:62%"><circle r="40" fill="none" stroke="#f0d79a" stroke-opacity=".5"/><circle r="6" fill="#f0d79a"/><circle r="18" fill="none" stroke="#f0d79a" stroke-opacity=".3"/><path d="M0 -40v-6M0 40v6M-40 0h-6M40 0h6" stroke="#f0d79a"/></svg>';
     $('ah-chain').innerHTML =
       '<svg class="flow" viewBox="0 0 400 80" preserveAspectRatio="none" aria-hidden="true"><path d="M50 40 C120 0 160 80 200 40 S280 0 350 40" fill="none" stroke="var(--ah)" stroke-width="2"/></svg>' +
-      '<div class="node"><div class="disc"><span class="g">' + GLYPH[h.planet] + '</span></div><b>' + the(h.planet) + '</b><span>The planet of the hour · ' + esc(skyText(p)) + '</span></div>' +
-      '<div class="node"><div class="disc">' + dayArt(h.planet, true) + '</div><b>' + esc(ha.angel) + '</b><span>Its angel in the Heptameron</span></div>' +
-      '<div class="node"><div class="disc">' + paulinaArt(pa, h.planet, true) + '</div><b>' + esc(pa.angel) + '</b><span>Angel of the ' + ORD[pa.no - 1] + ' hour (Ars Paulina), doing its work</span></div>' +
+      '<div class="node"><div class="disc"><span class="g">' + GLYPH[h.planet] + '</span></div><b>' + the(h.planet) + '</b><span>Planet of the hour · its angel ' + esc(S.hourAngel.angel) + ' · ' + esc(skyText(p)) + '</span></div>' +
+      '<div class="node"><div class="disc">' + paulinaArt(pa, h.planet, true) + '</div><b>' + esc(pa.angel) + '</b><span>Angel of the ' + ORD[pa.no - 1] + ' hour (Ars Paulina), doing the work of ' + the(h.planet) + '</span></div>' +
+      '<div class="node"><div class="disc">' + dayArt(d.ruler, true) + '</div><b>' + esc(da.angel) + '</b><span>Archangel of the day · ' + DAYS[d.wd] + ' · ' + GLYPH[d.ruler] + ' ' + the(d.ruler) + '</span></div>' +
       '<div class="node"><div class="disc">' + you + '</div><b>You</b><span>' + esc(loc.name.replace(/ \(.*$/, '')) + '</span></div>';
+  }
+
+  function nextHourObj() {
+    var all = []; S.days.forEach(function (d) { all = all.concat(d.hours); });
+    for (var i = 0; i < all.length; i++) if (all[i].start >= S.cur.end - 1000 && all[i].start > S.now) return all[i];
+    return null;
+  }
+  function renderNextHour() {
+    var n = nextHourObj(), tz = loc.tz, box = $('ah-nexthour');
+    if (!n) { box.hidden = true; return; }
+    box.hidden = false;
+    var pa = D.paulina[n.i], aligned = n.planet === n.ruler;
+    box.innerHTML = '<div class="disc">' + paulinaArt(pa, n.planet, true) + '</div>' +
+      '<div><div class="eyebrow">Next hour · ' + ROMAN[pa.no - 1] + ' of the ' + pa.period + ', ' + esc(pa.hour) + '</div><b>' + esc(pa.angel) + '</b>' +
+      '<span class="muted">serving <span style="color:' + HUE[n.planet][0] + '">' + GLYPH[n.planet] + ' ' + the(n.planet) + '</span>' + (aligned ? ' · <span style="color:var(--gold2)">aligned with ' + esc(D.seven[n.ruler].angel) + ', the archangel of the day</span>' : '') + '</span></div>' +
+      '<div class="when"><big id="ah-next-in">' + dur(n.start - new Date()) + '</big>at ' + esc(hm(n.start, tz)) + '</div>';
+    S.next = n;
   }
 
   function nextAlignment() {
@@ -139,35 +156,94 @@
     var box = $('ah-align');
     box.classList.toggle('on', on);
     var mid = on
-      ? '<div class="ring">✦</div><b style="font-family:var(--serif);font-size:22px;color:var(--gold2)">Aligned</b><p class="fine" style="margin:6px 0 0">' + the(h.planet) + ' rules both the day and the hour. ' + esc(S.dayAngel.angel) + ' keeps both.</p>'
-      : '<div class="ring">' + GLYPH[d.ruler] + '·' + GLYPH[h.planet] + '</div><b style="font-family:var(--serif);font-size:20px">Not aligned</b>' +
-        (nx ? '<p class="fine" style="margin:6px 0 0">Next: ' + esc(D.seven[nx.ruler].angel) + ' with ' + esc(D.seven[nx.planet].angel) + ' at ' + esc((nx.wd !== d.wd ? fmt(nx.start, tz, { weekday: 'short' }) + ' ' : '') + hm(nx.start, tz)) + ', ' + hourLabel(nx) + ' (in ' + dur(nx.start - S.now) + ')</p>' : '');
+      ? '<div class="ring">✦</div><b style="font-family:var(--serif);font-size:22px;color:var(--gold2)">Aligned now</b><p class="fine" style="margin:6px 0 0">' + the(h.planet) + ' rules both the day and the hour. ' + esc(S.dayAngel.angel) + ' keeps both.</p>'
+      : '<div class="ring">' + GLYPH[d.ruler] + '·' + GLYPH[h.planet] + '</div><b style="font-family:var(--serif);font-size:20px">Not aligned</b><p class="fine" style="margin:6px 0 0">The day belongs to ' + the(d.ruler) + ', this hour to ' + the(h.planet) + '.</p>';
     box.innerHTML =
-      '<div class="med"><div class="disc">' + dayArt(d.ruler, true) + '</div><b>' + esc(S.dayAngel.angel) + '</b><span class="fine">Angel of the day · ' + DAYS[d.wd] + ' · ' + GLYPH[d.ruler] + '</span></div>' +
+      '<div class="med"><div class="disc">' + dayArt(d.ruler, true) + '</div><b>' + esc(S.dayAngel.angel) + '</b><span class="fine">Archangel of the day · ' + DAYS[d.wd] + ' · ' + GLYPH[d.ruler] + '</span></div>' +
       '<div class="mid">' + mid + '</div>' +
       '<div class="med"><div class="disc">' + dayArt(h.planet, true) + '</div><b>' + esc(S.hourAngel.angel) + '</b><span class="fine">Angel of the hour’s planet · ' + GLYPH[h.planet] + '</span></div>' +
-      '<p class="fine" style="grid-column:1/-1;margin:8px 0 0;text-align:center">The day’s own planet returns in the first and eighth hours of the day and the third and tenth of the night: the hours the Ars Paulina names for its observances on Sunday, Monday, Wednesday and Saturday.</p>';
+      (nx ? '<p class="bignext" style="grid-column:1/-1">' + (on ? 'After this, the next alignment' : 'Next alignment') + ' in <b id="ah-align-in">' + dur(nx.start - new Date()) + '</b><br><span class="fine">' + esc(D.seven[nx.ruler].angel) + ' with ' + esc(D.seven[nx.planet].angel) + ', ' + esc((nx.wd !== d.wd ? fmt(nx.start, tz, { weekday: 'long' }) + ' ' : '') + hm(nx.start, tz)) + ', ' + hourLabel(nx) + '</span></p>' : '');
+    S.nextAlign = nx;
+    // today's four alignment hours (day I and VIII, night III and X), then the next day's first two
+    var list = [], di = S.days.indexOf(d);
+    [0, 7, 14, 21].forEach(function (k) { list.push(d.hours[k]); });
+    if (S.days[di + 1]) [0, 7].forEach(function (k) { list.push(S.days[di + 1].hours[k]); });
+    var items = list.map(function (x) {
+      var st = S.now >= x.end ? 'past' : S.now >= x.start ? 'now' : (nx && x === nx ? 'next' : '');
+      var lab = x.i < 12 ? 'Day ' + ROMAN[x.i] : 'Night ' + ROMAN[x.i - 12];
+      return '<div class="' + st + '"><em>' + (st === 'now' ? 'Now' : st === 'next' ? 'Next' : st === 'past' ? 'Passed' : DAYS[x.wd]) + ' · ' + lab + '</em><b>' + esc((x.wd !== d.wd ? fmt(x.start, tz, { weekday: 'short' }) + ' ' : '') + hm(x.start, tz)) + '</b><span>' + GLYPH[x.ruler] + ' ' + esc(D.seven[x.ruler].angel) + ' with ' + esc(D.paulina[x.i].angel) + '</span></div>';
+    }).join('');
+    $('ah-alignlist').innerHTML = items;
   }
 
   function quarterOf(az) { return az >= 45 && az < 135 ? 'East' : az >= 135 && az < 225 ? 'South' : az >= 225 && az < 315 ? 'West' : 'North'; }
+  var SIGNS = ['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓'].map(function (g) { return g + '\uFE0E'; }); // text, not emoji
   function renderSky() {
-    var h = S.cur, R = 170, pts = {}, out = '';
+    var h = S.cur, R = 190, pts = {}, now = new Date(), f1 = function (n) { return n.toFixed(1); };
     ORDER.forEach(function (pl) { pts[pl] = sky(pl); });
-    out += '<svg viewBox="-230 -230 460 460" role="img" aria-label="Sky chart: the positions of the Sun, Moon and planets from your location, north at the top"><defs><radialGradient id="ahsky"><stop offset="0" stop-color="#16203a"/><stop offset="1" stop-color="#070a14"/></radialGradient></defs>';
-    out += '<circle r="' + R + '" fill="url(#ahsky)" stroke="var(--gold)" stroke-opacity=".6"/><circle r="' + (R * 2 / 3) + '" fill="none" stroke="#2a3858"/><circle r="' + (R / 3) + '" fill="none" stroke="#2a3858"/>';
-    for (var k = 0; k < 16; k++) { var a = (k * 22.5 - 90) * Math.PI / 180; out += '<line x1="' + (R * Math.cos(a)).toFixed(1) + '" y1="' + (R * Math.sin(a)).toFixed(1) + '" x2="' + ((R + (k % 4 ? 6 : 12)) * Math.cos(a)).toFixed(1) + '" y2="' + ((R + (k % 4 ? 6 : 12)) * Math.sin(a)).toFixed(1) + '" stroke="var(--gold)"/>'; }
-    [['N', 0], ['E', 90], ['S', 180], ['W', 270]].forEach(function (c) { var a = (c[1] - 90) * Math.PI / 180; out += '<text x="' + (205 * Math.cos(a)).toFixed(1) + '" y="' + (205 * Math.sin(a) + 7).toFixed(1) + '" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" fill="var(--gold2)">' + c[0] + '</text>'; });
-    out += '<text x="0" y="5" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b6688">ZENITH</text>';
-    ORDER.forEach(function (pl) {
+    var sunAlt = pts.Sun ? pts.Sun.alt : -30, day = sunAlt > 0, twi = !day && sunAlt > -12;
+    var top = day ? '#2a5a9c' : twi ? '#3a2c6a' : '#0e1838', bot = day ? '#0f2648' : twi ? '#120c26' : '#03050c';
+    var starOp = day ? 0.12 : twi ? 0.5 : 1;
+    var xy = function (alt, az, rr) { var r = rr != null ? rr : R * (1 - alt / 90), a = (az - 90) * Math.PI / 180; return [r * Math.cos(a), r * Math.sin(a)]; };
+    var out = '<svg viewBox="-260 -260 520 520" role="img" aria-label="Your sky now: the Sun, Moon and planets as seen from your location, north at the top, the zenith in the centre">' +
+      '<defs><radialGradient id="ahsk" r=".75"><stop offset="0" stop-color="' + top + '"/><stop offset="1" stop-color="' + bot + '"/></radialGradient>' +
+      '<radialGradient id="ahhz" r=".5"><stop offset=".86" stop-color="' + (twi ? '#ff9a5c' : day ? '#9fd0ff' : '#5a6fb0') + '" stop-opacity="0"/><stop offset=".97" stop-color="' + (twi ? '#ff9a5c' : day ? '#9fd0ff' : '#5a6fb0') + '" stop-opacity=".45"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>' +
+      '<filter id="ahglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>' +
+      '<linearGradient id="ahbeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff6dc" stop-opacity=".0"/><stop offset="1" stop-color="' + HUE[h.planet][0] + '" stop-opacity=".95"/></linearGradient>' +
+      ORDER.map(function (pl) { return '<radialGradient id="aho' + pl + '"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="' + HUE[pl][0] + '"/><stop offset="1" stop-color="' + HUE[pl][0] + '" stop-opacity="0"/></radialGradient>'; }).join('') +
+      '<clipPath id="ahclip"><circle r="' + R + '"/></clipPath></defs>';
+    // compass rose behind everything
+    var rose = '', rp = '';
+    for (var k = 0; k < 32; k++) {
+      var ak = k * Math.PI / 16 - Math.PI / 2, rk = k % 2 ? R + 8 : (k % 8 === 0 ? 252 : k % 4 === 0 ? 234 : 216);
+      rp += (k ? 'L' : 'M') + f1(rk * Math.cos(ak)) + ' ' + f1(rk * Math.sin(ak));
+    }
+    rose = '<path d="' + rp + 'Z" fill="#d4ae62" fill-opacity=".16" stroke="#f0d79a" stroke-opacity=".55" stroke-width="1"/>';
+    out += '<g>' + rose + '</g><circle r="' + (R + 26) + '" fill="url(#ahhz)"/>';
+    out += '<circle r="' + R + '" fill="url(#ahsk)" stroke="#d4ae62" stroke-width="1.6"/>';
+    // stars, fixed per day so they don't jump around
+    var seed = Math.floor(now / 864e5), rnd = function () { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }, stars = '<g clip-path="url(#ahclip)" opacity="' + starOp + '">';
+    for (k = 0; k < 170; k++) { var rr = Math.sqrt(rnd()) * R, aa = rnd() * 6.283; stars += '<circle class="sky-tw" style="animation-delay:' + f1(rnd() * 4) + 's" cx="' + f1(rr * Math.cos(aa)) + '" cy="' + f1(rr * Math.sin(aa)) + '" r="' + f1(0.4 + rnd() * 1.3) + '" fill="#fff8e6"/>'; }
+    out += stars + '</g>';
+    // altitude rings
+    [30, 60].forEach(function (alt) { out += '<circle r="' + f1(R * (1 - alt / 90)) + '" fill="none" stroke="#b9c6ff" stroke-opacity=".22" stroke-dasharray="2 5"/><text x="4" y="' + f1(-R * (1 - alt / 90) - 3) + '" font-family="IBM Plex Mono, monospace" font-size="9" fill="#b9c6ff" opacity=".55">' + alt + '°</text>'; });
+    // the ecliptic, the road of the Sun, Moon and planets, with the twelve signs
+    if (EPH.eclipticAltAz) {
+      var seg = '', path = '', signs = '';
+      for (var l = 0; l <= 360; l += 3) {
+        var e = EPH.eclipticAltAz(l, now, loc.lat, loc.lon);
+        if (e.alt >= 0) { var q = xy(e.alt, e.az); seg += (seg ? 'L' : 'M') + f1(q[0]) + ' ' + f1(q[1]); }
+        else if (seg) { path += seg; seg = ''; }
+        if (l % 30 === 15 && e.alt > 4) { var qs = xy(e.alt, e.az); signs += '<text x="' + f1(qs[0]) + '" y="' + f1(qs[1] + 6) + '" text-anchor="middle" font-size="18" fill="#f0d79a" opacity=".7">' + SIGNS[(l - 15) / 30] + '</text>'; }
+      }
+      path += seg;
+      out += '<g clip-path="url(#ahclip)"><path d="' + path + '" fill="none" stroke="#f0d79a" stroke-opacity=".55" stroke-width="1.4" stroke-dasharray="6 4"/>' + signs + '</g>';
+    }
+    out += '<text x="0" y="4" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="2" fill="#c9d2f0" opacity=".6">ZENITH</text>';
+    // degree ticks and cardinal points
+    for (k = 0; k < 72; k++) { var at = (k * 5 - 90) * Math.PI / 180, l1 = k % 18 === 0 ? 14 : k % 2 ? 4 : 8;
+      out += '<line x1="' + f1(R * Math.cos(at)) + '" y1="' + f1(R * Math.sin(at)) + '" x2="' + f1((R + l1) * Math.cos(at)) + '" y2="' + f1((R + l1) * Math.sin(at)) + '" stroke="#d4ae62" stroke-opacity=".8"/>'; }
+    [['N', 0], ['E', 90], ['S', 180], ['W', 270]].forEach(function (c) { var q = xy(0, c[1], R + 36); out += '<text x="' + f1(q[0]) + '" y="' + f1(q[1] + 8) + '" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="26" font-weight="600" fill="#f0d79a">' + c[0] + '</text>'; });
+    // bodies: the other six first, the planet of the hour last and largest
+    ORDER.filter(function (pl) { return pl !== h.planet; }).concat([h.planet]).forEach(function (pl) {
       var p = pts[pl]; if (!p) return;
-      var up = p.alt >= 0, r = up ? R * (1 - p.alt / 90) : R + 22, a = (p.az - 90) * Math.PI / 180, x = r * Math.cos(a), y = r * Math.sin(a), on = pl === h.planet;
-      if (on) out += '<line x1="0" y1="0" x2="' + x.toFixed(1) + '" y2="' + y.toFixed(1) + '" stroke="' + HUE[pl][0] + '" stroke-dasharray="3 5"/><circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="22" fill="' + HUE[pl][0] + '" opacity=".25"/>';
-      out += '<text x="' + x.toFixed(1) + '" y="' + (y + (on ? 9 : 6)).toFixed(1) + '" text-anchor="middle" font-size="' + (on ? 26 : 17) + '" fill="' + HUE[pl][0] + '" opacity="' + (up ? 1 : 0.35) + '">' + GLYPH[pl] + '</text>';
+      var up = p.alt >= 0, on = pl === h.planet, q = up ? xy(p.alt, p.az) : xy(0, p.az, R + 58), r = on ? 15 : pl === 'Sun' || pl === 'Moon' ? 11 : 8;
+      if (on) {
+        var rim = xy(0, p.az, R);
+        out += '<line x1="0" y1="0" x2="' + f1(up ? q[0] : rim[0]) + '" y2="' + f1(up ? q[1] : rim[1]) + '" stroke="url(#ahbeam)" stroke-width="3" filter="url(#ahglow)"/>' +
+               '<line x1="0" y1="0" x2="' + f1(up ? q[0] : rim[0]) + '" y2="' + f1(up ? q[1] : rim[1]) + '" stroke="' + HUE[pl][0] + '" stroke-width="1.2"/>' +
+               '<circle class="sky-pulse" cx="' + f1(q[0]) + '" cy="' + f1(q[1]) + '" r="' + r + '" fill="none" stroke="' + HUE[pl][0] + '" stroke-width="2"/>';
+      }
+      out += '<g opacity="' + (up ? 1 : 0.45) + '"><circle cx="' + f1(q[0]) + '" cy="' + f1(q[1]) + '" r="' + (r * 2.2) + '" fill="url(#aho' + pl + ')" opacity=".55"/>' +
+             '<circle cx="' + f1(q[0]) + '" cy="' + f1(q[1]) + '" r="' + r + '" fill="#06080f" stroke="' + HUE[pl][0] + '" stroke-width="' + (on ? 2.4 : 1.2) + '"/>' +
+             '<text x="' + f1(q[0]) + '" y="' + f1(q[1] + r * 0.42) + '" text-anchor="middle" font-size="' + f1(r * 1.25) + '" fill="' + HUE[pl][0] + '">' + GLYPH[pl] + '</text>' +
+             '<text x="' + f1(q[0]) + '" y="' + f1(q[1] + r + 13) + '" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="' + (on ? 11 : 9) + '" letter-spacing="1" fill="' + (on ? '#fff3d6' : '#c9d2f0') + '">' + pl.toUpperCase() + (up ? '' : ' ↓') + '</text></g>';
     });
     $('ah-compass').innerHTML = out + '</svg>';
+
     var p = pts[h.planet], qn = p ? quarterOf(p.az) : null, da = S.dayAngel;
-    var html = '<p style="color:var(--text);font-size:18px;margin:0 0 6px"><b style="color:var(--ah)">' + GLYPH[h.planet] + ' ' + the(h.planet) + '</b> is ' + esc(p ? (p.alt >= 0 ? Math.round(p.alt) + '° above the horizon' : Math.round(-p.alt) + '° below the horizon') + ', toward the ' + POINTS[Math.round(p.az / 22.5) % 16] + ' (' + Math.round(p.az) + '°)' : '') + '.</p>' +
-      '<p class="muted" style="margin:0 0 14px">Planets near the centre are high overhead; those outside the ring are below your horizon.</p>';
+    var html = '<p style="color:var(--text);font-size:19px;margin:0 0 6px"><b style="color:var(--ah)">' + GLYPH[h.planet] + ' ' + the(h.planet) + '</b>, planet of this hour, is ' + esc(p ? (p.alt >= 0 ? Math.round(p.alt) + '° above the horizon' : Math.round(-p.alt) + '° below the horizon') + ', toward the ' + POINTS[Math.round(p.az / 22.5) % 16] + ' (' + Math.round(p.az) + '°)' : '') + '.</p>' +
+      '<p class="muted" style="margin:0 0 6px">' + (day ? 'Daylight' : twi ? 'Twilight' : 'Night') + ' sky. The zenith is at the centre and the horizon at the gold ring; bodies outside it are below the horizon. The dashed line is the ecliptic, the road of the Sun, Moon and planets through the twelve signs.</p>';
     if (da.quarters) {
       html += '<h3 style="font-size:22px;margin:16px 0 4px">Angels of the four quarters, ' + DAYS[S.day.wd] + '</h3><p class="fine" style="margin:0 0 6px">The Heptameron names these angels of the day “to be called from the four parts of the world”. The planet of the hour now lies in the ' + (qn || '') + '.</p><div class="quarters">' +
         ['East', 'South', 'West', 'North'].map(function (q) { return '<div' + (q === qn ? ' class="on"' : '') + '><b>' + q + (q === qn ? ' · the planet is here' : '') + '</b><span>' + esc(da.quarters[q].join(', ')) + '</span></div>'; }).join('') + '</div>';
@@ -199,6 +275,8 @@
     var now = new Date();
     if (now >= S.cur.end) { render(); return; }
     $('ah-count').textContent = dur(S.cur.end - now) + ' left in this hour · until ' + hm(S.cur.end, loc.tz) + ' · ' + loc.name.replace(/ \(.*$/, '');
+    var ni = $('ah-next-in'); if (ni && S.next) ni.textContent = dur(S.next.start - now);
+    var ai = $('ah-align-in'); if (ai && S.nextAlign) ai.textContent = dur(S.nextAlign.start - now);
     if (document.visibilityState === 'hidden') document.title = S.pa.angel + ' · ' + dur(S.cur.end - now);
   }
 
