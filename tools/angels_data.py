@@ -164,3 +164,59 @@ PAULINA = [
 
 PAULINA_RULE = ('The Nature of these 24 Angells of the day and night changeth every day: and their offices is to doe all things '
                 'that are attributed to the 7 planetts. But that changeth every day also.')
+
+# ------------------------------------------------------------------ what the old books say each planet's angels do,
+# and how they appear. Quotations: Heptameron (Eng. 1655), "The Spirits of the Air of [day]... their nature is...";
+# Liber Iuratus Honorii (Sworn Book of Honorius), as translated in Peterson's Heptameron notes;
+# Agrippa, Fourth Book, "the shapes familiar to the Spirits of [planet]" (particular forms, used here as emblems).
+OFFICES = {
+    'Sun': dict(
+        tags=['Prosperity', 'Favour', 'Honour', 'Health'],
+        heptameron='to procure Gold, Gemmes, Carbuncles, Riches; to cause one to obtain favour and benevolence; to dissolve the enmities of men; to raise men to honors; to carry or take away infirmities',
+        honorius='to provide love, gratitude, and wealth to man, and virtue, similarly to guard his health',
+        plain='Wealth and good fortune, the goodwill of others, the end of quarrels, honour and advancement, and health.',
+        looks='Honorius describes the angels of the Sun with bodies “great and large, and full of all benevolence”, their colours “bright or citrus, or like the Sun or gold”.',
+        emblems='a king with a sceptre riding on a lion, a crowned king, a queen with a sceptre, a lion, a cock, a golden garment, a sceptre'),
+    'Moon': dict(
+        tags=['Journeys', 'Secrets revealed', 'Silver', 'Thought and memory'],
+        heptameron='to give silver; to convey things from place to place; to make horses swift, and to disclose the secrets of persons both present and future',
+        honorius='to move the will and thinking, to speed journeys, to recall words, and to cause it to rain',
+        plain='Safe and swift journeys, things carried where they need to go, secrets brought to light, and a clear, remembering mind.',
+        looks='Honorius describes the angels of the Moon as “long and large”, their forms “dark and white like crystal or of a burnished sword, or like ice or dark clouds”.',
+        emblems='a king like an archer riding on a doe, a little boy, a huntress with bow and arrows, a doe, a goose, a green or silver garment, an arrow'),
+    'Mars': dict(
+        tags=['Strength', 'Victory in conflict', 'Health given or taken'],
+        heptameron='to cause wars, mortality, death and combustions; and to give two thousand Souldiers at a time; to bring death, infirmities or health',
+        honorius='to provoke wars, murder, destruction, and mortality of people',
+        plain='Force and victory in conflict, armed help, and power over illness. In the old books Mars is the planet of war, and its hours were the most feared.',
+        looks='Honorius describes the angels of Mars as “of medium stature, dry and thin”, their colour “red, such as red-hot coals kindled well”.',
+        emblems='an armed king riding on a wolf, an armed man, a woman holding a shield, a he-goat, a horse, a raven, a red garment'),
+    'Mercury': dict(
+        tags=['Knowledge', 'Prophecy', 'Justice', 'Healing'],
+        heptameron='to give all Metals; to reveal all earthly things past, present and to come; to pacifie judges, to give victories in war, to re-edifie, and teach experiments and all decayed Sciences, and to change bodies mixt of Elements conditionally out of one into another: to give infirmities or health; to raise the poor, and cast down the high ones; to binde or lose Spirits; to open locks or bolts',
+        honorius='to give answer regarding the past, present, and future, to teach the secret deeds which must come to pass in this world, and to reveal the secrets of all the others',
+        plain='Learning and lost knowledge recovered, foreknowledge, favour with judges, healing, the poor raised up, and locked things opened.',
+        looks='Honorius describes the angels of Mercury as “changeable, clear like glass, or like a flame of white fire”.',
+        emblems='a king riding on a bear, a fair youth, a woman holding a distaff, a dog, a magpie, a garment of changeable colours, a rod, a little staff'),
+    'Jupiter': dict(
+        tags=['Joy', 'Love', 'Peace', 'Healing'],
+        heptameron='to procure the love of woman; to cause men to be merry and joyful; to pacifie strife and contentions; to appease enemies; to heal the diseased, and to disease the whole; and procureth losses, or taketh them away',
+        honorius='joy, love, gladness, and are assigned to performing benevolence and gratitude of all persons',
+        plain='Joy and good cheer, love, peace in place of strife, enemies calmed, healing, and losses averted.',
+        looks='Honorius describes the angels of Jupiter as “of medium stature”, their colour “like the color of the sky, or of crystal”.',
+        emblems='a king with a drawn sword riding on a stag, a man wearing a mitre in long raiment, a maiden crowned with laurel and flowers, a bull, a stag, a peacock, an azure garment, a sword'),
+    'Venus': dict(
+        tags=['Love', 'Marriage', 'Reconciliation', 'Pleasure'],
+        heptameron='to give silver: to excite men, and incline them to luxury; to reconcile enemies through luxury; and to make marriages; to allure men to love women; to cause, or take away infirmities; and to do all things which have motion',
+        honorius='to cause laughter, lust, desire, and to turn women to love, and to give flowers and fruit',
+        plain='Love and desire, marriage, enemies reconciled, pleasure and laughter, and health.',
+        looks='Honorius describes the angels of Venus as “of medium stature in all ways”, their form “agreeable, and as white as snow”.',
+        emblems='a king with a sceptre riding on a camel, a maiden beautifully dressed, a dove, a white or green garment, flowers'),
+    'Saturn': dict(
+        tags=['Endings', 'Binding', 'Severity'],
+        heptameron='to sow discordes, hatred, evil thoughts and cogitations; to give lead freely, to slay and kill every one, and to lame or maim every member',
+        honorius='to cause sadness, anger, and hatred, to create snow and ice together',
+        plain='In the old books Saturn’s work is the hardest: discord, grief, cold and endings. Later astrology softened him into the planet of time, patience, discipline and limits.',
+        looks='Honorius describes the angels of Saturn as “long and slender, pale or yellow”.',
+        emblems='a bearded king riding on a dragon, an old man with a beard, an old woman leaning on a staff, a dragon, an owl, a black garment, a sickle, a juniper tree'),
+}

@@ -367,12 +367,29 @@
     var io = new IntersectionObserver(function (en) {
       en.forEach(function (x) {
         var el = x.target;
-        if (x.isIntersecting && !el.dataset.drawn) { el.innerHTML = ART.angel(JSON.parse(el.getAttribute('data-art'))); el.dataset.drawn = '1'; }
+        if (x.isIntersecting && !el.dataset.drawn) { el.innerHTML = ART.angel(JSON.parse(el.getAttribute('data-art'))); el.dataset.drawn = '1'; markImg(el); }
         el.classList.toggle('paused', !x.isIntersecting);
       });
     }, { rootMargin: '300px' });
     arts.forEach(function (a) { io.observe(a); });
   } else arts.forEach(function (el) { el.innerHTML = ART.angel(JSON.parse(el.getAttribute('data-art'))); });
+
+  // click any painted portrait to see it large
+  var lb = document.createElement('div'); lb.id = 'ah-lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Portrait');
+  document.body.appendChild(lb);
+  function closeLb() { lb.classList.remove('on'); lb.innerHTML = ''; }
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb.classList.contains('on')) closeLb(); });
+  document.addEventListener('click', function (e) {
+    var svg = e.target.closest && e.target.closest('svg.aa');
+    if (!svg || (e.target.closest('a') && !e.target.closest('.codex-art'))) return;
+    var im = svg.querySelector('image.aa-img');
+    if (!im) return;
+    var src = im.getAttribute('href').replace('-640.webp', '.webp'), label = svg.getAttribute('aria-label') || '';
+    lb.innerHTML = '<img src="' + esc(src) + '" alt="' + esc(label) + '"><p>' + esc(label.replace(/^Devotional artwork of /, '')) + '<small>Modern devotional artwork · tap anywhere to close</small></p>';
+    lb.classList.add('on');
+  });
+  function markImg(el) { if (el.querySelector('image.aa-img')) el.classList.add('has-img'); }
 
   // the veiled figure before the reveal
   $('ah-art').innerHTML = ART.angel({ name: 'Angel of the Hour', planet: 'Sun', kind: 'pauline', period: 'day', subtitle: '', ring: 'THE ANGEL OF THIS HOUR ✦ ARS PAULINA ✦ ', label: 'A veiled angel, waiting to be revealed' });

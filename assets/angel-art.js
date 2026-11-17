@@ -9,6 +9,13 @@
               Venus: ['#8fe0b4', '#123a2c'], Mercury: ['#9fd6ff', '#14304a'], Moon: ['#e6ecff', '#1e2638'] };
   var ORDER = ['Saturn', 'Jupiter', 'Mars', 'Sun', 'Venus', 'Mercury', 'Moon'];
   var uid = 0;
+  // Painted portraits (modern devotional artwork made with Canva's image generator); the procedural icon is the fallback.
+  function slugOf(n) { return String(n).toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, ''); }
+  function portrait(o) {
+    if (o.portrait === false) return '';
+    var k = (o.kind === 'pauline' ? 'paulina-' : '') + slugOf(o.name);
+    return (window.DS_PORTRAITS || []).indexOf(k) >= 0 ? '/assets/img/angels/' + k + (o.lite ? '-640' : '') + '.webp' : '';
+  }
 
   function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
   function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
@@ -67,6 +74,13 @@
     var c = 2 * Math.PI * r, path = rev ? 'M ' + r + ' 0 A ' + r + ' ' + r + ' 0 1 0 ' + (-r) + ' 0 A ' + r + ' ' + r + ' 0 1 0 ' + r + ' 0'
                                        : 'M ' + (-r) + ' 0 A ' + r + ' ' + r + ' 0 1 1 ' + r + ' 0 A ' + r + ' ' + r + ' 0 1 1 ' + (-r) + ' 0';
     return '<g class="' + cls + '"><path id="' + id + '" d="' + path + '" fill="none"/><text font-size="' + size + '" fill="' + fill + '" letter-spacing="' + (size * 0.28).toFixed(1) + '" font-family="' + (family || 'Cormorant Garamond, Georgia, serif') + '"><textPath href="#' + id + '" textLength="' + f(c * 0.995) + '" lengthAdjust="spacing">' + esc(text) + '</textPath></text></g>';
+  }
+
+  function plate(id, t) {
+    return '<path d="M-190 330 L-150 312 L150 312 L190 330 L150 348 L-150 348Z" fill="#120d05" stroke="url(#' + id + 'gold)" stroke-width="2.5"/>' +
+           '<path d="M-150 312 L-170 300 L-232 318 L-196 330 L-232 342 L-150 348Z" fill="#0c0904" stroke="url(#' + id + 'gold)" stroke-width="2"/>' +
+           '<path d="M150 312 L170 300 L232 318 L196 330 L232 342 L150 348Z" fill="#0c0904" stroke="url(#' + id + 'gold)" stroke-width="2"/>' +
+           '<text y="338" text-anchor="middle" font-size="26" letter-spacing="7" fill="#f3dfa6" font-family="Cormorant Garamond, Georgia, serif" font-weight="600">' + esc(t.toUpperCase()) + '</text>';
   }
 
   /* angel({name, planet, subtitle, hebrew, kind: 'day'|'pauline', period: 'day'|'night', hour}) -> SVG string */
@@ -133,6 +147,20 @@
       s += ringText(id + 'r2', 412, new Array(reps2 + 1).join(hb), 20, 'aa-ring2', true, '#d9c48c', 'Frank Ruhl Libre, David, Times New Roman, serif');
     }
 
+    var img = portrait(o);
+    if (img) {
+      // the painting, set in a round gilded window inside the turning rings
+      s += '<defs><clipPath id="' + id + 'win"><circle r="372"/></clipPath>' +
+           '<radialGradient id="' + id + 'vig" r="372" gradientUnits="userSpaceOnUse"><stop offset=".72" stop-color="#03040a" stop-opacity="0"/><stop offset="1" stop-color="#03040a" stop-opacity=".55"/></radialGradient>' +
+           '<radialGradient id="' + id + 'shine" cx="0" cy="-170" r="260" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff3d0" stop-opacity=".5"/><stop offset="1" stop-color="#fff3d0" stop-opacity="0"/></radialGradient></defs>';
+      s += '<circle r="384" fill="#05060c"/><g clip-path="url(#' + id + 'win)"><image class="aa-img" href="' + img + '" x="-372" y="-372" width="744" height="744" preserveAspectRatio="xMidYMid slice"/>' +
+           '<circle r="372" fill="url(#' + id + 'vig)"/><g class="aa-glow"><circle r="372" fill="url(#' + id + 'shine)" style="mix-blend-mode:screen"/></g></g>';
+      s += '<circle r="372" fill="none" stroke="url(#' + id + 'gold)" stroke-width="7"/><circle r="384" fill="none" stroke="url(#' + id + 'gold)" stroke-width="1.4" opacity=".8"/>';
+      for (i = 0; i < 36; i++) { var qb = pol(378, i / 36 * 6.283); s += '<circle cx="' + f(qb[0]) + '" cy="' + f(qb[1]) + '" r="' + (i % 3 ? 1.8 : 3) + '" fill="' + (i % 3 ? '#fff6dc' : p[0]) + '"/>'; }
+      if (o.subtitle) s += plate(id, o.subtitle);
+      return s + '</g></svg>';
+    }
+
     // wings: six for the angels of the days (after the seraphim of Isaiah 6:2), four for the angels of the hours
     var eyes = kind === 'day', wings = '<g class="aa-wings" filter="url(#' + id + 'soft)">';
     var W6 = [
@@ -172,12 +200,7 @@
     var pearls = '';
     for (i = 0; i < 24; i++) { var qp = pol(72, i / 24 * 6.283); pearls += '<circle cx="' + f(qp[0]) + '" cy="' + f(qp[1] - 150) + '" r="2.2" fill="#fff6dc"/>'; }
     s += pearls + '<circle cy="-150" r="44" fill="#fffdf4" opacity=".95" filter="url(#' + id + 'soft)"/>';
-    if (o.subtitle) {
-      s += '<path d="M-190 330 L-150 312 L150 312 L190 330 L150 348 L-150 348Z" fill="#120d05" stroke="url(#' + id + 'gold)" stroke-width="2.5"/>' +
-           '<path d="M-150 312 L-170 300 L-232 318 L-196 330 L-232 342 L-150 348Z" fill="#0c0904" stroke="url(#' + id + 'gold)" stroke-width="2"/>' +
-           '<path d="M150 312 L170 300 L232 318 L196 330 L232 342 L150 348Z" fill="#0c0904" stroke="url(#' + id + 'gold)" stroke-width="2"/>' +
-           '<text y="338" text-anchor="middle" font-size="26" letter-spacing="7" fill="#f3dfa6" font-family="Cormorant Garamond, Georgia, serif" font-weight="600">' + esc(o.subtitle.toUpperCase()) + '</text>';
-    }
+    if (o.subtitle) s += plate(id, o.subtitle);
     s += '</g></svg>';
     return s;
   }
@@ -203,5 +226,5 @@
     return s;
   }
 
-  window.DSAngelArt = { angel: angel, seal: seal, GLYPH: GLYPH, HUE: HUE };
+  window.DSAngelArt = { angel: angel, seal: seal, portrait: portrait, GLYPH: GLYPH, HUE: HUE };
 })();

@@ -118,12 +118,28 @@ body{background:radial-gradient(ellipse at 50% 0%,rgba(255,214,140,.07),transpar
 #ah-compass .sky-pulse{animation:skypulse 2.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
 @keyframes skypulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.4);opacity:0}}
 @media (prefers-reduced-motion: reduce){#ah-compass *{animation:none!important}}
+/* codex: offices */
+.chips2{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 12px}
+.chips2 span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1a1408;background:var(--gold2);border-radius:999px;padding:4px 11px}
+blockquote.src{margin:12px 0;padding:12px 18px;border-left:2px solid var(--gold);background:rgba(13,20,34,.6);border-radius:0 12px 12px 0}
+blockquote.src p{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--text);margin:0}
+blockquote.src cite{display:block;margin-top:6px;font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 /* codex */
-.codex{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:34px;align-items:start;padding:34px 0;border-top:1px solid var(--line)}
-.codex.small{grid-template-columns:minmax(0,220px) minmax(0,1fr)}
-@media(max-width:760px){.codex,.codex.small{grid-template-columns:minmax(0,1fr)}.codex-art{max-width:300px;margin:0 auto}}
-.codex-art{aspect-ratio:1}
+.codex{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:34px;align-items:start;padding:34px 0;border-top:1px solid var(--line)}
+.codex.small{grid-template-columns:minmax(0,380px) minmax(0,1fr)}
+@media(min-width:761px){.codex-art{position:sticky;top:84px}}
+@media(max-width:760px){.codex,.codex.small{grid-template-columns:minmax(0,1fr)}.codex-art{width:100%;max-width:440px;margin:0 auto}}
+.codex-art{aspect-ratio:1;filter:drop-shadow(0 0 40px rgba(255,214,140,.14))}
 .codex-art svg{width:100%;height:auto}
+.codex-art.has-img,.ah-stage .has-img{cursor:zoom-in}
+.aa-img{transition:transform 1.2s ease}
+.codex-art.has-img:hover .aa-img{transform:scale(1.04)}
+#ah-lb{position:fixed;inset:0;z-index:200;background:rgba(3,4,10,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:18px;cursor:zoom-out}
+#ah-lb.on{display:flex;animation:lbin .5s ease}
+#ah-lb img{max-width:min(92vw,980px);max-height:82vh;border-radius:6px;box-shadow:0 0 0 1px rgba(226,189,108,.6),0 0 90px rgba(255,214,140,.25)}
+#ah-lb p{margin:14px 0 0;color:#e9d49a;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;text-align:center;max-width:760px}
+#ah-lb small{display:block;color:#9aa3b8;font-size:.8rem;margin-top:4px;font-family:inherit}
+@keyframes lbin{from{opacity:0}to{opacity:1}}
 .codex h3{font-size:clamp(36px,4.6vw,54px);margin:6px 0 12px}
 .codex p{color:var(--soft)}
 .codex .lede2{font-size:18px;color:var(--text)}
@@ -250,7 +266,7 @@ table.week td{white-space:nowrap;font-size:13.5px}
     <div class="eyebrow">Sources and method</div>
     <h2 style="font-size:clamp(30px,4vw,44px);margin:12px 0 14px">How this page is made</h2>
     <p>The hours are counted from sunrise and sunset calculated for your place, the day divided into twelve and the night into twelve. The planet of each hour follows the Chaldean order from the planet of the day. The angels of the hours are those of the Ars Paulina; the angels of the days and the angels of the four quarters are those of the Heptameron. The positions of the planets are calculated from their orbital elements and agree with professional ephemerides to within a small fraction of a degree.</p>
-    <p>The names, hours, numbers and quotations come from the sources listed. The figures of the angels and the seals are modern devotional artwork made for Discovery Science and are not reproductions of any manuscript. This page describes a tradition; it does not claim that the angels or the hours influence events.</p>
+    <p>The names, hours, numbers and quotations come from the sources listed. The painted portraits of the angels are modern devotional artwork, made for Discovery Science with an AI image generator (Canva) from descriptions drawn from these texts: the colours and bodies the Sworn Book of Honorius gives each planet’s angels, the emblems in Agrippa’s Fourth Book, and the hours of the Ars Paulina. The gilded frames and the seals are drawn in code. None of it reproduces a manuscript figure. This page describes a tradition; it does not claim that the angels or the hours influence events.</p>
   </div>
   <aside><div class="ledger">
     <h4>Sources</h4>
