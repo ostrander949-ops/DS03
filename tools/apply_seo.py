@@ -363,7 +363,7 @@ wr('planetary-hours.html', page)
 # --------------------------------------------------------------------------------------------
 SITEMAP = ['index.html', 'new.html', 'angels.html', 'seven-angels.html', 'archive.html', 'planetary-hours.html', 'planetary-hour-now.html', 'angel-of-the-hour.html', 'coming-soon.html',
            'library.html', 'catalog.html', 'apps.html', 'almanac.html', 'google-play.html', 'obe.html', 'oracle.html',
-           'neuro.html', 'entrainment.html', 'shop.html', 'newsletter.html',
+           'neuro.html', 'entrainment.html', 'shop.html', 'newsletter.html', 'birth-angel.html',
            'asclepion.html', 'dhikr.html', 'divining-vessel.html', 'ekstasis.html', 'kispu.html',
            'planetary-attunement.html', 'spirit-drum.html', 'theurgia.html',
            'gifts/index.html', 'gifts/journals/index.html', 'gifts/meditation-sound-healing/index.html',
