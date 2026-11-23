@@ -9,7 +9,7 @@ import re
 BUTTONDOWN = 'discoveryscience'
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES = ['index.html', 'angel-of-the-hour.html', 'planetary-hour-now.html', 'planetary-hours.html', 'angels.html',
-         'seven-angels.html', 'archive.html', 'shop.html', 'newsletter.html']
+         'seven-angels.html', 'archive.html', 'shop.html', 'newsletter.html', 'birth-angel.html']
 
 CSS = ('<style>.dsn{padding:56px 0;border-top:1px solid rgba(226,189,108,.18);background:radial-gradient(ellipse at 50% 0,rgba(226,189,108,.10),transparent 70%)}'
        '.dsn .wrap{max-width:760px;margin:0 auto;padding:0 20px;text-align:center}'
